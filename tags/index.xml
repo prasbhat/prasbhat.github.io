@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on myzonesoft.com</title>
+    <link>https://myzonesoft.com/tags/</link>
+    <description>Recent content in Tags on myzonesoft.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://myzonesoft.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>H2 Database</title>
+      <link>https://myzonesoft.com/tags/h2-database/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/h2-database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hibernate</title>
+      <link>https://myzonesoft.com/tags/hibernate/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/hibernate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://myzonesoft.com/tags/java/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservice</title>
+      <link>https://myzonesoft.com/tags/microservice/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Boot</title>
+      <link>https://myzonesoft.com/tags/spring-boot/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

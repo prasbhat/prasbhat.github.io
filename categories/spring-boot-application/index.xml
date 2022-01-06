@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Boot Application on myzonesoft.com</title>
+    <link>https://myzonesoft.com/categories/spring-boot-application/</link>
+    <description>Recent content in Spring Boot Application on myzonesoft.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://myzonesoft.com/categories/spring-boot-application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Develop Microservice Application Using Spring Boot and H2 Database</title>
+      <link>https://myzonesoft.com/post/microservice-spring-boot-h2-db/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/post/microservice-spring-boot-h2-db/</guid>
+      <description>&lt;p&gt;In this article, I will be developing a microservice application using &lt;strong&gt;Java Technology&lt;/strong&gt; and &lt;strong&gt;Spring Boot Framework&lt;/strong&gt;, which will be the backend and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
+&lt;p&gt;I will be using &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, it is also known as an Embedded Java Database, for persisting(storing) the data.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Migration from Wordpress to Hugo and GitHub Pages - myzonesoft.com</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="myzonesoft.com" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">myzonesoft.com</div>
+					<div class="logo__tagline">A Technical Site for Everyone</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">
+				
+				<span class="menu__text">Articles</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Migration from Wordpress to Hugo and GitHub Pages</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-01-05T13:03:48&#43;05:30">January 05, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">Hugo</a>, <a class="meta__link" href="/categories/wordpress/" rel="category">Wordpress</a>, <a class="meta__link" href="/categories/website-migration/" rel="category">Website Migration</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/cover_images/getting-started-with-hugo-cover-image.png" alt="Migration from Wordpress to Hugo and GitHub Pages">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#installation-of-hugo">Installation of Hugo</a>
+      <ul>
+        <li><a href="#download-and-install-the-hugo-executable-for-windows-10">Download and Install the Hugo Executable for Windows 10</a></li>
+        <li><a href="#add-hugo-executable-to-your-windows-10-path-settings">Add Hugo Executable to your Windows 10 PATH settings</a></li>
+        <li><a href="#verify-the-executable">Verify the Executable</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-hugo">Working with Hugo</a>
+      <ul>
+        <li><a href="#generate-new-site">Generate new site</a></li>
+        <li><a href="#add-a-theme">Add a Theme</a></li>
+        <li><a href="#start-the-hugo-server">Start the Hugo Server</a></li>
+        <li><a href="#add-some-content">Add Some Content</a></li>
+      </ul>
+    </li>
+    <li><a href="#migrate-contents-from-wordpress-to-hugo">Migrate contents from Wordpress to Hugo</a>
+      <ul>
+        <li><a href="#export-the-wordpress-content">Export the Wordpress content</a></li>
+        <li><a href="#convert-wordpress-content-to-hugo-format">Convert Wordpress content to Hugo format</a></li>
+        <li><a href="#verify-the-contents">Verify the Contents</a></li>
+        <li><a href="#use-wordpress-content-in-hugo">Use Wordpress Content in Hugo</a></li>
+      </ul>
+    </li>
+    <li><a href="#hosting-the-website-on-github-pages">Hosting the website on GitHub Pages</a>
+      <ul>
+        <li><a href="#create-a-repository">Create a Repository</a></li>
+        <li><a href="#deploy-the-code-to-github-pages">Deploy the Code to GitHub Pages</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-custom-domain-on-github-pages">Working with Custom Domain on GitHub Pages</a>
+      <ul>
+        <li><a href="#setup-custom-domain-in-github-pages">Setup Custom Domain in GitHub Pages</a></li>
+        <li><a href="#update-the-dns-provider">Update the DNS Provider</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>In this post, I have documented all the steps I took to migrate this website from <a href="https://wordpress.com/"
+ target="_blank">Wordpress</a> to <a href="https://gohugo.io/"
+ target="_blank">Hugo</a> and host it on <a href="https://docs.github.com/en/pages"
+ target="_blank">GitHub Pages</a>.</p>
+<p><strong>Hugo</strong> is the <em>world’s fastest static website engine</em>. It is written in <em><strong>Golang</strong></em>.</p>
+<p><strong>GitHub Pages</strong> provides <em>free hosting space for the static sites</em>.</p>
+<h2 id="installation-of-hugo">Installation of Hugo</h2>
+<p>Follow the Hugo documentation on <a href="https://gohugo.io/getting-started/installing#windows"
+ target="_blank">Installing Hugo on Windows</a>.</p>
+<p>Given below are same steps from the above article.</p>
+<h3 id="download-and-install-the-hugo-executable-for-windows-10">Download and Install the Hugo Executable for Windows 10</h3>
+<ol>
+<li>Go to the <a href="https://github.com/gohugoio/hugo/releases"
+ target="_blank">Hugo Releases</a> page.
+
+  <figure>
+    <img src="images/hugo-releases-page.jpeg" alt="hugo-releases-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Releases Page</figcaption>
+  </figure>
+</li>
+<li>The latest release is tagged as <em>Latest</em> and will be placed at the top. Under the <strong>Assets</strong> section, you will find the downloads related to all the different Operating Systems. They’re all ZIP files.</li>
+<li>Find the <strong>Windows</strong> files near the bottom (they’re in alphabetical order, so <em>Windows</em> is last) – download either the <em>32-bit or 64-bit</em> file depending on whether you have <em>32-bit or 64-bit Windows</em>.
+
+  <figure>
+    <img src="images/hugo-releases-assets.jpeg" alt="hugo-releases-assets.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Releases Assets Section</figcaption>
+  </figure>
+</li>
+<li>Move the ZIP file into your <em><strong>&laquo;DESTINATION_FOLDER&raquo;</strong></em> folder.</li>
+<li>Double-click on the ZIP file and extract its contents.</li>
+<li>You should now have three new files: The <em>hugo executable (hugo.exe)</em>, <em>LICENSE</em> and <em>README.md</em>.
+
+  <figure>
+    <img src="images/hugo-installed-folder.jpeg" alt="hugo-installed-folder.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Installed on Local System</figcaption>
+  </figure>
+</li>
+</ol>
+<h3 id="add-hugo-executable-to-your-windows-10-path-settings">Add Hugo Executable to your Windows 10 PATH settings</h3>
+<ol>
+<li>Right click on the Start button.</li>
+<li>Click on System.</li>
+<li>Click on Advanced System Settings on the left.</li>
+<li>Click on the <em>Environment Variables</em>… button on the bottom.</li>
+<li>In the User variables section, find the row that starts with <strong>PATH</strong> (PATH will be all caps).</li>
+<li>Double-click on <strong>PATH</strong>.</li>
+<li>Click the <em>New…</em> button.</li>
+<li>Type in the folder where <em><strong>hugo.exe</strong></em> was extracted, which is <em><strong>&laquo;DESTINATION_FOLDER&raquo;</strong></em> if you went by the instructions above. Give the PATH entry only till the folder which has <em>hugo.exe</em> and not the filename. Press Enter when you’re done typing.</li>
+<li>Click <em>OK</em> at every window to exit.
+
+  <figure>
+    <img src="images/windows-path-settings.jpeg" alt="windows-path-settings.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Windows 10 PATH settings for Hugo Executable</figcaption>
+  </figure>
+</li>
+</ol>
+<h3 id="verify-the-executable">Verify the Executable</h3>
+<p>Run a few commands to verify that the executable is ready to run, and then build a sample site to get started.</p>
+<ol>
+<li>Open the command prompt(or Powershell), type <code>hugo help</code> and press the <em>Enter</em> key. You should see output that starts with:
+
+  <figure>
+    <img src="images/hugo-help-command.jpeg" alt="hugo-help-command.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">hugo help command</figcaption>
+  </figure>
+</li>
+</ol>
+<p>If you do, <strong>then the installation is complete</strong>. If you don’t, double-check the path that you placed the hugo.exe file in and that you typed that path correctly when you added it to your PATH variable.</p>
+<h2 id="working-with-hugo">Working with Hugo</h2>
+<h3 id="generate-new-site">Generate new site</h3>
+<p>Run the command to generate a new site. I am using <code>myzonesoft-hugo</code> as the name of my site project:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new site myzonesoft-hugo
+</code></pre></div><p>
+  <figure>
+    <img src="images/hugo-new-site-command.jpeg" alt="hugo-new-site-command.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">hugo new site command</figcaption>
+  </figure>
+</p>
+<p>You should now have a directory at <em><strong>&laquo;DESTINATION_FOLDER&raquo;/myzonesoft-hugo</strong></em>. Change into that directory and list the contents. You should get output similar to the following:
+
+  <figure>
+    <img src="images/hugo-folder-creation.jpeg" alt="hugo-folder-creation.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">hugo boilerplate folder structure</figcaption>
+  </figure>
+</p>
+<p>This is the directory which is the home for all the contents(articles, images, layouts, themes, etc.) related to the website we will be developing. This <strong>Hugo Directory Structure</strong> is explained in more details <a href="https://gohugo.io/getting-started/directory-structure/"
+ target="_blank">here</a>.</p>
+<h3 id="add-a-theme">Add a Theme</h3>
+<ol>
+<li>
+<p>Next step is to finalize a theme for our website. Hugo provides users with lots of themes. See <a href="https://themes.gohugo.io/"
+ target="_blank">themes.gohugo.io</a> for a list of themes to consider. For my website, I am using the <a href="https://github.com/Vimux/Mainroad/"
+ target="_blank">Mainroad</a> theme.</p>
+</li>
+<li>
+<p>Install the selected theme into the Projects <code>themes/&lt;&lt;THEME_NAME&gt;&gt;</code> directory.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>cd myzonesoft-hugo
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>git init
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>git clone https://github.com/Vimux/Mainroad.git themes/mainroad
+</code></pre></div><ol start="3">
+<li>Now let the Hugo know, which theme to use. Open the <code>config.toml</code> and enter the below line</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mainroad&#34;</span>
+</code></pre></div><h3 id="start-the-hugo-server">Start the Hugo Server</h3>
+<p>Now, start the Hugo server with drafts enabled</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo server -D
+</code></pre></div><p>
+  <figure>
+    <img src="images/start-hugo-server.jpeg" alt="start-hugo-server.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Server with Drafts Enabled</figcaption>
+  </figure>
+</p>
+<p>Navigate to your new site at <a href="http://localhost:1313/"
+ target="_blank">http://localhost:1313/</a>.
+
+  <figure>
+    <img src="images/hugo-website.jpeg" alt="hugo-website.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Website</figcaption>
+  </figure>
+</p>
+<h3 id="add-some-content">Add Some Content</h3>
+<p>Content files can be created directly into the content directory. However, I am using <a href="https://gohugo.io/content-management/page-bundles/"
+ target="_blank">Page Bundles</a> to have more control over the contents.
+You can manually create content files (for example as <code>content/&lt;CATEGORY&gt;/&lt;FILE&gt;.&lt;FORMAT&gt;</code>) and provide metadata in them, however you can use the <code>new</code> command to do a few things for you (like add title and date):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new post/my-first-post/index.md
+</code></pre></div><p>
+  <figure>
+    <img src="images/hugo-create-new-content.jpeg" alt="hugo-create-new-content.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Create New Content</figcaption>
+  </figure>
+</p>
+<blockquote>
+<p>Hugo uses <em><strong>Markdown files(.md)</strong></em> to store its content. Everything is in flat files.</p>
+<p>To know more about the Markdown Syntax, read <a href="https://towardsdatascience.com/the-ultimate-markdown-cheat-sheet-3d3976b31a0"
+ target="_blank">this</a>.</p>
+</blockquote>
+<p>The newly created index.md will look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">---
+title: <span style="color:#e6db74">&#34;My First Post&#34;</span>
+description: <span style="color:#e6db74">&#34;&#34;</span>
+date: <span style="color:#e6db74">&#34;2022-01-05T13:03:48+05:30&#34;</span>
+draft: true
+---
+
+</code></pre></div><p>The section that you see between the &lsquo;- - -&rsquo; is called <a href="https://gohugo.io/content-management/front-matter/"
+ target="_blank">Front Matter</a>. It houses the common attributes that are required across every posts.</p>
+<p>Feel free to edit the content and simply refresh in browser to see changes quickly.</p>
+<p>This will create a directory structure like below.:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">content/
+└── post
+    └── my-first-post
+        └── index.md
+</code></pre></div><p>Such directory structure is known as <a href="https://gohugo.io/content-management/page-bundles/"
+ target="_blank">Page Bundles</a>.</p>
+<p>We can store the images and other stuffs related to the article inside <code>my-first-post</code> directory.</p>
+<h2 id="migrate-contents-from-wordpress-to-hugo">Migrate contents from Wordpress to Hugo</h2>
+<p>At this stage we are ready to migrate the contents from the Wordpress to our newly created Hugo Site.</p>
+<h3 id="export-the-wordpress-content">Export the Wordpress content</h3>
+<ol>
+<li>
+<p>Go to your <em>Wordpress Admin Page</em>, <code>Tools -&gt; Export</code></p>
+</li>
+<li>
+<p>Choose what to Export(Choose- <em>All content</em>) and Click on <strong>Download Export File</strong> button.
+
+  <figure>
+    <img src="images/wordpress-export-tool.jpeg" alt="wordpress-export-tool.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Wordpress Export Tool</figcaption>
+  </figure>
+</p>
+</li>
+<li>
+<p>A <code>&lt;WEBSITE_NAME&gt;.WordPress.&lt;DATE_OF_EXPORT&gt;.xml</code> an RSS file will be downloaded to your local machine.</p>
+</li>
+</ol>
+<ul>
+<li>This format, which is called an <em><strong>WordPress eXtended RSS</strong></em> or <em><strong>WXR</strong></em> file, will contain your <em>posts, pages, custom post types, comments, custom fields, categories, tags, custom taxonomies, and users</em>.</li>
+</ul>
+<h3 id="convert-wordpress-content-to-hugo-format">Convert Wordpress content to Hugo format</h3>
+<p>If you Google Search <em>&ldquo;Wordpress to Hugo Convertor&rdquo;</em>, you will find tons of plugins and tools.</p>
+<p>Since I am on the basic plan of Wordpress, I could not use plugins and hence I was looking for tools.</p>
+<p>Then I found <a href="https://github.com/lonekorean/wordpress-export-to-markdown"
+ target="_blank">lonekorean/wordpress-export-to-markdown</a> converter, which produced much cleaner and desired output. Hence I ended up using this convertor tool.</p>
+<p>Instructions on how to install and work with this tool is provided in their GitHub page.</p>
+<p>The output directory will contain <em>all the published posts, pages, taxonomies, metadata, and settings converted to Markdown and YAML formats</em> from the Wordpress and ready to be dropped into Hugo.</p>
+<h3 id="verify-the-contents">Verify the Contents</h3>
+<p>The exported content would be in the Page Bundles with articles in the Markdown files and corresponding images. Review each of the contents carefully to make sure, everything is converted as expected.</p>
+<p>Make sure the <a href="https://gohugo.io/content-management/front-matter/"
+ target="_blank">Front Matter</a>, images and other relevant contents are correct. if not, make the necessary changes.</p>
+<p>There could be some issues while doing the conversion using a tool, as Wordpress might have used some custom formats and attributes, which may not have been converted properly.</p>
+<h3 id="use-wordpress-content-in-hugo">Use Wordpress Content in Hugo</h3>
+<p>Once you have verified and are satisfied with the quality of the exported content, we can copy these exported contents onto the Hugo Site Directory(created <a href="#generate-new-site"
+>earlier</a>).</p>
+<p>Now, when we refresh the browser, we will see the migrated contents already on the Hugo Site.</p>
+<blockquote>
+<p>You have moved all data from WordPress to a local Hugo install.</p>
+</blockquote>
+<h2 id="hosting-the-website-on-github-pages">Hosting the website on GitHub Pages</h2>
+<p>We can host our static website on <a href="https://docs.github.com/en/pages"
+ target="_blank">GitHub Pages</a> for free. The best part is that you can even use your own custom domain.</p>
+<p><em><strong>You get one site per GitHub Account and unlimited project sites</strong></em>.</p>
+<p>You need a GitHub Account for hosting your website on GitHub Pages. If you do not have one, create your own GitHub Account for free <a href="https://github.com/"
+ target="_blank">here</a>.</p>
+<h3 id="create-a-repository">Create a Repository</h3>
+<p>Once you have the GitHub Account, create a new public repository named <em><strong>&laquo;USERNAME&raquo;.github.io</strong></em>, where <em>username</em> is your <em>username</em> (or organization name) on GitHub.</p>
+<blockquote>
+<p>If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.</p>
+</blockquote>
+<ol>
+<li>In your <a href="https://github.com/"
+ target="_blank">GitHub homepage</a>, on the top right corner, click on the <strong>+</strong> symbol and choose <em>New repository</em>.</li>
+<li>You will be presented with new repository creation page.</li>
+</ol>
+<ul>
+<li>Enter the name as given above(<em><strong>&laquo;USERNAME&raquo;.github.io</strong></em>).</li>
+<li>Description is optional, but good to have.</li>
+<li>Access for this repository should be <strong>Public</strong>.</li>
+<li>Keep everything else as it is.</li>
+<li>Click on <strong>Create repository</strong> button.
+
+  <figure>
+    <img src="images/github-create-repo-for-github-pages.jpeg" alt="github-create-repo-for-github-pages.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Create Repository for GitHub Pages</figcaption>
+  </figure>
+</li>
+</ul>
+<ol start="3">
+<li>Once the repository is created, you will be presented with the empty repository welcome page.
+
+  <figure>
+    <img src="images/github-empty-repo.jpeg" alt="github-empty-repo.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">GitHub Empty Repo Welcome Page</figcaption>
+  </figure>
+</li>
+</ol>
+<h3 id="deploy-the-code-to-github-pages">Deploy the Code to GitHub Pages</h3>
+<ol>
+<li>In the Project Directory, run the following command, to publish your project:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo
+</code></pre></div><blockquote>
+<p>Hugo, by default, will publish only the pages that are marked with <code>draft: false</code> in the <a href="https://gohugo.io/content-management/front-matter/"
+ target="_blank">Front Matter</a>. So make sure to mark the pages you want to be published as <code>draft: false</code>.</p>
+</blockquote>
+<p>This will create a <code>public</code> folder, it contains the web files(might include .HTML, .css, .js, etc.) that Hugo automatically generates. <em>These are the published files that are used for hosting</em>.
+
+  <figure>
+    <img src="images/hugo-build.jpeg" alt="hugo-build.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Build</figcaption>
+  </figure>
+</p>
+<ol start="2">
+<li>In terminal, go to the directory of the <code>public</code> folder, then run following commands:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>cd public
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>git init
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>git add .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>git remote add origin https://github.com/<span style="color:#e6db74">&lt;&lt;USERNAME&gt;&gt;/&lt;&lt;USERNAME</span>&gt;&gt;.github.io.git
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>git commit -m <span style="color:#e6db74">&#34;first commit for website launch&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>git push origin master
+</code></pre></div><ol start="3">
+<li>
+<p>After running the above command, <em><strong>&laquo;USERNAME&raquo;.github.io</strong></em> is updated with the code from the <code>public</code> folder.
+
+  <figure>
+    <img src="images/github-first-commit.jpeg" alt="github-first-commit.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">First Commit into the GitHub Repo</figcaption>
+  </figure>
+</p>
+</li>
+<li>
+<p>Once the code is committed and pushed to the Repo, GitHub automatically starts an <strong>Action Workflow</strong> called <em><strong>pages-build-deployment</strong></em>.</p>
+</li>
+<li>
+<p>After the workflow finishes execution, we can view our new website on the link: <strong>https://&laquo;USERNAME&raquo;.github.io</strong>
+
+  <figure>
+    <img src="images/github-pages-website.jpeg" alt="github-pages-website.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Website Launched on Github Pages Successfully</figcaption>
+  </figure>
+</p>
+</li>
+</ol>
+<h2 id="working-with-custom-domain-on-github-pages">Working with Custom Domain on GitHub Pages</h2>
+<p>It is nice to have a website up and running on <em><strong>GitHub Pages</strong></em>. However, if you are looking at migrating your existing site to GitHub Pages, then this might not be enough and we would want our <em>existing domain</em> to serve the content from <strong>GitHub Pages</strong> and not the <em>.github.io domain</em>.</p>
+<h3 id="setup-custom-domain-in-github-pages">Setup Custom Domain in GitHub Pages</h3>
+<ol>
+<li>On <a href="https://github.com/"
+ target="_blank">GitHub</a>, navigate to your site&rsquo;s repository.</li>
+<li>Under your repository name, click <strong>Settings</strong>.</li>
+<li>In the left sidebar, click <strong>Pages</strong>.</li>
+<li>Under <em><strong>&ldquo;Custom domain&rdquo;</strong></em>, type your <strong>&laquo;YOUR-EXISTING-DOMAIN&raquo;</strong>, then click <strong>Save</strong>. This will create a commit that adds a <code>CNAME</code> record file in the root of your publishing source. <strong>DO NOT DELETE THIS FILE.</strong>
+
+  <figure>
+    <img src="images/github-pages-custom-domain.jpeg" alt="github-pages-custom-domain.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Custom Domain changes on GitHub Pages</figcaption>
+  </figure>
+</li>
+</ol>
+<h3 id="update-the-dns-provider">Update the DNS Provider</h3>
+<p>I have my domain registered with <a href="https://in.godaddy.com/"
+ target="_blank">GoDaddy</a> and so these instructions are specific to that. All you need to do is set <code>A</code> &amp; <code>CNAME</code> records for the selected domain.</p>
+<ol>
+<li>
+<p>Sign into GoDaddy Account.</p>
+</li>
+<li>
+<p>Choose <strong>My Domain</strong> -&gt; Click on <em>your Domain</em> -&gt; In the <strong>Domain Settings</strong>, select <strong>Manage DNS</strong></p>
+</li>
+<li>
+<p>Since I have already hosted my website through <strong>Wordpress</strong>, in the <strong>Manage DNS</strong> section, I see entries for <strong>Wordpress Nameservers</strong> and hence <em>GoDaddy will not allow to add new DNS Records</em>.
+
+  <figure>
+    <img src="images/godaddy-custom-wp-name-servers.jpeg" alt="godaddy-custom-wp-name-servers.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Custom Wordpress Nameservers used in GoDaddy</figcaption>
+  </figure>
+</p>
+</li>
+<li>
+<p>We have to first, change to using the default <strong>Nameservers</strong> from the GoDaddy. Click on the <strong>Change</strong> button in the Nameservers section and choose <strong>&ldquo;I want to use GoDaddy default nameservers(recommended)&quot;</strong>.</p>
+</li>
+<li>
+<p>Once the changes are effective, we will see <strong>DNS Records</strong> section filled with some <em>default values from GoDaddy</em>.
+
+  <figure>
+    <img src="images/godaddy-default-dns-records.jpeg" alt="godaddy-default-dns-records.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Default DNS Records entries by GoDaddy</figcaption>
+  </figure>
+</p>
+</li>
+<li>
+<p>If there are any additional <code>A</code> records and <code>CNAME</code> records, those can be deleted.</p>
+</li>
+<li>
+<p>Now we need to add <code>A</code> records and <code>CNAME</code> records.</p>
+</li>
+</ol>
+<ul>
+<li><code>A</code> records will be relevant to the GitHub Pages servers.</li>
+<li>To redirect <code>www</code> subdomain to the original domain, add a <code>CNAME</code> record with your GitHub pages profile URL with a <code>.</code>(dot) in the end.</li>
+</ul>
+<p>Click on the <strong>ADD</strong> button in the <strong>DNS Records</strong> section and add these below mentioned values</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">Value</th>
+<th style="text-align:center">TTL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">@</td>
+<td style="text-align:center">185.199.108.153</td>
+<td style="text-align:center">1 Hour</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">@</td>
+<td style="text-align:center">185.199.109.153</td>
+<td style="text-align:center">1 Hour</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">@</td>
+<td style="text-align:center">185.199.110.153</td>
+<td style="text-align:center">1 Hour</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">@</td>
+<td style="text-align:center">185.199.111.153</td>
+<td style="text-align:center">1 Hour</td>
+</tr>
+<tr>
+<td style="text-align:center">CNAME</td>
+<td style="text-align:center">www</td>
+<td style="text-align:center">&laquo;USERNAME&raquo;.github.io.</td>
+<td style="text-align:center">1 Hour</td>
+</tr>
+</tbody>
+</table>
+<p>For most updated IP Addresses, check GitHub&rsquo;s <a href="https://help.github.com/articles/setting-up-an-apex-domain/"
+ target="_blank">official documentation</a></p>
+<blockquote>
+<p>Usually it refreshes instantly. Sometimes it takes up to 48 hours for DNS Records to be reflected properly. So you might have to check following day.</p>
+</blockquote>
+<p>Once these updates are done, you can go to your existing domain <strong>https://&laquo;YOUR-EXISTING-DOMAIN&raquo;</strong> and see the new Hugo site hosted on the domain.</p>
+<blockquote>
+<p>Even going to either <strong>https://&laquo;USERNAME&raquo;.github.io</strong> or <strong>https://www.&laquo;YOUR-EXISTING-DOMAIN&raquo;</strong> would redirect the users to same site.</p>
+</blockquote>
+<p>
+  <figure>
+    <img src="images/myzonesoft-hugo-site.jpeg" alt="myzonesoft-hugo-site.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">My existing domain website hosted with Hugo contents</figcaption>
+  </figure>
+</p>
+<blockquote>
+<p><strong>With this, the migration of your website from Wordpress to GitHub Pages powered by Hugo is complete.</strong></p>
+</blockquote>
+<blockquote>
+<p><em><strong>NOTE: Replace &laquo;VARIABLES&raquo; with relevant data. It indicates variable to be replaced with your data.</strong></em></p>
+<blockquote>
+<p>Variables that needs to be replaced in this article, are listed below:</p>
+<ul>
+<li>&laquo;DESTINATION_FOLDER&raquo;</li>
+<li>&laquo;THEME_NAME&raquo;</li>
+<li>&laquo;USERNAME&raquo;</li>
+<li>&laquo;YOUR-EXISTING-DOMAIN&raquo;</li>
+</ul>
+</blockquote>
+</blockquote>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hugo/" rel="tag">Hugo</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/wordpress/" rel="tag">Wordpress</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/github-pages/" rel="tag">GitHub Pages</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/web-hosting/" rel="tag">Web Hosting</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/github/" rel="tag">GitHub</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Prashanth Bhat</span>
+	</div>
+	<div class="authorbox__description">
+		<strong>Prashanth Bhat</strong> is a <strong>Developer/Coder</strong>, <em>who loves to work with Technology, learn new things and share his learnings with others</em>. For comments/feedback you can reach <a href="mailto:bhatpp.android@gmail.com">here</a>.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/microservice-spring-boot-h2-db/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Develop Microservice Application Using Spring Boot and H2 Database</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://myzonesoft.com/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/getting-started-with-hugo/">Migration from Wordpress to Hugo and GitHub Pages</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/microservice-spring-boot-h2-db/">Develop Microservice Application Using Spring Boot and H2 Database</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/microservice/">Microservice</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/relational-database/">Relational Database</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/spring-boot-application/">Spring Boot Application</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/website-migration/">Website Migration</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/wordpress/">Wordpress</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="GitHub">GitHub (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github-pages/" title="GitHub Pages">GitHub Pages (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/h2-database/" title="H2 Database">H2 Database (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hibernate/" title="Hibernate">Hibernate (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microservice/" title="Microservice">Microservice (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-hosting/" title="Web Hosting">Web Hosting (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/wordpress/" title="Wordpress">Wordpress (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020-2022 myzonesoft.com
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

@@ -72,14 +72,14 @@
 			<h1 class="post__title">Develop Microservice Application Using Spring Boot and H2 Database</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-01-01T00:00:00Z">January 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/microservice/" rel="category">Microservice</a>, <a class="meta__link" href="/categories/relational-database/" rel="category">Relational Database</a>, <a class="meta__link" href="/categories/spring-boot-application/" rel="category">Spring Boot Application</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-21T00:00:00Z">February 21, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/microservice/" rel="category">Microservice</a>, <a class="meta__link" href="/categories/relational-database/" rel="category">Relational Database</a>, <a class="meta__link" href="/categories/spring-boot-application/" rel="category">Spring Boot Application</a>
 	</span>
 </div></div>
 		</header>
 		
 	<figure class="post__thumbnail thumbnail">
 		
-		<img class="thumbnail__image" src="/thumbnail_images/microservice-spring-boot-h2-db-cover-image.png" alt="Develop Microservice Application Using Spring Boot and H2 Database">
+		<img class="thumbnail__image" src="/cover_images/microservice-spring-boot-h2-db-cover-image.png" alt="Develop Microservice Application Using Spring Boot and H2 Database">
 		
 	</figure>
 <div class="post__toc toc">
@@ -96,20 +96,21 @@
       </ul>
     </li>
     <li><a href="#create-bootstrap-spring-boot-application">Create Bootstrap Spring Boot Application</a></li>
+    <li><a href="#running-the-spring-boot-project">Running the Spring Boot Project</a></li>
     <li><a href="#enhance-the-existing-application-to-expose-rest-apis">Enhance the Existing Application to Expose REST APIs</a>
       <ul>
         <li><a href="#add-context-path-to-the-spring-boot-project">Add Context Path to the Spring Boot Project</a></li>
         <li><a href="#adding-database">Adding Database</a></li>
         <li><a href="#pojo-model-classes">POJO Model Classes</a></li>
         <li><a href="#jpa-repository-interfaces">JPA Repository Interfaces</a></li>
-        <li><a href="#add-rest-api-endpoint--create">Add REST API endpoint – <code>/create</code></a></li>
-        <li><a href="#add-rest-api-endpoint--findall">Add REST API Endpoint – <code>/findAll</code></a></li>
-        <li><a href="#add-rest-api-endpoint--findid">Add REST API endpoint – <code>/find/{id}</code></a></li>
-        <li><a href="#add-rest-api-endpoint--update">Add REST API endpoint – <code>/update</code></a></li>
-        <li><a href="#add-rest-api-endpoint--deletebyidid">Add REST API endpoint – <code>/deleteById/{id}</code></a></li>
+        <li><a href="#add-rest-create-api-endpoint--create">Add REST CREATE API Endpoint – <code>/create</code></a></li>
+        <li><a href="#add-rest-read-api-endpoint--findall">Add REST READ API Endpoint – <code>/findAll</code></a></li>
+        <li><a href="#add-rest-read-api-endpoint--findid">Add REST READ API Endpoint – <code>/find/{id}</code></a></li>
+        <li><a href="#add-rest-update-api-endpoint--update">Add REST UPDATE API Endpoint – <code>/update</code></a></li>
+        <li><a href="#add-rest-delete-api-endpoint--deletebyidid">Add REST DELETE API Endpoint – <code>/deleteById/{id}</code></a></li>
       </ul>
     </li>
-    <li><a href="#configure-spring-boot-to-handle-cors-request">Configure Spring Boot to handle CORS Request</a></li>
+    <li><a href="#configure-spring-boot-to-handle-cors-request">Configure Spring Boot to Handle CORS Request</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -212,7 +213,8 @@
   </figure>
 </p>
 <p>To resolve this error: <em>Navigate to Files → Project Structure → Project Settings →Project → Project SDK and select the relevant JDK that is installed in your system, click</em> <em><strong>OK</strong></em></p>
-<p>Launch your Spring Boot project by following below process:</p>
+<h2 id="running-the-spring-boot-project">Running the Spring Boot Project</h2>
+<p>To launch your Spring Boot Projects, follow the steps given below:</p>
 <ul>
 <li>
 <p>Click on <strong>Add Configuration</strong> on top right corner, as shown below:
@@ -267,7 +269,7 @@
 <hr>
 <h3 id="add-context-path-to-the-spring-boot-project">Add Context Path to the Spring Boot Project</h3>
 <p>The <strong>Context Path</strong> is the <em>Prefix of a <strong>URL Path</strong></em> that is used to select the <strong>context(s)</strong> to which an incoming request is passed.</p>
-<p>Currently, we have not specified any <strong>Context Path</strong> in our project, meaning project endpoints will be placed immediately after the <code>&lt;hostname:port&gt;/&lt;endpoint&gt;</code> (like <code>http://localhost:8080/findAll</code> ).</p>
+<p>Currently, we have not specified any <strong>Context Path</strong> in our project, meaning API endpoints will be placed immediately after the <em>Domain URL</em> <code>&lt;hostname:port&gt;/&lt;api-endpoint&gt;</code> (like <code>http://localhost:8080/findAll</code> ).</p>
 <p>However, it is always advisable to have a <strong>Context Path</strong> specific to projects, that will help in easily fetching project specific endpoints. Let us add the <strong>Context Path</strong>, relevant to this project.</p>
 <p>It can be added in the <code>application.properties</code> file, located at <code>src/main/resources/</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#f92672">#=========================</span>
@@ -277,7 +279,7 @@
 </code></pre></div><p>After this change, the endpoint looks like: <code>http://localhost:8080/Todo/findAll</code> and the response we receive from the server, would still remain same.</p>
 <hr>
 <h3 id="adding-database">Adding Database</h3>
-<p>We will first setup the database for persisting the data. I will be using the Relational Database known as <strong>H2 Database</strong>. It is called the <em>Java SQL database</em>.</p>
+<p>We will first setup the database for persisting the data. I will be using the <strong>Relational Database</strong> known as <em><strong>H2 Database</strong></em>. It is called the <em>Java SQL database</em>.</p>
 <p>The main features of H2 are:</p>
 <ul>
 <li>Very fast, open source, JDBC API</li>
@@ -329,7 +331,7 @@
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>spring.jpa.<span style="color:#66d9ef">show</span><span style="color:#f92672">-</span><span style="color:#66d9ef">sql</span><span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#f92672">#</span> Hibernate ddl auto (<span style="color:#66d9ef">create</span>, <span style="color:#66d9ef">create</span><span style="color:#f92672">-</span><span style="color:#66d9ef">drop</span>, <span style="color:#66d9ef">update</span>): <span style="color:#66d9ef">with</span> <span style="color:#e6db74">&#34;update&#34;</span> the <span style="color:#66d9ef">database</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#f92672">#</span> <span style="color:#66d9ef">schema</span> will be automatically updated accordingly <span style="color:#66d9ef">to</span> java entities <span style="color:#66d9ef">found</span> <span style="color:#66d9ef">in</span> the project
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>spring.jpa.hibernate.ddl<span style="color:#f92672">-</span>auto<span style="color:#f92672">=</span><span style="color:#66d9ef">update</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>spring.jpa.hibernate.ddl<span style="color:#f92672">-</span>auto<span style="color:#f92672">=</span><span style="color:#66d9ef">create</span><span style="color:#f92672">-</span><span style="color:#66d9ef">drop</span>
 </code></pre></div><p>Let us look at some of the values that are used for configuring Database.</p>
 <ul>
 <li><strong>Datasource URL, username, password and driver class</strong> are required for connecting to database. <code>/todoApplication</code> is the name of my database.</li>
@@ -471,7 +473,7 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
 <p>However in the <strong>TodoTaskComments table</strong>, we have a Column called <strong>Id</strong>, which maps to <strong>Id</strong> Column in <strong>Todo table</strong>.</p>
 <p>Now, with this basic understanding of how Models, Entities and Tables mapping works in Hibernate, let us move on and add some REST API Endpoints.</p>
 <hr>
-<h3 id="add-rest-api-endpoint--create">Add REST API endpoint – <code>/create</code></h3>
+<h3 id="add-rest-create-api-endpoint--create">Add REST CREATE API Endpoint – <code>/create</code></h3>
 <table>
 <thead>
 <tr>
@@ -558,18 +560,26 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
 <table>
 <thead>
 <tr>
-<th style="text-align:center">HTTP Method</th>
-<th style="text-align:center">Endpoint URL</th>
-<th style="text-align:center">Request Header</th>
-<th style="text-align:center">Request Body</th>
+<th>Header</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">POST</td>
-<td style="text-align:center"><code>http://localhost:8080/Todo/create</code></td>
-<td style="text-align:center"><code>Content-type: application/json</code></td>
-<td style="text-align:center"><code>{&quot;title&quot;: &quot;Testing the Application&quot;, &quot;description&quot;: &quot;Testing the Application&quot;,&quot;dueDate&quot;: &quot;2022-01-31&quot;,&quot;status&quot;: &quot;NOT_STARTED&quot;,&quot;todoTaskCommentsSet&quot;: []}</code></td>
+<td><strong>HTTP Method</strong></td>
+<td>POST</td>
+</tr>
+<tr>
+<td><strong>Endpoint URL</strong></td>
+<td><code>http://localhost:8080/Todo/create</code></td>
+</tr>
+<tr>
+<td><strong>Request Header</strong></td>
+<td><code>Content-type: application/json</code></td>
+</tr>
+<tr>
+<td><strong>Request Body</strong></td>
+<td><code>{&quot;title&quot;: &quot;Testing the Application&quot;, &quot;description&quot;: &quot;Testing the Application&quot;,&quot;dueDate&quot;: &quot;2022-01-31&quot;,&quot;status&quot;: &quot;NOT_STARTED&quot;,&quot;todoTaskCommentsSet&quot;: []}</code></td>
 </tr>
 </tbody>
 </table>
@@ -580,7 +590,7 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
   </figure>
 </p>
 <hr>
-<h3 id="add-rest-api-endpoint--findall">Add REST API Endpoint – <code>/findAll</code></h3>
+<h3 id="add-rest-read-api-endpoint--findall">Add REST READ API Endpoint – <code>/findAll</code></h3>
 <table>
 <thead>
 <tr>
@@ -639,7 +649,7 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
   </figure>
 </p>
 <hr>
-<h3 id="add-rest-api-endpoint--findid">Add REST API endpoint – <code>/find/{id}</code></h3>
+<h3 id="add-rest-read-api-endpoint--findid">Add REST READ API Endpoint – <code>/find/{id}</code></h3>
 <table>
 <thead>
 <tr>
@@ -699,7 +709,7 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
   </figure>
 </p>
 <hr>
-<h3 id="add-rest-api-endpoint--update">Add REST API endpoint – <code>/update</code></h3>
+<h3 id="add-rest-update-api-endpoint--update">Add REST UPDATE API Endpoint – <code>/update</code></h3>
 <table>
 <thead>
 <tr>
@@ -726,18 +736,26 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
 <table>
 <thead>
 <tr>
-<th style="text-align:center">HTTP Method</th>
-<th style="text-align:center">Endpoint URL</th>
-<th style="text-align:center">Request Header</th>
-<th style="text-align:center">Request Body</th>
+<th>Header</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">PUT</td>
-<td style="text-align:center"><code>http://localhost:8080/Todo/update</code></td>
-<td style="text-align:center"><code>Content-type: application/json</code></td>
-<td style="text-align:center"><code>{&quot;id&quot;: 1,&quot;title&quot;: &quot;Testing the Application&quot;,&quot;description&quot;: &quot;Testing the Application&quot;, &quot;creationDate&quot;: &quot;2022-01-03&quot;,&quot;dueDate&quot;: &quot;2022-01-31&quot;,&quot;status&quot;: &quot;IN_PROGRESS&quot;,&quot;todoTaskCommentsSet&quot;: [{&quot;taskComments&quot;: &quot;Testing comments 1&quot;}]}</code></td>
+<td><strong>HTTP Method</strong></td>
+<td>PUT</td>
+</tr>
+<tr>
+<td><strong>Endpoint URL</strong></td>
+<td><code>http://localhost:8080/Todo/update</code></td>
+</tr>
+<tr>
+<td><strong>Request Header</strong></td>
+<td><code>Content-type: application/json</code></td>
+</tr>
+<tr>
+<td><strong>Request Body</strong></td>
+<td><code>{&quot;id&quot;: 1,&quot;title&quot;: &quot;Testing the Application&quot;,&quot;description&quot;: &quot;Testing the Application&quot;, &quot;creationDate&quot;: &quot;2022-01-03&quot;,&quot;dueDate&quot;: &quot;2022-01-31&quot;,&quot;status&quot;: &quot;IN_PROGRESS&quot;,&quot;todoTaskCommentsSet&quot;: [{&quot;taskComments&quot;: &quot;Testing comments 1&quot;}]}</code></td>
 </tr>
 </tbody>
 </table>
@@ -748,7 +766,7 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
   </figure>
 </p>
 <hr>
-<h3 id="add-rest-api-endpoint--deletebyidid">Add REST API endpoint – <code>/deleteById/{id}</code></h3>
+<h3 id="add-rest-delete-api-endpoint--deletebyidid">Add REST DELETE API Endpoint – <code>/deleteById/{id}</code></h3>
 <table>
 <thead>
 <tr>
@@ -817,7 +835,7 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
   </figure>
 </p>
 <hr>
-<h2 id="configure-spring-boot-to-handle-cors-request">Configure Spring Boot to handle CORS Request</h2>
+<h2 id="configure-spring-boot-to-handle-cors-request">Configure Spring Boot to Handle CORS Request</h2>
 <p>By default, the Spring Boot REST API which is running on <code>http://localhost:8080/</code>, will not allow requests from other servers/domains like <code>http://localhost:3000/</code> and <code>http://localhost:4200/</code>.</p>
 <p>This is called <em><strong><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing"
  target="_blank">CORS (Cross-Origin Resource Sharing) policy</a></strong></em>, where in by default, servers block request coming from other servers or domains.</p>
@@ -897,10 +915,18 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
 		<span class="authorbox__name">About Prashanth Bhat</span>
 	</div>
 	<div class="authorbox__description">
-		Prashanth Bhat is a Tech Savvy person, who loves to work with technology, learn new things and document them, in order to help others.
+		<strong>Prashanth Bhat</strong> is a <strong>Developer/Coder</strong>, <em>who loves to work with Technology, learn new things and share his learnings with others</em>. For comments/feedback you can reach <a href="mailto:bhatpp.android@gmail.com">here</a>.
 	</div>
 </div>
 
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/getting-started-with-hugo/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Migration from Wordpress to Hugo and GitHub Pages</p>
+		</a>
+	</div>
+</nav>
 
 
 			</div>
@@ -917,6 +943,7 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/getting-started-with-hugo/">Migration from Wordpress to Hugo and GitHub Pages</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/microservice-spring-boot-h2-db/">Develop Microservice Application Using Spring Boot and H2 Database</a></li>
 		</ul>
 	</div>
@@ -925,6 +952,10 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
 	<h4 class="widget__title">Categories</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/microservice/">Microservice</a>&nbsp;
 				<span class="widget__counter widget__counter--bubble">1</span>
@@ -937,17 +968,30 @@ In order to avoid that, <code>cascade = CascadeType.MERGE</code> should be used.
 				<a class="widget__link" href="/categories/spring-boot-application/">Spring Boot Application</a>&nbsp;
 				<span class="widget__counter widget__counter--bubble">1</span>
 				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/website-migration/">Website Migration</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/wordpress/">Wordpress</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
 		</ul>
 	</div>
 </div>
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="GitHub">GitHub (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github-pages/" title="GitHub Pages">GitHub Pages (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/h2-database/" title="H2 Database">H2 Database (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hibernate/" title="Hibernate">Hibernate (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microservice/" title="Microservice">Microservice (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-hosting/" title="Web Hosting">Web Hosting (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/wordpress/" title="Wordpress">Wordpress (1)</a>
 	</div>
 </div>
 </aside>

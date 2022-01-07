@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub on myzonesoft.com</title>
+    <link>https://myzonesoft.com/tags/github/</link>
+    <description>Recent content in GitHub on myzonesoft.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Jan 2022 13:03:48 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migration from Wordpress to Hugo and GitHub Pages</title>
+      <link>https://myzonesoft.com/post/getting-started-with-hugo/</link>
+      <pubDate>Wed, 05 Jan 2022 13:03:48 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/post/getting-started-with-hugo/</guid>
+      <description>In this post, I have documented all the steps I took to migrate this website from Wordpress to Hugo and host it on GitHub Pages.
+Hugo is the world’s fastest static website engine. It is written in Golang.
+GitHub Pages provides free hosting space for the static sites.
+Installation of Hugo Follow the Hugo documentation on Installing Hugo on Windows.
+Given below are same steps from the above article.
+Download and Install the Hugo Executable for Windows 10  Go to the Hugo Releases page.</description>
+    </item>
+    
+  </channel>
+</rss>

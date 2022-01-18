@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Develop Microservice Application Using Spring Boot and MongoDB Database - myzonesoft.com</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="myzonesoft.com" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">myzonesoft.com</div>
+					<div class="logo__tagline">A Technical Site for Everyone</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">
+				
+				<span class="menu__text">Articles</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Develop Microservice Application Using Spring Boot and MongoDB Database</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-06-10T00:00:00Z">June 10, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/microservice/" rel="category">Microservice</a>, <a class="meta__link" href="/categories/no-sql-database/" rel="category">No SQL Database</a>, <a class="meta__link" href="/categories/spring-boot-application/" rel="category">Spring Boot Application</a>
+	</span>
+</div><p class="reading-time">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="18px" height="18px" viewBox="0 0 88.965 88.966">
+<g>
+	<g>
+		<polygon points="66.436,56.656 61.639,56.656 61.639,72.438 75.096,72.438 75.096,67.641 66.436,67.641 		"/>
+		<path d="M65.049,46.49v-3.342V23.541c0,0,0.008-6.385,0-6.465l-3.746-7.59l3.324-6.32c0.354-0.67,0.33-1.475-0.062-2.121
+			C64.174,0.397,63.471,0,62.715,0H5.301C4.11,0,3.143,0.967,3.143,2.16l0.052,80.307h10.369V16.841H7.461V4.32h51.68l-2.186,4.15
+			c-0.328,0.625-0.332,1.369-0.007,1.998l3.295,6.373h-42.43v65.625h7.915h6.818h14.526h2.236c3.865,4,9.273,6.5,15.264,6.5
+			c11.719,0,21.25-9.532,21.25-21.25C85.825,56.158,76.547,46.746,65.049,46.49z M64.575,81.966c-7.857,0-14.25-6.394-14.25-14.25
+			s6.393-14.25,14.25-14.25s14.25,6.394,14.25,14.25S72.432,81.966,64.575,81.966z"/>
+	</g>
+</svg>
+</i><b>Reading Time:</b> 11 Minutes  </p></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/cover_images/microservice-spring-boot-mongodb-cover-image.png" alt="Develop Microservice Application Using Spring Boot and MongoDB Database">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#about-mongodb">About MongoDB</a>
+      <ul>
+        <li><a href="#performance-analysis-between-mongodb-and-rdbms">Performance Analysis Between MongoDB and RDBMS</a></li>
+        <li><a href="#terminologies-between-rdbms-and-mongodb">Terminologies between RDBMS and MongoDB</a></li>
+        <li><a href="#things-to-consider-while-designing-mongodb-schema">Things to consider while designing MongoDB schema</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#running-the-mongodb-server">Running the MongoDB Server</a></li>
+        <li><a href="#working-with-mongodb">Working with MongoDB</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-mongodb-in-spring-boot">Using MongoDB in Spring Boot</a>
+      <ul>
+        <li><a href="#update-the-pomxml">Update the <code>pom.xml</code></a></li>
+        <li><a href="#update-the-pojo-model-classes">Update the POJO Model Classes</a></li>
+        <li><a href="#update-repository-interfaces">Update Repository Interfaces</a></li>
+        <li><a href="#update-the-applicationproperties">Update the <code>application.properties</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#add-data-into-mongodb-database">Add Data into MongoDB Database</a></li>
+    <li><a href="#update-the-existing-data-in-mongodb-database">Update the existing Data in MongoDB Database</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>In this article, I will be developing a Microservice Application using <strong>Java Technology</strong> and <strong>Spring Boot Framework</strong>, which will be the backend and expose all <em>CRUD (Create, Read, Update, Delete) Operations</em> as the REST APIs.</p>
+<p>I will be using <em><strong>No SQL Database</strong></em> known as <strong>MongoDB Database</strong> for persisting(storing) the data.</p>
+<p>By the end of this article, you would learn about how to:</p>
+<ul>
+<li>Persist the data in <strong>MongoDB Database</strong>, using the same Spring Boot Microservice Project created earlier.</li>
+</ul>
+<hr>
+<p>This article is based on my previous article <em><strong><a href="/post/microservice-springboot-h2"
+ target="_blank">Develop Microservice Application Using Spring Boot and H2 Database</a></strong></em>, where I have explained how to expose the <em>REST API using Spring Boot Framework and using the Relational Database like <strong>H2 Database</strong></em> for persisting(storing) the data.</p>
+<p>In this article I will be explaining how to use <em><strong>No SQL Databases</strong></em> like <strong>MongoDB</strong> to persist data, instead of <em><strong>Relational Database</strong></em>. Basic functionalities of the Microservice remains same, as explained in previous article. Please do read that once, before continuing here.</p>
+<p>If you have no time to read this article completely, but want to try the code for yourself, GitHub location is provided <em><a href="https://github.com/prasbhat/microservice-springboot-mongodb"
+ target="_blank">here</a></em>.</p>
+<hr>
+<h2 id="about-mongodb">About MongoDB</h2>
+<p><strong>Mongo DB</strong> <em>stores data as documents</em> and hence falls into a class of databases that are called <strong>Document Oriented Databases</strong>. There is also a broad category of database known as <strong><em>No SQL Databases</em></strong>.</p>
+<p>A <strong>Relational Database</strong> has a <em>typical schema design that shows number of tables and the relationship between these tables</em>, while in <strong>MongoDB</strong> <em>there is no concept of relationship</em>.</p>
+<hr>
+<h3 id="performance-analysis-between-mongodb-and-rdbms">Performance Analysis Between MongoDB and RDBMS</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Relational Database (RDBMS)</th>
+<th style="text-align:center">MongoDB Database</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">We have multiple schemas and, in each schema, we create tables to store data</td>
+<td style="text-align:center">MongoDB is a document-oriented database in which data is written in BSON format which is a JSON like format</td>
+</tr>
+<tr>
+<td style="text-align:center">Tables are used to store elements</td>
+<td style="text-align:center">Collection is used to store data</td>
+</tr>
+<tr>
+<td style="text-align:center">Slower, compared to MongoDB</td>
+<td style="text-align:center">Almost 100 times faster than Traditional Relational Databases</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="terminologies-between-rdbms-and-mongodb">Terminologies between RDBMS and MongoDB</h3>
+<p>The following table shows the relationship of RDBMS terminology with MongoDB.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Relational Database (RDBMS)</th>
+<th style="text-align:center">MongoDB Database</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Database</td>
+<td style="text-align:center">Database</td>
+</tr>
+<tr>
+<td style="text-align:center">Table</td>
+<td style="text-align:center">Collection</td>
+</tr>
+<tr>
+<td style="text-align:center">Tuple/Row</td>
+<td style="text-align:center">Document</td>
+</tr>
+<tr>
+<td style="text-align:center">Column</td>
+<td style="text-align:center">Field</td>
+</tr>
+<tr>
+<td style="text-align:center">Table Join</td>
+<td style="text-align:center">$lookup, embedded document</td>
+</tr>
+<tr>
+<td style="text-align:center">Primary Key</td>
+<td style="text-align:center">Primary Key (Default key <em>_id</em> provided by MongoDB itself)</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT INTO NEW_TABLE</td>
+<td style="text-align:center">$out</td>
+</tr>
+<tr>
+<td style="text-align:center">MERGE INTO TABLE</td>
+<td style="text-align:center">$merge</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="things-to-consider-while-designing-mongodb-schema">Things to consider while designing MongoDB schema</h3>
+<ul>
+<li>Always design schema according to user requirements.</li>
+<li>Do join on write operations not on read operations.</li>
+<li>Objects which you want to use together, should be combined into one document. Otherwise, they should be separated (make sure that there should not be need of joins).</li>
+<li>Optimize your schema for more frequent use cases.</li>
+<li>Do complex aggregation in the schema.</li>
+<li>You should duplicate the data but, in a limit, because disc space is cheaper than compute time.</li>
+</ul>
+<hr>
+<h3 id="installation">Installation</h3>
+<p>MongoDB Community Server for the windows can be downloaded from <em><strong><a href="https://www.mongodb.com/try/download/community"
+ target="_blank">here</a></strong></em>.</p>
+<p>Choose the <em>On-Premises and select Version – Latest current, Platform – Windows, Package – msi and click on download</em>.
+
+  <figure>
+    <img src="images/mongo-installer.jpeg" alt="mongo-installer.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Installer</figcaption>
+  </figure>
+</p>
+<p>Once download is complete, double click the downloaded <strong>mongodb-windows-x86_64-4.4.2-signed.msi</strong> file and complete the installation.
+
+  <figure>
+    <img src="images/mongo-installer-end-user-license.jpeg" alt="mongo-installer-end-user-license.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Installer End User License Agreement</figcaption>
+  </figure>
+</p>
+<p>In the &ldquo;<strong><em>Choose Setup Type</em></strong>&rdquo; screen</p>
+<p><strong>Complete</strong> – This will install MongoDB with all default settings and into the default location (<em>C:\Program Files\MongoDB</em>)</p>
+<p><strong>Custom</strong> – You can choose the components to install and location to install.
+
+  <figure>
+    <img src="images/mongo-installer-choose-setup.jpeg" alt="mongo-installer-choose-setup.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Installer Choose Setup Type</figcaption>
+  </figure>
+</p>
+<p>In the &ldquo;<strong><em>Custom Setup</em></strong>&rdquo; screen, choose the components to install and select the location.
+
+  <figure>
+    <img src="images/mongo-installer-custom-setup.jpeg" alt="mongo-installer-custom-setup.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Installer Custom Setup</figcaption>
+  </figure>
+</p>
+<p>In the &ldquo;<strong><em>Service Configuration</em></strong>&rdquo; screen, you can either choose to run MongoDB service as a Network Service user or local domain user. By Default, &ldquo;<em><strong>Run Service as a Network Service user</strong></em>&rdquo; is selected.</p>
+<p>Choose a &ldquo;<strong><em>Service Name</em></strong>&rdquo;.</p>
+<p>Enter the location for <em>Data Directory</em> and <em>Log Directory</em>. These are used to store the database and database logs respectively,
+
+  <figure>
+    <img src="images/mongo-installer-service-configuration.jpeg" alt="mongo-installer-service-configuration.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Installer Service Configuration</figcaption>
+  </figure>
+</p>
+<p><strong><em>MongoDB Compass</em></strong> is optional and <em>we can uncheck the box</em>, we won’t install it now. If required, we can install it later.</p>
+<p><strong><em>MongoDB Compass</em></strong> is a GUI for MongoDB. It is also known as <strong><em>MongoDB GUI</em></strong>. We can use Compass GUI to explore our data visually, optimize performance, manage indexes, and implement document-validation.
+
+  <figure>
+    <img src="images/mongo-installer-compass-install.jpeg" alt="mongo-installer-compass-install.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Installer Compass Install</figcaption>
+  </figure>
+
+
+  <figure>
+    <img src="images/mongo-installer-ready-to-install.jpeg" alt="mongo-installer-ready-to-install.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Installer Ready to install</figcaption>
+  </figure>
+</p>
+<p>After installation, go to <em>Environment Variables</em> and <em>add the path of the MongoDB bin folder</em>. With this you can start the MongoDB server and MongoDB shell from any location.
+
+  <figure>
+    <img src="images/mongo-installer-env-path.jpeg" alt="mongo-installer-env-path.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Installer Environment Variables PATH</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="running-the-mongodb-server">Running the MongoDB Server</h3>
+<p>Open the <em>Command Prompt (PowerShell)</em> and check the version of the installed MongoDB, using the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo --version
+</code></pre></div><p>
+  <figure>
+    <img src="images/mongo-version.jpeg" alt="mongo-version.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Version Check</figcaption>
+  </figure>
+</p>
+<p>Now start the MongoDB Database Server using the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongod --dbpath <span style="color:#e6db74">&#34;&lt;&lt;DATA_DIRECTORY_LOCATION_GIVEN_ABOVE&gt;&gt;&#34;</span>
+</code></pre></div><p>A <em>Data Directory</em> is required in MongoDB to store all the information; hence we need to specify the <em>&ndash;dbpath</em> attribute. <em>Default location for Data Directory is C:\data\db</em>. If you want to put the data in different location, then specify the location using <em>&ndash;dbpath</em> attribute.</p>
+<p>If we get the message <em>“Waiting for connection”</em> in the console, then our MongoDB database server is up and running successfully.
+
+  <figure>
+    <img src="images/mongo-console.jpeg" alt="mongo-console.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Database Server Up</figcaption>
+  </figure>
+</p>
+<p>Open another Command Prompt (PowerShell) and start the MongoDB shell, using the command: <code>mongo</code></p>
+<p><strong>MongoDB Shell</strong> is now open. We can execute all our MongoDB queries and commands here.
+
+  <figure>
+    <img src="images/mongo-shell.jpeg" alt="mongo-shell.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MongoDB Shell</figcaption>
+  </figure>
+</p>
+<p>Some useful MongoDB commands</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Command</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>show dbs</code></td>
+<td style="text-align:center">show database names</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>show collections</code></td>
+<td style="text-align:center">show collections in current database</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>show users</code></td>
+<td style="text-align:center">show users in current database</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>show profile</code></td>
+<td style="text-align:center">show most recent <em>system.profile</em> entries with time &gt;= 1ms</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>show logs</code></td>
+<td style="text-align:center">show the accessible logger names</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>show log [name]</code></td>
+<td style="text-align:center">prints out the last segment of log in memory, &lsquo;<em>global</em>&rsquo; is default</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>use &lt;db_name&gt;</code></td>
+<td style="text-align:center">set current database</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>db</code></td>
+<td style="text-align:center">check the currently selected database</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>db.createCollection(name, options)</code></td>
+<td style="text-align:center">create collection. MongoDB creates collection automatically when you insert some documents.</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>db.&lt;collection_name&gt;.insert({key: value})</code></td>
+<td style="text-align:center">insert a document into the collection. <strong><em>{key:value}</em></strong> is the document</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>db.&lt;collection_name&gt;.find()</code></td>
+<td style="text-align:center">list objects(documents) in collection <strong><em>&lt;collection_name&gt;</em></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>db.&lt;collection_name&gt;.find( { &lt;field1&gt;: &lt;value&gt; } )</code></td>
+<td style="text-align:center">list objects(documents) in <em><strong>&lt;collection_name&gt;</strong></em>.<br/><code>&lt;field&gt;: &lt;1 or true&gt;</code> - Specifies the inclusion of a field.<br/> <code>&lt;field&gt;: &lt;0 or false&gt;</code> - Specifies the exclusion of a field.</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>db.&lt;collection_name&gt;.update(SELECTION_CRITERIA, UPDATED_DATA)</code></td>
+<td style="text-align:center">to update or modify the existing documents of a collection.<br/> <strong>SELECTION_CRITERIA</strong> – The selection criteria for the update.<br/> <strong>UPDATED_DATA</strong> – The modifications to apply.</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>db.&lt;collection_name&gt;.remove (DELETION_CRITERIA, JustOne)</code></td>
+<td style="text-align:center">to delete documents from a collection.<br/> <strong>DELETION_CRITERIA</strong> – to remove the documents from the collection.<br/><strong>JustOne</strong> - It removes only one document when set to true or 1</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>it</code></td>
+<td style="text-align:center">result of the last line evaluated; use to further iterate</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>db.&lt;collection_name&gt;.drop()</code></td>
+<td style="text-align:center">drop a collection from a database</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>Db.dropDatabase()</code></td>
+<td style="text-align:center">drops the currently used database</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>DBQuery.shellBatchSize = x</code></td>
+<td style="text-align:center">set default number of items to display on shell</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>exit</code></td>
+<td style="text-align:center">quit the mongo shell</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="working-with-mongodb">Working with MongoDB</h3>
+<p>In MongoDB you don&rsquo;t need to create a database manually because MongoDB will create it automatically when you save the value into the defined collection at first time.</p>
+<ul>
+<li>Create a new Database using the command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">use testDB
+</code></pre></div><p>
+  <figure>
+    <img src="images/mongo-use-db.jpeg" alt="mongo-use-db.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Create a new database</figcaption>
+  </figure>
+</p>
+<ul>
+<li>To check the currently selected database, use the command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db
+</code></pre></div><p>
+  <figure>
+    <img src="images/mongo-db.jpeg" alt="mongo-db.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Check Current Database</figcaption>
+  </figure>
+</p>
+<ul>
+<li>Check the database list, by using the command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> dbs
+</code></pre></div><p>
+  <figure>
+    <img src="images/mongo-show-dbs.jpeg" alt="mongo-show-dbs.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Show Databases List</figcaption>
+  </figure>
+</p>
+<p>Here, the database I created(above) <strong><em>&ldquo;testDB&rdquo;</em></strong> is not present in the list because, <em><strong>empty databases</strong></em> <em>are not displayed</em>. Insert at-least one document into it to display that database.</p>
+<ul>
+<li>Insert documents (records) to database, using the command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db.<span style="color:#f92672">&lt;</span>collection_name<span style="color:#f92672">&gt;</span>.<span style="color:#66d9ef">insert</span>(<span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">key</span>: value<span style="color:#960050;background-color:#1e0010">}</span>)
+</code></pre></div><p>Since I am already using the <strong><em>testDB</em></strong> database, I can directly use insert statement, else first I need to select the database and then the insert command.</p>
+<p>If you want to insert multiple documents in a collection, you have to pass an array of documents using the below command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db.<span style="color:#f92672">&lt;</span>collection_name<span style="color:#f92672">&gt;</span>.<span style="color:#66d9ef">insert</span>()
+</code></pre></div><p>
+  <figure>
+    <img src="images/mongo-insert.jpeg" alt="mongo-insert.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Insert Document</figcaption>
+  </figure>
+</p>
+<ul>
+<li>
+<p>Now if you check the database list, you will see your testDB listed.
+
+  <figure>
+    <img src="images/mongo-latest-show-dbs.jpeg" alt="mongo-latest-show-dbs.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Show Database List</figcaption>
+  </figure>
+</p>
+</li>
+<li>
+<p>To check the collections, use the command:</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> collections
+</code></pre></div><p>
+  <figure>
+    <img src="images/mongo-show-collections.jpeg" alt="mongo-show-collections.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Show Collections List in a Database</figcaption>
+  </figure>
+</p>
+<ul>
+<li>To list objects in your collections, use the command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db.<span style="color:#f92672">&lt;</span>collection_name<span style="color:#f92672">&gt;</span>.find()
+</code></pre></div><p>
+  <figure>
+    <img src="images/mongo-find.jpeg" alt="mongo-find.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Find the Collection</figcaption>
+  </figure>
+</p>
+<p>As you can see above, an <em>_id</em> is the unique identifier for the document and is generated automatically by the MongoDB.</p>
+<p>The <em>ObjectId</em> is a <strong>12-byte hexadecimal value</strong>, consists of:</p>
+<ol>
+<li>A <strong>4-byte timestamp value</strong>, representing the <em>ObjectId’s</em> creation, measured in seconds since the Unix epoch</li>
+<li>A <strong>5-byte random value</strong></li>
+<li>A <strong>3-byte incrementing counter</strong>, initialized to a random value</li>
+</ol>
+<ul>
+<li>To drop the database, first get into the database to be dropped and then use the drop database command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db.dropDatabase()
+</code></pre></div><p>
+  <figure>
+    <img src="images/mongo-drop-database.jpeg" alt="mongo-drop-database.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Dropping the Database</figcaption>
+  </figure>
+</p>
+<hr>
+<h2 id="using-mongodb-in-spring-boot">Using MongoDB in Spring Boot</h2>
+<p>Now that we have some understanding of the MongoDB and its commands, lets us see how we can replace our <strong>Relational Database</strong> in the project mentioned <a href="/post//microservice-springboot-h2"
+ target="_blank">here</a> with <strong>MongoDB Database</strong>.</p>
+<p>We need to make some changes to our existing project, in order to make it compatible with MongoDB.</p>
+<h3 id="update-the-pomxml">Update the <code>pom.xml</code></h3>
+<p>Update the <em>pom.xml</em> by adding the following dependency</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#f92672">dependency</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>	&lt;<span style="color:#f92672">groupId</span>&gt;org.springframework.boot&lt;/<span style="color:#f92672">groupId</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>	&lt;<span style="color:#f92672">artifactId</span>&gt;spring-boot-starter-data-mongodb&lt;/<span style="color:#f92672">artifactId</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>&lt;/<span style="color:#f92672">dependency</span>&gt;
+</code></pre></div><h3 id="update-the-pojo-model-classes">Update the POJO Model Classes</h3>
+<ol>
+<li><code>com.myzonesoft.microservice.todo.model.Todo</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a6e22e">@Document</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Todo</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#a6e22e">@Id</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#66d9ef">private</span> String id<span style="color:#f92672">;</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#66d9ef">private</span> String title<span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#66d9ef">private</span> String description<span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#66d9ef">private</span> LocalDate dueDate<span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#66d9ef">private</span> String status<span style="color:#f92672">;</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsList<span style="color:#f92672">;</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#f92672">}</span>
+</code></pre></div><p>Let us look at the highlighted lines</p>
+<ul>
+<li><code>@Entity</code> is replaced with <code>@Document</code>- Because everything is stored as <em>document</em> in MongoDB.</li>
+<li>We don’t need <code>@GeneratedValue</code> on the primary key, as MongoDB would generate the primary key (<code>_id</code>- hexadecimal alphanumeric value) automatically, as already seen.</li>
+<li>Since the <strong>Primary Key</strong> generated by MongoDB is a <em>hexadecimal alphanumeric value</em>, <em><strong>Primary Key needs to be a String</strong></em>.</li>
+<li><em>MongoDB works with flat structure</em>. When defining the relationship, there are two methods that work in MongoDB (We do not need any sort of relationship mappings (One-To-Many, Many-To-Many, One-To-One)):
+<ol>
+<li>The Child Object can be directly called into the Parent Object(as shown above).</li>
+<li>The Controlling Object (Parent Object) can have a <code>org.springframework.data.mongodb.core.mapping.DBRef</code> or <code>@DBRef</code> Annotation on the Child Object.</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><code>com.myzonesoft.microservice.todo.model.TodoTaskComments</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">@Document</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTaskComments</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#a6e22e">@Id</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#66d9ef">private</span> String todoTaskCommentsId<span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>    <span style="color:#66d9ef">private</span> String taskComments<span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>    <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>Since we are not working with the Relationship Mappings, we need not define the reverse mapping in the Child Object.</li>
+</ul>
+<h3 id="update-repository-interfaces">Update Repository Interfaces</h3>
+<ol>
+<li><code>com.myzonesoft.microservice.todo.repository.TodoRepository</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">@Repository</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoRepository</span> <span style="color:#66d9ef">extends</span> MongoRepository<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+</code></pre></div><ol start="2">
+<li><code>com.myzonesoft.microservice.todo.repository.TodoTaskCommentsRepository</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">@Repository</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoTaskCommentsRepository</span> <span style="color:#66d9ef">extends</span> MongoRepository<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>Extend the <strong><em>MongoRepository</em></strong>, instead of <strong><em>JPARepository</em></strong>.</li>
+</ul>
+<h3 id="update-the-applicationproperties">Update the <code>application.properties</code></h3>
+<p>Update the database properties in <em>/src/main/resources/application.properties</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>spring.<span style="color:#66d9ef">data</span>.mongodb.<span style="color:#66d9ef">database</span><span style="color:#f92672">=</span>todoApp_db
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>spring.<span style="color:#66d9ef">data</span>.mongodb.port<span style="color:#f92672">=</span><span style="color:#ae81ff">27017</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>spring.<span style="color:#66d9ef">data</span>.mongodb.<span style="color:#66d9ef">host</span><span style="color:#f92672">=</span>localhost
+</code></pre></div><p>If we don’t specify any database name(as in <em>todoApp_db</em> here), MongoDB server will create a default database called <em><strong>“test”</strong></em>, when inserting first set of document.</p>
+<p>Once we have completed these configurations, we are ready to persist the data from the Spring Boot into MongoDB database.</p>
+<h2 id="add-data-into-mongodb-database">Add Data into MongoDB Database</h2>
+<p>Open Command Prompt and start the MongoDB database as given <a href="#running-the-mongodb-server"
+>here</a>.</p>
+<p>Once the mongo console is open, check the available databases.
+
+  <figure>
+    <img src="images/mongo-spring-boot-show-dbs.jpeg" alt="mongo-spring-boot-show-dbs.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Show Database List</figcaption>
+  </figure>
+</p>
+<p>Now start the Spring Boot server in the IDE. Once the server starts, use create API on any Rest Client and add one entry.</p>
+<table><tbody><tr><td><strong>HTTP Method</strong></td><td>POST</td></tr><tr><td><strong>Endpoint URL</strong></td><td><em>http://localhost:8080/Todo/create</em></td></tr><tr><td><strong>Request Header</strong></td><td><code>Content-type: application/json</code></td></tr><tr><td><strong>Request Body</strong></td><td><code><em>{<br>&nbsp;&nbsp;"title":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"description":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"dueDate":&nbsp;"2022-01-31",<br>&nbsp;&nbsp;"status":&nbsp;"NOT_STARTED"<br>}</em></code></td></tr></tbody></table>
+<p>Response from server
+
+  <figure>
+    <img src="images/mongo-spring-boot-create-api.jpeg" alt="mongo-spring-boot-create-api.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Create API on MongoDB</figcaption>
+  </figure>
+</p>
+<p>Now check the database and you will see the new database created named <strong><em>todoApp_db</em></strong>. When you browse through this database, you will see collections and one entry added.
+
+  <figure>
+    <img src="images/mongo-spring-boot-after-insert.jpeg" alt="mongo-spring-boot-after-insert.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Mongo DB after insertion of document</figcaption>
+  </figure>
+
+This is the output on the Mongo console:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>{ 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;61dd8403759e676b1b26cc13&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#f92672">&#34;title&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#f92672">&#34;description&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-01-10T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#f92672">&#34;dueDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-01-30T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#f92672">&#34;status&#34;</span> : <span style="color:#e6db74">&#34;NOT_STARTED&#34;</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#f92672">&#34;todoTaskCommentsList&#34;</span> : [ ], 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#f92672">&#34;_class&#34;</span> : <span style="color:#e6db74">&#34;com.myzonesoft.microservice.todo.model.Todo&#34;</span> 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>}
+</code></pre></div><h2 id="update-the-existing-data-in-mongodb-database">Update the existing Data in MongoDB Database</h2>
+<p>Use Update API on any Rest Client and update an entry, by adding two comments.</p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>HTTP Method</strong></td>
+      <td>PUT</td>
+    </tr>
+    <tr>
+      <td><strong>Endpoint URL</strong></td>
+      <td><em>http://localhost:8080/Todo/update</em></td>
+    </tr>
+    <tr>
+      <td><strong>Request Header</strong></td>
+      <td><code>Content-type: application/json</code></td>
+    </tr>
+    <tr>
+      <td><strong>Request Body</strong></td>
+      <td>
+        <code><em>{<br>&nbsp;&nbsp;"id":&nbsp;"61dd8403759e676b1b26cc13",<br>&nbsp;&nbsp;"title":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"description":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"creationDate":&nbsp;"2022-01-03",<br>&nbsp;&nbsp;"dueDate":&nbsp;"2022-01-31",<br>&nbsp;&nbsp;"status":&nbsp;"IN_PROGRESS",<br>&nbsp;&nbsp;"todoTaskCommentsList":&nbsp;[{<br>&nbsp;&nbsp;&nbsp;&nbsp;"taskComments":&nbsp;"Testing comments 1"<br>&nbsp;&nbsp;},{<br>&nbsp;&nbsp;&nbsp;&nbsp;"taskComments":&nbsp;"Testing comments 2"<br>&nbsp;&nbsp;}]<br>}</em></code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <figure>
+    <img src="images/mongo-spring-boot-update-api.jpeg" alt="mongo-spring-boot-update-api.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Update API on MongoDB</figcaption>
+  </figure>
+</p>
+<p>Now check the database console, you will see collections and one entry updated.
+
+  <figure>
+    <img src="images/mongo-spring-boot-after-update.jpeg" alt="mongo-spring-boot-after-update.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Mongo DB after update of document</figcaption>
+  </figure>
+</p>
+<p>This is the output on the Mongo console:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>{ 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;61dd8403759e676b1b26cc13&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#f92672">&#34;title&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#f92672">&#34;description&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-01-10T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#f92672">&#34;dueDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-01-30T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#f92672">&#34;status&#34;</span> : <span style="color:#e6db74">&#34;IN_PROGRESS&#34;</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#f92672">&#34;todoTaskCommentsList&#34;</span> : [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    { 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;61dd8713759e676b1b26cc14&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>      <span style="color:#f92672">&#34;taskComments&#34;</span> : <span style="color:#e6db74">&#34;Testing comments 1&#34;</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>      <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-01-10T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span> 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    }, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    { 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>      <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;61dd8713759e676b1b26cc15&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>      <span style="color:#f92672">&#34;taskComments&#34;</span> : <span style="color:#e6db74">&#34;Testing comments 2&#34;</span>, 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>      <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-01-10T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span> 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>  ],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>  <span style="color:#f92672">&#34;_class&#34;</span> : <span style="color:#e6db74">&#34;com.myzonesoft.microservice.todo.model.Todo&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>}
+</code></pre></div><p>As you can see, it iterates through all the Child Objects and displays the result.</p>
+<blockquote>
+<p>Congratulations, you have successfully persisted data into MongoDB database.</p>
+</blockquote>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>With this we have come to an end of this article and we have learned how to persist the data in MongoDB Database, using the same Spring Boot Microservice Project created earlier.</p>
+<p>We only made few changes related to database and overall functionality and code related to REST API microservice was untouched.</p>
+<p>Complete code for this project can be found at GitHub <a href="https://github.com/prasbhat/microservice-springboot-mongodb"
+ target="_blank">here</a>. Go ahead and clone it.</p>
+<p><em>Instructions on how to clone and run the project are provided on the GitHub page.</em></p>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/mongodb-database/" rel="tag">MongoDB Database</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hibernate/" rel="tag">Hibernate</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/java/" rel="tag">Java</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/microservice/" rel="tag">Microservice</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/spring-boot/" rel="tag">Spring Boot</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Prashanth Bhat</span>
+	</div>
+	<div class="authorbox__description">
+		<strong>Prashanth Bhat</strong> has about 15+ years of <strong>Developing/Coding</strong> knowledge. <em>He loves to work with Technology, learn new things and share his learnings with others</em>. For comments/feedback you can reach <a href="mailto:bhatpp.android@gmail.com">here</a>.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/microservice-springboot-h2/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Develop Microservice Application Using Spring Boot and H2 Database</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/getting-started-with-hugo/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Migration from Wordpress to Hugo and GitHub Pages</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://myzonesoft.com/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/getting-started-with-hugo/">Migration from Wordpress to Hugo and GitHub Pages</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/microservice-springboot-mongodb/">Develop Microservice Application Using Spring Boot and MongoDB Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/microservice-springboot-h2/">Develop Microservice Application Using Spring Boot and H2 Database</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/microservice/">Microservice</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/no-sql-database/">No SQL Database</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/relational-database/">Relational Database</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/spring-boot-application/">Spring Boot Application</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/website-migration/">Website Migration</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/wordpress/">Wordpress</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="GitHub">GitHub (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github-pages/" title="GitHub Pages">GitHub Pages (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/h2-database/" title="H2 Database">H2 Database (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hibernate/" title="Hibernate">Hibernate (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microservice/" title="Microservice">Microservice (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb-database/" title="MongoDB Database">MongoDB Database (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-hosting/" title="Web Hosting">Web Hosting (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/wordpress/" title="Wordpress">Wordpress (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020-2022 myzonesoft.com
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

@@ -22,11 +22,21 @@ Download and Install the Hugo Executable for Windows 10  Go to the Hugo Releases
     </item>
     
     <item>
+      <title>Develop Microservice Application Using Spring Boot and MongoDB Database</title>
+      <link>https://myzonesoft.com/post/microservice-springboot-mongodb/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/post/microservice-springboot-mongodb/</guid>
+      <description>&lt;p&gt;In this article, I will be developing a Microservice Application using &lt;strong&gt;Java Technology&lt;/strong&gt; and &lt;strong&gt;Spring Boot Framework&lt;/strong&gt;, which will be the backend and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
+&lt;p&gt;I will be using &lt;em&gt;&lt;strong&gt;No SQL Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;MongoDB Database&lt;/strong&gt; for persisting(storing) the data.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Develop Microservice Application Using Spring Boot and H2 Database</title>
-      <link>https://myzonesoft.com/post/microservice-spring-boot-h2-db/</link>
+      <link>https://myzonesoft.com/post/microservice-springboot-h2/</link>
       <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://myzonesoft.com/post/microservice-spring-boot-h2-db/</guid>
+      <guid>https://myzonesoft.com/post/microservice-springboot-h2/</guid>
       <description>&lt;p&gt;In this article, I will be developing a microservice application using &lt;strong&gt;Java Technology&lt;/strong&gt; and &lt;strong&gt;Spring Boot Framework&lt;/strong&gt;, which will be the backend and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
 &lt;p&gt;I will be using &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, it is also known as an Embedded Java Database, for persisting(storing) the data.&lt;/p&gt;</description>
     </item>

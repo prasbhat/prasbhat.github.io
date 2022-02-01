@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MVC on myzonesoft.com</title>
+    <link>https://myzonesoft.com/categories/mvc/</link>
+    <description>Recent content in MVC on myzonesoft.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://myzonesoft.com/categories/mvc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Develop MVC Application using Spring Boot and JSP</title>
+      <link>https://myzonesoft.com/post/mvc-springboot-h2-jsp/</link>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/post/mvc-springboot-h2-jsp/</guid>
+      <description>&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using Spring Boot and JSP for the Microservice Application that was created in &lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://myzonesoft.com/post/microservice-springboot-h2&#34;
+ target=&#34;_blank&#34;&gt;Develop Microservice Application Using Spring Boot and H2 Database&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;, which exposes the REST APIs as a backend application.&lt;/p&gt;
+&lt;p&gt;However, in this article, I will create an &lt;em&gt;User Interface (UI)&lt;/em&gt; for that application using JSP in Spring Boot, in order to make &lt;strong&gt;&lt;a href=&#34;#what-is-model-view-controller-mvc-architecture&#34;
+&gt;Model-View-Controller (MVC) architecture&lt;/a&gt;&lt;/strong&gt; work.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -13,12 +13,12 @@
       <pubDate>Wed, 05 Jan 2022 13:03:48 +0530</pubDate>
       
       <guid>https://myzonesoft.com/post/getting-started-with-hugo/</guid>
-      <description>In this post, I have documented all the steps I took to migrate this website from Wordpress to Hugo and host it on GitHub Pages.
-Hugo is the world’s fastest static website engine. It is written in Golang.
-GitHub Pages provides free hosting space for the static sites.
-Installation of Hugo Follow the Hugo documentation on Installing Hugo on Windows.
-Given below are same steps from the above article.
-Download and Install the Hugo Executable for Windows 10  Go to the Hugo Releases page.</description>
+      <description>&lt;p&gt;In this post, I have documented all the steps I took to migrate this website from &lt;a href=&#34;https://wordpress.com/&#34;
+ target=&#34;_blank&#34;&gt;Wordpress&lt;/a&gt; to &lt;a href=&#34;https://gohugo.io/&#34;
+ target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; and host it on &lt;a href=&#34;https://docs.github.com/en/pages&#34;
+ target=&#34;_blank&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; is the &lt;em&gt;world’s fastest static website engine&lt;/em&gt;. It is written in &lt;em&gt;&lt;strong&gt;Golang&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub Pages&lt;/strong&gt; provides &lt;em&gt;free hosting space for the static sites&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -13,12 +13,12 @@
       <pubDate>Wed, 05 Jan 2022 13:03:48 +0530</pubDate>
       
       <guid>https://myzonesoft.com/post/getting-started-with-hugo/</guid>
-      <description>In this post, I have documented all the steps I took to migrate this website from Wordpress to Hugo and host it on GitHub Pages.
-Hugo is the world’s fastest static website engine. It is written in Golang.
-GitHub Pages provides free hosting space for the static sites.
-Installation of Hugo Follow the Hugo documentation on Installing Hugo on Windows.
-Given below are same steps from the above article.
-Download and Install the Hugo Executable for Windows 10  Go to the Hugo Releases page.</description>
+      <description>&lt;p&gt;In this post, I have documented all the steps I took to migrate this website from &lt;a href=&#34;https://wordpress.com/&#34;
+ target=&#34;_blank&#34;&gt;Wordpress&lt;/a&gt; to &lt;a href=&#34;https://gohugo.io/&#34;
+ target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; and host it on &lt;a href=&#34;https://docs.github.com/en/pages&#34;
+ target=&#34;_blank&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; is the &lt;em&gt;world’s fastest static website engine&lt;/em&gt;. It is written in &lt;em&gt;&lt;strong&gt;Golang&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub Pages&lt;/strong&gt; provides &lt;em&gt;free hosting space for the static sites&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,6 +33,18 @@ This website was initially developed and hosted on the Wordpress.
 Now it is generated using Hugo with Mainroad theme and hosted on GitHub Pages.
 Read this article, in order to understand more about this interesting journey.
 Thanks for reading!</description>
+    </item>
+    
+    <item>
+      <title>Develop MVC Application using Spring Boot and JSP</title>
+      <link>https://myzonesoft.com/post/mvc-springboot-h2-jsp/</link>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/post/mvc-springboot-h2-jsp/</guid>
+      <description>&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using Spring Boot and JSP for the Microservice Application that was created in &lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://myzonesoft.com/post/microservice-springboot-h2&#34;
+ target=&#34;_blank&#34;&gt;Develop Microservice Application Using Spring Boot and H2 Database&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;, which exposes the REST APIs as a backend application.&lt;/p&gt;
+&lt;p&gt;However, in this article, I will create an &lt;em&gt;User Interface (UI)&lt;/em&gt; for that application using JSP in Spring Boot, in order to make &lt;strong&gt;&lt;a href=&#34;#what-is-model-view-controller-mvc-architecture&#34;
+&gt;Model-View-Controller (MVC) architecture&lt;/a&gt;&lt;/strong&gt; work.&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -37,9 +37,36 @@
     <item>
       <title>Microservice</title>
       <link>https://myzonesoft.com/categories/microservice/</link>
-      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://myzonesoft.com/categories/microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MVC</title>
+      <link>https://myzonesoft.com/categories/mvc/</link>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/categories/mvc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Relational Database</title>
+      <link>https://myzonesoft.com/categories/relational-database/</link>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/categories/relational-database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Boot Application</title>
+      <link>https://myzonesoft.com/categories/spring-boot-application/</link>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/categories/spring-boot-application/</guid>
       <description></description>
     </item>
     
@@ -49,24 +76,6 @@
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://myzonesoft.com/categories/no-sql-database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spring Boot Application</title>
-      <link>https://myzonesoft.com/categories/spring-boot-application/</link>
-      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/categories/spring-boot-application/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Relational Database</title>
-      <link>https://myzonesoft.com/categories/relational-database/</link>
-      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/categories/relational-database/</guid>
       <description></description>
     </item>
     

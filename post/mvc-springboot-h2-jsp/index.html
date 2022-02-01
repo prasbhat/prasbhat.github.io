@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Develop MVC Application using Spring Boot and JSP - myzonesoft.com</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="myzonesoft.com" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">myzonesoft.com</div>
+					<div class="logo__tagline">A Technical Site for Everyone</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">
+				
+				<span class="menu__text">Articles</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Develop MVC Application using Spring Boot and JSP</h1>
+			<div class="views">
+    <span class="views">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=https%3a%2f%2fmyzonesoft.com%2fpost%2fmvc-springboot-h2-jsp%2f" alt="Views"/>
+    </span>
+</div>
+
+			
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-07-22T00:00:00Z">July 22, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/microservice/" rel="category">Microservice</a>, <a class="meta__link" href="/categories/relational-database/" rel="category">Relational Database</a>, <a class="meta__link" href="/categories/spring-boot-application/" rel="category">Spring Boot Application</a>, <a class="meta__link" href="/categories/mvc/" rel="category">MVC</a>
+	</span>
+</div><div class="reading-time">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="18px" height="18px" viewBox="0 0 88.965 88.966">
+<g>
+	<g>
+		<polygon points="66.436,56.656 61.639,56.656 61.639,72.438 75.096,72.438 75.096,67.641 66.436,67.641 		"/>
+		<path d="M65.049,46.49v-3.342V23.541c0,0,0.008-6.385,0-6.465l-3.746-7.59l3.324-6.32c0.354-0.67,0.33-1.475-0.062-2.121
+			C64.174,0.397,63.471,0,62.715,0H5.301C4.11,0,3.143,0.967,3.143,2.16l0.052,80.307h10.369V16.841H7.461V4.32h51.68l-2.186,4.15
+			c-0.328,0.625-0.332,1.369-0.007,1.998l3.295,6.373h-42.43v65.625h7.915h6.818h14.526h2.236c3.865,4,9.273,6.5,15.264,6.5
+			c11.719,0,21.25-9.532,21.25-21.25C85.825,56.158,76.547,46.746,65.049,46.49z M64.575,81.966c-7.857,0-14.25-6.394-14.25-14.25
+			s6.393-14.25,14.25-14.25s14.25,6.394,14.25,14.25S72.432,81.966,64.575,81.966z"/>
+	</g>
+</svg>
+</i><b>Reading Time:</b> 9 Minutes  </div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/cover_images/mvc-jsp-spring-boot-h2-cover-page.png" alt="Develop MVC Application using Spring Boot and JSP">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-model-view-controller-mvc-architecture">What is Model-View-Controller (MVC) Architecture?</a>
+      <ul>
+        <li><a href="#the-model-layer">The Model Layer</a></li>
+        <li><a href="#the-view-layer">The View Layer</a></li>
+        <li><a href="#the-controller-layer">The Controller Layer</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-jsp-in-spring-boot">Using JSP in Spring Boot</a></li>
+    <li><a href="#running-the-jsp-spring-boot-project">Running the JSP Spring Boot Project</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>In this article, I will be developing a <em><strong>Model-View-Controller (MVC)</strong></em> application using Spring Boot and JSP for the Microservice Application that was created in <em><strong><a href="/post/microservice-springboot-h2"
+ target="_blank">Develop Microservice Application Using Spring Boot and H2 Database</a></strong></em>, which exposes the REST APIs as a backend application.</p>
+<p>However, in this article, I will create an <em>User Interface (UI)</em> for that application using JSP in Spring Boot, in order to make <strong><a href="#what-is-model-view-controller-mvc-architecture"
+>Model-View-Controller (MVC) architecture</a></strong> work.</p>
+<p>If you have no time to read this article, but want to try the code for yourself, GitHub location is provided <em><a href="https://github.com/prasbhat/mvc-springboot-h2-jsp"
+ target="_blank">here</a></em>. Go ahead and clone the code.</p>
+<hr>
+<h2 id="what-is-model-view-controller-mvc-architecture">What is Model-View-Controller (MVC) Architecture?</h2>
+<p>Model designs based on MVC Architecture follow the <em><strong>MVC Design Pattern</strong></em> and they separate the application logic from the <em>User Interface (UI)</em> when designing the software. As the name implies <em>MVC Pattern</em> has three layers, which are:</p>
+<ul>
+<li><strong>Model</strong>– Represents the Business Layer of the Application</li>
+<li><strong>View</strong>– Defines the Presentation Layer of the Application</li>
+<li><strong>Controller</strong>– Manages the flow of the application</li>
+</ul>
+<p>
+  <figure>
+    <img src="images/mvc-architecture.jpeg" alt="mvc-architecture.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MVC Architecture</figcaption>
+  </figure>
+</p>
+<p>In the Java Programming context, the <strong>Model</strong> consists of simple <em>Java Classes(POJO - Plain Old Java Object classes)</em>, the <strong>View</strong> displays the data, usually the UI layer and the <strong>Controller</strong> consists of <em>Servlets or Business Logic</em>.</p>
+<p><em>JSP is used as the View Layer in the classic MVC Architecture.</em></p>
+<h3 id="the-model-layer">The Model Layer</h3>
+<p>In the MVC Design Pattern, the <em><strong>model</strong></em> is the Data Layer which defines the <em>Business Logic of the System</em> and also represents the State of the Application. The Model Objects retrieve and store the State of the Model in a Database. Through this Layer, we apply Rules to Data, which eventually represents the concepts our application manages.</p>
+<h3 id="the-view-layer">The View Layer</h3>
+<p>This Layer of the MVC Design Pattern represents the <em>Output of the Application</em> or <em>User Interface (UI)</em>. It displays the data fetched from the Model Layer by the Controller and presents the data to the user whenever asked for. It receives all the information it needs from the Controller and it does not need to interact with the Business Layer directly.</p>
+<h3 id="the-controller-layer">The Controller Layer</h3>
+<p>The <em><strong>Controller</strong></em> is like an Interface between <em><strong>Model</strong></em> and <em><strong>View</strong></em>. It receives the user requests from the View Layer and processes them, including the necessary validations. The requests are then sent to Model Layer for Data Processing. Once they are processed, the data is again sent back to the Controller and then displayed on the View Layer.</p>
+<p>The <em><strong>MVC Architecture</strong></em> provides an altogether new level of modularity to your code which makes it a lot more readable and maintainable.</p>
+<h2 id="using-jsp-in-spring-boot">Using JSP in Spring Boot</h2>
+<p>We will call the <em>existing Microservice REST APIs</em> already available <a href="/post/microservice-springboot-h2/conclusion"
+ target="_blank">here</a>, into this project and will not recreate those again. So we will be using the <a href="https://spring.io/blog/2009/03/27/rest-in-spring-3-resttemplate"
+ target="_blank">RestTemplate</a> for calling the REST APIs. So let&rsquo;s get started.</p>
+<blockquote>
+<p><em>If you want to enhance your earlier created Spring Boot to interact with JSP, add these below mentioned changes directly to that project and <strong>replace RestTemplate calls with the call to the respective methods.</strong></em></p>
+</blockquote>
+<ol>
+<li><strong>Update <em>pom.xml</em></strong></li>
+</ol>
+<ul>
+<li>We need to package the project as a <strong>war</strong> file, because by default <em>pom.xml</em> would package the project into <strong>jar</strong> and when using JSP files with Spring Boot, we cannot use <strong>jar</strong> for packaging the project because, JSP files are placed in <code>WEB-INF</code> folder which is available outside the <code>resources</code> folder and will not be packaged in the jar.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">packaging</span>&gt;war&lt;/<span style="color:#f92672">packaging</span>&gt;
+</code></pre></div><ul>
+<li>Add the following dependencies to the <em>pom.xml</em> for JSP to be processed.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>&lt;<span style="color:#f92672">dependency</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>	&lt;<span style="color:#f92672">groupId</span>&gt;org.apache.tomcat.embed&lt;/<span style="color:#f92672">groupId</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>	&lt;<span style="color:#f92672">artifactId</span>&gt;tomcat-embed-jasper&lt;/<span style="color:#f92672">artifactId</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>	&lt;<span style="color:#f92672">scope</span>&gt;provided&lt;/<span style="color:#f92672">scope</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>&lt;/<span style="color:#f92672">dependency</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>&lt;<span style="color:#f92672">dependency</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>	&lt;<span style="color:#f92672">groupId</span>&gt;javax.servlet&lt;/<span style="color:#f92672">groupId</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>	&lt;<span style="color:#f92672">artifactId</span>&gt;jstl&lt;/<span style="color:#f92672">artifactId</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>	&lt;<span style="color:#f92672">scope</span>&gt;provided&lt;/<span style="color:#f92672">scope</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>&lt;/<span style="color:#f92672">dependency</span>&gt;
+</code></pre></div><ol start="2">
+<li><strong>Update <code>/src/main/resources/application.properties</code>- to include processing of JSP files.</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>spring<span style="color:#f92672">.</span><span style="color:#a6e22e">mvc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">view</span><span style="color:#f92672">.</span><span style="color:#a6e22e">prefix</span><span style="color:#f92672">=/</span>WEB<span style="color:#f92672">-</span>INF<span style="color:#f92672">/</span>jsp<span style="color:#f92672">/</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>spring<span style="color:#f92672">.</span><span style="color:#a6e22e">mvc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">view</span><span style="color:#f92672">.</span><span style="color:#a6e22e">suffix</span><span style="color:#f92672">=.</span><span style="color:#a6e22e">jsp</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#960050;background-color:#1e0010">#</span> User Variables
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>base_uri<span style="color:#f92672">=</span>http<span style="color:#f92672">:</span><span style="color:#75715e">//localhost:8080/Todo/
+</span></code></pre></div><p>These prefix and suffix will inform the Application Server to process the JSP files from respective location.</p>
+<p>The <code>base_uri</code> variable will be used in the Controller class, to make the REST API calls using RestTemplate.</p>
+<ol start="3">
+<li><strong>Create a new folder <code>/src/main/webapp/WEB-INF/jsp/</code>- for placing all the JSP files</strong></li>
+</ol>
+<ul>
+<li>Make sure to keep all the JSP files in this folder, in order for application server to process them.</li>
+</ul>
+<ol start="4">
+<li><strong>Create new JSP file= <code>/src/main/webapp/WEB-INF/jsp/index.jsp</code></strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#960050;background-color:#1e0010">&lt;</span>%@taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#960050;background-color:#1e0010">&lt;</span>%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>&lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    &lt;<span style="color:#f92672">title</span>&gt;To do Tracker&lt;/<span style="color:#f92672">title</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#75715e">&lt;!-- Latest compiled and minified CSS --&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fullPath</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ctx</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;${pageContext.request.contextPath}&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        <span style="color:#a6e22e">apiURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fullPath</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">fullPath</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">ctx</span>)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">ctx</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">redirectToSingleView</span>(<span style="color:#a6e22e">action</span>, <span style="color:#a6e22e">id</span>) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>            window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">apiURL</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/singleItemView/&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">action</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">id</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">deleteById</span>(<span style="color:#a6e22e">id</span>) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>            <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;DELETE&#34;</span>, <span style="color:#a6e22e">apiURL</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/deleteById/&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">id</span>, <span style="color:#66d9ef">true</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>            <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">send</span>();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>            window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">reload</span>();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>    &lt;/<span style="color:#f92672">script</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>&lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>&lt;<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>		&lt;<span style="color:#f92672">h1</span>&gt;To do Tracker Application&lt;/<span style="color:#f92672">h1</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>	    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">redirectToSingleView(&#39;edit&#39;,&#39;0&#39;)</span>&gt;CREATE&lt;/<span style="color:#f92672">button</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>    &lt;/<span style="color:#f92672">div</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>	&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;table-striped&#39;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1&#39;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>        &lt;<span style="color:#f92672">thead</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>            &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>                &lt;<span style="color:#f92672">th</span>&gt;Title&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>                &lt;<span style="color:#f92672">th</span>&gt;Description&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>                &lt;<span style="color:#f92672">th</span>&gt;Due Date&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>                &lt;<span style="color:#f92672">th</span>&gt;Status&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>                &lt;<span style="color:#f92672">th</span>&gt;No. Of Comments&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>                &lt;<span style="color:#f92672">th</span>&gt;View&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>                &lt;<span style="color:#f92672">th</span>&gt;Edit&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>                &lt;<span style="color:#f92672">th</span>&gt;Delete&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>            &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>        &lt;/<span style="color:#f92672">thead</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>        &lt;<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>            &lt;<span style="color:#f92672">c:forEach</span> <span style="color:#a6e22e">items</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoList}&#34;</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;todo&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>                &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>                    &lt;<span style="color:#f92672">td</span>&gt;${todo.title}&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>                    &lt;<span style="color:#f92672">td</span>&gt;${todo.description}&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>                        &lt;<span style="color:#f92672">fmt:parseDate</span>  <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todo.dueDate}&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yyyy-MM-dd&#34;</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parsedDate&#34;</span> /&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>                        &lt;<span style="color:#f92672">fmt:formatDate</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${parsedDate}&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dd-MMM-yyyy&#34;</span> /&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>                    &lt;<span style="color:#f92672">td</span>&gt;${todo.status}&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>                    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;${todo.todoTaskCommentsSet.size()}&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">redirectToSingleView(&#39;view&#39;,&#39;${todo.id}&#39;)</span>&gt;VIEW&lt;/<span style="color:#f92672">button</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">redirectToSingleView(&#39;edit&#39;,&#39;${todo.id}&#39;)</span>&gt;EDIT&lt;/<span style="color:#f92672">button</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-warning&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">deleteById(&#39;${todo.id}&#39;)</span>&gt;DELETE&lt;/<span style="color:#f92672">button</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span>                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span>            &lt;/<span style="color:#f92672">c:forEach</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span>        &lt;/<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span>    &lt;/<span style="color:#f92672">table</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span>&lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><ol start="5">
+<li><strong>Create one more JSP file= <code>/src/main/webapp/WEB-INF/jsp/singleItemPage.jsp</code></strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="color:#960050;background-color:#1e0010">&lt;</span>%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span style="color:#960050;background-color:#1e0010">&lt;</span>%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span style="color:#960050;background-color:#1e0010">&lt;</span>%@ page import=&#34;org.json.*&#34; %&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span>&lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span>    &lt;<span style="color:#f92672">title</span>&gt;To do Tracker&lt;/<span style="color:#f92672">title</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span>    <span style="color:#75715e">&lt;!-- Latest compiled and minified CSS --&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span>    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span>        <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span>        <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">submit</span>(<span style="color:#a6e22e">id</span>) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">jsonObj</span> <span style="color:#f92672">=</span> {};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span>            <span style="color:#a6e22e">jsonObj</span>[<span style="color:#e6db74">&#39;id&#39;</span>]<span style="color:#f92672">=</span><span style="color:#a6e22e">id</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span>            <span style="color:#a6e22e">jsonObj</span>[<span style="color:#e6db74">&#39;title&#39;</span>]<span style="color:#f92672">=</span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;title&#39;</span>).<span style="color:#a6e22e">value</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span>            <span style="color:#a6e22e">jsonObj</span>[<span style="color:#e6db74">&#39;description&#39;</span>]<span style="color:#f92672">=</span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;description&#39;</span>).<span style="color:#a6e22e">value</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span>            <span style="color:#a6e22e">jsonObj</span>[<span style="color:#e6db74">&#39;dueDate&#39;</span>]<span style="color:#f92672">=</span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;dueDate&#39;</span>).<span style="color:#a6e22e">value</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span>            <span style="color:#a6e22e">jsonObj</span>[<span style="color:#e6db74">&#39;status&#39;</span>]<span style="color:#f92672">=</span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;status&#39;</span>).<span style="color:#a6e22e">value</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">jsonCommentsArray</span><span style="color:#f92672">=</span>[];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">jsonCommentsObj</span><span style="color:#f92672">=</span>{};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span>            <span style="color:#a6e22e">jsonCommentsObj</span>[<span style="color:#e6db74">&#34;taskComments&#34;</span>]<span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;taskComments&#39;</span>).<span style="color:#a6e22e">value</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span>            <span style="color:#a6e22e">jsonCommentsArray</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">jsonCommentsObj</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span>            <span style="color:#a6e22e">jsonObj</span>[<span style="color:#e6db74">&#34;todoTaskCommentsSet&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonCommentsArray</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fullPath</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ctx</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;${pageContext.request.contextPath}&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span>            <span style="color:#a6e22e">apiURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fullPath</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">fullPath</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">ctx</span>)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">ctx</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">id</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span>                <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;PUT&#34;</span>, <span style="color:#a6e22e">apiURL</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/update&#34;</span>, <span style="color:#66d9ef">true</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span>            } <span style="color:#66d9ef">else</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span>                <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#a6e22e">apiURL</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/create&#34;</span>, <span style="color:#66d9ef">true</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span>            }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span>            <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#34;Content-type&#34;</span>,<span style="color:#e6db74">&#34;application/json&#34;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span>            <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">jsonObj</span>));
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span>            window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">apiURL</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">addNewComments</span>(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">lTable</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;commentsTable&#34;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span>            <span style="color:#a6e22e">lTable</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">lTable</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;table&#34;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;none&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;table&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span>    &lt;/<span style="color:#f92672">script</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span>&lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span>&lt;<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span>	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span>		&lt;<span style="color:#f92672">h1</span>&gt;To do Tracker Application&lt;/<span style="color:#f92672">h1</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span>        &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;table-striped&#39;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1&#39;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span>            &lt;<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span>                &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span>                    &lt;<span style="color:#f92672">th</span>&gt;Title&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span>                        &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span>&gt;${todoItem.title}&lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span>                        &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;edit&#39;}&#34;</span>&gt;&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;title&#39;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;title&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span>                            <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;${todoItem.title}&#39;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;35&#34;</span> /&gt;&lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span>                &lt;/<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span>                    &lt;<span style="color:#f92672">th</span>&gt;Description&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span>                        &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span>&gt;${todoItem.description}&lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span>                        &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;edit&#39;}&#34;</span>&gt;&lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;description&#39;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;description&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span>                            <span style="color:#a6e22e">rows</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">cols</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;38&#34;</span>&gt;${todoItem.description}&lt;/<span style="color:#f92672">textarea</span>&gt;&lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span>                &lt;/<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span>                     &lt;<span style="color:#f92672">th</span>&gt;Creation Date&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span>                     &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span>                         &lt;<span style="color:#f92672">fmt:parseDate</span>  <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem.creationDate}&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yyyy-MM-dd&#34;</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parsedDate&#34;</span> /&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span>                         &lt;<span style="color:#f92672">fmt:formatDate</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${parsedDate}&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dd-MMM-yyyy&#34;</span> /&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span>                     &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span>                &lt;/<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span>                    &lt;<span style="color:#f92672">th</span>&gt;Due Date&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span>                        &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span>                            &lt;<span style="color:#f92672">fmt:parseDate</span>  <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem.dueDate}&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yyyy-MM-dd&#34;</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parsedDate&#34;</span> /&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span>                            &lt;<span style="color:#f92672">fmt:formatDate</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${parsedDate}&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dd-MMM-yyyy&#34;</span> /&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span>                        &lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span>                        &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;edit&#39;}&#34;</span>&gt;&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dueDate&#39;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dueDate&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span>                            <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;${todoItem.dueDate}&#39;</span>/&gt;&lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span>                &lt;/<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span>                    &lt;<span style="color:#f92672">th</span>&gt;Status&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span>                        &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span>&gt;${todoItem.status}&lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span>                        &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;edit&#39;}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span>                            &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;status&#39;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;status&#39;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;${todoItem.status}&#39;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span>                                &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;--Select Status--&lt;/<span style="color:#f92672">option</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span>                                &lt;<span style="color:#f92672">c:forEach</span> <span style="color:#a6e22e">items</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoStatus}&#34;</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;status&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span>                                    &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${status}&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span>                                        <span style="color:#960050;background-color:#1e0010">${</span><span style="color:#a6e22e">status </span><span style="color:#f92672">=</span><span style="color:#e6db74">=</span> <span style="color:#a6e22e">todoItem</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">status</span> <span style="color:#960050;background-color:#1e0010">?</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">selected</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selected&#34;</span><span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#a6e22e">:</span> <span style="color:#960050;background-color:#1e0010">&#39;&#39;}</span>&gt;${status}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span>                                  &lt;/<span style="color:#f92672">option</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span>                                &lt;/<span style="color:#f92672">c:forEach</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span>                            &lt;/<span style="color:#f92672">select</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span>                        &lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span>                &lt;/<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span>                    &lt;<span style="color:#f92672">th</span>&gt;Comments&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span>                        &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem.todoTaskCommentsSet.size() &gt; 0}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span>                            &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;table-bordered&#39;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span>                                &lt;<span style="color:#f92672">thead</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span>                                    &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span>                                        &lt;<span style="color:#f92672">th</span>&gt;Creation Date&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span>                                        &lt;<span style="color:#f92672">th</span>&gt;Description&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span>                                    &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span>                                &lt;/<span style="color:#f92672">thead</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span>                                &lt;<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span>                                    &lt;<span style="color:#f92672">c:forEach</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comments&#34;</span> <span style="color:#a6e22e">items</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem.todoTaskCommentsSet}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span>                                        &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span>                                            &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span>                                                &lt;<span style="color:#f92672">fmt:parseDate</span>  <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${comments.creationDate}&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yyyy-MM-dd&#34;</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parsedDate&#34;</span> /&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span>                                                &lt;<span style="color:#f92672">fmt:formatDate</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${parsedDate}&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dd-MMM-yyyy&#34;</span> /&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119</span>                                            &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120</span>                                            &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">c:out</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${comments.taskComments}&#34;</span>/&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121</span>                                        &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122</span>                                    &lt;/<span style="color:#f92672">c:forEach</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123</span>                                &lt;/<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124</span>                            &lt;/<span style="color:#f92672">table</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125</span>                        &lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126</span>                        &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;edit&#39;}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127</span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">addNewComments()</span>&gt;Add New Comments&lt;/<span style="color:#f92672">button</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128</span>                        &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;table-bordered&#39;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;commentsTable&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:none;&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129</span>                            &lt;<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130</span>                                &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131</span>                                    &lt;<span style="color:#f92672">th</span>&gt;Description&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132</span>                                    &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;description&#39;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;taskComments&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133</span>                                    <span style="color:#a6e22e">rows</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">cols</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;38&#34;</span>&gt;&lt;/<span style="color:#f92672">textarea</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134</span>                                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135</span>                            &lt;/<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136</span>                        &lt;/<span style="color:#f92672">table</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137</span>                        &lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139</span>                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140</span>                &lt;<span style="color:#f92672">c:if</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;edit&#39;}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141</span>                &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142</span>                    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143</span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">submit(${todoItem.id})</span>&gt;Submit&lt;/<span style="color:#f92672">button</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145</span>                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146</span>                &lt;/<span style="color:#f92672">c:if</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147</span>            &lt;/<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148</span>        &lt;/<span style="color:#f92672">table</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149</span>	&lt;/<span style="color:#f92672">div</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150</span>&lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><ol start="6">
+<li><strong>Create a new Controller Class = <code>com.myzonesoft.microservice.todo.controller.TodoViewController</code></strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a6e22e">@RestController</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoViewController</span> <span style="color:#66d9ef">implements</span> TodoApplicationConstants <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> RestTemplate restTemplate <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RestTemplate<span style="color:#f92672">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${base_uri}&#34;</span><span style="color:#f92672">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#66d9ef">private</span> String base_uri<span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#66d9ef">public</span> ModelAndView <span style="color:#a6e22e">gotoHome</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoList&#34;</span><span style="color:#f92672">,</span> restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">getForObject</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">,</span>List<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ModelAndView<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;index&#34;</span><span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#f92672">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/singleItemView/{action}/{todoId}&#34;</span><span style="color:#f92672">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#66d9ef">public</span> ModelAndView <span style="color:#a6e22e">goToSingleItemView</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">,</span> <span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;action&#34;</span><span style="color:#f92672">)</span> String action<span style="color:#f92672">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>                                           <span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoId&#34;</span><span style="color:#f92672">)</span> String todoId<span style="color:#f92672">){</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        Todo todoItem <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Todo<span style="color:#f92672">(</span>0L<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">(),</span> LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>                <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>Long<span style="color:#f92672">.</span><span style="color:#a6e22e">parseLong</span><span style="color:#f92672">(</span>todoId<span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>            todoItem <span style="color:#f92672">=</span> restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">getForObject</span><span style="color:#f92672">(</span>base_uri <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/find/&#34;</span> <span style="color:#f92672">+</span> todoId<span style="color:#f92672">,</span> Todo<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        <span style="color:#f92672">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoItem&#34;</span><span style="color:#f92672">,</span> todoItem<span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;action&#34;</span><span style="color:#f92672">,</span>action<span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoStatus&#34;</span><span style="color:#f92672">,</span>restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">getForObject</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/getStatus&#34;</span><span style="color:#f92672">,</span>List<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ModelAndView<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;singleItemPage&#34;</span><span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    <span style="color:#f92672">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    <span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/create&#34;</span><span style="color:#f92672">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendToCreate</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> Todo todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>        restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">postForObject</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/create&#34;</span><span style="color:#f92672">,</span>todoItem<span style="color:#f92672">,</span>Todo<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>    <span style="color:#f92672">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>    <span style="color:#a6e22e">@PutMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/update&#34;</span><span style="color:#f92672">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendToUpdate</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> Todo todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>        restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/update&#34;</span><span style="color:#f92672">,</span>todoItem<span style="color:#f92672">,</span>Todo<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#f92672">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>    <span style="color:#a6e22e">@DeleteMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/deleteById/{id}&#34;</span><span style="color:#f92672">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendToDeleteById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>       restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/deleteById/&#34;</span><span style="color:#f92672">+</span>id<span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    <span style="color:#f92672">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span style="color:#f92672">}</span>
+</code></pre></div><p>Since we have added <em><strong>prefix</strong></em> and <em><strong>suffix</strong></em> parameters in the <code>application.properties</code>, hence just the name of the JSP in the return statement, would redirect to the respective JSP file.</p>
+<p><em><strong>RestTemplate</strong></em> is used in the Controller class for making the <em>REST APIs calls to the existing Microservice</em>.</p>
+<hr>
+<h2 id="running-the-jsp-spring-boot-project">Running the JSP Spring Boot Project</h2>
+<p>With these changes, we are ready to run the project. When we start the project and go to browser and type <a href="http://localhost:8081/todo-jsp/"
+ target="_blank">http://localhost:8081/todo-jsp/</a>, we will see the <code>index.jsp</code> in action.
+
+  <figure>
+    <img src="images/todo-tracker-home-page.jpeg" alt="todo-tracker-home-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Todo Tracker Home Page</figcaption>
+  </figure>
+</p>
+<p>Since we are on Development mode and our <code>spring.jpa.hibernate.ddl-auto=create-drop</code>, we do not see any records.</p>
+<p><strong>See the working demo</strong>
+<video src="videos/mvc-springboot-h2-jsp-working.webm" controls="yes"></p>
+<p><strong>Let us navigate through each pages</strong></p>
+<ul>
+<li>
+<p>When you click on <strong>Create</strong> Button
+
+  <figure>
+    <img src="images/todo-tracker-create-page.jpeg" alt="todo-tracker-create-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Todo Tracker Create Page</figcaption>
+  </figure>
+</p>
+</li>
+<li>
+<p>Enter the values and Click on the <strong>Submit</strong> Button in the Create Page
+
+  <figure>
+    <img src="images/todo-tracker-home-page-2.jpeg" alt="todo-tracker-home-page-2.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Todo Tracker Home Page After Create</figcaption>
+  </figure>
+</p>
+</li>
+<li>
+<p>Click on <strong>View</strong> Button to go to the below page
+
+  <figure>
+    <img src="images/todo-tracker-view-page.jpeg" alt="todo-tracker-view-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Todo Tracker View Page</figcaption>
+  </figure>
+</p>
+</li>
+<li>
+<p>On the Home page, click on the <strong>Edit</strong> Button to get the Edit Page, where you can update the existing contents or add new comment.
+
+  <figure>
+    <img src="images/todo-tracker-edit-page.jpeg" alt="todo-tracker-edit-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Todo Tracker Edit Page</figcaption>
+  </figure>
+</p>
+</li>
+<li>
+<p>On the Home page, click on <strong>Delete</strong> Button and delete the task.
+
+  <figure>
+    <img src="images/todo-tracker-home-page.jpeg" alt="todo-tracker-home-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Todo Tracker Home Page After Delete</figcaption>
+  </figure>
+</p>
+</li>
+</ul>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>With this setup, we have come to an end of this article and we have seen how we can create application with <em>MVC architecture using <strong>Spring Boot</strong> and <strong>JSP pages</strong></em>.</p>
+<p>Complete code for this project can be found at GitHub <a href="https://github.com/prasbhat/mvc-springboot-h2-jsp"
+ target="_blank">here</a>. Go ahead and clone it.</p>
+<p>Instructions on how to clone and run the project are provided on the GitHub page.</p>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/h2-database/" rel="tag">H2 Database</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hibernate/" rel="tag">Hibernate</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/java/" rel="tag">Java</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/microservice/" rel="tag">Microservice</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/spring-boot/" rel="tag">Spring Boot</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/jsp/" rel="tag">JSP</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/resttemplate/" rel="tag">RestTemplate</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Prashanth Bhat</span>
+	</div>
+	<div class="authorbox__description">
+		<strong>Prashanth Bhat</strong> has about 15+ years of <strong>Developing/Coding</strong> knowledge. <em>He loves to work with Technology, learn new things and share his learnings with others</em>. For comments/feedback you can reach <a href="mailto:bhatpp.android@gmail.com">here</a>.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/microservice-springboot-mongodb/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Develop Microservice Application Using Spring Boot and MongoDB Database</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/getting-started-with-hugo/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Migration from Wordpress to Hugo and GitHub Pages</p>
+		</a>
+	</div>
+</nav>
+
+
+<script src="https://utteranc.es/client.js"
+        repo="https://github.com/prasbhat/prasbhat.github.io"
+        issue-term="pathname"
+        label="Comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://myzonesoft.com/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/getting-started-with-hugo/">Migration from Wordpress to Hugo and GitHub Pages</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/mvc-springboot-h2-jsp/">Develop MVC Application using Spring Boot and JSP</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/microservice-springboot-mongodb/">Develop Microservice Application Using Spring Boot and MongoDB Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/microservice-springboot-h2/">Develop Microservice Application Using Spring Boot and H2 Database</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/microservice/">Microservice</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/mvc/">MVC</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/no-sql-database/">No SQL Database</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/relational-database/">Relational Database</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/spring-boot-application/">Spring Boot Application</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/website-migration/">Website Migration</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/wordpress/">Wordpress</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="GitHub">GitHub (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github-pages/" title="GitHub Pages">GitHub Pages (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/h2-database/" title="H2 Database">H2 Database (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hibernate/" title="Hibernate">Hibernate (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/jsp/" title="JSP">JSP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microservice/" title="Microservice">Microservice (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb-database/" title="MongoDB Database">MongoDB Database (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/resttemplate/" title="RestTemplate">RestTemplate (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-hosting/" title="Web Hosting">Web Hosting (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/wordpress/" title="Wordpress">Wordpress (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020-2022 myzonesoft.com
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

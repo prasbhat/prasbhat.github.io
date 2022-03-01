@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Develop MVC Application using Spring Boot and Thymeleaf - myzonesoft.com</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="myzonesoft.com" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">myzonesoft.com</div>
+					<div class="logo__tagline">A Technical Site for Everyone</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">
+				
+				<span class="menu__text">Articles</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header"><div class="views">
+    <span class="views">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=https%3a%2f%2fmyzonesoft.com%2fpost%2fmvc-springboot-thymeleaf%2f" alt="Views"/>
+    </span>
+</div>
+
+			<h1 class="post__title">Develop MVC Application using Spring Boot and Thymeleaf</h1>
+			
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-10-05T00:00:00Z">October 05, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/microservice/" rel="category">Microservice</a>, <a class="meta__link" href="/categories/relational-database/" rel="category">Relational Database</a>, <a class="meta__link" href="/categories/spring-boot-application/" rel="category">Spring Boot Application</a>, <a class="meta__link" href="/categories/mvc/" rel="category">MVC</a>
+	</span>
+</div><div class="meta__item meta__icon">
+<svg width="18" height="18" viewBox="0 0 88.965 88.966">
+	<polygon points="66.436,56.656 61.639,56.656 61.639,72.438 75.096,72.438 75.096,67.641 66.436,67.641"/>
+	<path d="M65.049,46.49v-3.342V23.541c0,0,0.008-6.385,0-6.465l-3.746-7.59l3.324-6.32c0.354-0.67,0.33-1.475-0.062-2.121
+		C64.174,0.397,63.471,0,62.715,0H5.301C4.11,0,3.143,0.967,3.143,2.16l0.052,80.307h10.369V16.841H7.461V4.32h51.68l-2.186,4.15
+		c-0.328,0.625-0.332,1.369-0.007,1.998l3.295,6.373h-42.43v65.625h7.915h6.818h14.526h2.236c3.865,4,9.273,6.5,15.264,6.5
+		c11.719,0,21.25-9.532,21.25-21.25C85.825,56.158,76.547,46.746,65.049,46.49z M64.575,81.966c-7.857,0-14.25-6.394-14.25-14.25
+		s6.393-14.25,14.25-14.25s14.25,6.394,14.25,14.25S72.432,81.966,64.575,81.966z"/>	
+</svg>
+ 12 Minutes   Read   
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/cover_images/mvc-springboot-thymeleaf.png" alt="Develop MVC Application using Spring Boot and Thymeleaf">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-thymeleaf">What is Thymeleaf?</a></li>
+    <li><a href="#create-a-spring-boot-application-with-thymeleaf">Create a Spring Boot Application with Thymeleaf</a></li>
+    <li><a href="#create-fragment-templates">Create Fragment Templates</a>
+      <ul>
+        <li><a href="#using-the-layout-and-layoutdecorator-dialect-directive">Using the <code>layout</code> and <code>layout:decorator</code> Dialect Directive</a></li>
+        <li><a href="#using-the-fragment-replace-directive">Using the fragment <code>replace</code> directive</a></li>
+      </ul>
+    </li>
+    <li><a href="#create-thymeleaf-application">Create Thymeleaf Application</a></li>
+    <li><a href="#enhance-the-application-to-consume-rest-apis">Enhance the application to consume REST APIs</a>
+      <ul>
+        <li><a href="#display-all-items">Display All Items</a></li>
+        <li><a href="#create-new-item">Create New Item</a></li>
+        <li><a href="#view-single-item">View Single Item</a></li>
+        <li><a href="#edit-single-item">Edit Single Item</a></li>
+        <li><a href="#delete-an-item">Delete an Item</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-demo">Working Demo</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(255, 82, 82)',
+  textColor: '#fff'
+})</script> 
+<p>In this article, I will be developing a <em><strong>Model-View-Controller (MVC)</strong></em> application using <strong>Spring Boot</strong> and <strong>Thymeleaf</strong>.</p>
+<p>If you want to understand more about MVC architecture, go through <a href="/post/mvc-springboot-h2-jsp/#what-is-model-view-controller-mvc-architecture"
+ target="_blank">this</a> article.</p>
+<p>If you have no time to read this article, but want to try the code for yourself, GitHub location is provided <em><a href="https://github.com/prasbhat/mvc-springboot-thymeleaf"
+ target="_blank">here</a></em>. Go ahead and clone the code.</p>
+<hr>
+<h2 id="what-is-thymeleaf">What is Thymeleaf?</h2>
+<p><em><strong><a href="https://www.thymeleaf.org/"
+ target="_blank">Thymeleaf</a></strong></em> is a Java Template Engine for processing and creating <em>HTML5, XML, JavaScript, CSS and Text</em>. It is able to apply a set of transformations to template files in order to display data and/or text produced by your applications.</p>
+<p>The library is extremely extensible and its natural templating capability ensures templates can be prototyped without a backend – which makes development very fast when compared with other popular template engines such as <em><strong>JSP</strong></em>.</p>
+<p>Thymeleaf has a good integration with Spring MVC Framework, making it first choice library for Frontend Development in Java and Spring Technologies.</p>
+<hr>
+<h2 id="create-a-spring-boot-application-with-thymeleaf">Create a Spring Boot Application with Thymeleaf</h2>
+<p>Create a bootstrapped Spring Boot Application using <em><strong><a href="https://start.spring.io"
+ target="_blank">Spring Boot Initializr</a></strong></em>.</p>
+<p>Add the following dependencies: Spring Web, Spring Boot DevTools, <em><strong>Thymeleaf</strong></em>.</p>
+<p>Download the Zip file and unzip it. Import the unzipped project into your installed IDE, as <em><strong>existing Maven Project</strong></em>.</p>
+<p>To understand more on this process, follow <a href="/post/microservice-springboot-h2/#create-bootstrap-spring-boot-application"
+ target="_blank">this</a> link.</p>
+<p>Now let us add the endpoints in the controller and Thymeleaf resources.</p>
+<hr>
+<h2 id="create-fragment-templates">Create Fragment Templates</h2>
+<p>Before creating endpoints, let us first understand one important feature of the Thymeleaf- <strong>Fragment Templates</strong>, also known as <strong>Frames</strong>.</p>
+<p>Default location for storing all the Thymeleaf templates is: <code>/src/main/resources/templates</code></p>
+<p>Fragment templates provides consistency across the pages to have same header, footer contents and also maintain similar feel to the pages.</p>
+<p>There are two ways of creating fragment templates in Thymeleaf</p>
+<h3 id="using-the-layout-and-layoutdecorator-dialect-directive">Using the <code>layout</code> and <code>layout:decorator</code> Dialect Directive</h3>
+<p>Define the header, footer and body section in the main template and replace only the body section in the subsequent html files, using the Thymeleaf <code>layout</code> and <code>layout:decorator</code> dialect directive.</p>
+<p>Let us see an example:</p>
+<p>In order to get this to work, we need to have a below Maven dependency in the pom.xml:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#f92672">dependency</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>	&lt;<span style="color:#f92672">groupId</span>&gt;nz.net.ultraq.thymeleaf&lt;/<span style="color:#f92672">groupId</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>	&lt;<span style="color:#f92672">artifactId</span>&gt;thymeleaf-layout-dialect&lt;/<span style="color:#f92672">artifactId</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>&lt;/<span style="color:#f92672">dependency</span>&gt;
+</code></pre></div><p>Create a <code>BaseLayout.html</code> file in the location: <code>/src/main/resources/templates/Layouts</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns:th</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.thymeleaf.org&#34;</span> <span style="color:#a6e22e">xmlns:layout</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.ultraq.net.nz/thymeleaf/layout&#34;</span>&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    &lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>/&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        &lt;<span style="color:#f92672">title</span>&gt;Base Layout&lt;/<span style="color:#f92672">title</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    &lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    &lt;<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">th:fragment</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-header&#34;</span>&gt;This is a custom header&lt;/<span style="color:#f92672">header</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">layout:fragment</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-body-content&#34;</span>&gt;This is the main body section&lt;/<span style="color:#f92672">section</span>&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        &lt;<span style="color:#f92672">footer</span> <span style="color:#a6e22e">th:fragment</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-footer&#34;</span>&gt;This is a custom footer&lt;/<span style="color:#f92672">footer</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    &lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>This creates a <strong>Main Fragment page</strong>, on which body section will get replaced.</p>
+<p>Create a <code>home.html</code> file in the location: <code>/src/main/resources/templates</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns:th</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.thymeleaf.org&#34;</span> <span style="color:#a6e22e">xmlns:layout</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.ultraq.net.nz/thymeleaf/layout&#34;</span> <span style="color:#a6e22e">layout:decorator</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Layouts/BaseLayout&#34;</span>&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    &lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        &lt;<span style="color:#f92672">title</span> <span style="color:#a6e22e">layout:title-pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;$DECORATOR_TITLE | $CONTENT_TITLE&#34;</span>&gt;Dashboard&lt;/<span style="color:#f92672">title</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    &lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    &lt;<span style="color:#f92672">body</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">layout:fragment</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-body-content&#34;</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container-fluid&#34;</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>                This the home page for the example
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>            &lt;/<span style="color:#f92672">div</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        &lt;/<span style="color:#f92672">section</span>&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    &lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>Contents inside the <code>&lt;section layout:fragment=&quot;custom-body-content&quot;&gt;</code> attribute in the <code>home.html</code> file will replace the contents in the <code>BaseLayout.html</code> file with the same <code>&lt;section&gt;</code> attribute during the runtime, since we have mapping for the layout using the Thymeleaf directive.</p>
+<h3 id="using-the-fragment-replace-directive">Using the fragment <code>replace</code> directive</h3>
+<p>Define the header, footer and body section in the main template and add the header and footer sections in the subsequent html files using the Thymeleaf <code>replace</code> directive.</p>
+<p>Let us see an example.</p>
+<p>Create a <code>header.html</code> file in the location: <code>/src/main/resources/templates/fragments</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns:th</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.thymeleaf.org&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    &lt;<span style="color:#f92672">head</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:fragment</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-css&#34;</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>            This is header-css fragment            
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    &lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    &lt;<span style="color:#f92672">body</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:fragment</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>            This is header fragment
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    &lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>Similarly create a <code>footer.html</code> file and place it in the location: <code>/src/main/resources/templates/fragments</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/1999/xhtml&#34;</span> <span style="color:#a6e22e">xmlns:th</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.thymeleaf.org&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    &lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    &lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    &lt;<span style="color:#f92672">body</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:fragment</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>            &lt;<span style="color:#f92672">footer</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>                This is footer fragment
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>            &lt;/<span style="color:#f92672">footer</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    &lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>Create a <code>home.html</code> file in the location: <code>/src/main/resources/templates/</code> and use these header and footer fragments.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns:th</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.thymeleaf.org&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    &lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        &lt;<span style="color:#f92672">title</span>&gt;Spring Boot Thymeleaf + Spring Security&lt;/<span style="color:#f92672">title</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:replace</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fragments/header :: header-css&#34;</span>/&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    &lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    &lt;<span style="color:#f92672">body</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:replace</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fragments/header :: header&#34;</span>/&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>            This is body content
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        &lt;/<span style="color:#f92672">div</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:replace</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fragments/footer :: footer&#34;</span>/&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    &lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>As you can see in the above code, header and footer sections are inserted into the page using the <code>replace</code> attribute from the Thymeleaf library.</p>
+<p>We have seen 2 different methods of creating and using the fragment templates in the Thymeleaf. You can create and use either or none of them, based on your requirement.</p>
+<hr>
+<h2 id="create-thymeleaf-application">Create Thymeleaf Application</h2>
+<p>For our example we will be using the <a href="#using-the-fragment-replace-directive"
+>Using the fragment replace directive</a> explained above.</p>
+<p>Final Project Structure would look something like given below:</p>
+<p>
+  <figure>
+    <img src="images/project-structure.jpeg" alt="project-structure.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Project Structure</figcaption>
+  </figure>
+</p>
+<p>Let us create <code>header.html</code> and <code>footer.html</code> files in their respective locations, as explained earlier.</p>
+<ul>
+<li>Create <code>header.html</code> file in the location: <code>/src/main/resources/templates/fragments</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns:th</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.thymeleaf.org&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    &lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:fragment</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-css&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>            <span style="color:#75715e">&lt;!-- this is header-css --&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>            &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>                <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>                <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        &lt;/<span style="color:#f92672">div</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    &lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>&lt;<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:fragment</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        <span style="color:#75715e">&lt;!-- this is header --&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        &lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar navbar-inverse&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>               &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse navbar-collapse&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>                    &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav navbar-nav&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>                        &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">th:href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@{/}&#34;</span>&gt;Home&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>                    &lt;/<span style="color:#f92672">ul</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>                &lt;/<span style="color:#f92672">div</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>            &lt;/<span style="color:#f92672">div</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        &lt;/<span style="color:#f92672">nav</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    &lt;/<span style="color:#f92672">div</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>&lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><ul>
+<li>Create a <code>footer.html</code> file and place it in location: <code>/src/main/resources/templates/fragments</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/1999/xhtml&#34;</span> <span style="color:#a6e22e">xmlns:th</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.thymeleaf.org&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    &lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    &lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    &lt;<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:fragment</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>                &lt;<span style="color:#f92672">footer</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>                    <span style="color:#75715e">&lt;!-- this is footer --&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>                    2021-&lt;<span style="color:#f92672">script</span>&gt;document.<span style="color:#a6e22e">write</span>(<span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">getFullYear</span>())&lt;/<span style="color:#f92672">script</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>                &lt;/<span style="color:#f92672">footer</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>            &lt;/<span style="color:#f92672">div</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        &lt;/<span style="color:#f92672">div</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    &lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><hr>
+<h2 id="enhance-the-application-to-consume-rest-apis">Enhance the application to consume REST APIs</h2>
+<p>Let us start building the frontend components for our <strong>Todo Tracker Application</strong>, so that we can <em>consume the REST APIs exposed by our microservice</em>, mentioned below:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">CRUD Operations</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CREATE</td>
+<td style="text-align:center">POST</td>
+<td style="text-align:center"><code>/create</code></td>
+</tr>
+<tr>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/findAll</code> and  <code>/find/{id}</code></td>
+</tr>
+<tr>
+<td style="text-align:center">UPDATE</td>
+<td style="text-align:center">PUT</td>
+<td style="text-align:center"><code>/update</code></td>
+</tr>
+<tr>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>/deleteById/{id}</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="display-all-items">Display All Items</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Endpoint Name</th>
+<th style="text-align:center">Endpoint Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>/findAll</code></td>
+<td style="text-align:center"><em>For listing all items of the Todo Tracker Application</em></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we will need to add following components:</p>
+<ol>
+<li><strong>index.html</strong> located at Default Thymeleaf location (<code>/src/main/resources/templates</code>)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span> <span style="color:#a6e22e">xmlns:th</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.thymeleaf.org&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    &lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        &lt;<span style="color:#f92672">title</span>&gt;To do Tracker&lt;/<span style="color:#f92672">title</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:replace</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fragments/header :: header-css&#34;</span>/&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    &lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    &lt;<span style="color:#f92672">body</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:replace</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fragments/header :: header&#34;</span>/&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>            &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;table-striped&#39;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1&#39;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>                &lt;<span style="color:#f92672">thead</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>                &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>                    &lt;<span style="color:#f92672">th</span>&gt;Title&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>                    &lt;<span style="color:#f92672">th</span>&gt;Description&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>                    &lt;<span style="color:#f92672">th</span>&gt;Due Date&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>                    &lt;<span style="color:#f92672">th</span>&gt;Status&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>                    &lt;<span style="color:#f92672">th</span>&gt;No. Of Comments&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>                    &lt;<span style="color:#f92672">th</span>&gt;View&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>                    &lt;<span style="color:#f92672">th</span>&gt;Edit&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>                    &lt;<span style="color:#f92672">th</span>&gt;Delete&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>                &lt;/<span style="color:#f92672">thead</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>                &lt;<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>                    &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">th:each</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;todo : ${todoList}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>                        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todo.title}&#34;</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>                        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todo.description}&#34;</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>                        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todo.dueDate}&#34;</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>                        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todo.status}&#34;</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>                        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todo.todoTaskCommentsSet.size()}&#34;</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>                        &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>                            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">th:href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@{/singleItemView/view/__${todo.id}__}&#34;</span>&gt;&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span>&gt;VIEW&lt;/<span style="color:#f92672">button</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>                        &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>                        &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>                            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">th:href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@{/singleItemView/edit/__${todo.id}__}&#34;</span>&gt;&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span>&gt;EDIT&lt;/<span style="color:#f92672">button</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>                        &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>                        &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>                            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">th:href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@{/deleteById/__${todo.id}__}&#34;</span>&gt;&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-warning&#34;</span>&gt;DELETE&lt;/<span style="color:#f92672">button</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>                        &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>                    &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>                &lt;/<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>            &lt;/<span style="color:#f92672">table</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>        &lt;/<span style="color:#f92672">div</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>        &lt;<span style="color:#f92672">br</span>/&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:replace</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fragments/footer :: footer&#34;</span>/&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>    &lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p><strong>Highlighted lines(5,8,32)</strong> are using the <code>th:replace</code> <em>directive dialect</em> of the Thymeleaf to have the <em><strong>header</strong></em> and <em><strong>footer</strong></em> from the <strong>fragments templates</strong>, inserted into this template file.</p>
+<ol start="2">
+<li>Update <strong>application.properties</strong> in <code>/src/main/resources/</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#f92672">#=========================</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">#</span> <span style="color:#f92672">=</span> SERVER CONFIGURATION <span style="color:#f92672">=</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#f92672">#=========================</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>server.port<span style="color:#f92672">=</span><span style="color:#ae81ff">8081</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>server.servlet.contextPath<span style="color:#f92672">=/</span>todo<span style="color:#f92672">-</span>thymeleaf<span style="color:#f92672">/</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#f92672">#</span> <span style="color:#f92672">===============================</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#f92672">#</span> <span style="color:#f92672">=</span> LOGGING
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#f92672">#</span> <span style="color:#f92672">===============================</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#f92672">#</span> Logging <span style="color:#66d9ef">level</span> <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">each</span> packages
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>logging.<span style="color:#66d9ef">level</span>.com.myzonesoft.microservice.todo<span style="color:#f92672">=</span>INFO
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#f92672">#</span> Logging pattern <span style="color:#66d9ef">for</span> the console
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>logging.pattern.console<span style="color:#f92672">=</span> <span style="color:#f92672">%</span>d<span style="color:#960050;background-color:#1e0010">{</span>yyyy<span style="color:#f92672">-</span>MM<span style="color:#f92672">-</span>dd HH:mm:ss<span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#f92672">%-</span><span style="color:#ae81ff">5</span>p [<span style="color:#f92672">%</span><span style="color:#66d9ef">c</span>] <span style="color:#f92672">-</span> <span style="color:#f92672">%</span>msg<span style="color:#f92672">%</span>n
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#f92672">#</span> <span style="color:#66d9ef">User</span> Variables
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>base_uri<span style="color:#f92672">=</span>http:<span style="color:#f92672">//</span>localhost:<span style="color:#ae81ff">8080</span><span style="color:#f92672">/</span>Todo<span style="color:#f92672">/</span>
+</span></code></pre></div><p>Let us look at some of the Highlights:</p>
+<ul>
+<li><strong>Line# 4</strong>: we are using a different port (8081), since <em><strong>Spring Boot Microservice Project</strong></em> is running on port 8080.</li>
+<li><strong>Line#16</strong>: this is used as <code>base_uri</code> for calling the <em><strong>Spring Boot Microservice REST APIs</strong></em>.
+<ul>
+<li>Placing this in <code>application.properties</code> is useful when we move across different environments during deployments.</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>Add <strong>Controller</strong> = <code>com.myzonesoft.microservice.todo.controller.TodoViewController</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a6e22e">@Controller</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoViewController</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> RestTemplate restTemplate <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RestTemplate<span style="color:#f92672">();</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${base_uri}&#34;</span><span style="color:#f92672">)</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#66d9ef">private</span> String base_uri<span style="color:#f92672">;</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>   <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">)</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">gotoHome</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoList&#34;</span><span style="color:#f92672">,</span> restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">getForObject</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">,</span>List<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">));</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;index&#34;</span><span style="color:#f92672">;</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#f92672">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#f92672">}</span>
+</code></pre></div><p>Let us look at some of the Highlights:</p>
+<ul>
+<li><strong>Line# 1</strong>: We are using <code>@Controller</code> annotation.
+<ul>
+<li>Usually for Rest Client APIs, we use <code>@RestController</code>.</li>
+<li>However, in order to inform the <strong>Thymeleaf (Java Template Engine)</strong> to redirect the requests to <em>Thymeleaf templates</em>, we need to use <code>@Controller</code>.</li>
+<li>If we use <code>@RestController</code>, since it is a combination of <code>@Controller</code> and <code>@ResponseBody</code>, whatever we have in the <em>return statement, will be displayed on the UI</em>.</li>
+</ul>
+</li>
+<li><strong>Line# 4</strong>: We are using RestTemplate to invoke the <em><strong>Spring Boot Microservice REST APIs</strong></em>.</li>
+<li><strong>Line# 6-7</strong>: We are reading the value of the <code>base_uri</code> from the <strong>application.properties</strong> and assigning to a variable.</li>
+<li><strong>Line# 9-12</strong>: Method to call the <code>/findAll</code> REST API of the <em><strong>Spring Boot Microservice project</strong></em>.</li>
+<li><strong>Line# 12</strong>: Method returns the String value <strong>&ldquo;index&rdquo;</strong>.
+<ul>
+<li>Because we are using <code>@Controller</code>, <strong>Thymeleaf (Java Template Engine)</strong> will identify it as a call to the <em>Thymeleaf template</em> and tries to find the template with the name <code>index.html</code> in <code>/src/main/resources/templates</code>.</li>
+<li>Since we have the file <code>index.html</code> at that location, it will render that file.</li>
+</ul>
+</li>
+</ul>
+<p>Now, run the server using the Configuration settings as shown <a href="/post/microservice-springboot-h2/#running-the-spring-boot-project"
+ target="_blank">here</a>.</p>
+<p>We will see the page similar to below.</p>
+<blockquote>
+<p>Since we are on Development mode and our <code>spring.jpa.hibernate.ddl-auto=create-drop</code> in the main project, we do not see any records.</p>
+</blockquote>
+<p>
+  <figure>
+    <img src="images/home-page.jpeg" alt="home-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">/findAll REST API call</figcaption>
+  </figure>
+</p>
+<p>We will see how to create records in the next section of this article.</p>
+<hr>
+<h3 id="create-new-item">Create New Item</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Endpoint Name</th>
+<th style="text-align:center">Endpoint Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>/create</code></td>
+<td style="text-align:center"><em>For creating/adding new item to the Todo Tracker Application</em></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we will need to add/update following components:</p>
+<ol>
+<li>Update <code>/src/main/resources/templates/index.html</code> - add this line before the <code>&lt;table&gt;</code> attribute, for allowing users to add new items.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">th:href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@{/singleItemView/edit/0}&#34;</span>&gt;&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span>&gt;CREATE&lt;/<span style="color:#f92672">button</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>        &lt;<span style="color:#f92672">br</span>/&gt;
+</code></pre></div><ol start="2">
+<li>Update <code>com.myzonesoft.microservice.todo.controller.TodoViewController</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/singleItemView/{action}/{todoId}&#34;</span><span style="color:#f92672">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">goToSingleItemPage</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">,</span> <span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;action&#34;</span><span style="color:#f92672">)</span> String action<span style="color:#f92672">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>                                        <span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoId&#34;</span><span style="color:#f92672">)</span> String todoId<span style="color:#f92672">){</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    Todo todoItem <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Todo<span style="color:#f92672">(</span>0L<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>Long<span style="color:#f92672">.</span><span style="color:#a6e22e">parseLong</span><span style="color:#f92672">(</span>todoId<span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        todoItem <span style="color:#f92672">=</span> restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">getForObject</span><span style="color:#f92672">(</span>base_uri <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/find/&#34;</span> <span style="color:#f92672">+</span> todoId<span style="color:#f92672">,</span> Todo<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#f92672">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoItem&#34;</span><span style="color:#f92672">,</span> todoItem<span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoTaskComments&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> TodoTaskComments<span style="color:#f92672">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;action&#34;</span><span style="color:#f92672">,</span>action<span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoStatus&#34;</span><span style="color:#f92672">,</span>restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">getForObject</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/getStatus&#34;</span><span style="color:#f92672">,</span>List<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;singleItemPage&#34;</span><span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#f92672">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/createOrUpdate&#34;</span><span style="color:#f92672">,</span> consumes <span style="color:#f92672">=</span> MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_FORM_URLENCODED_VALUE</span><span style="color:#f92672">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">sendToCreate</span><span style="color:#f92672">(</span>Todo todoItem<span style="color:#f92672">,</span> TodoTaskComments todoTaskComments<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>todoItem<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">()</span> <span style="color:#f92672">!=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        todoTaskCommentsSet<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        todoItem<span style="color:#f92672">.</span><span style="color:#a6e22e">setTodoTaskCommentsSet</span><span style="color:#f92672">(</span>todoTaskCommentsSet<span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/update&#34;</span><span style="color:#f92672">,</span>todoItem<span style="color:#f92672">,</span>Todo<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">postForObject</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/create&#34;</span><span style="color:#f92672">,</span>todoItem<span style="color:#f92672">,</span>Todo<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    <span style="color:#f92672">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;redirect:/&#34;</span><span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>First method(<code>goToSingleItemPage</code>) will redirect requests from click of <strong>Create</strong> Button to new <code>singleItemPage.html</code>.</li>
+<li>Second method(<code>sendToCreate</code>) will call either <code>/create</code> or <code>/update</code> API of the <strong>Spring Boot Microservice Project</strong>.</li>
+</ul>
+<ol start="3">
+<li>Add <code>/src/main/resources/templates/singleItemPage.html</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span> <span style="color:#a6e22e">xmlns:th</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.thymeleaf.org&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span>&lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span>    &lt;<span style="color:#f92672">title</span>&gt;To do Tracker&lt;/<span style="color:#f92672">title</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:replace</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fragments/header :: header-css&#34;</span>/&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">addNewComments</span>(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">lTable</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;commentsTable&#34;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span>            <span style="color:#a6e22e">lTable</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">lTable</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;table&#34;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;none&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;table&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span>    &lt;/<span style="color:#f92672">script</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span>&lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span>&lt;<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:replace</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fragments/header :: header&#34;</span>/&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span>        &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#a6e22e">th:action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@{/createOrUpdate}&#34;</span> <span style="color:#a6e22e">th:object</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span>        &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;table-striped&#39;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1&#39;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span>            &lt;<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span>                &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">th:value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*{id}&#34;</span>/&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span>                &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span>                    &lt;<span style="color:#f92672">th</span>&gt;Title&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span>                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">th:if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem.title}&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span>                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">th:unless</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span>                            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;title&#39;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;title&#39;</span> <span style="color:#a6e22e">th:value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;*{title}&#39;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;35&#34;</span>/&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span>                        &lt;/<span style="color:#f92672">span</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span>                &lt;/<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span>                    &lt;<span style="color:#f92672">th</span>&gt;Description&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span>                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">th:if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem.description}&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span>                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">th:unless</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span>                            &lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;description&#39;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;description&#39;</span> <span style="color:#a6e22e">rows</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">cols</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;38&#34;</span> <span style="color:#a6e22e">th:value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;*{description}&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span>                                      <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem.description}&#34;</span>&gt;&lt;/<span style="color:#f92672">textarea</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span>                        &lt;/<span style="color:#f92672">span</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span>                &lt;/<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span>                    &lt;<span style="color:#f92672">th</span>&gt;Creation Date&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span>                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${#temporals.format(todoItem.creationDate, &#39;dd-MM-yyyy&#39;)}&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span>                &lt;/<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span>                    &lt;<span style="color:#f92672">th</span>&gt;Due Date&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span>                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">th:if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${#temporals.format(todoItem.dueDate, &#39;dd-MM-yyyy&#39;)}&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span>                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">th:unless</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span>                            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">th:field</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*{dueDate}&#34;</span> <span style="color:#a6e22e">th:value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*{dueDate}&#34;</span>/&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span>                        &lt;/<span style="color:#f92672">span</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span>                &lt;/<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span>                    &lt;<span style="color:#f92672">th</span>&gt;Status&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span>                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">th:if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span><span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;${todoItem.status}&#39;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span>                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">th:unless</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;view&#39;}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span>                            &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">th:field</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*{status}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span>                            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>&gt;--Select Status--&lt;/<span style="color:#f92672">option</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span>                            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">th:each</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;status : ${todoStatus}&#34;</span> <span style="color:#a6e22e">th:value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${status}&#34;</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${status}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span>                            &lt;/<span style="color:#f92672">option</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span>                        &lt;/<span style="color:#f92672">select</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span>                        &lt;/<span style="color:#f92672">span</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span>                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span>                &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">th:if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem.id &gt; 0}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span>                    &lt;<span style="color:#f92672">th</span>&gt;Comments&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span>                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span>                        &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;table-bordered&#39;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span>                            &lt;<span style="color:#f92672">thead</span> <span style="color:#a6e22e">th:if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem.todoTaskCommentsSet.size() &gt; 0}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span>                            &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span>                                &lt;<span style="color:#f92672">th</span>&gt;Creation Date&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span>                                &lt;<span style="color:#f92672">th</span>&gt;Description&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span>                            &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span>                            &lt;/<span style="color:#f92672">thead</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span>                            &lt;<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span>                                &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">th:each</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comments : ${todoItem.todoTaskCommentsSet}&#34;</span> <span style="color:#a6e22e">th:if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoItem.todoTaskCommentsSet.size() &gt; 0}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span>                                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span>                                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${#temporals.format(comments.creationDate, &#39;dd-MM-yyyy&#39;)}&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span>                                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span>                                    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">th:text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${comments.taskComments}&#34;</span>/&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span>                                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span>                                &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span>                                    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#a6e22e">th:if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;edit&#39; and todoItem.id &gt; 0}&#34;</span> <span style="color:#a6e22e">th:object</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoTaskComments}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span>                                        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">addNewComments()</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Add New Comments&#34;</span> /&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span>                                        &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;table-bordered&#39;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;commentsTable&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:none;&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span>                                                &lt;<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span>                                                    &lt;<span style="color:#f92672">th</span>&gt;Description&lt;/<span style="color:#f92672">th</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span>                                                    &lt;<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span>                                                        &lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">th:field</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*{taskComments}&#34;</span> <span style="color:#a6e22e">rows</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">cols</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;38&#34;</span>&gt;&lt;/<span style="color:#f92672">textarea</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span>                                                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span>                                                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span>                                        &lt;/<span style="color:#f92672">table</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span>                                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span>                                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span>                            &lt;/<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span>                        &lt;/<span style="color:#f92672">table</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span>                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span>                &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">th:if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${action == &#39;edit&#39;}&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span>                    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span>&gt;Submit&lt;/<span style="color:#f92672">button</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span>                    &lt;/<span style="color:#f92672">td</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span>                &lt;/<span style="color:#f92672">tr</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span>            &lt;/<span style="color:#f92672">tbody</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span>        &lt;/<span style="color:#f92672">table</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span>        &lt;/<span style="color:#f92672">form</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span>    &lt;/<span style="color:#f92672">div</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span>    &lt;<span style="color:#f92672">br</span>/&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">th:replace</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fragments/footer :: footer&#34;</span>/&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span>&lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>When the user clicks on the <strong>Create</strong> button in the <code>index.html</code> page, they will be redirected to <code>singleViewPage.html</code> page, where they can create new todo Item by entering the details and click <strong>Submit</strong>.</p>
+<p>
+  <figure>
+    <img src="images/create-page.jpeg" alt="create-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Create Page</figcaption>
+  </figure>
+</p>
+<p>
+  <figure>
+    <img src="images/after-create.jpeg" alt="after-create.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Home page after Create</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="view-single-item">View Single Item</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Endpoint Name</th>
+<th style="text-align:center">Endpoint Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>/find/{id}</code></td>
+<td style="text-align:center"><em>To view only one item from the Todo Tracker Application</em></td>
+</tr>
+</tbody>
+</table>
+<p>When the user clicks on <strong>View</strong> button in the <code>index.html</code> page, they will be redirected to <code>singleViewPage.html</code> page and based on the <code>action=view</code>, they will be displayed the single item.
+
+  <figure>
+    <img src="images/view-page.jpeg" alt="view-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Single Item View Page</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="edit-single-item">Edit Single Item</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Endpoint Name</th>
+<th style="text-align:center">Endpoint Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>/update</code></td>
+<td style="text-align:center"><em>For updating/editing item from the Todo Tracker Application</em></td>
+</tr>
+</tbody>
+</table>
+<p>When the user clicks on <strong>Edit</strong> button in the <code>index.html</code> page, they will be redirected to <code>singleViewPage.html</code> page and based on the <code>action=edit</code>, they will be allowed to edit the existing item. User can add comments also, by clicking the <strong>Add New Comments</strong> button.
+
+  <figure>
+    <img src="images/edit-page.jpeg" alt="edit-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Edit Page</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="delete-an-item">Delete an Item</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Endpoint Name</th>
+<th style="text-align:center">Endpoint Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>/deleteById/{id}</code></td>
+<td style="text-align:center"><em>For deleting an item from the Todo Tracker Application</em></td>
+</tr>
+</tbody>
+</table>
+<p>For consuming this endpoint, we will need to update following components:</p>
+<ol>
+<li>Update <code>com.myzonesoft.microservice.todo.controller.TodoViewController</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/deleteById/{id}&#34;</span><span style="color:#f92672">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">sendToDeleteById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/deleteById/&#34;</span><span style="color:#f92672">+</span>id<span style="color:#f92672">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;redirect:/&#34;</span><span style="color:#f92672">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#f92672">}</span>
+</code></pre></div><p>When user clicks on Delete button, the item will be deleted.
+
+  <figure>
+    <img src="images/delete-button.jpeg" alt="delete-button.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Deleting the Item</figcaption>
+  </figure>
+</p>
+<p>
+  <figure>
+    <img src="images/home-page.jpeg" alt="home-page.jpeg">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">After Deleting the Item</figcaption>
+  </figure>
+</p>
+<hr>
+<h2 id="working-demo">Working Demo</h2>
+<p>The above explained concept is shown below.
+<video src="videos/mvc-springboot-thymeleaf-working-demo.webm" controls="yes"></p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>With this setup, we have come to an end of this article and we have seen how we can create <em>MVC application using Spring Boot and Thymeleaf</em> and calling the REST APIs created in another Spring Boot project.</p>
+<p>Complete code for this project can be found at GitHub <a href="https://github.com/prasbhat/mvc-springboot-thymeleaf"
+ target="_blank">here</a>. Go ahead and clone it.</p>
+<p><em>Instructions on how to clone the code repository and run the project are provided on the GitHub project page.</em></p>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/java/" rel="tag">Java</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/microservice/" rel="tag">Microservice</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/spring-boot/" rel="tag">Spring Boot</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/thymeleaf/" rel="tag">Thymeleaf</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/resttemplate/" rel="tag">RestTemplate</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Prashanth Bhat</span>
+	</div>
+	<div class="authorbox__description">
+		<strong>Prashanth Bhat</strong> has about 15+ years of <strong>Developing/Coding</strong> knowledge. <em>He loves to work with Technology, learn new things and share his learnings with others</em>. For comments/feedback you can reach <a href="mailto:bhatpp.android@gmail.com">here</a>.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/mvc-springboot-h2-jsp/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Develop MVC Application using Spring Boot and JSP</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/getting-started-with-hugo/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Migration from Wordpress to Hugo and GitHub Pages</p>
+		</a>
+	</div>
+</nav>
+
+
+<script src="https://utteranc.es/client.js"
+        repo="https://github.com/prasbhat/prasbhat.github.io"
+        issue-term="pathname"
+        label="Comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://myzonesoft.com/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/getting-started-with-hugo/">Migration from Wordpress to Hugo and GitHub Pages</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/mvc-springboot-thymeleaf/">Develop MVC Application using Spring Boot and Thymeleaf</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/mvc-springboot-h2-jsp/">Develop MVC Application using Spring Boot and JSP</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/microservice-springboot-mongodb/">Develop Microservice Application Using Spring Boot and MongoDB Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/microservice-springboot-h2/">Develop Microservice Application Using Spring Boot and H2 Database</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/microservice/">Microservice</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">4</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/mvc/">MVC</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/no-sql-database/">No SQL Database</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/relational-database/">Relational Database</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/spring-boot-application/">Spring Boot Application</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">4</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/website-migration/">Website Migration</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/wordpress/">Wordpress</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="GitHub">GitHub (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github-pages/" title="GitHub Pages">GitHub Pages (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/h2-database/" title="H2 Database">H2 Database (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hibernate/" title="Hibernate">Hibernate (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/jsp/" title="JSP">JSP (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/microservice/" title="Microservice">Microservice (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb-database/" title="MongoDB Database">MongoDB Database (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/resttemplate/" title="RestTemplate">RestTemplate (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/thymeleaf/" title="Thymeleaf">Thymeleaf (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-hosting/" title="Web Hosting">Web Hosting (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/wordpress/" title="Wordpress">Wordpress (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020-2022 myzonesoft.com
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

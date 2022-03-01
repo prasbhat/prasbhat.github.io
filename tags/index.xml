@@ -53,6 +53,51 @@
     </item>
     
     <item>
+      <title>Java</title>
+      <link>https://myzonesoft.com/tags/java/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservice</title>
+      <link>https://myzonesoft.com/tags/microservice/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RestTemplate</title>
+      <link>https://myzonesoft.com/tags/resttemplate/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/resttemplate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Boot</title>
+      <link>https://myzonesoft.com/tags/spring-boot/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thymeleaf</title>
+      <link>https://myzonesoft.com/tags/thymeleaf/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/thymeleaf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>H2 Database</title>
       <link>https://myzonesoft.com/tags/h2-database/</link>
       <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
@@ -71,47 +116,11 @@
     </item>
     
     <item>
-      <title>Java</title>
-      <link>https://myzonesoft.com/tags/java/</link>
-      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>JSP</title>
       <link>https://myzonesoft.com/tags/jsp/</link>
       <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://myzonesoft.com/tags/jsp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Microservice</title>
-      <link>https://myzonesoft.com/tags/microservice/</link>
-      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/microservice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RestTemplate</title>
-      <link>https://myzonesoft.com/tags/resttemplate/</link>
-      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/resttemplate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spring Boot</title>
-      <link>https://myzonesoft.com/tags/spring-boot/</link>
-      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/spring-boot/</guid>
       <description></description>
     </item>
     

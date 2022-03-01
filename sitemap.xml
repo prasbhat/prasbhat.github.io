@@ -44,6 +44,36 @@
     <loc>https://myzonesoft.com/about/</loc>
     <lastmod>2021-12-31T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/java/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/microservice/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/categories/microservice/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/categories/mvc/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/categories/relational-database/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/resttemplate/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/spring-boot/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/categories/spring-boot-application/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/thymeleaf/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://myzonesoft.com/post/mvc-springboot-h2-jsp/</loc>
     <lastmod>2021-07-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -53,31 +83,7 @@
     <loc>https://myzonesoft.com/tags/hibernate/</loc>
     <lastmod>2021-07-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/tags/java/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://myzonesoft.com/tags/jsp/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/microservice/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/microservice/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/mvc/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/relational-database/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/resttemplate/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/spring-boot/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/spring-boot-application/</loc>
     <lastmod>2021-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/microservice-springboot-mongodb/</loc>

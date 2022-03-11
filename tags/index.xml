@@ -53,11 +53,38 @@
     </item>
     
     <item>
+      <title>AngularJS</title>
+      <link>https://myzonesoft.com/tags/angularjs/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/angularjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Frontend</title>
+      <link>https://myzonesoft.com/tags/frontend/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Java</title>
       <link>https://myzonesoft.com/tags/java/</link>
       <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://myzonesoft.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://myzonesoft.com/tags/javascript/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -71,15 +98,6 @@
     </item>
     
     <item>
-      <title>RestTemplate</title>
-      <link>https://myzonesoft.com/tags/resttemplate/</link>
-      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/resttemplate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Spring Boot</title>
       <link>https://myzonesoft.com/tags/spring-boot/</link>
       <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
@@ -89,9 +107,18 @@
     </item>
     
     <item>
+      <title>RestTemplate</title>
+      <link>https://myzonesoft.com/tags/resttemplate/</link>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/resttemplate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Thymeleaf</title>
       <link>https://myzonesoft.com/tags/thymeleaf/</link>
-      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://myzonesoft.com/tags/thymeleaf/</guid>
       <description></description>

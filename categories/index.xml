@@ -35,6 +35,15 @@
     </item>
     
     <item>
+      <title>AngularJS</title>
+      <link>https://myzonesoft.com/categories/angularjs/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/categories/angularjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Microservice</title>
       <link>https://myzonesoft.com/categories/microservice/</link>
       <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
@@ -62,9 +71,18 @@
     </item>
     
     <item>
+      <title>Spring Boot</title>
+      <link>https://myzonesoft.com/categories/spring-boot/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://myzonesoft.com/categories/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Spring Boot Application</title>
       <link>https://myzonesoft.com/categories/spring-boot-application/</link>
-      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://myzonesoft.com/categories/spring-boot-application/</guid>
       <description></description>

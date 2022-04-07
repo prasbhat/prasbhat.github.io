@@ -56,16 +56,30 @@ if (!doNotTrack) {
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/">
+			<a class="menu__link" href="/categories/spring-boot/">
 				
-				<span class="menu__text">Articles</span>
+				<span class="menu__text">Spring Boot</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/frontend/">
+				
+				<span class="menu__text">Frontend</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/hugo/">
+				
+				<span class="menu__text">Hugo</span>
 				
 			</a>
 		</li>
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Us</span>
 				
 			</a>
 		</li>
@@ -78,7 +92,7 @@ if (!doNotTrack) {
 			<div class="primary">
 			
 <main class="main" role="main">
-	<article class="post">
+	<article class="post" autonumbering>
 		<header class="post__header"><div class="views">
     <span class="views">
         <img src="https://visitor-badge.glitch.me/badge?page_id=https%3a%2f%2fmyzonesoft.com%2fpost%2fmicroservice-springboot-h2%2f" alt="Views"/>
@@ -89,7 +103,7 @@ if (!doNotTrack) {
 			
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-21T00:00:00Z">February 21, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/microservice/" rel="category">Microservice</a>, <a class="meta__link" href="/categories/relational-database/" rel="category">Relational Database</a>, <a class="meta__link" href="/categories/spring-boot-application/" rel="category">Spring Boot Application</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-21T00:00:00Z">July 21, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/spring-boot/" rel="category">Spring Boot</a>
 	</span>
 </div><div class="meta__item meta__icon">
 <svg width="18" height="18" viewBox="0 0 88.965 88.966">
@@ -100,7 +114,7 @@ if (!doNotTrack) {
 		c11.719,0,21.25-9.532,21.25-21.25C85.825,56.158,76.547,46.746,65.049,46.49z M64.575,81.966c-7.857,0-14.25-6.394-14.25-14.25
 		s6.393-14.25,14.25-14.25s14.25,6.394,14.25,14.25S72.432,81.966,64.575,81.966z"/>	
 </svg>
- 16 Minutes   Read   
+ 17 Minutes   Read   
 </div></div>
 		</header>
 		
@@ -220,7 +234,7 @@ if (!doNotTrack) {
 <p>Provide all the required information like: <em>Groups, Artifacts, Name, Description, Package Name, Java Version, Dependencies (Maven)</em> and click on <em><strong>Generate</strong></em>.
 
   <figure>
-    <img src="images/spring-boot-initializr.jpeg" alt="spring-boot-initializr.jpeg">
+    <img src="images/spring-boot-initializr.jpeg" alt="spring-boot-initializr.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Spring Boot Initializr</figcaption>
   </figure>
 </p>
@@ -233,7 +247,7 @@ if (!doNotTrack) {
 <p>After all the dependencies are resolved, the project structure should be similar to below:
 
   <figure>
-    <img src="images/vanilla-springboot-project-structure.jpeg" alt="vanilla-springboot-project-structure.jpeg">
+    <img src="images/vanilla-springboot-project-structure.jpeg" alt="vanilla-springboot-project-structure.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Bootstrap Spring Boot Project Structure</figcaption>
   </figure>
 </p>
@@ -241,7 +255,7 @@ if (!doNotTrack) {
 <p>When you try to launch the project, without correct JDK mapped in IntelliJ IDE, you get below mentioned error:
 
   <figure>
-    <img src="images/no-sdk-error.jpeg" alt="no-sdk-error.jpeg">
+    <img src="images/no-sdk-error.jpeg" alt="no-sdk-error.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">No SDK Error</figcaption>
   </figure>
 </p>
@@ -253,7 +267,7 @@ if (!doNotTrack) {
 <p>Click on <strong>Add Configuration</strong> on top right corner, as shown below:
 
   <figure>
-    <img src="images/ide-add-maven-run-configuration.jpeg" alt="ide-add-maven-run-configuration.jpeg">
+    <img src="images/ide-add-maven-run-configuration.jpeg" alt="ide-add-maven-run-configuration.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Configuration to add Maven inside IDE</figcaption>
   </figure>
 </p>
@@ -262,7 +276,7 @@ if (!doNotTrack) {
 <p>Click on <em><strong>+</strong></em> symbol and select <em><strong>Maven</strong></em> from dropdown list and in the <em><strong>Command line</strong></em> type: <code>spring-boot:run</code> and click <em><strong>Apply</strong></em> and then click <strong>OK</strong>.
 
   <figure>
-    <img src="images/add-maven-run.jpeg" alt="add-maven-run.jpeg">
+    <img src="images/add-maven-run.jpeg" alt="add-maven-run.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">NOTE: Name and Working directory will be auto populated. you can change the Name, if you wish.</figcaption>
   </figure>
 </p>
@@ -274,14 +288,14 @@ if (!doNotTrack) {
 <p>If everything is setup properly, you will see that the <em><strong>Run</strong></em> window will be launched and <strong>Embedded Tomcat server</strong> will be started on <em>Port 8080 (default port)</em>.
 
   <figure>
-    <img src="images/tomcat-server-running.jpeg" alt="tomcat-server-running.jpeg">
+    <img src="images/tomcat-server-running.jpeg" alt="tomcat-server-running.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Tomcat Server Running Successfully</figcaption>
   </figure>
 </p>
 <p>Go to any Browser and type – <code>http://localhost:8080/</code>
 
   <figure>
-    <img src="images/whitelabel-error.jpeg" alt="whitelabel-error.jpeg">
+    <img src="images/whitelabel-error.jpeg" alt="whitelabel-error.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Whitelabel Error</figcaption>
   </figure>
 </p>
@@ -295,7 +309,7 @@ if (!doNotTrack) {
 <p>The final project structure will look something like this:
 
   <figure>
-    <img src="images/final-project-structure-2.jpeg" alt="final-project-structure-2.jpeg">
+    <img src="images/final-project-structure-2.jpeg" alt="final-project-structure-2.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Final Project Structure</figcaption>
   </figure>
 </p>
@@ -305,11 +319,21 @@ if (!doNotTrack) {
 <p>Currently, we have not specified any <strong>Context Path</strong> in our project, meaning API endpoints will be placed immediately after the <em>Domain URL</em> <code>&lt;hostname:port&gt;/&lt;api-endpoint&gt;</code> (like <code>http://localhost:8080/findAll</code> ).</p>
 <p>However, it is always advisable to have a <strong>Context Path</strong> specific to projects, that will help in easily fetching project specific endpoints. Let us add the <strong>Context Path</strong>, relevant to this project.</p>
 <p>It can be added in the <code>application.properties</code> file, located at <code>src/main/resources/</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#f92672">#=========================</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#f92672">#</span> <span style="color:#f92672">=</span> SERVER CONFIGURATION <span style="color:#f92672">=</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#f92672">#=========================</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>server.servlet.contextPath<span style="color:#f92672">=/</span>Todo<span style="color:#f92672">/</span>
-</code></pre></div><p>After this change, the endpoint looks like: <code>http://localhost:8080/Todo/findAll</code> and the response we receive from the server, would still remain same.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">#=========================</span>
+<span style="color:#f92672">#</span> <span style="color:#f92672">=</span> SERVER CONFIGURATION <span style="color:#f92672">=</span>
+<span style="color:#f92672">#=========================</span>
+server.servlet.contextPath<span style="color:#f92672">=/</span>Todo<span style="color:#f92672">/</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>After this change, the endpoint looks like: <code>http://localhost:8080/Todo/findAll</code> and the response we receive from the server, would still remain same.</p>
 <hr>
 <h3 id="adding-database">Adding Database</h3>
 <p>We will first setup the database for persisting the data. I will be using the <strong>Relational Database</strong> known as <em><strong>H2 Database</strong></em>. It is called the <em>Java SQL database</em>.</p>
@@ -336,37 +360,76 @@ if (!doNotTrack) {
 <li>Add the <em>H2 Database and JPA related dependencies in the pom.xml</em> (if not added already during project initialization <a href="#create-bootstrap-spring-boot-application"
 >here</a>)</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#f92672">dependency</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>	&lt;<span style="color:#f92672">groupId</span>&gt;org.springframework.boot&lt;/<span style="color:#f92672">groupId</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>	&lt;<span style="color:#f92672">artifactId</span>&gt;spring-boot-starter-data-jpa&lt;/<span style="color:#f92672">artifactId</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>&lt;/<span style="color:#f92672">dependency</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>&lt;<span style="color:#f92672">dependency</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>	&lt;<span style="color:#f92672">groupId</span>&gt;com.h2database&lt;/<span style="color:#f92672">groupId</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>	&lt;<span style="color:#f92672">artifactId</span>&gt;h2&lt;/<span style="color:#f92672">artifactId</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>&lt;/<span style="color:#f92672">dependency</span>&gt;
-</code></pre></div><ol start="2">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">dependency</span>&gt;
+	&lt;<span style="color:#f92672">groupId</span>&gt;org.springframework.boot&lt;/<span style="color:#f92672">groupId</span>&gt;
+	&lt;<span style="color:#f92672">artifactId</span>&gt;spring-boot-starter-data-jpa&lt;/<span style="color:#f92672">artifactId</span>&gt;
+&lt;/<span style="color:#f92672">dependency</span>&gt;
+&lt;<span style="color:#f92672">dependency</span>&gt;
+	&lt;<span style="color:#f92672">groupId</span>&gt;com.h2database&lt;/<span style="color:#f92672">groupId</span>&gt;
+	&lt;<span style="color:#f92672">artifactId</span>&gt;h2&lt;/<span style="color:#f92672">artifactId</span>&gt;
+&lt;/<span style="color:#f92672">dependency</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
 <li>Update the <code>/src/main/resources/application.properties</code>, to add the H2 configuration</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#f92672">#</span> <span style="color:#f92672">===============================</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">#</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">SOURCE</span> <span style="color:#f92672">-</span> H2
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#f92672">#</span> <span style="color:#f92672">===============================</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>spring.datasource.url<span style="color:#f92672">=</span>jdbc:h2:<span style="color:#f92672">~/</span>todoApplication;DB_CLOSE_ON_EXIT<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>spring.datasource.username<span style="color:#f92672">=</span>root
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>spring.datasource.password<span style="color:#f92672">=</span>root
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>spring.datasource.driver<span style="color:#f92672">-</span><span style="color:#66d9ef">class</span><span style="color:#f92672">-</span>name<span style="color:#f92672">=</span>org.h2.Driver
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#f92672">#</span> Allows Hibernate <span style="color:#66d9ef">to</span> generate <span style="color:#66d9ef">SQL</span> optimized <span style="color:#66d9ef">for</span> a particular DBMS
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>spring.jpa.properties.hibernate.dialect<span style="color:#f92672">=</span>org.hibernate.dialect.H2Dialect
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>spring.h2.console.enabled<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#f92672">#</span> <span style="color:#f92672">===============================</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#f92672">#</span> <span style="color:#f92672">=</span> JPA <span style="color:#f92672">/</span> HIBERNATE
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#f92672">#</span> <span style="color:#f92672">===============================</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#f92672">#</span> <span style="color:#66d9ef">Show</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">not</span> log <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">each</span> <span style="color:#66d9ef">sql</span> query
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>spring.jpa.<span style="color:#66d9ef">show</span><span style="color:#f92672">-</span><span style="color:#66d9ef">sql</span><span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#f92672">#</span> Hibernate ddl auto (<span style="color:#66d9ef">create</span>, <span style="color:#66d9ef">create</span><span style="color:#f92672">-</span><span style="color:#66d9ef">drop</span>, <span style="color:#66d9ef">update</span>): <span style="color:#66d9ef">with</span> <span style="color:#e6db74">&#34;update&#34;</span> the <span style="color:#66d9ef">database</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#f92672">#</span> <span style="color:#66d9ef">schema</span> will be automatically updated accordingly <span style="color:#66d9ef">to</span> java entities 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#f92672">#</span> <span style="color:#66d9ef">found</span> <span style="color:#66d9ef">in</span> the project
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>spring.jpa.hibernate.ddl<span style="color:#f92672">-</span>auto<span style="color:#f92672">=</span><span style="color:#66d9ef">create</span><span style="color:#f92672">-</span><span style="color:#66d9ef">drop</span>
-</code></pre></div><p>Let us look at some of the values that are used for configuring Database.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">#</span> <span style="color:#f92672">===============================</span>
+<span style="color:#f92672">#</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">SOURCE</span> <span style="color:#f92672">-</span> H2
+<span style="color:#f92672">#</span> <span style="color:#f92672">===============================</span>
+spring.datasource.url<span style="color:#f92672">=</span>jdbc:h2:<span style="color:#f92672">~/</span>todoApplication;DB_CLOSE_ON_EXIT<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>
+spring.datasource.username<span style="color:#f92672">=</span>root
+spring.datasource.password<span style="color:#f92672">=</span>root
+spring.datasource.driver<span style="color:#f92672">-</span><span style="color:#66d9ef">class</span><span style="color:#f92672">-</span>name<span style="color:#f92672">=</span>org.h2.Driver
+<span style="color:#f92672">#</span> Allows Hibernate <span style="color:#66d9ef">to</span> generate <span style="color:#66d9ef">SQL</span> optimized <span style="color:#66d9ef">for</span> a particular DBMS
+spring.jpa.properties.hibernate.dialect<span style="color:#f92672">=</span>org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>
+<span style="color:#f92672">#</span> <span style="color:#f92672">===============================</span>
+<span style="color:#f92672">#</span> <span style="color:#f92672">=</span> JPA <span style="color:#f92672">/</span> HIBERNATE
+<span style="color:#f92672">#</span> <span style="color:#f92672">===============================</span>
+<span style="color:#f92672">#</span> <span style="color:#66d9ef">Show</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">not</span> log <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">each</span> <span style="color:#66d9ef">sql</span> query
+spring.jpa.<span style="color:#66d9ef">show</span><span style="color:#f92672">-</span><span style="color:#66d9ef">sql</span><span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>
+<span style="color:#f92672">#</span> Hibernate ddl auto (<span style="color:#66d9ef">create</span>, <span style="color:#66d9ef">create</span><span style="color:#f92672">-</span><span style="color:#66d9ef">drop</span>, <span style="color:#66d9ef">update</span>): <span style="color:#66d9ef">with</span> <span style="color:#e6db74">&#34;update&#34;</span> the <span style="color:#66d9ef">database</span>
+<span style="color:#f92672">#</span> <span style="color:#66d9ef">schema</span> will be automatically updated accordingly <span style="color:#66d9ef">to</span> java entities 
+<span style="color:#f92672">#</span> <span style="color:#66d9ef">found</span> <span style="color:#66d9ef">in</span> the project
+spring.jpa.hibernate.ddl<span style="color:#f92672">-</span>auto<span style="color:#f92672">=</span><span style="color:#66d9ef">create</span><span style="color:#f92672">-</span><span style="color:#66d9ef">drop</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Let us look at some of the values that are used for configuring Database.</p>
 <ul>
 <li><strong>Datasource URL, username, password and driver class</strong> are required for connecting to database. <code>/todoApplication</code> is the name of my database.</li>
 <li><code>DB_CLOSE_ON_EXIT=FALSE</code> – By Default, <em><strong>Embedded H2 Database</strong></em> shuts down the database, when the application is closed. To prevent that from happening, we can use this statement.</li>
@@ -385,14 +448,14 @@ It takes following values:
 <p><em>Once the above configuration changes are complete</em>, <strong>Restart</strong> the Spring Boot Application and next time when Tomcat server starts, it would have created <em>H2 Database</em>.
 
   <figure>
-    <img src="images/h2-database-start.jpeg" alt="h2-database-start.jpeg">
+    <img src="images/h2-database-start.jpeg" alt="h2-database-start.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Tomcat Server re-starts and creates tables in H2 Database</figcaption>
   </figure>
 </p>
 <p>Open any browser and type in <code>http://localhost:8080/Todo/h2-console</code>, you get the <em><strong>H2 Console Login Screen</strong></em> similar to below:
 
   <figure>
-    <img src="images/h2-console-login-page.jpeg" alt="h2-console-login-page.jpeg">
+    <img src="images/h2-console-login-page.jpeg" alt="h2-console-login-page.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">H2 Console Login Page</figcaption>
   </figure>
 </p>
@@ -409,26 +472,51 @@ It takes following values:
 <ol>
 <li><code>com.myzonesoft.microservice.todo.model.Todo</code></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a6e22e">@Entity</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Todo</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#a6e22e">@Id</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">AUTO</span><span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#66d9ef">private</span> Long id<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#66d9ef">private</span> String title<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#66d9ef">private</span> String description<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#66d9ef">private</span> LocalDate dueDate<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#66d9ef">private</span> String status<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#a6e22e">@JsonManagedReference</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#a6e22e">@OneToMany</span><span style="color:#f92672">(</span>mappedBy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;todoTask&#34;</span><span style="color:#f92672">,</span> fetch <span style="color:#f92672">=</span> FetchType<span style="color:#f92672">.</span><span style="color:#a6e22e">EAGER</span><span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#66d9ef">private</span> Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="color:#75715e">//Empty Constructor
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#75715e"></span>    <span style="color:#75715e">//Constructor with all fields
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#75715e"></span>    <span style="color:#75715e">//Getters and Setters
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#75715e"></span>    <span style="color:#75715e">//toString method for converting POJO to string 
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div><p>Some of the Hibernate Annotations used in the above code are explained below:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Entity</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Todo</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Id</span>
+    <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">AUTO</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> Long id<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String title<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String description<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> LocalDate dueDate<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String status<span style="color:#f92672">;</span>
+    
+    <span style="color:#a6e22e">@JsonManagedReference</span>
+    <span style="color:#a6e22e">@OneToMany</span><span style="color:#f92672">(</span>mappedBy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;todoTask&#34;</span><span style="color:#f92672">,</span> fetch <span style="color:#f92672">=</span> FetchType<span style="color:#f92672">.</span><span style="color:#a6e22e">EAGER</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet<span style="color:#f92672">;</span>
+
+    <span style="color:#75715e">//Empty Constructor
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//Constructor with all fields
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//Getters and Setters
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//toString method for converting POJO to string 
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Some of the Hibernate Annotations used in the above code are explained below:</p>
 <ul>
 <li><code>@Entity</code>– Letting the Hibernate know that this <em><strong>POJO Model Class</strong></em> is to be converted to Table in the database and its private variables into Columns of that Table.</li>
 <li><code>@Id</code>– To identify the primary key of the table.</li>
@@ -443,26 +531,51 @@ It takes following values:
 <ol start="2">
 <li><code>com.myzonesoft.microservice.todo.model.TodoTaskComments</code></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a6e22e">@Entity</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTaskComments</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#a6e22e">@Id</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">AUTO</span><span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#66d9ef">private</span> Long todoTaskCommentsId<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#66d9ef">private</span> String taskComments<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#a6e22e">@JsonBackReference</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#a6e22e">@ManyToOne</span><span style="color:#f92672">(</span>fetch <span style="color:#f92672">=</span> FetchType<span style="color:#f92672">.</span><span style="color:#a6e22e">EAGER</span><span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#a6e22e">@JoinColumn</span><span style="color:#f92672">(</span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">,</span> nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#66d9ef">private</span> Todo todoTask<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="color:#75715e">//Empty Constructor
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#75715e"></span>    <span style="color:#75715e">//Constructor with all fields
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#75715e"></span>    <span style="color:#75715e">//Getters and Setters
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#75715e"></span>    <span style="color:#75715e">//toString method for converting POJO to string 
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div><p>Some of the Hibernate Annotations used in the above code are explained below:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Entity</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTaskComments</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Id</span>
+    <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">AUTO</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> Long todoTaskCommentsId<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">private</span> String taskComments<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@JsonBackReference</span>
+    <span style="color:#a6e22e">@ManyToOne</span><span style="color:#f92672">(</span>fetch <span style="color:#f92672">=</span> FetchType<span style="color:#f92672">.</span><span style="color:#a6e22e">EAGER</span><span style="color:#f92672">)</span>
+    <span style="color:#a6e22e">@JoinColumn</span><span style="color:#f92672">(</span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">,</span> nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> Todo todoTask<span style="color:#f92672">;</span>
+
+    <span style="color:#75715e">//Empty Constructor
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//Constructor with all fields
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//Getters and Setters
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//toString method for converting POJO to string 
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Some of the Hibernate Annotations used in the above code are explained below:</p>
 <ul>
 <li><code>@JsonBackReference</code>- As explained above, this is used for referring the Back Reference Class.</li>
 <li><code>@ManyToOne</code>- Reverse mapping for the OneToMany explained above.
@@ -477,9 +590,17 @@ It takes following values:
 <ol>
 <li><code>com.myzonesoft.microservice.todo.repository.TodoRepository</code></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">@Repository</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoRepository</span> <span style="color:#66d9ef">extends</span> JpaRepository<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">,</span> Long<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-</code></pre></div><p>Some of the Hibernate Annotations used in the above code are explained below:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Repository</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoRepository</span> <span style="color:#66d9ef">extends</span> JpaRepository<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">,</span> Long<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Some of the Hibernate Annotations used in the above code are explained below:</p>
 <ul>
 <li><code>@Repository</code>- This Hibernate Annotation represents this interface as the Repository, meaning a <em><strong>Data Transfer Object(DTO) Class</strong></em>.</li>
 <li>This interface extends <code>org.springframework.data.jpa.repository.JpaRepository</code>.</li>
@@ -488,13 +609,22 @@ It takes following values:
 <ol start="2">
 <li><code>com.myzonesoft.microservice.todo.repository.TodoTaskCommentsRepository</code></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">@Repository</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoTaskCommentsRepository</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#66d9ef">extends</span> JpaRepository<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">,</span> Long<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-</code></pre></div><p>Now if we login to the H2 database, we see the below schema:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Repository</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoTaskCommentsRepository</span> 
+    <span style="color:#66d9ef">extends</span> JpaRepository<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">,</span> Long<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now if we login to the H2 database, we see the below schema:
 
   <figure>
-    <img src="images/h2-database-schema.jpeg" alt="h2-database-schema.jpeg">
+    <img src="images/h2-database-schema.jpeg" alt="h2-database-schema.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">H2 Database Schema</figcaption>
   </figure>
 </p>
@@ -521,87 +651,177 @@ It takes following values:
 <ul>
 <li><strong>Service Interface</strong> = <code>com.myzonesoft.microservice.todo.service.TodoService</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoService</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    Todo <span style="color:#a6e22e">createOrUpdate</span><span style="color:#f92672">(</span>Todo todoItem<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getTodoStatusAsList</span><span style="color:#f92672">();</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#f92672">}</span>
-</code></pre></div><p><em>Service Interface will be auto-wired into the Controller Class</em> and this Service Interface will be implemented by different Classes.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoService</span> <span style="color:#f92672">{</span>
+    Todo <span style="color:#a6e22e">createOrUpdate</span><span style="color:#f92672">(</span>Todo todoItem<span style="color:#f92672">);</span>
+    List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getTodoStatusAsList</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><em>Service Interface will be auto-wired into the Controller Class</em> and this Service Interface will be implemented by different Classes.</p>
 <ul>
 <li><strong>Service Implementation Class</strong> = <code>com.myzonesoft.microservice.todo.service.TodoServiceImpl</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a6e22e">@Service</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoServiceImpl</span> <span style="color:#66d9ef">implements</span> TodoService<span style="color:#f92672">,</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    TodoApplicationConstants <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#75715e">//Autowire the JPA Repository
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Autowired</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#66d9ef">private</span> TodoRepository todoRepository<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#a6e22e">@Autowired</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#66d9ef">private</span> TodoTaskCommentsRepository todoTaskCommentsRepository<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#a6e22e">@Override</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#66d9ef">public</span> Todo <span style="color:#a6e22e">createOrUpdate</span><span style="color:#f92672">(</span>Todo todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        <span style="color:#75715e">//Get the list of TodoTaskComments from the Request Body
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#75715e"></span>        Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet <span style="color:#f92672">=</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>            todoItem<span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoTaskCommentsSet</span><span style="color:#f92672">();</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        <span style="color:#75715e">//Save the TodoTaskComments before Todo Item can be saved
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>todoTaskCommentsSet <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>TodoTaskComments todoTaskComments <span style="color:#f92672">:</span> todoTaskCommentsSet<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoTaskCommentsId</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>                        <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">getTaskComments</span><span style="color:#f92672">().</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>                    todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">setTodoTask</span><span style="color:#f92672">(</span>todoItem<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>                    todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDate</span><span style="color:#f92672">(</span>LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">());</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>                    todoTaskCommentsRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>                <span style="color:#f92672">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>            <span style="color:#f92672">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        <span style="color:#f92672">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>        todoItem<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDate</span><span style="color:#f92672">(</span>LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">());</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>        todoItem <span style="color:#f92672">=</span> todoRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>todoItem<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>        <span style="color:#66d9ef">return</span> todoItem<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>    <span style="color:#f92672">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    <span style="color:#75715e">/**
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span style="color:#75715e">     * Method implementation for listing all the values of the Status 
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span style="color:#75715e">     * variable from the Enum
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span style="color:#75715e">     * @return List of all values of the Status variable
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span style="color:#75715e">     */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>    <span style="color:#a6e22e">@Override</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getTodoStatusAsList</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>        List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> statusList <span style="color:#f92672">=</span> Stream<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>TODO_STATUS<span style="color:#f92672">.</span><span style="color:#a6e22e">values</span><span style="color:#f92672">())</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>                                        <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>TODO_STATUS<span style="color:#f92672">::</span>name<span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>                                        <span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>        <span style="color:#66d9ef">return</span> statusList<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>    <span style="color:#f92672">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Service</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoServiceImpl</span> <span style="color:#66d9ef">implements</span> TodoService<span style="color:#f92672">,</span> 
+    TodoApplicationConstants <span style="color:#f92672">{</span>
+
+    <span style="color:#75715e">//Autowire the JPA Repository
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Autowired</span>
+    <span style="color:#66d9ef">private</span> TodoRepository todoRepository<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Autowired</span>
+    <span style="color:#66d9ef">private</span> TodoTaskCommentsRepository todoTaskCommentsRepository<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Todo <span style="color:#a6e22e">createOrUpdate</span><span style="color:#f92672">(</span>Todo todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">//Get the list of TodoTaskComments from the Request Body
+</span><span style="color:#75715e"></span>        Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet <span style="color:#f92672">=</span> 
+            todoItem<span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoTaskCommentsSet</span><span style="color:#f92672">();</span>
+
+        <span style="color:#75715e">//Save the TodoTaskComments before Todo Item can be saved
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>todoTaskCommentsSet <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>TodoTaskComments todoTaskComments <span style="color:#f92672">:</span> todoTaskCommentsSet<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoTaskCommentsId</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> 
+                        <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">getTaskComments</span><span style="color:#f92672">().</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                    todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">setTodoTask</span><span style="color:#f92672">(</span>todoItem<span style="color:#f92672">);</span>
+                    todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDate</span><span style="color:#f92672">(</span>LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">());</span>
+                    todoTaskCommentsRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">);</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+
+        todoItem<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDate</span><span style="color:#f92672">(</span>LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">());</span>
+        todoItem <span style="color:#f92672">=</span> todoRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>todoItem<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> todoItem<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Method implementation for listing all the values of the Status 
+</span><span style="color:#75715e">     * variable from the Enum
+</span><span style="color:#75715e">     * @return List of all values of the Status variable
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getTodoStatusAsList</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> statusList <span style="color:#f92672">=</span> Stream<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>TODO_STATUS<span style="color:#f92672">.</span><span style="color:#a6e22e">values</span><span style="color:#f92672">())</span>
+                                        <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>TODO_STATUS<span style="color:#f92672">::</span>name<span style="color:#f92672">)</span>
+                                        <span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
+        <span style="color:#66d9ef">return</span> statusList<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>Util Interface</strong>, for storing all the constants, enums and other values= <code>com.myzonesoft.microservice.todo.util.TodoApplicationConstants</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoApplicationConstants</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#75715e">//Enums
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">enum</span> TODO_STATUS <span style="color:#f92672">{</span>NOT_STARTED<span style="color:#f92672">,</span> IN_PROGRESS<span style="color:#f92672">,</span> ON_HOLD<span style="color:#f92672">,</span> COMPLETED<span style="color:#f92672">,</span> DEFERRED<span style="color:#f92672">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoApplicationConstants</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">//Enums
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">enum</span> TODO_STATUS <span style="color:#f92672">{</span>NOT_STARTED<span style="color:#f92672">,</span> IN_PROGRESS<span style="color:#f92672">,</span> ON_HOLD<span style="color:#f92672">,</span> COMPLETED<span style="color:#f92672">,</span> DEFERRED<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>Controller Class</strong>, for exposing the REST APIs = <code>com.myzonesoft.microservice.todo.controller.TodoController</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#a6e22e">@RestController</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoController</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#a6e22e">@Autowired</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#66d9ef">private</span> TodoService todoService<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/create&#34;</span><span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#66d9ef">public</span> Todo <span style="color:#a6e22e">createTodoItem</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> Todo todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        todoItem <span style="color:#f92672">=</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">createOrUpdate</span><span style="color:#f92672">(</span>todoItem<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        <span style="color:#66d9ef">return</span> todoItem<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#f92672">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#f92672">}</span>
-</code></pre></div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RestController</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoController</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Autowired</span>
+    <span style="color:#66d9ef">private</span> TodoService todoService<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/create&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> Todo <span style="color:#a6e22e">createTodoItem</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> Todo todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        todoItem <span style="color:#f92672">=</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">createOrUpdate</span><span style="color:#f92672">(</span>todoItem<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> todoItem<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
 <table><tbody><tr><td><strong>HTTP Method</strong></td><td>POST</td></tr><tr><td><strong>Endpoint URL</strong></td><td><em>http://localhost:8080/Todo/create</em></td></tr><tr><td><strong>Request Header</strong></td><td><code>Content-type: application/json</code></td></tr><tr><td><strong>Request Body</strong></td><td><code><em>{<br>&nbsp;&nbsp;"title":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"description":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"dueDate":&nbsp;"2022-01-31",<br>&nbsp;&nbsp;"status":&nbsp;"NOT_STARTED",<br>&nbsp;&nbsp;"todoTaskCommentsSet":&nbsp;[]<br>}</em></code></td></tr></tbody></table>
 <p>
   <figure>
-    <img src="images/create-api-response-2.jpeg" alt="create-api-response.jpeg">
+    <img src="images/create-api-response-2.jpeg" alt="create-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for /create POST API call</figcaption>
   </figure>
 </p>
@@ -625,25 +845,55 @@ It takes following values:
 <ul>
 <li><strong>Service Interface</strong> = <code>com.myzonesoft.microservice.todo.service.TodoService</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#75715e">//GET - /findAll
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#75715e"></span>List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
-</code></pre></div><ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//GET - /findAll
+</span><span style="color:#75715e"></span>List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>Service Implementation Class</strong> = <code>com.myzonesoft.microservice.todo.service.TodoServiceImpl</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">@Override</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAll</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> todoList <span style="color:#f92672">=</span> todoRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#66d9ef">return</span> todoList<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAll</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> todoList <span style="color:#f92672">=</span> todoRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">return</span> todoList<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>Controller Class</strong> = <code>com.myzonesoft.microservice.todo.controller.TodoController</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#75715e">//REST API is exposed as &#39;/findAll&#39;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#75715e"></span><span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/findAll&#34;</span><span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAllTodoList</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#66d9ef">return</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#f92672">}</span>
-</code></pre></div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//REST API is exposed as &#39;/findAll&#39;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/findAll&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAllTodoList</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
 <table>
 <thead>
 <tr>
@@ -660,7 +910,7 @@ It takes following values:
 </table>
 <p>
   <figure>
-    <img src="images/find-all-api-response-2.jpeg" alt="find-all-api-response.jpeg">
+    <img src="images/find-all-api-response-2.jpeg" alt="find-all-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for findAll GET API call</figcaption>
   </figure>
 </p>
@@ -684,26 +934,57 @@ It takes following values:
 <ul>
 <li><strong>Service interface</strong> = <code>com.myzonesoft.microservice.todo.service.TodoService</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#75715e">//GET - /find/{id}
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#75715e"></span>Todo <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> id<span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//GET - /find/{id}
+</span><span style="color:#75715e"></span>Todo <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> id<span style="color:#f92672">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>Service Implementation Class</strong> = <code>com.myzonesoft.microservice.todo.service.TodoServiceImpl</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#75715e">//GET - /find/{id}
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Override</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#66d9ef">public</span> Todo <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    Optional<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> todoItem <span style="color:#f92672">=</span> todoRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    <span style="color:#66d9ef">return</span> todoItem<span style="color:#f92672">.</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//GET - /find/{id}
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> Todo <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    Optional<span style="color:#f92672">&lt;</span>Todo<span style="color:#f92672">&gt;</span> todoItem <span style="color:#f92672">=</span> todoRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">return</span> todoItem<span style="color:#f92672">.</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>Controller Class</strong> = <code>com.myzonesoft.microservice.todo.controller.TodoController</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#75715e">//GET - /find/{id}
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#75715e"></span><span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/find/{id}&#34;</span><span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#66d9ef">public</span> Todo <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#66d9ef">return</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#f92672">}</span>
-</code></pre></div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//GET - /find/{id}
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/find/{id}&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> Todo <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
 <table>
 <thead>
 <tr>
@@ -720,7 +1001,7 @@ It takes following values:
 </table>
 <p>
   <figure>
-    <img src="images/find-one-api-response-2.jpeg" alt="find-one-api-response.jpeg">
+    <img src="images/find-one-api-response-2.jpeg" alt="find-one-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for find/{id} GET API call</figcaption>
   </figure>
 </p>
@@ -744,14 +1025,24 @@ It takes following values:
 <ul>
 <li><strong>Controller Class</strong> = <code>com.myzonesoft.microservice.todo.controller.TodoController</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">@PutMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/update&#34;</span><span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#66d9ef">public</span> Todo <span style="color:#a6e22e">updateTodoItem</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> Todo todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#66d9ef">return</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">createOrUpdate</span><span style="color:#f92672">(</span>todoItem<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#f92672">}</span>
-</code></pre></div><table><tbody><tr><td><strong>HTTP Method</strong></td><td>PUT</td></tr><tr><td><strong>Endpoint URL</strong></td><td><em>http://localhost:8080/Todo/update</em></td></tr><tr><td><strong>Request Header</strong></td><td><code>Content-type: application/json</code></td></tr><tr><td><strong>Request Body</strong></td><td><code><em>{<br>&nbsp;&nbsp;"id":&nbsp;1,<br>&nbsp;&nbsp;"title":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"description":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"creationDate":&nbsp;"2022-01-03",<br>&nbsp;&nbsp;"dueDate":&nbsp;"2022-01-31",<br>&nbsp;&nbsp;"status":&nbsp;"IN_PROGRESS",<br>&nbsp;&nbsp;"todoTaskCommentsSet":&nbsp;[{<br>&nbsp;&nbsp;&nbsp;&nbsp;"taskComments":&nbsp;"Testing comments 1"<br>&nbsp;&nbsp;}]<br>}</em></code></td></tr></tbody></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@PutMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/update&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> Todo <span style="color:#a6e22e">updateTodoItem</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> Todo todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">createOrUpdate</span><span style="color:#f92672">(</span>todoItem<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><table><tbody><tr><td><strong>HTTP Method</strong></td><td>PUT</td></tr><tr><td><strong>Endpoint URL</strong></td><td><em>http://localhost:8080/Todo/update</em></td></tr><tr><td><strong>Request Header</strong></td><td><code>Content-type: application/json</code></td></tr><tr><td><strong>Request Body</strong></td><td><code><em>{<br>&nbsp;&nbsp;"id":&nbsp;1,<br>&nbsp;&nbsp;"title":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"description":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"creationDate":&nbsp;"2022-01-03",<br>&nbsp;&nbsp;"dueDate":&nbsp;"2022-01-31",<br>&nbsp;&nbsp;"status":&nbsp;"IN_PROGRESS",<br>&nbsp;&nbsp;"todoTaskCommentsSet":&nbsp;[{<br>&nbsp;&nbsp;&nbsp;&nbsp;"taskComments":&nbsp;"Testing comments 1"<br>&nbsp;&nbsp;}]<br>}</em></code></td></tr></tbody></table>
 <p>
   <figure>
-    <img src="images/update-api-response-2.jpeg" alt="update-api-response.jpeg">
+    <img src="images/update-api-response-2.jpeg" alt="update-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for /update PUT API call</figcaption>
   </figure>
 </p>
@@ -775,40 +1066,85 @@ It takes following values:
 <ul>
 <li><strong>Service interface</strong> = <code>com.myzonesoft.microservice.todo.service.TodoService</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#75715e">//DELETE - /deleteById/{id}
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#75715e"></span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> id<span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//DELETE - /deleteById/{id}
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> id<span style="color:#f92672">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>Service Implementation Class</strong> = <code>com.myzonesoft.microservice.todo.service.TodoServiceImpl</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">//DELETE - /deleteById/{id}
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Override</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#66d9ef">boolean</span> isDeleted <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        <span style="color:#75715e">//Delete the TaskComments before deleting the Todo Tasks.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#75715e"></span>        Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet <span style="color:#f92672">=</span> findById<span style="color:#f92672">(</span>id<span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>            <span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoTaskCommentsSet</span><span style="color:#f92672">();</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>todoTaskCommentsSet <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>            <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>TodoTaskComments todoTaskComments<span style="color:#f92672">:</span> todoTaskCommentsSet<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>                todoTaskCommentsRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>            <span style="color:#f92672">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        <span style="color:#f92672">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        todoRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        isDeleted <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception ex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        ex<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    <span style="color:#f92672">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#66d9ef">return</span> isDeleted<span style="color:#f92672">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//DELETE - /deleteById/{id}
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">boolean</span> isDeleted <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">//Delete the TaskComments before deleting the Todo Tasks.
+</span><span style="color:#75715e"></span>        Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet <span style="color:#f92672">=</span> findById<span style="color:#f92672">(</span>id<span style="color:#f92672">)</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoTaskCommentsSet</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>todoTaskCommentsSet <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>TodoTaskComments todoTaskComments<span style="color:#f92672">:</span> todoTaskCommentsSet<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                todoTaskCommentsRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        todoRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+        isDeleted <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception ex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        ex<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> isDeleted<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>Controller Class</strong> = <code>com.myzonesoft.microservice.todo.controller.TodoController</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#75715e">//DELETE - /deleteById/{id}
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#75715e"></span><span style="color:#a6e22e">@DeleteMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/deleteById/{id}&#34;</span><span style="color:#f92672">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#66d9ef">return</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#f92672">}</span>
-</code></pre></div><p>Now, <em>Open any REST client</em> and provide values, as per the below table</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//DELETE - /deleteById/{id}
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@DeleteMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/deleteById/{id}&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now, <em>Open any REST client</em> and provide values, as per the below table</p>
 <table>
 <thead>
 <tr>
@@ -826,7 +1162,7 @@ It takes following values:
 <p>Response from the Server
 
   <figure>
-    <img src="images/delete-api-response.jpeg" alt="delete-api-response.jpeg">
+    <img src="images/delete-api-response.jpeg" alt="delete-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for /deleteById/{id} DELETE API call</figcaption>
   </figure>
 </p>
@@ -837,12 +1173,23 @@ It takes following values:
  target="_blank">CORS (Cross-Origin Resource Sharing) policy</a></strong></em>, where in by default, servers block request coming from other servers or domains.</p>
 <p>Let’s configure Rest Resource to allow access from specific server(s), in order to allow our frontend applications(will be developed later) to make REST APIs calls to this Spring Boot Server.</p>
 <p>Update the <strong>Rest Controller</strong> = <code>com.myzonesoft.microservice.todo.controller.TodoController</code>, to allow request from <strong>ReactJS, VueJS</strong> <code>(http://localhost:3000/)</code> and <strong>AngularJS</strong> <code>(http://localhost:4200/)</code> servers.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">@CrossOrigin</span><span style="color:#f92672">(</span>origins <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;http://localhost:4200&#34;</span> <span style="color:#f92672">})</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#a6e22e">@RestController</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoController</span> <span style="color:#f92672">{</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#75715e">//Other Codes
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div><hr>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@CrossOrigin</span><span style="color:#f92672">(</span>origins <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;http://localhost:4200&#34;</span> <span style="color:#f92672">})</span>
+<span style="color:#a6e22e">@RestController</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoController</span> <span style="color:#f92672">{</span> 
+    <span style="color:#75715e">//Other Codes
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
 <h2 id="conclusion">Conclusion</h2>
 <p>With these endpoints’ setup, we have come to an end of this article and we have enabled <em><strong>CRUD (Create, Read, Update, Delete) Operations</strong></em> <em>using below REST API Endpoints</em> and they are ready to be consumed by any frontend applications or other microservices.</p>
 <table>
@@ -898,6 +1245,9 @@ It takes following values:
 			<a class="tags__link btn" href="/tags/microservice/" rel="tag">Microservice</a>
 		</li>
 		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/relational-database/" rel="tag">Relational Database</a>
+		</li>
+		<li class="tags__item">
 			<a class="tags__link btn" href="/tags/spring-boot/" rel="tag">Spring Boot</a>
 		</li>
 	</ul>
@@ -923,100 +1273,17 @@ It takes following values:
 		</a>
 	</div>
 </nav>
-
+<script src="https://utteranc.es/client.js"
+	repo="prasbhat/prasbhat.github.io"
+	issue-term="title"
+	label="Comments"
+	theme="github-light"
+	crossorigin="anonymous"
+	async>
+</script>
 
 			</div>
-			<aside class="sidebar"><div class="widget-search widget">
-	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
-		<label>
-			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
-		</label>
-		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://myzonesoft.com/" />
-	</form>
-</div>
-<div class="widget-recent widget">
-	<h4 class="widget__title">Recent Posts</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/getting-started-with-hugo/">Migration from Wordpress to Hugo and GitHub Pages</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/mvc-frontend-angularjs/">Develop MVC Application using Spring Boot and AngularJS</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/mvc-springboot-thymeleaf/">Develop MVC Application using Spring Boot and Thymeleaf</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/mvc-springboot-h2-jsp/">Develop MVC Application using Spring Boot and JSP</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/microservice-springboot-mongodb/">Develop Microservice Application Using Spring Boot and MongoDB Database</a></li>
-		</ul>
-	</div>
-</div>
-<div class="widget-categories widget">
-	<h4 class="widget__title">Categories</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/angularjs/">AngularJS</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/microservice/">Microservice</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">5</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/mvc/">MVC</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">3</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/no-sql-database/">No SQL Database</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/relational-database/">Relational Database</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/spring-boot/">Spring Boot</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/spring-boot-application/">Spring Boot Application</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/website-migration/">Website Migration</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/wordpress/">Wordpress</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-		</ul>
-	</div>
-</div>
-<div class="widget-taglist widget">
-	<h4 class="widget__title">Tags</h4>
-	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/angularjs/" title="AngularJS">AngularJS (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="Frontend">Frontend (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="GitHub">GitHub (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/github-pages/" title="GitHub Pages">GitHub Pages (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/h2-database/" title="H2 Database">H2 Database (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/hibernate/" title="Hibernate">Hibernate (3)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (5)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="Javascript">Javascript (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/jsp/" title="JSP">JSP (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/microservice/" title="Microservice">Microservice (5)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb-database/" title="MongoDB Database">MongoDB Database (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/resttemplate/" title="RestTemplate">RestTemplate (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (5)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/thymeleaf/" title="Thymeleaf">Thymeleaf (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/web-hosting/" title="Web Hosting">Web Hosting (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/wordpress/" title="Wordpress">Wordpress (1)</a>
-	</div>
-</div>
-</aside>
+			
 		</div>
 		<footer class="footer">
 	<div class="container footer__container flex">

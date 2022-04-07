@@ -3,117 +3,114 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://myzonesoft.com/categories/</loc>
-    <lastmod>2022-01-05T13:03:48+05:30</lastmod>
+    <lastmod>2022-03-18T12:54:13+05:30</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/tags/github/</loc>
-    <lastmod>2022-01-05T13:03:48+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/github-pages/</loc>
-    <lastmod>2022-01-05T13:03:48+05:30</lastmod>
+    <loc>https://myzonesoft.com/post/enhancing-hugo-project/</loc>
+    <lastmod>2022-03-18T12:54:13+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/hugo/</loc>
-    <lastmod>2022-01-05T13:03:48+05:30</lastmod>
+    <lastmod>2022-03-18T12:54:13+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/categories/hugo/</loc>
+    <lastmod>2022-03-18T12:54:13+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/</loc>
+    <lastmod>2022-03-18T12:54:13+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/post/</loc>
+    <lastmod>2022-03-18T12:54:13+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/</loc>
+    <lastmod>2022-03-18T12:54:13+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/github-pages/</loc>
     <lastmod>2022-01-05T13:03:48+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/getting-started-with-hugo/</loc>
     <lastmod>2022-01-05T13:03:48+05:30</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/</loc>
-    <lastmod>2022-01-05T13:03:48+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/post/</loc>
-    <lastmod>2022-01-05T13:03:48+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/</loc>
-    <lastmod>2022-01-05T13:03:48+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/web-hosting/</loc>
-    <lastmod>2022-01-05T13:03:48+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/website-migration/</loc>
+    <loc>https://myzonesoft.com/tags/website-migration/</loc>
     <lastmod>2022-01-05T13:03:48+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/wordpress/</loc>
     <lastmod>2022-01-05T13:03:48+05:30</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/categories/wordpress/</loc>
-    <lastmod>2022-01-05T13:03:48+05:30</lastmod>
-  </url><url>
     <loc>https://myzonesoft.com/about/</loc>
     <lastmod>2021-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/tags/angularjs/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/angularjs/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/post/mvc-frontend-angularjs/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+    <loc>https://myzonesoft.com/post/mvc-frontend-react/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/frontend/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/tags/java/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+    <loc>https://myzonesoft.com/categories/frontend/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/javascript/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/tags/microservice/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+    <loc>https://myzonesoft.com/tags/mvc/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/categories/microservice/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+    <loc>https://myzonesoft.com/tags/reactjs/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/categories/mvc/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+    <loc>https://myzonesoft.com/tags/typescript/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/categories/relational-database/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+    <loc>https://myzonesoft.com/tags/angularjs/</loc>
+    <lastmod>2021-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/tags/spring-boot/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/spring-boot/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+    <loc>https://myzonesoft.com/post/mvc-frontend-angularjs/</loc>
+    <lastmod>2021-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</loc>
-    <lastmod>2021-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/java/</loc>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/microservice/</loc>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/relational-database/</loc>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/resttemplate/</loc>
-    <lastmod>2021-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/categories/spring-boot-application/</loc>
-    <lastmod>2021-08-12T00:00:00+00:00</lastmod>
+    <loc>https://myzonesoft.com/tags/spring-boot/</loc>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/categories/spring-boot/</loc>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/thymeleaf/</loc>
-    <lastmod>2021-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/mvc-springboot-h2-jsp/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/h2-database/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/hibernate/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/jsp/</loc>
-    <lastmod>2021-07-22T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/microservice-springboot-mongodb/</loc>
-    <lastmod>2021-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/mongodb-database/</loc>
-    <lastmod>2021-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/categories/no-sql-database/</loc>
-    <lastmod>2021-06-10T00:00:00+00:00</lastmod>
+    <loc>https://myzonesoft.com/tags/no-sql-database/</loc>
+    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/microservice-springboot-h2/</loc>
-    <lastmod>2021-02-21T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-21T00:00:00+00:00</lastmod>
   </url>
 </urlset>

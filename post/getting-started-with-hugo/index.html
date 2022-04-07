@@ -56,16 +56,30 @@ if (!doNotTrack) {
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/">
+			<a class="menu__link" href="/categories/spring-boot/">
 				
-				<span class="menu__text">Articles</span>
+				<span class="menu__text">Spring Boot</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/frontend/">
+				
+				<span class="menu__text">Frontend</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/hugo/">
+				
+				<span class="menu__text">Hugo</span>
 				
 			</a>
 		</li>
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Us</span>
 				
 			</a>
 		</li>
@@ -78,7 +92,7 @@ if (!doNotTrack) {
 			<div class="primary">
 			
 <main class="main" role="main">
-	<article class="post">
+	<article class="post" autonumbering>
 		<header class="post__header"><div class="views">
     <span class="views">
         <img src="https://visitor-badge.glitch.me/badge?page_id=https%3a%2f%2fmyzonesoft.com%2fpost%2fgetting-started-with-hugo%2f" alt="Views"/>
@@ -89,7 +103,7 @@ if (!doNotTrack) {
 			
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-01-05T13:03:48&#43;05:30">January 05, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">Hugo</a>, <a class="meta__link" href="/categories/wordpress/" rel="category">Wordpress</a>, <a class="meta__link" href="/categories/website-migration/" rel="category">Website Migration</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-01-05T13:03:48&#43;05:30">January 05, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">Hugo</a>
 	</span>
 </div><div class="meta__item meta__icon">
 <svg width="18" height="18" viewBox="0 0 88.965 88.966">
@@ -175,7 +189,7 @@ if (!doNotTrack) {
  target="_blank">Hugo Releases</a> page.
 
   <figure>
-    <img src="images/hugo-releases-page.jpeg" alt="hugo-releases-page.jpeg">
+    <img src="images/hugo-releases-page.jpeg" alt="hugo-releases-page.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Releases Page</figcaption>
   </figure>
 </li>
@@ -183,7 +197,7 @@ if (!doNotTrack) {
 <li>Find the <strong>Windows</strong> files near the bottom (they’re in alphabetical order, so <em>Windows</em> is last) – download either the <em>32-bit or 64-bit</em> file depending on whether you have <em>32-bit or 64-bit Windows</em>.
 
   <figure>
-    <img src="images/hugo-releases-assets.jpeg" alt="hugo-releases-assets.jpeg">
+    <img src="images/hugo-releases-assets.jpeg" alt="hugo-releases-assets.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Releases Assets Section</figcaption>
   </figure>
 </li>
@@ -192,7 +206,7 @@ if (!doNotTrack) {
 <li>You should now have three new files: The <em>hugo executable (hugo.exe)</em>, <em>LICENSE</em> and <em>README.md</em>.
 
   <figure>
-    <img src="images/hugo-installed-folder.jpeg" alt="hugo-installed-folder.jpeg">
+    <img src="images/hugo-installed-folder.jpeg" alt="hugo-installed-folder.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Installed on Local System</figcaption>
   </figure>
 </li>
@@ -210,7 +224,7 @@ if (!doNotTrack) {
 <li>Click <em>OK</em> at every window to exit.
 
   <figure>
-    <img src="images/windows-path-settings.jpeg" alt="windows-path-settings.jpeg">
+    <img src="images/windows-path-settings.jpeg" alt="windows-path-settings.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Windows 10 PATH settings for Hugo Executable</figcaption>
   </figure>
 </li>
@@ -221,7 +235,7 @@ if (!doNotTrack) {
 <li>Open the command prompt(or Powershell), type <code>hugo help</code> and press the <em>Enter</em> key. You should see output that starts with:
 
   <figure>
-    <img src="images/hugo-help-command.jpeg" alt="hugo-help-command.jpeg">
+    <img src="images/hugo-help-command.jpeg" alt="hugo-help-command.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">hugo help command</figcaption>
   </figure>
 </li>
@@ -233,14 +247,14 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new site myzonesoft-hugo
 </code></pre></div><p>
   <figure>
-    <img src="images/hugo-new-site-command.jpeg" alt="hugo-new-site-command.jpeg">
+    <img src="images/hugo-new-site-command.jpeg" alt="hugo-new-site-command.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">hugo new site command</figcaption>
   </figure>
 </p>
 <p>You should now have a directory at <em><strong>&laquo;DESTINATION_FOLDER&raquo;/myzonesoft-hugo</strong></em>. Change into that directory and list the contents. You should get output similar to the following:
 
   <figure>
-    <img src="images/hugo-folder-creation.jpeg" alt="hugo-folder-creation.jpeg">
+    <img src="images/hugo-folder-creation.jpeg" alt="hugo-folder-creation.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">hugo boilerplate folder structure</figcaption>
   </figure>
 </p>
@@ -257,10 +271,19 @@ if (!doNotTrack) {
 <p>Install the selected theme into the Projects <code>themes/&lt;&lt;THEME_NAME&gt;&gt;</code> directory.</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>cd myzonesoft-hugo
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>git init
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>git clone https://github.com/Vimux/Mainroad.git themes/mainroad
-</code></pre></div><ol start="3">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd myzonesoft-hugo
+git init
+git clone https://github.com/Vimux/Mainroad.git themes/mainroad
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
 <li>Now let the Hugo know, which theme to use. Open the <code>config.toml</code> and enter the below line</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mainroad&#34;</span>
@@ -269,7 +292,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo server -D
 </code></pre></div><p>
   <figure>
-    <img src="images/start-hugo-server.jpeg" alt="start-hugo-server.jpeg">
+    <img src="images/start-hugo-server.jpeg" alt="start-hugo-server.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Server with Drafts Enabled</figcaption>
   </figure>
 </p>
@@ -277,7 +300,7 @@ if (!doNotTrack) {
  target="_blank">http://localhost:1313/</a>.
 
   <figure>
-    <img src="images/hugo-website.jpeg" alt="hugo-website.jpeg">
+    <img src="images/hugo-website.jpeg" alt="hugo-website.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Website</figcaption>
   </figure>
 </p>
@@ -288,7 +311,7 @@ You can manually create content files (for example as <code>content/&lt;CATEGORY
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new post/my-first-post/index.md
 </code></pre></div><p>
   <figure>
-    <img src="images/hugo-create-new-content.jpeg" alt="hugo-create-new-content.jpeg">
+    <img src="images/hugo-create-new-content.jpeg" alt="hugo-create-new-content.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Create New Content</figcaption>
   </figure>
 </p>
@@ -327,7 +350,7 @@ draft: true
 <p>Choose what to Export(Choose- <em>All content</em>) and Click on <strong>Download Export File</strong> button.
 
   <figure>
-    <img src="images/wordpress-export-tool.jpeg" alt="wordpress-export-tool.jpeg">
+    <img src="images/wordpress-export-tool.jpeg" alt="wordpress-export-tool.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Wordpress Export Tool</figcaption>
   </figure>
 </p>
@@ -382,7 +405,7 @@ draft: true
 <li>Click on <strong>Create repository</strong> button.
 
   <figure>
-    <img src="images/github-create-repo-for-github-pages.jpeg" alt="github-create-repo-for-github-pages.jpeg">
+    <img src="images/github-create-repo-for-github-pages.jpeg" alt="github-create-repo-for-github-pages.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Create Repository for GitHub Pages</figcaption>
   </figure>
 </li>
@@ -391,7 +414,7 @@ draft: true
 <li>Once the repository is created, you will be presented with the empty repository welcome page.
 
   <figure>
-    <img src="images/github-empty-repo.jpeg" alt="github-empty-repo.jpeg">
+    <img src="images/github-empty-repo.jpeg" alt="github-empty-repo.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">GitHub Empty Repo Welcome Page</figcaption>
   </figure>
 </li>
@@ -408,25 +431,37 @@ draft: true
 <p>This will create a <code>public</code> folder, it contains the web files(might include .HTML, .css, .js, etc.) that Hugo automatically generates. <em>These are the published files that are used for hosting</em>.
 
   <figure>
-    <img src="images/hugo-build.jpeg" alt="hugo-build.jpeg">
+    <img src="images/hugo-build.jpeg" alt="hugo-build.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Build</figcaption>
   </figure>
 </p>
 <ol start="2">
 <li>In terminal, go to the directory of the <code>public</code> folder, then run following commands:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>cd public
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>git init
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>git add .
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>git remote add origin https://github.com/<span style="color:#e6db74">&lt;&lt;USERNAME&gt;&gt;/&lt;&lt;USERNAME</span>&gt;&gt;.github.io.git
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>git commit -m <span style="color:#e6db74">&#34;first commit for website launch&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>git push origin master
-</code></pre></div><ol start="3">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd public
+git init
+git add .
+git remote add origin https://github.com/<span style="color:#e6db74">&lt;&lt;USERNAME&gt;&gt;/&lt;&lt;USERNAME</span>&gt;&gt;.github.io.git
+git commit -m <span style="color:#e6db74">&#34;first commit for website launch&#34;</span>
+git push origin master
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
 <li>
 <p>After running the above command, <em><strong>&laquo;USERNAME&raquo;.github.io</strong></em> is updated with the code from the <code>public</code> folder.
 
   <figure>
-    <img src="images/github-first-commit.jpeg" alt="github-first-commit.jpeg">
+    <img src="images/github-first-commit.jpeg" alt="github-first-commit.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">First Commit into the GitHub Repo</figcaption>
   </figure>
 </p>
@@ -438,7 +473,7 @@ draft: true
 <p>After the workflow finishes execution, we can view our new website on the link: <strong>https://&laquo;USERNAME&raquo;.github.io</strong>
 
   <figure>
-    <img src="images/github-pages-website.jpeg" alt="github-pages-website.jpeg">
+    <img src="images/github-pages-website.jpeg" alt="github-pages-website.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Website Launched on Github Pages Successfully</figcaption>
   </figure>
 </p>
@@ -455,7 +490,7 @@ draft: true
 <li>Under <em><strong>&ldquo;Custom domain&rdquo;</strong></em>, type your <strong>&laquo;YOUR-EXISTING-DOMAIN&raquo;</strong>, then click <strong>Save</strong>. This will create a commit that adds a <code>CNAME</code> record file in the root of your publishing source. <strong>DO NOT DELETE THIS FILE.</strong>
 
   <figure>
-    <img src="images/github-pages-custom-domain.jpeg" alt="github-pages-custom-domain.jpeg">
+    <img src="images/github-pages-custom-domain.jpeg" alt="github-pages-custom-domain.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Custom Domain changes on GitHub Pages</figcaption>
   </figure>
 </li>
@@ -474,7 +509,7 @@ draft: true
 <p>Since I have already hosted my website through <strong>Wordpress</strong>, in the <strong>Manage DNS</strong> section, I see entries for <strong>Wordpress Nameservers</strong> and hence <em>GoDaddy will not allow to add new DNS Records</em>.
 
   <figure>
-    <img src="images/godaddy-custom-wp-name-servers.jpeg" alt="godaddy-custom-wp-name-servers.jpeg">
+    <img src="images/godaddy-custom-wp-name-servers.jpeg" alt="godaddy-custom-wp-name-servers.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Custom Wordpress Nameservers used in GoDaddy</figcaption>
   </figure>
 </p>
@@ -486,7 +521,7 @@ draft: true
 <p>Once the changes are effective, we will see <strong>DNS Records</strong> section filled with some <em>default values from GoDaddy</em>.
 
   <figure>
-    <img src="images/godaddy-default-dns-records.jpeg" alt="godaddy-default-dns-records.jpeg">
+    <img src="images/godaddy-default-dns-records.jpeg" alt="godaddy-default-dns-records.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Default DNS Records entries by GoDaddy</figcaption>
   </figure>
 </p>
@@ -556,7 +591,7 @@ draft: true
 </blockquote>
 <p>
   <figure>
-    <img src="images/myzonesoft-hugo-site.jpeg" alt="myzonesoft-hugo-site.jpeg">
+    <img src="images/myzonesoft-hugo-site.jpeg" alt="myzonesoft-hugo-site.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">My existing domain website hosted with Hugo contents</figcaption>
   </figure>
 </p>
@@ -575,6 +610,8 @@ draft: true
 </ul>
 </blockquote>
 </blockquote>
+<p>If you want to learn about how to enhance your Hugo project, with some additional features, read <a href="/post/enhancing-hugo-project/"
+ target="_blank">this article</a></p>
 		</div>
 		<footer class="post__footer">
 			
@@ -591,10 +628,7 @@ draft: true
 			<a class="tags__link btn" href="/tags/github-pages/" rel="tag">GitHub Pages</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/web-hosting/" rel="tag">Web Hosting</a>
-		</li>
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/github/" rel="tag">GitHub</a>
+			<a class="tags__link btn" href="/tags/website-migration/" rel="tag">Website Migration</a>
 		</li>
 	</ul>
 </div>
@@ -613,106 +647,29 @@ draft: true
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/mvc-frontend-angularjs/" rel="prev">
+		<a class="pager__link" href="/post/mvc-frontend-react/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">Develop MVC Application using Spring Boot and AngularJS</p>
+			<p class="pager__title">Develop MVC Application using TypeScript and ReactJS</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/enhancing-hugo-project/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Enhancing Hugo Project</p>
 		</a>
 	</div>
 </nav>
-
+<script src="https://utteranc.es/client.js"
+	repo="prasbhat/prasbhat.github.io"
+	issue-term="title"
+	label="Comments"
+	theme="github-light"
+	crossorigin="anonymous"
+	async>
+</script>
 
 			</div>
-			<aside class="sidebar"><div class="widget-search widget">
-	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
-		<label>
-			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
-		</label>
-		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://myzonesoft.com/" />
-	</form>
-</div>
-<div class="widget-recent widget">
-	<h4 class="widget__title">Recent Posts</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/getting-started-with-hugo/">Migration from Wordpress to Hugo and GitHub Pages</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/mvc-frontend-angularjs/">Develop MVC Application using Spring Boot and AngularJS</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/mvc-springboot-thymeleaf/">Develop MVC Application using Spring Boot and Thymeleaf</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/mvc-springboot-h2-jsp/">Develop MVC Application using Spring Boot and JSP</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/microservice-springboot-mongodb/">Develop Microservice Application Using Spring Boot and MongoDB Database</a></li>
-		</ul>
-	</div>
-</div>
-<div class="widget-categories widget">
-	<h4 class="widget__title">Categories</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/angularjs/">AngularJS</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/microservice/">Microservice</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">5</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/mvc/">MVC</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">3</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/no-sql-database/">No SQL Database</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/relational-database/">Relational Database</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/spring-boot/">Spring Boot</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/spring-boot-application/">Spring Boot Application</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/website-migration/">Website Migration</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/wordpress/">Wordpress</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-		</ul>
-	</div>
-</div>
-<div class="widget-taglist widget">
-	<h4 class="widget__title">Tags</h4>
-	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/angularjs/" title="AngularJS">AngularJS (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="Frontend">Frontend (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="GitHub">GitHub (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/github-pages/" title="GitHub Pages">GitHub Pages (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/h2-database/" title="H2 Database">H2 Database (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/hibernate/" title="Hibernate">Hibernate (3)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (5)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="Javascript">Javascript (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/jsp/" title="JSP">JSP (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/microservice/" title="Microservice">Microservice (5)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb-database/" title="MongoDB Database">MongoDB Database (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/resttemplate/" title="RestTemplate">RestTemplate (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (5)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/thymeleaf/" title="Thymeleaf">Thymeleaf (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/web-hosting/" title="Web Hosting">Web Hosting (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/wordpress/" title="Wordpress">Wordpress (1)</a>
-	</div>
-</div>
-</aside>
+			
 		</div>
 		<footer class="footer">
 	<div class="container footer__container flex">

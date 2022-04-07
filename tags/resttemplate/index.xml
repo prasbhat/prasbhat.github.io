@@ -6,11 +6,11 @@
     <description>Recent content in RestTemplate on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://myzonesoft.com/tags/resttemplate/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://myzonesoft.com/tags/resttemplate/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Develop MVC Application using Spring Boot and Thymeleaf</title>
       <link>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</link>
-      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
@@ -27,7 +27,7 @@
     <item>
       <title>Develop MVC Application using Spring Boot and JSP</title>
       <link>https://myzonesoft.com/post/mvc-springboot-h2-jsp/</link>
-      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://myzonesoft.com/post/mvc-springboot-h2-jsp/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;

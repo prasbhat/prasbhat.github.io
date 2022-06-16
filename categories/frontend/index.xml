@@ -8,74 +8,39 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://myzonesoft.com/categories/frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Develop MVC Application using TypeScript and ReactJS</title>
-      <link>https://myzonesoft.com/post/mvc-frontend-react/</link>
+      <title>Frontend using ReactJS and TypeScript</title>
+      <link>https://myzonesoft.com/post/frontend-react/</link>
       <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://myzonesoft.com/post/mvc-frontend-react/</guid>
+      <guid>https://myzonesoft.com/post/frontend-react/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
   diameter: 56,
   backgroundColor: &#39;rgb(255, 82, 82)&#39;,
   textColor: &#39;#fff&#39;
 })&lt;/script&gt; 
-&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;ReactJS Framework&lt;/strong&gt;, &lt;em&gt;which would consume the REST APIs exposed by&lt;/em&gt; the &lt;strong&gt;Spring Boot Microservice&lt;/strong&gt; application, created in &lt;a href=&#34;https://myzonesoft.com/post/microservice-springboot-h2/&#34;
- target=&#34;_blank&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you want to understand more about MVC architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-h2-jsp/#what-is-model-view-controller-mvc-architecture&#34;
+&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;ReactJS Framework&lt;/strong&gt;, &lt;em&gt;which would consume the REST APIs created in &lt;a href=&#34;https://myzonesoft.com/post/microservice-springboot-h2/&#34;
+ target=&#34;_blank&#34;&gt;Microservice Using Spring Boot, Hibernate and H2 Database&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to understand more about MVC Architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
  target=&#34;_blank&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Develop MVC Application using TypeScript and AngularJS</title>
-      <link>https://myzonesoft.com/post/mvc-frontend-angularjs/</link>
+      <title>Frontend using AngularJS and TypeScript</title>
+      <link>https://myzonesoft.com/post/frontend-angular/</link>
       <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://myzonesoft.com/post/mvc-frontend-angularjs/</guid>
+      <guid>https://myzonesoft.com/post/frontend-angular/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
   diameter: 56,
   backgroundColor: &#39;rgb(255, 82, 82)&#39;,
   textColor: &#39;#fff&#39;
 })&lt;/script&gt; 
-&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;AngularJS Framework&lt;/strong&gt;, &lt;em&gt;which would consume the REST APIs exposed by&lt;/em&gt; the &lt;strong&gt;Spring Boot Microservice&lt;/strong&gt; application, created in &lt;a href=&#34;https://myzonesoft.com/post/microservice-springboot-h2/&#34;
- target=&#34;_blank&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you want to understand more about MVC architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-h2-jsp/#what-is-model-view-controller-mvc-architecture&#34;
+&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;AngularJS Framework&lt;/strong&gt;, &lt;em&gt;which would consume the REST APIs created in &lt;a href=&#34;https://myzonesoft.com/post/microservice-springboot-h2/&#34;
+ target=&#34;_blank&#34;&gt;Microservice Using Spring Boot, Hibernate and H2 Database&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to understand more about MVC Architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
  target=&#34;_blank&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Develop MVC Application using Spring Boot and Thymeleaf</title>
-      <link>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</link>
-      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</guid>
-      <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;addBackToTop({
-  diameter: 56,
-  backgroundColor: &#39;rgb(255, 82, 82)&#39;,
-  textColor: &#39;#fff&#39;
-})&lt;/script&gt; 
-&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;Spring Boot&lt;/strong&gt; and &lt;strong&gt;Thymeleaf&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;If you want to understand more about MVC architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-h2-jsp/#what-is-model-view-controller-mvc-architecture&#34;
- target=&#34;_blank&#34;&gt;this&lt;/a&gt; article.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Develop MVC Application using Spring Boot and JSP</title>
-      <link>https://myzonesoft.com/post/mvc-springboot-h2-jsp/</link>
-      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/post/mvc-springboot-h2-jsp/</guid>
-      <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;addBackToTop({
-  diameter: 56,
-  backgroundColor: &#39;rgb(255, 82, 82)&#39;,
-  textColor: &#39;#fff&#39;
-})&lt;/script&gt;
-&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using Spring Boot and JSP for the Microservice Application that was created in &lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://myzonesoft.com/post/microservice-springboot-h2&#34;
- target=&#34;_blank&#34;&gt;Develop Microservice Application Using Spring Boot and H2 Database&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;, which exposes the REST APIs as a backend application.&lt;/p&gt;
-&lt;p&gt;However, in this article, I will create an &lt;em&gt;User Interface (UI)&lt;/em&gt; for that application using JSP in Spring Boot, in order to make &lt;strong&gt;&lt;a href=&#34;#what-is-model-view-controller-mvc-architecture&#34;
-&gt;Model-View-Controller (MVC) architecture&lt;/a&gt;&lt;/strong&gt; work.&lt;/p&gt;</description>
     </item>
     
   </channel>

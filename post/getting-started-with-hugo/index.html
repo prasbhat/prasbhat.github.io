@@ -56,9 +56,16 @@ if (!doNotTrack) {
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/categories/spring-boot/">
+			<a class="menu__link" href="/categories/microservice/">
 				
-				<span class="menu__text">Spring Boot</span>
+				<span class="menu__text">Microservices</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/mvc/">
+				
+				<span class="menu__text">MVC</span>
 				
 			</a>
 		</li>
@@ -244,8 +251,8 @@ if (!doNotTrack) {
 <h2 id="working-with-hugo">Working with Hugo</h2>
 <h3 id="generate-new-site">Generate new site</h3>
 <p>Run the command to generate a new site. I am using <code>myzonesoft-hugo</code> as the name of my site project:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new site myzonesoft-hugo
-</code></pre></div><p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo new site myzonesoft-hugo
+</span></span></code></pre></div><p>
   <figure>
     <img src="images/hugo-new-site-command.jpeg" alt="hugo-new-site-command.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">hugo new site command</figcaption>
@@ -271,26 +278,26 @@ if (!doNotTrack) {
 <p>Install the selected theme into the Projects <code>themes/&lt;&lt;THEME_NAME&gt;&gt;</code> directory.</p>
 </li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd myzonesoft-hugo
-git init
-git clone https://github.com/Vimux/Mainroad.git themes/mainroad
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd myzonesoft-hugo
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git clone https://github.com/Vimux/Mainroad.git themes/mainroad
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>Now let the Hugo know, which theme to use. Open the <code>config.toml</code> and enter the below line</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mainroad&#34;</span>
-</code></pre></div><h3 id="start-the-hugo-server">Start the Hugo Server</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mainroad&#34;</span>
+</span></span></code></pre></div><h3 id="start-the-hugo-server">Start the Hugo Server</h3>
 <p>Now, start the Hugo server with drafts enabled</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo server -D
-</code></pre></div><p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo server -D
+</span></span></code></pre></div><p>
   <figure>
     <img src="images/start-hugo-server.jpeg" alt="start-hugo-server.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Server with Drafts Enabled</figcaption>
@@ -308,8 +315,8 @@ git clone https://github.com/Vimux/Mainroad.git themes/mainroad
 <p>Content files can be created directly into the content directory. However, I am using <a href="https://gohugo.io/content-management/page-bundles/"
  target="_blank">Page Bundles</a> to have more control over the contents.
 You can manually create content files (for example as <code>content/&lt;CATEGORY&gt;/&lt;FILE&gt;.&lt;FORMAT&gt;</code>) and provide metadata in them, however you can use the <code>new</code> command to do a few things for you (like add title and date):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new post/my-first-post/index.md
-</code></pre></div><p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo new post/my-first-post/index.md
+</span></span></code></pre></div><p>
   <figure>
     <img src="images/hugo-create-new-content.jpeg" alt="hugo-create-new-content.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Hugo Create New Content</figcaption>
@@ -321,22 +328,21 @@ You can manually create content files (for example as <code>content/&lt;CATEGORY
  target="_blank">this</a>.</p>
 </blockquote>
 <p>The newly created index.md will look something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">---
-title: <span style="color:#e6db74">&#34;My First Post&#34;</span>
-description: <span style="color:#e6db74">&#34;&#34;</span>
-date: <span style="color:#e6db74">&#34;2022-01-05T13:03:48+05:30&#34;</span>
-draft: true
----
-
-</code></pre></div><p>The section that you see between the &lsquo;- - -&rsquo; is called <a href="https://gohugo.io/content-management/front-matter/"
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: <span style="color:#e6db74">&#34;My First Post&#34;</span>
+</span></span><span style="display:flex;"><span>description: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>date: <span style="color:#e6db74">&#34;2022-01-05T13:03:48+05:30&#34;</span>
+</span></span><span style="display:flex;"><span>draft: true
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>The section that you see between the &lsquo;- - -&rsquo; is called <a href="https://gohugo.io/content-management/front-matter/"
  target="_blank">Front Matter</a>. It houses the common attributes that are required across every posts.</p>
 <p>Feel free to edit the content and simply refresh in browser to see changes quickly.</p>
 <p>This will create a directory structure like below.:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">content/
-└── post
-    └── my-first-post
-        └── index.md
-</code></pre></div><p>Such directory structure is known as <a href="https://gohugo.io/content-management/page-bundles/"
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>content/
+</span></span><span style="display:flex;"><span>└── post
+</span></span><span style="display:flex;"><span>    └── my-first-post
+</span></span><span style="display:flex;"><span>        └── index.md
+</span></span></code></pre></div><p>Such directory structure is known as <a href="https://gohugo.io/content-management/page-bundles/"
  target="_blank">Page Bundles</a>.</p>
 <p>We can store the images and other stuffs related to the article inside <code>my-first-post</code> directory.</p>
 <h2 id="migrate-contents-from-wordpress-to-hugo">Migrate contents from Wordpress to Hugo</h2>
@@ -423,8 +429,8 @@ draft: true
 <ol>
 <li>In the Project Directory, run the following command, to publish your project:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo
+</span></span></code></pre></div><blockquote>
 <p>Hugo, by default, will publish only the pages that are marked with <code>draft: false</code> in the <a href="https://gohugo.io/content-management/front-matter/"
  target="_blank">Front Matter</a>. So make sure to mark the pages you want to be published as <code>draft: false</code>.</p>
 </blockquote>
@@ -438,23 +444,23 @@ draft: true
 <ol start="2">
 <li>In terminal, go to the directory of the <code>public</code> folder, then run following commands:</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd public
-git init
-git add .
-git remote add origin https://github.com/<span style="color:#e6db74">&lt;&lt;USERNAME&gt;&gt;/&lt;&lt;USERNAME</span>&gt;&gt;.github.io.git
-git commit -m <span style="color:#e6db74">&#34;first commit for website launch&#34;</span>
-git push origin master
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd public
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git remote add origin https://github.com/<span style="color:#e6db74">&lt;&lt;USERNAME&gt;&gt;/&lt;&lt;USERNAME</span>&gt;&gt;.github.io.git
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;first commit for website launch&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>
@@ -515,7 +521,7 @@ git push origin master
 </p>
 </li>
 <li>
-<p>We have to first, change to using the default <strong>Nameservers</strong> from the GoDaddy. Click on the <strong>Change</strong> button in the Nameservers section and choose <strong>&ldquo;I want to use GoDaddy default nameservers(recommended)&quot;</strong>.</p>
+<p>We have to first, change to using the default <strong>Nameservers</strong> from the GoDaddy. Click on the <strong>Change</strong> button in the Nameservers section and choose <strong>&ldquo;I want to use GoDaddy default nameservers(recommended)&rdquo;</strong>.</p>
 </li>
 <li>
 <p>Once the changes are effective, we will see <strong>DNS Records</strong> section filled with some <em>default values from GoDaddy</em>.
@@ -641,15 +647,16 @@ git push origin master
 		<span class="authorbox__name">About Prashanth Bhat</span>
 	</div>
 	<div class="authorbox__description">
-		<strong>Prashanth Bhat</strong> has about 15+ years of <strong>Developing/Coding</strong> knowledge. <em>He loves to work with Technology, learn new things and share his learnings with others</em>. For comments/feedback you can reach <a href="mailto:bhatpp.android@gmail.com">here</a>.
+		<strong>Prashanth Bhat</strong> has about 15+ years of <strong>Developing/Coding</strong> knowledge. <em>He loves to work with Technology, learn new things and share his learnings with others</em>. For comments/feedback you can reach <a href="mailto:bhatpp.android@gmail.com"
+>here</a>.
 	</div>
 </div>
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/mvc-frontend-react/" rel="prev">
+		<a class="pager__link" href="/post/frontend-react/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">Develop MVC Application using TypeScript and ReactJS</p>
+			<p class="pager__title">Frontend using ReactJS and TypeScript</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">

@@ -6,7 +6,25 @@
     <description>Recent content in Frontend on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://myzonesoft.com/categories/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 12:04:54 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/categories/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Frontend using VueJS and TypeScript</title>
+      <link>https://myzonesoft.com/post/frontend-vue/</link>
+      <pubDate>Mon, 20 Jun 2022 12:04:54 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/post/frontend-vue/</guid>
+      <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 56,
+  backgroundColor: &#39;rgb(255, 82, 82)&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;
+&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;VueJS Framework&lt;/strong&gt;, &lt;em&gt;which would consume the REST APIs created in &lt;a href=&#34;https://myzonesoft.com/post/microservice-springboot-h2/&#34;
+ target=&#34;_blank&#34;&gt;Microservice Using Spring Boot, Hibernate and H2 Database&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to understand more about MVC Architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
+ target=&#34;_blank&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Frontend using ReactJS and TypeScript</title>
       <link>https://myzonesoft.com/post/frontend-react/</link>

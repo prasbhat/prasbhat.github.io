@@ -3,7 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://myzonesoft.com/categories/</loc>
-    <lastmod>2022-03-18T12:54:13+05:30</lastmod>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/frontend/</loc>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/categories/frontend/</loc>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/post/frontend-vue/</loc>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/javascript/</loc>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/mvc/</loc>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/</loc>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/post/</loc>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/</loc>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/typescript/</loc>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/vuejs/</loc>
+    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/enhancing-hugo-project/</loc>
     <lastmod>2022-03-18T12:54:13+05:30</lastmod>
@@ -14,13 +44,7 @@
     <loc>https://myzonesoft.com/categories/hugo/</loc>
     <lastmod>2022-03-18T12:54:13+05:30</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/</loc>
-    <lastmod>2022-03-18T12:54:13+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/post/</loc>
-    <lastmod>2022-03-18T12:54:13+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/</loc>
+    <loc>https://myzonesoft.com/categories/others/</loc>
     <lastmod>2022-03-18T12:54:13+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/github-pages/</loc>
@@ -38,25 +62,10 @@
     <loc>https://myzonesoft.com/about/</loc>
     <lastmod>2021-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/tags/frontend/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/frontend/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://myzonesoft.com/post/frontend-react/</loc>
     <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/tags/javascript/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/mvc/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://myzonesoft.com/tags/reactjs/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/typescript/</loc>
     <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/angularjs/</loc>

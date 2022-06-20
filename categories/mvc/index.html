@@ -77,12 +77,25 @@ if (!doNotTrack) {
 				
 			</a>
 		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/categories/hugo/">
+		<li class="menu__item menu__dropdown">
+			<a class="menu__link" href="/categories/others/">
 				
-				<span class="menu__text">Hugo</span>
+				<span class="menu__text">Others</span>
+				<label class="drop-icon" for="Others">▾</label>
 				
 			</a>
+			<input type="checkbox" id="Others">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/hugo/">
+						
+						<span class="menu__text">Hugo</span>
+						
+					</a>
+					</li>
+				
+			</ul>
 		</li>
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
@@ -119,6 +132,9 @@ if (!doNotTrack) {
 					
 					
 						(2)
+					
+				
+					
 					
 				
 					
@@ -232,11 +248,11 @@ if (!doNotTrack) {
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/frontend-vue/">Frontend using VueJS and TypeScript</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/enhancing-hugo-project/">Enhancing Hugo Project</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/getting-started-with-hugo/">Migration from Wordpress to Hugo and GitHub Pages</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/frontend-react/">Frontend using ReactJS and TypeScript</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/frontend-angular/">Frontend using AngularJS and TypeScript</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/mvc-springboot-thymeleaf/">MVC Application using Spring Boot and Thymeleaf</a></li>
 		</ul>
 	</div>
 </div>
@@ -244,24 +260,25 @@ if (!doNotTrack) {
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/angularjs/" title="AngularJS">AngularJS (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="Frontend">Frontend (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="Frontend">Frontend (5)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github-pages/" title="GitHub Pages">GitHub Pages (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/h2-database/" title="H2 Database">H2 Database (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hibernate/" title="Hibernate">Hibernate (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (4)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/jsp/" title="JSP">JSP (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/microservice/" title="Microservice">Microservice (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb-database/" title="MongoDB Database">MongoDB Database (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/mvc/" title="MVC">MVC (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mvc/" title="MVC">MVC (5)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/no-sql-database/" title="No SQL Database">No SQL Database (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/reactjs/" title="ReactJS">ReactJS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/relational-database/" title="Relational Database">Relational Database (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/resttemplate/" title="RestTemplate">RestTemplate (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/thymeleaf/" title="Thymeleaf">Thymeleaf (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/typescript/" title="TypeScript">TypeScript (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/typescript/" title="TypeScript">TypeScript (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vuejs/" title="VueJS">VueJS (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/website-migration/" title="Website Migration">Website Migration (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/wordpress/" title="Wordpress">Wordpress (1)</a>
 	</div>

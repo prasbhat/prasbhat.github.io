@@ -55,12 +55,33 @@ if (!doNotTrack) {
 				
 			</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__dropdown">
 			<a class="menu__link" href="/categories/microservice/">
 				
 				<span class="menu__text">Microservices</span>
+				<label class="drop-icon" for="Microservices">▾</label>
 				
 			</a>
+			<input type="checkbox" id="Microservices">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/spring-boot/">
+						
+						<span class="menu__text">Spring Boot</span>
+						
+					</a>
+					</li>
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/dropwizard/">
+						
+						<span class="menu__text">Dropwizard</span>
+						
+					</a>
+					</li>
+				
+			</ul>
 		</li>
 		<li class="menu__item">
 			<a class="menu__link" href="/categories/mvc/">
@@ -178,7 +199,8 @@ if (!doNotTrack) {
   backgroundColor: 'rgb(255, 82, 82)',
   textColor: '#fff'
 })</script> 
-<p>In this article, I will be developing a <em><strong>Model-View-Controller (MVC)</strong></em> application using <strong>Spring Boot</strong> and <strong>Thymeleaf</strong>.</p>
+<p>In this article, I will be developing a <em><strong>Model-View-Controller (MVC)</strong></em> application using <strong>Spring Boot</strong> and <strong>Thymeleaf</strong> for the Microservice Application that was created in <em><strong><a href="/categories/microservice/"
+ target="_blank">Microservices</a></strong></em>, which exposes the REST APIs as a backend application.</p>
 <p>If you want to understand more about MVC architecture, go through <a href="/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture"
  target="_blank">this</a> article.</p>
 <p>If you have no time to read this article, but want to try the code for yourself, GitHub location is provided <em><a href="https://github.com/prasbhat/mvc-springboot-thymeleaf"

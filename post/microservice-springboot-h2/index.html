@@ -55,12 +55,33 @@ if (!doNotTrack) {
 				
 			</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__dropdown">
 			<a class="menu__link" href="/categories/microservice/">
 				
 				<span class="menu__text">Microservices</span>
+				<label class="drop-icon" for="Microservices">▾</label>
 				
 			</a>
+			<input type="checkbox" id="Microservices">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/spring-boot/">
+						
+						<span class="menu__text">Spring Boot</span>
+						
+					</a>
+					</li>
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/dropwizard/">
+						
+						<span class="menu__text">Dropwizard</span>
+						
+					</a>
+					</li>
+				
+			</ul>
 		</li>
 		<li class="menu__item">
 			<a class="menu__link" href="/categories/mvc/">
@@ -154,7 +175,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#familiarity-with-technology-and-frameworks">Familiarity with Technology and Frameworks</a></li>
         <li><a href="#jdk-18">JDK 1.8+</a></li>
-        <li><a href="#ide-for-code-development">IDE for Code Development</a></li>
+        <li><a href="#integrated-development-environment-ide-for-code-development">Integrated Development Environment (IDE) for Code Development</a></li>
         <li><a href="#other-related-software">Other related software</a></li>
       </ul>
     </li>
@@ -271,7 +292,7 @@ if (!doNotTrack) {
 <blockquote>
 <p>Since it is an Oracle Proprietary product you will need to <em>sign-in/create</em> Oracle Account, before downloading.</p>
 </blockquote>
-<h3 id="ide-for-code-development">IDE for Code Development</h3>
+<h3 id="integrated-development-environment-ide-for-code-development">Integrated Development Environment (IDE) for Code Development</h3>
 <p>You can use any IDE of your choice. I will be using the <em><strong>IntelliJ IDEA Community Edition</strong></em>.</p>
 <p>If you wish to use the IntelliJ IDEA Community Edition, download the latest version from <a href="https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&amp;code=IIC"
  target="_blank">here</a>.</p>
@@ -314,6 +335,7 @@ if (!doNotTrack) {
   </figure>
 </p>
 <p>To resolve this error: <em>Navigate to Files → Project Structure → Project Settings →Project → Project SDK and select the relevant JDK that is installed in your system, click</em> <em><strong>OK</strong></em></p>
+<hr>
 <h2 id="running-the-spring-boot-project">Running the Spring Boot Project</h2>
 <p>To launch your Spring Boot Projects, follow the steps given below:</p>
 <ul>
@@ -411,10 +433,9 @@ if (!doNotTrack) {
 </ul>
 <p>I will using the <em><strong>Embedded Version</strong></em> of the <em>H2 Database</em>. We will use <em>Hibernate</em> to interact with the Database.</p>
 <p>For completing this setup, we will need to update/create few files/classes. Let us go ahead and complete that.</p>
-<ol>
-<li>Add the <em>H2 Database and JPA related dependencies in the pom.xml</em> (if not added already during project initialization <a href="#create-bootstrap-spring-boot-application"
->here</a>)</li>
-</ol>
+<h4 id="update-pomxml">Update <code>pom.xml</code></h4>
+<p>Add the <em>H2 Database and JPA related dependencies in the pom.xml</em> (if not added already during project initialization <a href="#create-bootstrap-spring-boot-application"
+>here</a>)</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -437,9 +458,8 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>Update the <code>/src/main/resources/application.properties</code>, to add the <em>H2</em> configurations to the <em>Hibernate</em> settings.</li>
-</ol>
+</div><h4 id="update-the-srcmainresourcesapplicationproperties">Update the <code>/src/main/resources/application.properties</code></h4>
+<p>To add the <em>H2</em> configurations to the <em>Hibernate</em> settings.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -562,9 +582,10 @@ It takes following values:
 <li><code>@Id</code>– To identify the primary key of the table.</li>
 <li><code>@GeneratedValue(strategy = GenerationType.AUTO)</code>– To Auto Generate the sequence for the Primary Key. There are different strategies available, based on the database that is used.</li>
 <li><code>@JsonManagedReference</code>- This is required to avoid the <strong>&ldquo;Could not write JSON: Infinite recursion (StackOverflowError); nested exception&rdquo;</strong>. <em>Where in, the output goes into infinite recursive loop and eventually <em><strong>StackOverflowError</strong></em> error is thrown</em>. This annotation requires <code>@JsonBackReference</code> to be added on the referenced variable of the back reference class <em>(more on this below)</em>.</li>
-<li><code>@OneToMany</code>- Each To-do task can have many comments. So there is a One-To-Many relationship between Todo <em><strong>POJO Model Class</strong></em> and TodoTaskComments <em><strong>POJO Model Class</strong></em>.
+<li><code>@OneToMany</code>- Each Todo task can have many comments.
 <ul>
-<li>We are using <code>mappedBy</code> attribute, where we inform the Spring Boot/Hibernate which variable is responsible for updating this relationship.</li>
+<li>So there is a <strong>One-To-Many relationship</strong> between <em><strong>Todo POJO Model Class</strong></em> and <em><strong>TodoTaskComments POJO Model Class</strong></em>.</li>
+<li>We are using <code>mappedBy</code> attribute, where we inform the Hibernate which variable is responsible for updating this relationship.</li>
 </ul>
 </li>
 </ul>
@@ -618,11 +639,8 @@ It takes following values:
 </div><p>Some of the Hibernate Annotations used in the above code are explained below:</p>
 <ul>
 <li><code>@JsonBackReference</code>- As explained above, this is used for referring the Back Reference Class.</li>
-<li><code>@ManyToOne</code>- Reverse mapping for the OneToMany explained above.
-<ul>
-<li><code>@JoinColumn</code>- Refers to the Column name from the main model class.</li>
-</ul>
-</li>
+<li><code>@ManyToOne</code>- Reverse mapping for the OneToMany explained above.</li>
+<li><code>@JoinColumn</code>- Refers to the Primary Key of the Main Model Class.</li>
 </ul>
 <h3 id="jpa-repository-interfaces">JPA Repository Interfaces</h3>
 <p><strong>Spring Boot JPA</strong> is a Java specification for managing relational data in Java applications. It allows us to access and persist data between Java Objects/Classes and Relational Databases.</p>
@@ -736,7 +754,6 @@ It takes following values:
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
@@ -756,8 +773,7 @@ It takes following values:
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Save the TodoTaskComments before task can be saved
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>todoTaskCommentsSet <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>TodoTaskComments todoTaskComments <span style="color:#f92672">:</span> todoTaskCommentsSet<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>todoTaskComments <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoTaskCommentsId</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> 
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">!</span>todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">getTaskComments</span><span style="color:#f92672">().</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>todoTaskComment <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>todoTaskComment<span style="color:#f92672">.</span><span style="color:#a6e22e">getTaskComments</span><span style="color:#f92672">().</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>                    todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">setTodoTask</span><span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>                    todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDate</span><span style="color:#f92672">(</span>LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">());</span>
 </span></span><span style="display:flex;"><span>                    todoTaskCommentsRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">);</span>
@@ -1183,11 +1199,13 @@ It takes following values:
 </p>
 <hr>
 <h2 id="configure-spring-boot-to-handle-cors-request">Configure Spring Boot to Handle CORS Request</h2>
-<p>By default, the Spring Boot REST API which is running on <code>http://localhost:8080/</code>, will not allow requests from other servers/domains like <code>http://localhost:3000/</code> and <code>http://localhost:4200/</code>.</p>
+<p>By default, the Spring Boot REST API which is running on <code>http://localhost:8080/</code>, will not allow requests from frontend applications through domains like <code>http://localhost:3000/</code>.</p>
 <p>This is called <em><strong><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing"
  target="_blank">CORS (Cross-Origin Resource Sharing) policy</a></strong></em>, where in by default, servers block request coming from other servers or domains.</p>
 <p>Let’s configure Rest Resource to allow access from specific server(s), in order to allow our frontend applications(will be developed later) to make REST APIs calls to this Spring Boot Server.</p>
-<p>Update the <strong>Rest Controller</strong> = <code>controller.TodoController</code>, to allow request from <strong>ReactJS, VueJS</strong> <code>(http://localhost:3000/)</code> and <strong>AngularJS</strong> <code>(http://localhost:4200/)</code> servers.</p>
+<ul>
+<li>Update the <strong>Rest Controller</strong> = <code>controller.TodoController</code>, to allow request from <strong>our frontend applications</strong> <code>(http://localhost:3000/)</code>.</li>
+</ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -1198,7 +1216,7 @@ It takes following values:
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@CrossOrigin</span><span style="color:#f92672">(</span>origins <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;http://localhost:4200&#34;</span> <span style="color:#f92672">})</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@CrossOrigin</span><span style="color:#f92672">(</span>origins <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span> <span style="color:#f92672">})</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/tasks&#34;</span><span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoController</span> <span style="color:#f92672">{</span> 

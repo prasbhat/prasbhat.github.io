@@ -6,7 +6,25 @@
     <description>Recent content in Categories on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jun 2022 12:04:54 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jun 2022 15:24:28 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dropwizard</title>
+      <link>https://myzonesoft.com/categories/dropwizard/</link>
+      <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/categories/dropwizard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservice</title>
+      <link>https://myzonesoft.com/categories/microservice/</link>
+      <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/categories/microservice/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Frontend</title>
       <link>https://myzonesoft.com/categories/frontend/</link>
@@ -49,15 +67,6 @@
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://myzonesoft.com/categories/spring-boot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Microservice</title>
-      <link>https://myzonesoft.com/categories/microservice/</link>
-      <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/categories/microservice/</guid>
       <description></description>
     </item>
     

@@ -55,12 +55,33 @@ if (!doNotTrack) {
 				
 			</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__dropdown">
 			<a class="menu__link" href="/categories/microservice/">
 				
 				<span class="menu__text">Microservices</span>
+				<label class="drop-icon" for="Microservices">▾</label>
 				
 			</a>
+			<input type="checkbox" id="Microservices">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/spring-boot/">
+						
+						<span class="menu__text">Spring Boot</span>
+						
+					</a>
+					</li>
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/dropwizard/">
+						
+						<span class="menu__text">Dropwizard</span>
+						
+					</a>
+					</li>
+				
+			</ul>
 		</li>
 		<li class="menu__item">
 			<a class="menu__link" href="/categories/mvc/">
@@ -184,8 +205,8 @@ if (!doNotTrack) {
   backgroundColor: 'rgb(255, 82, 82)',
   textColor: '#fff'
 })</script>
-<p>In this article, I will be developing a <em><strong>Model-View-Controller (MVC)</strong></em> application using <strong>VueJS Framework</strong>, <em>which would consume the REST APIs created in <a href="/post/microservice-springboot-h2/"
- target="_blank">Microservice Using Spring Boot, Hibernate and H2 Database</a></em>.</p>
+<p>In this article, I will be developing a <em><strong>Model-View-Controller (MVC)</strong></em> application using <strong>VueJS Framework</strong>, <em>which would consume the REST APIs created in <a href="/categories/microservice/"
+ target="_blank">Microservices</a></em>.</p>
 <p>If you want to understand more about MVC Architecture, go through <a href="/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture"
  target="_blank">this article</a>.</p>
 <p>By the end of this article, you would learn about how to:</p>
@@ -1820,6 +1841,12 @@ if (!doNotTrack) {
 		<a class="pager__link" href="/post/enhancing-hugo-project/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">Enhancing Hugo Project</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/microservice-dropwizard-h2/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Microservice Using Dropwizard, Hibernate and H2 Database</p>
 		</a>
 	</div>
 </nav>

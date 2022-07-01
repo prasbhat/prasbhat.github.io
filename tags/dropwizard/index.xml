@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dropwizard on myzonesoft.com</title>
+    <link>https://myzonesoft.com/tags/dropwizard/</link>
+    <description>Recent content in Dropwizard on myzonesoft.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Jun 2022 15:24:28 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/dropwizard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microservice Using Dropwizard, Hibernate and H2 Database</title>
+      <link>https://myzonesoft.com/post/microservice-dropwizard-h2/</link>
+      <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/post/microservice-dropwizard-h2/</guid>
+      <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 56,
+  backgroundColor: &#39;rgb(255, 82, 82)&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;
+&lt;p&gt;In this article, I will develop a &lt;strong&gt;Microservice Application&lt;/strong&gt; using &lt;strong&gt;Dropwizard Framework&lt;/strong&gt; and &lt;strong&gt;H2 Database&lt;/strong&gt; and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dropwizard Framework&lt;/strong&gt; will serve as back-end server and I will be using &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, &lt;em&gt;it is also known as an Embedded Java Database&lt;/em&gt;, for persisting(storing) the data.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

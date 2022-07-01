@@ -19,8 +19,8 @@
   backgroundColor: &#39;rgb(255, 82, 82)&#39;,
   textColor: &#39;#fff&#39;
 })&lt;/script&gt;
-&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;VueJS Framework&lt;/strong&gt;, &lt;em&gt;which would consume the REST APIs created in &lt;a href=&#34;https://myzonesoft.com/post/microservice-springboot-h2/&#34;
- target=&#34;_blank&#34;&gt;Microservice Using Spring Boot, Hibernate and H2 Database&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;VueJS Framework&lt;/strong&gt;, &lt;em&gt;which would consume the REST APIs created in &lt;a href=&#34;https://myzonesoft.com/categories/microservice/&#34;
+ target=&#34;_blank&#34;&gt;Microservices&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;If you want to understand more about MVC Architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
  target=&#34;_blank&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;</description>
     </item>

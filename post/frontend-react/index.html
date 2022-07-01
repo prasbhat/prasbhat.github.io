@@ -55,12 +55,33 @@ if (!doNotTrack) {
 				
 			</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__dropdown">
 			<a class="menu__link" href="/categories/microservice/">
 				
 				<span class="menu__text">Microservices</span>
+				<label class="drop-icon" for="Microservices">▾</label>
 				
 			</a>
+			<input type="checkbox" id="Microservices">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/spring-boot/">
+						
+						<span class="menu__text">Spring Boot</span>
+						
+					</a>
+					</li>
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/dropwizard/">
+						
+						<span class="menu__text">Dropwizard</span>
+						
+					</a>
+					</li>
+				
+			</ul>
 		</li>
 		<li class="menu__item">
 			<a class="menu__link" href="/categories/mvc/">
@@ -182,8 +203,8 @@ if (!doNotTrack) {
   backgroundColor: 'rgb(255, 82, 82)',
   textColor: '#fff'
 })</script> 
-<p>In this article, I will be developing a <em><strong>Model-View-Controller (MVC)</strong></em> application using <strong>ReactJS Framework</strong>, <em>which would consume the REST APIs created in <a href="/post/microservice-springboot-h2/"
- target="_blank">Microservice Using Spring Boot, Hibernate and H2 Database</a></em>.</p>
+<p>In this article, I will be developing a <em><strong>Model-View-Controller (MVC)</strong></em> application using <strong>ReactJS Framework</strong>, <em>which would consume the REST APIs created in <a href="/categories/microservice/"
+ target="_blank">Microservices</a></em>.</p>
 <p>If you want to understand more about MVC Architecture, go through <a href="/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture"
  target="_blank">this article</a>.</p>
 <p>By the end of this article, you would learn about how to:</p>
@@ -1864,10 +1885,10 @@ if (!doNotTrack) {
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoApplicationComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">create</span>(<span style="color:#a6e22e">id</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">create() {</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;edit&#39;</span>;
 </span></span><span style="display:flex;"><span>         <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>( { <span style="color:#a6e22e">todoItem</span><span style="color:#f92672">:</span> 
-</span></span><span style="display:flex;"><span>            { <span style="color:#a6e22e">systemTasksId</span>: <span style="color:#66d9ef">id</span>, <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">dueDate</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span> } ,
+</span></span><span style="display:flex;"><span>            { <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">dueDate</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span> } ,
 </span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">todoTaskComments</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">taskComments</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>}
 </span></span><span style="display:flex;"><span>        });
 </span></span><span style="display:flex;"><span>    }
@@ -1896,7 +1917,7 @@ if (!doNotTrack) {
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">TodoApplicationView</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">component</span>) <span style="color:#f92672">=&gt;</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
 </span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;  
-</span></span><span style="display:flex; background-color:#3c3d38"><span>            &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">component</span>.<span style="color:#a6e22e">create</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)}&gt;<span style="color:#a6e22e">Create</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">component</span>.<span style="color:#a6e22e">create</span> ()}&gt;<span style="color:#a6e22e">Create</span>&lt;/<span style="color:#f92672">button</span>&gt;
 </span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;table-striped&#39;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1&#39;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>                ...
 </span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">table</span>&gt;

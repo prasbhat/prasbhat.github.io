@@ -55,12 +55,33 @@ if (!doNotTrack) {
 				
 			</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__dropdown">
 			<a class="menu__link" href="/categories/microservice/">
 				
 				<span class="menu__text">Microservices</span>
+				<label class="drop-icon" for="Microservices">▾</label>
 				
 			</a>
+			<input type="checkbox" id="Microservices">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/spring-boot/">
+						
+						<span class="menu__text">Spring Boot</span>
+						
+					</a>
+					</li>
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/dropwizard/">
+						
+						<span class="menu__text">Dropwizard</span>
+						
+					</a>
+					</li>
+				
+			</ul>
 		</li>
 		<li class="menu__item">
 			<a class="menu__link" href="/categories/mvc/">
@@ -134,7 +155,7 @@ if (!doNotTrack) {
 		c11.719,0,21.25-9.532,21.25-21.25C85.825,56.158,76.547,46.746,65.049,46.49z M64.575,81.966c-7.857,0-14.25-6.394-14.25-14.25
 		s6.393-14.25,14.25-14.25s14.25,6.394,14.25,14.25S72.432,81.966,64.575,81.966z"/>	
 </svg>
- 9 Minutes   Read   
+ 11 Minutes   Read   
 </div></div>
 		</header>
 		
@@ -148,6 +169,7 @@ if (!doNotTrack) {
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
+    <li><a href="#overview">Overview</a></li>
     <li><a href="#what-is-model-view-controller-mvc-architecture">What is Model-View-Controller (MVC) Architecture?</a>
       <ul>
         <li><a href="#the-model-layer">The Model Layer</a></li>
@@ -155,7 +177,24 @@ if (!doNotTrack) {
         <li><a href="#the-controller-layer">The Controller Layer</a></li>
       </ul>
     </li>
-    <li><a href="#using-jsp-in-spring-boot">Using JSP in Spring Boot</a></li>
+    <li><a href="#prerequisites">Prerequisites</a>
+      <ul>
+        <li><a href="#familiarity-with-technology-and-frameworks">Familiarity with Technology and Frameworks</a></li>
+        <li><a href="#jdk-18">JDK 1.8+</a></li>
+        <li><a href="#integrated-development-environment-ide-for-code-development">Integrated Development Environment (IDE) for Code Development</a></li>
+        <li><a href="#other-related-software">Other related software</a></li>
+      </ul>
+    </li>
+    <li><a href="#adding-jsp-to-spring-boot-project">Adding JSP to Spring Boot Project</a>
+      <ul>
+        <li><a href="#update-pomxml">Update pom.xml</a></li>
+        <li><a href="#update-srcmainresourcesapplicationproperties">Update <code>/src/main/resources/application.properties</code></a></li>
+        <li><a href="#create-a-new-folder-srcmainwebappweb-infjsp">Create a new folder <code>/src/main/webapp/WEB-INF/jsp/</code></a></li>
+        <li><a href="#update-the-existing-controller--controllertodocontroller">Update the existing Controller = <code>controller.TodoController</code></a></li>
+        <li><a href="#create-a-new-controller-class--controllertodoviewcontroller">Create a new Controller Class = <code>controller.TodoViewController</code></a></li>
+        <li><a href="#create-new-jsp-file-srcmainwebappweb-infjspindexjsp">Create new JSP file= <code>/src/main/webapp/WEB-INF/jsp/index.jsp</code></a></li>
+      </ul>
+    </li>
     <li><a href="#running-the-jsp-spring-boot-project">Running the JSP Spring Boot Project</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
@@ -168,19 +207,28 @@ if (!doNotTrack) {
   backgroundColor: 'rgb(255, 82, 82)',
   textColor: '#fff'
 })</script>
-<p>In this article, I will be developing a <em><strong>Model-View-Controller (MVC)</strong></em> application using Spring Boot and JSP for the Microservice Application that was created in <em><strong><a href="/post/microservice-springboot-h2"
- target="_blank">Microservice Using Spring Boot, Hibernate and H2 Database</a></strong></em>, which exposes the REST APIs as a backend application.</p>
-<p>However, in this article, I will create an <em>User Interface (UI)</em> for that application using JSP in Spring Boot, in order to make <strong><a href="#what-is-model-view-controller-mvc-architecture"
->Model-View-Controller (MVC) architecture</a></strong> work.</p>
+<p>In this article, I will be developing a <em><strong><a href="#what-is-model-view-controller-mvc-architecture"
+>Model-View-Controller (MVC)</a></strong></em> application using <strong>Spring Boot</strong>, <strong>H2 Database</strong> and <strong>Java Server Pages (JSP)</strong>.</p>
+<p><strong>Spring Boot Framework</strong> will serve as back-end(created in <em><strong><a href="/post/microservice-springboot-h2"
+ target="_blank">Microservice Using Spring Boot, Hibernate and H2 Database</a></strong></em>, same code will be reused with few modifications).</p>
+<p>I will be using the same <em><strong>Relational Database</strong></em> known as <strong>H2 Database</strong>, for persisting(storing) the data, used in the above mentioned project.</p>
+<p><strong>Java Server Pages (JSP)</strong> will be the <em>User Interface (UI)</em> for this application.</p>
 <p>If you have no time to read this article, but want to try the code for yourself, GitHub location is provided <em><a href="https://github.com/prasbhat/mvc-springboot-jsp"
  target="_blank">here</a></em>. Go ahead and clone the code.</p>
 <hr>
-<h2 id="what-is-model-view-controller-mvc-architecture">What is Model-View-Controller (MVC) Architecture?</h2>
-<p>Model designs based on MVC Architecture follow the <em><strong>MVC Design Pattern</strong></em> and they separate the application logic from the <em>User Interface (UI)</em> when designing the software. As the name implies <em>MVC Pattern</em> has three layers, which are:</p>
+<h2 id="overview">Overview</h2>
+<p>We will build a <em><strong>MVC application using Spring Boot, H2 Database and Java Server Pages (JSP)</strong></em> for a <strong>Todo Task Application</strong> in that:</p>
 <ul>
-<li><strong>Model</strong>– Represents the Business Layer of the Application</li>
-<li><strong>View</strong>– Defines the Presentation Layer of the Application</li>
-<li><strong>Controller</strong>– Manages the flow of the application</li>
+<li>Each <strong>Todo Task</strong> has <em>id, title, description, creation date, due date, status and comments</em>.</li>
+<li>User can <em>Create New Task, Update Existing Task, View All Tasks as List, View a Task and Delete a Task</em>.</li>
+</ul>
+<hr>
+<h2 id="what-is-model-view-controller-mvc-architecture">What is Model-View-Controller (MVC) Architecture?</h2>
+<p>Model designs based on <strong>MVC Architecture</strong> follow the <em><strong>MVC Design Pattern</strong></em> and they separate the <strong>Application Logic</strong> from the <strong>User Interface (UI)</strong> when designing the software. As the name implies <em>MVC Pattern</em> has three layers, which are:</p>
+<ul>
+<li><strong>Model</strong>– Represents the <em>Business Layer of the Application</em></li>
+<li><strong>View</strong>– Defines the <em>Presentation Layer of the Application</em></li>
+<li><strong>Controller</strong>– Manages the <em>Flow of the Application</em></li>
 </ul>
 <p>
   <figure>
@@ -188,27 +236,41 @@ if (!doNotTrack) {
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">MVC Architecture</figcaption>
   </figure>
 </p>
-<p>In the Java Programming context, the <strong>Model</strong> consists of simple <em>Java Classes(POJO - Plain Old Java Object classes)</em>, the <strong>View</strong> displays the data, usually the UI layer and the <strong>Controller</strong> consists of <em>Servlets or Business Logic</em>.</p>
-<p><em>JSP is used as the View Layer in the classic MVC Architecture.</em></p>
+<p>In the Java Programming Context, the <strong>Model</strong> consists of simple <em>Java Classes(POJO - Plain Old Java Object classes)</em>, the <strong>View</strong> displays the data, usually the UI layer and the <strong>Controller</strong> consists of <em>Servlets or Business Logic</em>.</p>
 <h3 id="the-model-layer">The Model Layer</h3>
-<p>In the MVC Design Pattern, the <em><strong>model</strong></em> is the Data Layer which defines the <em>Business Logic of the System</em> and also represents the State of the Application. The Model Objects retrieve and store the State of the Model in a Database. Through this Layer, we apply Rules to Data, which eventually represents the concepts our application manages.</p>
+<p>In the MVC Design Pattern, the <em><strong>Model</strong></em> is the Data Layer which defines the <em>Business Logic of the System</em> and also represents the <em>State of the Application</em>. The Model Objects retrieve and store the <strong>State of the Model in a Database</strong>. Through this Layer, we apply <em>Rules to Data</em>, which eventually represents the concepts our application manages.</p>
 <h3 id="the-view-layer">The View Layer</h3>
 <p>This Layer of the MVC Design Pattern represents the <em>Output of the Application</em> or <em>User Interface (UI)</em>. It displays the data fetched from the Model Layer by the Controller and presents the data to the user whenever asked for. It receives all the information it needs from the Controller and it does not need to interact with the Business Layer directly.</p>
 <h3 id="the-controller-layer">The Controller Layer</h3>
 <p>The <em><strong>Controller</strong></em> is like an Interface between <em><strong>Model</strong></em> and <em><strong>View</strong></em>. It receives the user requests from the View Layer and processes them, including the necessary validations. The requests are then sent to Model Layer for Data Processing. Once they are processed, the data is again sent back to the Controller and then displayed on the View Layer.</p>
 <p>The <em><strong>MVC Architecture</strong></em> provides an altogether new level of modularity to your code which makes it a lot more readable and maintainable.</p>
-<h2 id="using-jsp-in-spring-boot">Using JSP in Spring Boot</h2>
-<p>We will call the <em>existing Microservice REST APIs</em> already available <a href="/post/microservice-springboot-h2"
- target="_blank">here</a>, into this project and will not recreate those again. So we will be using the <a href="https://spring.io/blog/2009/03/27/rest-in-spring-3-resttemplate"
- target="_blank">RestTemplate</a> for calling the REST APIs. So let&rsquo;s get started.</p>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>There are some prerequisites that are required for creating the <strong>Microservice Spring Boot Application</strong>.</p>
+<h3 id="familiarity-with-technology-and-frameworks">Familiarity with Technology and Frameworks</h3>
+<p>It is assumed that you have prior basic knowledge or familiarity with <strong>Java Technology</strong>, <strong>Java Server Pages (JSP)</strong>, <strong>Spring</strong>, <strong>Spring Boot</strong>, <strong>Hibernate Frameworks</strong>, <strong>working with RDBMS databases</strong> and <strong>basic SQL commands</strong>, because I will not be covering the basics of these in this article.</p>
+<p>If you are not familiar, then it is advised to get the basic knowledge of these before continuing.</p>
+<h3 id="jdk-18">JDK 1.8+</h3>
+<p>Download the latest version of the <strong>Java JDK</strong> (1.17 is the latest LTS version, at the time of writing this article) from <a href="https://www.oracle.com/java/technologies/javase-downloads.html"
+ target="_blank">here</a>. Click on the downloaded <em>.exe</em> and complete the installation.</p>
 <blockquote>
-<p><em>If you want to enhance your earlier created Spring Boot to interact with JSP, add these below mentioned changes directly to that project and <strong>replace RestTemplate calls with the call to the respective methods.</strong></em></p>
+<p>Since it is an Oracle Proprietary product you will need to <em>sign-in/create</em> Oracle Account, before downloading.</p>
 </blockquote>
-<ol>
-<li><strong>Update <em>pom.xml</em></strong></li>
-</ol>
+<h3 id="integrated-development-environment-ide-for-code-development">Integrated Development Environment (IDE) for Code Development</h3>
+<p>You can use any IDE of your choice. I will be using the <em><strong>IntelliJ IDEA Community Edition</strong></em>.</p>
+<p>If you wish to use the IntelliJ IDEA Community Edition, download the latest version from <a href="https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&amp;code=IIC"
+ target="_blank">here</a>.</p>
+<p>Click on the downloaded <em>.exe</em> and complete the installation.</p>
+<h3 id="other-related-software">Other related software</h3>
+<p><strong>Webserver</strong>– Tomcat is embedded in the Spring Boot application and can be used as Webserver for running this project.</p>
+<p><strong>Project Management Tool (Maven)</strong>– Maven is embedded in the Spring Boot application and can be used for building and managing the Spring Boot project.</p>
+<hr>
+<h2 id="adding-jsp-to-spring-boot-project">Adding JSP to Spring Boot Project</h2>
+<p>We will be updating the <em>Microservice Application</em> already created in <em><strong><a href="/post/microservice-springboot-h2"
+ target="_blank">Microservice Using Spring Boot, Hibernate and H2 Database</a></strong></em>. We will make the necessary changes to add <strong>Java Server Pages (JSP)</strong> , as a View Layer to this application.</p>
+<h3 id="update-pomxml">Update pom.xml</h3>
 <ul>
-<li>We need to package the project as a <strong>war</strong> file, because by default <em>pom.xml</em> would package the project into <strong>jar</strong> and when using JSP files with Spring Boot, we cannot use <strong>jar</strong> for packaging the project because, JSP files are placed in <code>WEB-INF</code> folder which is available outside the <code>resources</code> folder and will not be packaged in the jar.</li>
+<li>We need to package the project as a <strong>war</strong> file, because by default <em>pom.xml</em> would package the project into <strong>jar</strong> and when using <em>JSP files with Spring Boot</em>, we cannot use <strong>jar</strong> for packaging the project because, JSP files are placed in <code>WEB-INF</code> folder which is available outside the <code>resources</code> folder and will not be packaged in the jar.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">packaging</span>&gt;war&lt;/<span style="color:#f92672">packaging</span>&gt;
 </span></span></code></pre></div><ul>
@@ -240,42 +302,237 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">dependency</span>&gt;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li><strong>Update <code>/src/main/resources/application.properties</code>- to include processing of JSP files.</strong></li>
-</ol>
+</div><h3 id="update-srcmainresourcesapplicationproperties">Update <code>/src/main/resources/application.properties</code></h3>
+<ul>
+<li>For processing of JSP files.</li>
+</ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>server<span style="color:#f92672">.</span><span style="color:#a6e22e">port</span><span style="color:#f92672">=</span>8081
-</span></span><span style="display:flex;"><span>server<span style="color:#f92672">.</span><span style="color:#a6e22e">servlet</span><span style="color:#f92672">.</span><span style="color:#a6e22e">contextPath</span><span style="color:#f92672">=/</span>todo<span style="color:#f92672">-</span>app<span style="color:#f92672">/</span>view<span style="color:#f92672">-</span>jsp<span style="color:#f92672">/</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>spring<span style="color:#f92672">.</span><span style="color:#a6e22e">mvc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">view</span><span style="color:#f92672">.</span><span style="color:#a6e22e">prefix</span><span style="color:#f92672">=/</span>WEB<span style="color:#f92672">-</span>INF<span style="color:#f92672">/</span>jsp<span style="color:#f92672">/</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>spring<span style="color:#f92672">.</span><span style="color:#a6e22e">mvc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">view</span><span style="color:#f92672">.</span><span style="color:#a6e22e">prefix</span><span style="color:#f92672">=/</span>WEB<span style="color:#f92672">-</span>INF<span style="color:#f92672">/</span>jsp<span style="color:#f92672">/</span>
 </span></span><span style="display:flex;"><span>spring<span style="color:#f92672">.</span><span style="color:#a6e22e">mvc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">view</span><span style="color:#f92672">.</span><span style="color:#a6e22e">suffix</span><span style="color:#f92672">=.</span><span style="color:#a6e22e">jsp</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> User Variables
-</span></span><span style="display:flex;"><span>base_uri<span style="color:#f92672">=</span>http<span style="color:#f92672">:</span><span style="color:#75715e">//localhost:8080/todo-app/tasks
-</span></span></span></code></pre></td></tr></table>
+</span></span></code></pre></td></tr></table>
 </div>
-</div><p>These prefix and suffix will inform the Application Server to process the JSP files from respective location.</p>
-<p>The <code>base_uri</code> variable will be used in the Controller class, to make the REST API calls using RestTemplate.</p>
-<ol start="3">
-<li><strong>Create a new folder <code>/src/main/webapp/WEB-INF/jsp/</code>- for placing all the JSP files</strong></li>
-</ol>
+</div><p>These <strong>prefix</strong> and <strong>suffix</strong> will inform the Application Server to process the JSP files from respective location.</p>
+<h3 id="create-a-new-folder-srcmainwebappweb-infjsp">Create a new folder <code>/src/main/webapp/WEB-INF/jsp/</code></h3>
 <ul>
 <li>Make sure to keep all the JSP files in this folder, in order for application server to process them.</li>
 </ul>
-<ol start="4">
-<li><strong>Create new JSP file= <code>/src/main/webapp/WEB-INF/jsp/index.jsp</code></strong></li>
-</ol>
+<h3 id="update-the-existing-controller--controllertodocontroller">Update the existing Controller = <code>controller.TodoController</code></h3>
+<ul>
+<li>Remove all the <em><strong>RequestMappings(like @GetMapping, @PostMapping, @PutMapping, @DeleteMapping)</strong></em> from this class, since it is serving as only <strong>Intermediary Controller class</strong>.</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoController</span> <span style="color:#66d9ef">implements</span> TodoApplicationConstants <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> TodoService todoService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">getAllTasks</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            List<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> tasksList <span style="color:#f92672">=</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;&gt;(</span>tasksList<span style="color:#f92672">,</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">OK</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception ex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;&gt;(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">INTERNAL_SERVER_ERROR</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getTasksById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        Optional<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;&gt;(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(),</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">OK</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;&gt;(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">NOT_FOUND</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>HttpStatus<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">deleteTaskById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;&gt;(</span>HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">NO_CONTENT</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;&gt;(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">NOT_FOUND</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception ex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;&gt;(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">INTERNAL_SERVER_ERROR</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">updateTaskItem</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> Tasks task<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        task <span style="color:#f92672">=</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">createOrUpdate</span><span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;&gt;(</span>task<span style="color:#f92672">,</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">OK</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">createTodoTask</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> Tasks task<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        task <span style="color:#f92672">=</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">createOrUpdate</span><span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;&gt;(</span>task<span style="color:#f92672">,</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">CREATED</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">getTaskStatus</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> taskStatusList <span style="color:#f92672">=</span> todoService<span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoStatusAsList</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;&gt;(</span>taskStatusList<span style="color:#f92672">,</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">OK</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="create-a-new-controller-class--controllertodoviewcontroller">Create a new Controller Class = <code>controller.TodoViewController</code></h3>
+<ul>
+<li>This is the Controller Class that will be receiving the requests from JSP and hence it will have all the <em><strong>RequestMappings(like @GetMapping, @PostMapping, @PutMapping, @DeleteMapping)</strong></em>.</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoViewController</span> <span style="color:#66d9ef">implements</span> TodoApplicationConstants <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> TodoController todoController<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ModelAndView <span style="color:#a6e22e">gotoHome</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoList&#34;</span><span style="color:#f92672">,</span> todoController<span style="color:#f92672">.</span><span style="color:#a6e22e">getAllTasks</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getBody</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ModelAndView<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;index&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/singleItemView/{action}/{todoId}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ModelAndView <span style="color:#a6e22e">goToSingleItemView</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">,</span> <span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;action&#34;</span><span style="color:#f92672">)</span> String action<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                           <span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoId&#34;</span><span style="color:#f92672">)</span> Long todoId<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        Tasks todoItem <span style="color:#f92672">=</span> Tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">title</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">description</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">dueDate</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">).</span><span style="color:#a6e22e">status</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>todoId <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            todoItem <span style="color:#f92672">=</span> todoController<span style="color:#f92672">.</span><span style="color:#a6e22e">getTasksById</span><span style="color:#f92672">(</span>todoId<span style="color:#f92672">).</span><span style="color:#a6e22e">getBody</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoItem&#34;</span><span style="color:#f92672">,</span> todoItem<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;action&#34;</span><span style="color:#f92672">,</span>action<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoStatus&#34;</span><span style="color:#f92672">,</span>todoController<span style="color:#f92672">.</span><span style="color:#a6e22e">getTaskStatus</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getBody</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ModelAndView<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;singleItemPage&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/create&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendToCreate</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">,</span> <span style="color:#a6e22e">@RequestBody</span> Tasks todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        todoController<span style="color:#f92672">.</span><span style="color:#a6e22e">createTodoTask</span><span style="color:#f92672">(</span>todoItem<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        gotoHome<span style="color:#f92672">(</span>model<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PutMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/update&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendToUpdate</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">,</span> <span style="color:#a6e22e">@RequestBody</span> Tasks todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        todoController<span style="color:#f92672">.</span><span style="color:#a6e22e">updateTaskItem</span><span style="color:#f92672">(</span>todoItem<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        gotoHome<span style="color:#f92672">(</span>model<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@DeleteMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/deleteById/{id}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendToDeleteById</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">,</span> <span style="color:#a6e22e">@PathVariable</span> <span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        todoController<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteTaskById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        gotoHome<span style="color:#f92672">(</span>model<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="create-new-jsp-file-srcmainwebappweb-infjspindexjsp">Create new JSP file= <code>/src/main/webapp/WEB-INF/jsp/index.jsp</code></h3>
+<ul>
+<li>This is the <em>Homepage</em> for the application.</li>
+<li>This will contain List of Tasks with options to View/Edit/Delete.</li>
+<li>New Task can also be created from this page.</li>
+</ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -403,26 +660,26 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">tr</span>&gt;
 </span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">thead</span>&gt;
 </span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tbody</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">c:forEach</span> <span style="color:#a6e22e">items</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoList}&#34;</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;todo&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">c:forEach</span> <span style="color:#a6e22e">items</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todoList}&#34;</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tasks&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">tr</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span>&gt;${todo.title}&lt;/<span style="color:#f92672">td</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span>&gt;${todo.description}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span>&gt;${tasks.title}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span>&gt;${tasks.description}&lt;/<span style="color:#f92672">td</span>&gt;
 </span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span>&gt;
-</span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">fmt:parseDate</span>  <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${todo.dueDate}&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yyyy-MM-dd&#34;</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parsedDate&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">fmt:parseDate</span>  <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${tasks.dueDate}&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yyyy-MM-dd&#34;</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parsedDate&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">fmt:formatDate</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${parsedDate}&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dd-MMM-yyyy&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>                    &lt;/<span style="color:#f92672">td</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span>&gt;${todo.status}&lt;/<span style="color:#f92672">td</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;${todo.todoTaskCommentsSet.size()}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span>&gt;${tasks.status}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;${tasks.todoTaskCommentsSet.size()}&lt;/<span style="color:#f92672">td</span>&gt;
 </span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span>&gt;
-</span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">redirectToSingleView(&#39;view&#39;,&#39;${todo.systemTasksId}&#39;)</span>&gt;
+</span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">redirectToSingleView(&#39;view&#39;,&#39;${tasks.systemTasksId}&#39;)</span>&gt;
 </span></span><span style="display:flex;"><span>                            VIEW&lt;/<span style="color:#f92672">button</span>&gt;
 </span></span><span style="display:flex;"><span>                    &lt;/<span style="color:#f92672">td</span>&gt;
 </span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span>&gt;
-</span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">redirectToSingleView(&#39;edit&#39;,&#39;${todo.systemTasksId}&#39;)</span>&gt;
+</span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">redirectToSingleView(&#39;edit&#39;,&#39;${tasks.systemTasksId}&#39;)</span>&gt;
 </span></span><span style="display:flex;"><span>                            EDIT&lt;/<span style="color:#f92672">button</span>&gt;
 </span></span><span style="display:flex;"><span>                    &lt;/<span style="color:#f92672">td</span>&gt;
 </span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">td</span>&gt;
-</span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-warning&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">deleteById(&#39;${todo.systemTasksId}&#39;)</span>&gt;DELETE&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-warning&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">deleteById(&#39;${tasks.systemTasksId}&#39;)</span>&gt;DELETE&lt;/<span style="color:#f92672">button</span>&gt;
 </span></span><span style="display:flex;"><span>                    &lt;/<span style="color:#f92672">td</span>&gt;
 </span></span><span style="display:flex;"><span>                &lt;/<span style="color:#f92672">tr</span>&gt;
 </span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">c:forEach</span>&gt;
@@ -435,6 +692,11 @@ if (!doNotTrack) {
 </div><ol start="5">
 <li><strong>Create one more JSP file= <code>/src/main/webapp/WEB-INF/jsp/singleItemPage.jsp</code></strong></li>
 </ol>
+<ul>
+<li>When user clicks on View/Edit/Create on the Homepage, they are redirected to this page.</li>
+<li>This page will display details about the single task.</li>
+<li>User can either View/Edit the existing task or Create the new Task, depending on the chosen action.</li>
+</ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
@@ -751,114 +1013,16 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="6">
-<li><strong>Create a new Controller Class = <code>controller.TodoViewController</code></strong></li>
-</ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoViewController</span> <span style="color:#66d9ef">implements</span> TodoApplicationConstants <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> RestTemplate restTemplate <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RestTemplate<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${base_uri}&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String base_uri<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ModelAndView <span style="color:#a6e22e">gotoHome</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoList&#34;</span><span style="color:#f92672">,</span> restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">getForObject</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">,</span>List<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ModelAndView<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;index&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/singleItemView/{action}/{todoId}&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ModelAndView <span style="color:#a6e22e">goToSingleItemView</span><span style="color:#f92672">(</span>ModelMap model<span style="color:#f92672">,</span> <span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;action&#34;</span><span style="color:#f92672">)</span> String action<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span>                                           <span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoId&#34;</span><span style="color:#f92672">)</span> String todoId<span style="color:#f92672">){</span>
-</span></span><span style="display:flex;"><span>        Tasks todoItem <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tasks<span style="color:#f92672">(</span>0L<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">(),</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>Long<span style="color:#f92672">.</span><span style="color:#a6e22e">parseLong</span><span style="color:#f92672">(</span>todoId<span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            todoItem <span style="color:#f92672">=</span> restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">getForObject</span><span style="color:#f92672">(</span>base_uri <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> todoId<span style="color:#f92672">,</span> Tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoItem&#34;</span><span style="color:#f92672">,</span> todoItem<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;action&#34;</span><span style="color:#f92672">,</span>action<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;todoStatus&#34;</span><span style="color:#f92672">,</span>restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">getForObject</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/status&#34;</span><span style="color:#f92672">,</span>List<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ModelAndView<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;singleItemPage&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/create&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendToCreate</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> Tasks todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">postForObject</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">,</span>todoItem<span style="color:#f92672">,</span>Tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PutMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/update&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendToUpdate</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> Tasks todoItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">,</span>todoItem<span style="color:#f92672">,</span>Tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@DeleteMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/deleteById/{id}&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendToDeleteById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#66d9ef">long</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>base_uri<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">+</span>id<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Since we have added <em><strong>prefix</strong></em> and <em><strong>suffix</strong></em> parameters in the <code>application.properties</code>, hence just the name of the JSP in the return statement, would redirect to the respective JSP file.</p>
-<p><em><strong>RestTemplate</strong></em> is used in the Controller class for making the <em>REST APIs calls to the existing Microservice</em>.</p>
-<hr>
+</div><hr>
 <h2 id="running-the-jsp-spring-boot-project">Running the JSP Spring Boot Project</h2>
-<p>With these changes, we are ready to run the project. When we start the project and go to browser and type <a href="http://localhost:8081/todo-app/view-jsp/"
- target="_blank">http://localhost:8081/todo-app/view-jsp/</a>, we will see the <code>index.jsp</code> in action.
+<p>With these changes, we are ready to run the project. When we start the project and go to browser and type <a href="http://localhost:8080/todo-app/tasks"
+ target="_blank">http://localhost:8080/todo-app/tasks</a>, we will see the <code>index.jsp</code> in action.
 
   <figure>
     <img src="images/todo-tracker-home-page.jpeg" alt="todo-tracker-home-page.jpeg" style="display: block;margin: 0.7rem auto;">
     <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Todo Tracker Home Page</figcaption>
   </figure>
 </p>
-<p><strong>See the working demo</strong>
-<video src="videos/mvc-springboot-h2-jsp-working.webm" controls="yes"></p>
-<p><strong>Let us navigate through each pages</strong></p>
 <ul>
 <li>
 <p>When you click on <strong>Create</strong> Button
@@ -908,7 +1072,7 @@ if (!doNotTrack) {
 </ul>
 <hr>
 <h2 id="conclusion">Conclusion</h2>
-<p>With this setup, we have come to an end of this article and we have seen how we can create application with <em>MVC architecture using <strong>Spring Boot</strong> and <strong>JSP pages</strong></em>.</p>
+<p>With this setup, we have come to an end of this article and we have seen how we can developing a <em><strong>Model-View-Controller (MVC)</strong></em> Application using <strong>Spring Boot</strong>, <strong>H2 Database</strong> and <strong>Java Server Pages (JSP)</strong>.</p>
 <p>Complete code for this project can be found at GitHub <a href="https://github.com/prasbhat/mvc-springboot-jsp"
  target="_blank">here</a>. Go ahead and clone it.</p>
 <p>Instructions on how to clone and run the project are provided on the GitHub page.</p>
@@ -935,9 +1099,6 @@ if (!doNotTrack) {
 		</li>
 		<li class="tags__item">
 			<a class="tags__link btn" href="/tags/jsp/" rel="tag">JSP</a>
-		</li>
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/resttemplate/" rel="tag">RestTemplate</a>
 		</li>
 		<li class="tags__item">
 			<a class="tags__link btn" href="/tags/relational-database/" rel="tag">Relational Database</a>

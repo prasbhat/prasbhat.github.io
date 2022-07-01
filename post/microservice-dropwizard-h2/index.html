@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Microservice Using Dropwizard, Hibernate and H2 Database - myzonesoft.com</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KY3NJW8CDF"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-KY3NJW8CDF', { 'anonymize_ip': false });
+}
+</script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="myzonesoft.com" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">myzonesoft.com</div>
+					<div class="logo__tagline">A Technical Site for Everyone</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__dropdown">
+			<a class="menu__link" href="/categories/microservice/">
+				
+				<span class="menu__text">Microservices</span>
+				<label class="drop-icon" for="Microservices">▾</label>
+				
+			</a>
+			<input type="checkbox" id="Microservices">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/spring-boot/">
+						
+						<span class="menu__text">Spring Boot</span>
+						
+					</a>
+					</li>
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/dropwizard/">
+						
+						<span class="menu__text">Dropwizard</span>
+						
+					</a>
+					</li>
+				
+			</ul>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/mvc/">
+				
+				<span class="menu__text">MVC</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/frontend/">
+				
+				<span class="menu__text">Frontend</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__dropdown">
+			<a class="menu__link" href="/categories/others/">
+				
+				<span class="menu__text">Others</span>
+				<label class="drop-icon" for="Others">▾</label>
+				
+			</a>
+			<input type="checkbox" id="Others">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/hugo/">
+						
+						<span class="menu__text">Hugo</span>
+						
+					</a>
+					</li>
+				
+			</ul>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About Us</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post" autonumbering>
+		<header class="post__header"><div class="views">
+    <span class="views">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=https%3a%2f%2fmyzonesoft.com%2fpost%2fmicroservice-dropwizard-h2%2f" alt="Views"/>
+    </span>
+</div>
+
+			<h1 class="post__title">Microservice Using Dropwizard, Hibernate and H2 Database</h1>
+			
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-28T15:24:28&#43;05:30">June 28, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/microservice/" rel="category">Microservice</a>, <a class="meta__link" href="/categories/dropwizard/" rel="category">Dropwizard</a>
+	</span>
+</div><div class="meta__item meta__icon">
+<svg width="18" height="18" viewBox="0 0 88.965 88.966">
+	<polygon points="66.436,56.656 61.639,56.656 61.639,72.438 75.096,72.438 75.096,67.641 66.436,67.641"/>
+	<path d="M65.049,46.49v-3.342V23.541c0,0,0.008-6.385,0-6.465l-3.746-7.59l3.324-6.32c0.354-0.67,0.33-1.475-0.062-2.121
+		C64.174,0.397,63.471,0,62.715,0H5.301C4.11,0,3.143,0.967,3.143,2.16l0.052,80.307h10.369V16.841H7.461V4.32h51.68l-2.186,4.15
+		c-0.328,0.625-0.332,1.369-0.007,1.998l3.295,6.373h-42.43v65.625h7.915h6.818h14.526h2.236c3.865,4,9.273,6.5,15.264,6.5
+		c11.719,0,21.25-9.532,21.25-21.25C85.825,56.158,76.547,46.746,65.049,46.49z M64.575,81.966c-7.857,0-14.25-6.394-14.25-14.25
+		s6.393-14.25,14.25-14.25s14.25,6.394,14.25,14.25S72.432,81.966,64.575,81.966z"/>	
+</svg>
+ 19 Minutes   Read   
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/cover_images/microservice-dropwizard-h2.png" alt="Microservice Using Dropwizard, Hibernate and H2 Database">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#definitions">Definitions</a></li>
+    <li><a href="#prerequisites">Prerequisites</a>
+      <ul>
+        <li><a href="#familiarity-with-technology-and-frameworks">Familiarity with Technology and Frameworks</a></li>
+        <li><a href="#jdk-18">JDK 1.8+</a></li>
+        <li><a href="#integrated-development-environment-ide-for-code-development">Integrated Development Environment (IDE) for Code Development</a></li>
+        <li><a href="#other-related-software">Other related software</a></li>
+      </ul>
+    </li>
+    <li><a href="#create-bootstrap-dropwizard-project">Create Bootstrap Dropwizard Project</a>
+      <ul>
+        <li><a href="#create-dropwizard-project-using-maven">Create Dropwizard Project using Maven</a></li>
+        <li><a href="#libraries-included-inside-dropwizard">Libraries included inside dropwizard</a></li>
+        <li><a href="#building-fat-jars">Building Fat JARs</a></li>
+        <li><a href="#creating-an-application-class">Creating An Application Class</a></li>
+        <li><a href="#create-representationmodel-class">Create Representation/Model Class</a></li>
+        <li><a href="#create-daorepository-class">Create DAO/Repository Class</a></li>
+        <li><a href="#creating-a-resourcecontroller-class">Creating A Resource/Controller Class</a></li>
+        <li><a href="#registering-a-resource">Registering A Resource</a></li>
+      </ul>
+    </li>
+    <li><a href="#running-the-application">Running the Application</a>
+      <ul>
+        <li><a href="#using-the-uber-fat-jar-file-standalone-application">Using the Uber Fat Jar File (Standalone application)</a></li>
+        <li><a href="#through-the-intellij-idea-ide">Through the Intellij Idea IDE</a></li>
+        <li><a href="#server-start">Server start</a></li>
+        <li><a href="#access-the-uri">Access the URI</a></li>
+      </ul>
+    </li>
+    <li><a href="#enhance-the-existing-application-to-expose-rest-apis">Enhance the Existing Application to Expose REST APIs</a>
+      <ul>
+        <li><a href="#final-project-structure">Final Project Structure</a></li>
+        <li><a href="#connecting-with-database">Connecting with Database</a></li>
+        <li><a href="#add-rest-api-endpoint-for-create-operation">Add REST API Endpoint for CREATE Operation</a></li>
+        <li><a href="#add-rest-api-endpoint-for-get-all-operation">Add REST API Endpoint for GET All Operation</a></li>
+        <li><a href="#add-rest-api-endpoint-for-get-operation">Add REST API Endpoint for GET Operation</a></li>
+        <li><a href="#add-rest-api-endpoint-for-update-operation">Add REST API Endpoint for UPDATE Operation</a></li>
+        <li><a href="#add-rest-api-endpoint-for-delete-operation">Add REST API Endpoint for DELETE Operation</a></li>
+      </ul>
+    </li>
+    <li><a href="#configure-dropwizard-to-handle-cors-request">Configure Dropwizard to Handle CORS Request</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(255, 82, 82)',
+  textColor: '#fff'
+})</script>
+<p>In this article, I will develop a <strong>Microservice Application</strong> using <strong>Dropwizard Framework</strong> and <strong>H2 Database</strong> and expose all <em>CRUD (Create, Read, Update, Delete) Operations</em> as the REST APIs.</p>
+<p><strong>Dropwizard Framework</strong> will serve as back-end server and I will be using <em><strong>Relational Database</strong></em> known as <strong>H2 Database</strong>, <em>it is also known as an Embedded Java Database</em>, for persisting(storing) the data.</p>
+<p>By the end of this article, you would learn about how to:</p>
+<ul>
+<li>Configure Hibernate to work with <em>Relational Database</em> and persist the data.</li>
+<li>Create and Expose <em><strong>REST APIs</strong></em> for CRUD Operations using <strong>Dropwizard Framework</strong>.</li>
+<li>How to handle <em><strong>HTTP</strong></em> and <em><strong>CORS</strong></em> Requests through REST Controller.</li>
+</ul>
+<hr>
+<h2 id="overview">Overview</h2>
+<p>We will build a <strong>Rest CRUD API using Dropwizard Framework</strong> for a <strong>Todo Task Application</strong> in that:</p>
+<ul>
+<li>Each <strong>Todo Task</strong> has <em>id, title, description, creation date, due date, status and comments</em>.</li>
+<li>APIs help to <em>Create, Read, Update, Delete</em> <strong>Todo Tasks</strong>.</li>
+</ul>
+<p>Below mentioned are the <em><strong>REST APIs</strong></em> for CRUD Operations using <strong>Dropwizard Framework</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Create New Todo Task</td>
+<td style="text-align:center">CREATE</td>
+<td style="text-align:center">POST</td>
+<td style="text-align:center"><code>/tasks</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Fetch All Todo Tasks</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/tasks</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Fetch One Todo Task</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/tasks/{id}</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Update One Specific Todo Task</td>
+<td style="text-align:center">UPDATE</td>
+<td style="text-align:center">PUT</td>
+<td style="text-align:center"><code>/tasks</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Delete One Specific Todo Task</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>/tasks/{id}</code></td>
+</tr>
+</tbody>
+</table>
+<p>If you have no time to read this article, but want to try the code for yourself, GitHub location is provided <a href="https://github.com/prasbhat/microservice-dropwizard-h2"
+ target="_blank">here</a>. Go ahead and clone the code repository.</p>
+<hr>
+<h2 id="definitions">Definitions</h2>
+<p><strong><a href="https://www.dropwizard.io/en/latest/"
+ target="_blank">Dropwizard</a></strong> is an open source Java Framework for the rapid development of REST APIs. <strong>Dropwizard</strong> is kind of ecosystem which contains all the dependencies (such as <em>Jersey, Jackson or Jetty</em>) from the Java ecosystem into a <strong>simple</strong>, <strong>light-weight</strong> package that lets you focus on <em>getting things done</em>.</p>
+<p><strong><a href="https://spring.io/microservices"
+ target="_blank">Microservices</a></strong> is an architecture that allows the developers to develop and deploy services independently. Each service running has its own process and this achieves the lightweight model to support business applications. One of the most popular types of APIs for building Microservices applications is known as <em><strong>&ldquo;RESTful API&rdquo;</strong></em> or <em><strong>&ldquo;REST API&rdquo;</strong></em>.</p>
+<p><strong>RE</strong>presentational <strong>S</strong>tate <strong>T</strong>ransfer <strong>(REST)</strong> is an architectural style that defines a set of constraints to be used for creating web services. <strong>REST API</strong> is a way of accessing web services in a simple and flexible way without having any processing. All communication done via REST API uses only <em>HTTP request</em>.</p>
+<p><strong>Application Programming Interface (API)</strong> is a software intermediary that allows two applications to talk to each other. To simplify, an <em><strong>API</strong></em> delivers a user requests to a system and sends the system’s response back to a user.</p>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>There are some prerequisites that are required for creating the <strong>Microservice Application using Dropwizard</strong>.</p>
+<h3 id="familiarity-with-technology-and-frameworks">Familiarity with Technology and Frameworks</h3>
+<p>It is assumed that you have prior knowledge or familiarity with <strong>Java Technology</strong>, <strong>Jetty</strong>, <strong>Jersey</strong>, <strong>Jackson</strong>, <strong>Hibernate Frameworks</strong>, <strong>working with RDBMS databases</strong> and <strong>basic SQL commands</strong>, because I will not be covering the basics of these in this article.</p>
+<p>If you are not familiar, then it is advised to get the basic knowledge of these before continuing.</p>
+<h3 id="jdk-18">JDK 1.8+</h3>
+<p>Download the latest version of the <strong>Java JDK</strong> (1.17 is the latest LTS version, at the time of writing this article) from <a href="https://www.oracle.com/java/technologies/javase-downloads.html"
+ target="_blank">here</a>. Click on the downloaded <em>.exe</em> and complete the installation.</p>
+<blockquote>
+<p>Since it is an Oracle Proprietary product you will need to <em>sign-in/create</em> Oracle Account, before downloading.</p>
+</blockquote>
+<h3 id="integrated-development-environment-ide-for-code-development">Integrated Development Environment (IDE) for Code Development</h3>
+<p>You can use any IDE of your choice. I will be using the <em><strong>IntelliJ IDEA Community Edition</strong></em>.</p>
+<p>If you wish to use the <em>IntelliJ IDEA Community Edition</em>, download the latest version from <a href="https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&amp;code=IIC"
+ target="_blank">here</a>.</p>
+<p>Click on the downloaded <em>.exe</em> and complete the installation.</p>
+<h3 id="other-related-software">Other related software</h3>
+<p><strong>Web Application</strong>– <em><strong>Jetty</strong></em> is embedded in the <strong>Dropwizard Framework</strong> and can be used as Web application for running this project.</p>
+<p><strong>Project Management Tool</strong>– <strong>Dropwizard Framework</strong> officially supports <em><strong>Maven</strong></em>, so we are going to use it in this project.</p>
+<hr>
+<h2 id="create-bootstrap-dropwizard-project">Create Bootstrap Dropwizard Project</h2>
+<p>Let me first create the <em>Bootstrap Dropwizard Project</em>, I mean, the basic project without any of the customization. Later I will enhance it with different methods, to include <em>CRUD Operations</em> and <em>Expose REST APIs</em>, as discussed above.</p>
+<h3 id="create-dropwizard-project-using-maven">Create Dropwizard Project using Maven</h3>
+<p>There are two options for creating the project using <strong>Maven</strong>.</p>
+<h4 id="using-command-prompt">Using Command Prompt</h4>
+<p>Move to the folder where you want to create the project and open the command prompt.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mvn archetype:generate  -DgroupId<span style="color:#f92672">=</span>com.myzonesoft.todo 
+</span></span><span style="display:flex;"><span>                        -DartifactId<span style="color:#f92672">=</span>microservice-dropwizard-h2 
+</span></span><span style="display:flex;"><span>                        -DarchetypeArtifactId<span style="color:#f92672">=</span>maven-archetype-quickstart 
+</span></span><span style="display:flex;"><span>                        -DinteractiveMode<span style="color:#f92672">=</span>false
+</span></span></code></pre></div><h4 id="using-integrated-development-environment-ide">Using Integrated Development Environment (IDE)</h4>
+<p>Open your favorite <strong>IDE</strong>(I will be using <em>IntelliJ IDEA Community Edition</em>, as mentioned <a href="#integrated-development-environment-ide-for-code-development"
+>here</a>) and select <strong>File</strong> -&gt; <strong>New</strong> -&gt; <strong>Project</strong>.</p>
+<ul>
+<li>A popup window with option to <em>create new project</em> appears.</li>
+<li>Fill in <em>Name</em>, <em>Location</em>, <em>Language</em>, <em>Build System</em>, <em>JDK</em>, <em>GroupId</em>, <em>ArtifactId</em> and click <strong>Create</strong>.</li>
+<li>New project will be created.
+
+  <figure>
+    <img src="images/new-project-creation-using-ide.jpeg" alt="new-project-creation-using-ide.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">New Dropwizard Project creation using IDE</figcaption>
+  </figure>
+</li>
+</ul>
+<p>Generated project will have <strong>pom.xml</strong> file as well. Add <em>Dropwizard dependencies</em> there.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;properties&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dropwizard.version&gt;</span>2.1.0<span style="color:#f92672">&lt;/dropwizard.version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/properties&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencyManagement&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;groupId&gt;</span>io.dropwizard<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;artifactId&gt;</span>dropwizard-dependencies<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;version&gt;</span>${dropwizard.version}<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;type&gt;</span>pom<span style="color:#f92672">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;scope&gt;</span>import<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependencyManagement&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;groupId&gt;</span>io.dropwizard<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;artifactId&gt;</span>dropwizard-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>That’s it. This will download all the required dependencies to your project. The current <strong><a href="https://github.com/dropwizard/dropwizard/releases/tag/v2.1.0"
+ target="_blank">Dropwizard version is 2.1.0</a></strong>.</p>
+<h3 id="libraries-included-inside-dropwizard">Libraries included inside dropwizard</h3>
+<p>Once you include dropwizard into your project, you get following libraries added to your classpath.</p>
+<ul>
+<li><a href="https://jersey.github.io/"
+ target="_blank">Jersey</a> – For building RESTful web applications. It allows you to write clean, testable classes which gracefully map HTTP requests to simple Java objects.</li>
+<li><a href="https://www.eclipse.org/jetty/"
+ target="_blank">Jetty</a> – Dropwizard uses the Jetty HTTP library to embed an HTTP server directly into your project.</li>
+<li><a href="https://github.com/FasterXML/jackson"
+ target="_blank">Jackson</a> – For object to/from JSON conversion. It allows to export your domain models directly with JAXB annotations.</li>
+<li><a href="https://github.com/google/guava"
+ target="_blank">Guava</a> – highly optimized immutable data structures to speedup development.</li>
+<li><a href="http://logback.qos.ch/"
+ target="_blank">Logback</a> and <a href="http://www.slf4j.org/"
+ target="_blank">SLF4j</a> – for performant and flexible logging.</li>
+<li><a href="http://hibernate.org/subprojects/validator.html"
+ target="_blank">Hibernate Validator</a> – an easy declarative framework for validating user input and generating helpful and i18n-friendly error messages.</li>
+<li><a href="https://hc.apache.org/httpcomponents-client-ga/index.html"
+ target="_blank">Apache HTTPClient</a> – For both low- and high-level interaction with other web services.</li>
+<li><a href="http://jdbi.org/"
+ target="_blank">JDBI</a> – the most straightforward way to use a relational database with Java.</li>
+<li><a href="https://www.liquibase.org/"
+ target="_blank">Liquibase</a> – to keep your database schema in check throughout your development and release cycle.</li>
+<li><a href="https://freemarker.sourceforge.io/"
+ target="_blank">FreeMarker</a> and <a href="https://mustache.github.io/"
+ target="_blank">Mustache</a> – are simple templating systems for more user-facing applications.</li>
+<li><a href="https://www.joda.org/joda-time/"
+ target="_blank">Joda Time</a> – very complete and sane library for handling dates and times.</li>
+</ul>
+<h3 id="building-fat-jars">Building Fat JARs</h3>
+<p>To add build and package support to our project, we will use the <strong>maven-shade</strong> plugin, which will allow us to package our project completely, along with its dependencies, into a single <strong>standalone JAR file (Fat/Uber JAR)</strong> that can be distributed and executed as is.</p>
+<p><code>pom.xml</code> after adding the build section.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;properties&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;maven.compiler.source&gt;</span>1.17<span style="color:#f92672">&lt;/maven.compiler.source&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;maven.compiler.target&gt;</span>1.17<span style="color:#f92672">&lt;/maven.compiler.target&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/properties&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;artifactId&gt;</span>maven-shade-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;version&gt;</span>3.3.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;executions&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;execution&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;phase&gt;</span>package<span style="color:#f92672">&lt;/phase&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;goals&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;goal&gt;</span>shade<span style="color:#f92672">&lt;/goal&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/goals&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;transformers&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;transformer</span> <span style="color:#a6e22e">implementation=</span><span style="color:#e6db74">&#34;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;mainClass&gt;</span>com.myzonesoft.todo.microservice.MicroserviceDropwizardH2Application<span style="color:#f92672">&lt;/mainClass&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;/transformer&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;transformer</span> <span style="color:#a6e22e">implementation=</span><span style="color:#e6db74">&#34;org.apache.maven.plugins.shade.resource.ServicesResourceTransformer&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;/transformer&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/transformers&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/execution&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/executions&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/plugins&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="creating-an-application-class">Creating An Application Class</h3>
+<p>An <strong>Application Class</strong> is entry point for any <strong>Dropwizard Project</strong>. It needs to extend the <code>io.dropwizard.Application</code> class and implement its the <code>run(Configuration, Environment)</code> method. They prepare the runtime environment of the application.</p>
+<p>To invoke the <code>run</code> method, you will need to have <code>public static void main(String[] args) {}</code> method, which will be invoked by <code>java -jar</code> command when you run the application as jar file.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MicroserviceDropwizardH2Application</span> <span style="color:#66d9ef">extends</span> Application<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> MicroserviceDropwizardH2Application<span style="color:#f92672">().</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Configuration configuration<span style="color:#f92672">,</span> Environment environment<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// nothing to do yet
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In the <code>run</code> method, we need to register all the <strong>Resource/Controller Classes</strong> later.</p>
+<hr>
+<h3 id="create-representationmodel-class">Create Representation/Model Class</h3>
+<p><strong>Representation</strong> is what holds the data and serialized into JSON. It’s <strong>Model</strong> for RESTful application. When using <em>Jersey with Jackson</em>, all you need to build a resource representation is – a simple POJO following Java Bean standards. <strong>Jackson</strong> constructs the JSON string recursively according to the getter methods of each class and their return type.</p>
+<ul>
+<li>Create new <strong>Representation/Model Class</strong> - <code>model.Tasks</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tasks</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String systemTasksId<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String title<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String description<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@JsonFormat</span><span style="color:#f92672">(</span>shape <span style="color:#f92672">=</span> JsonFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">Shape</span><span style="color:#f92672">.</span><span style="color:#a6e22e">STRING</span><span style="color:#f92672">,</span> pattern <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dd-MM-yyyy&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@JsonFormat</span><span style="color:#f92672">(</span>shape <span style="color:#f92672">=</span> JsonFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">Shape</span><span style="color:#f92672">.</span><span style="color:#a6e22e">STRING</span><span style="color:#f92672">,</span> pattern <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dd-MM-yyyy&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> LocalDate dueDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String status<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Create new <strong>Representation/Model Class</strong> - <code>model.TodoTaskComments</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTaskComments</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Long todoTaskCommentsId<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String taskComments<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@JsonFormat</span><span style="color:#f92672">(</span>shape <span style="color:#f92672">=</span> JsonFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">Shape</span><span style="color:#f92672">.</span><span style="color:#a6e22e">STRING</span><span style="color:#f92672">,</span> pattern <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yyyy-MM-dd&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Tasks todoTask<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="add-project-lombok-to-representationmodel-class">Add Project Lombok to Representation/Model Class</h4>
+<p><strong>Representation/Model Class</strong> would require lots of bolier plate codes like <strong>No Args Constructor</strong> methods, <strong>All Args Constructor</strong> methods, <strong>Getters/Setters</strong> methods, <strong>To String</strong> methods and <strong>Class Builder</strong> methods. Instead of writing these for all model classes, in order to reduce the code, we can use <strong><a href="https://projectlombok.org/"
+ target="_blank">Project Lombok</a></strong>.</p>
+<ul>
+<li>In our <code>pom.xml</code>, add the following dependency</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;properties&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;lombok.version&gt;</span>1.18.24<span style="color:#f92672">&lt;/lombok.version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/properties&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;groupId&gt;</span>org.projectlombok<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;artifactId&gt;</span>lombok<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;version&gt;</span>${lombok.version}<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;scope&gt;</span>provided<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Update the <strong>Representation/Model Class</strong> to include the <em><strong>Lombok Annotations</strong></em> - <code>model.Tasks</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Builder</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Getter</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Setter</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@NoArgsConstructor</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@AllArgsConstructor</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ToString</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tasks</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="create-daorepository-class">Create DAO/Repository Class</h3>
+<p><strong>DAO/Repository Class</strong> will be responsible for updating the <strong>Model Class</strong> data in the Database. Let us create- <code>repository.TasksDAO</code></p>
+<h4 id="hardcode-the-data">Hardcode the Data</h4>
+<p>For now, I will hardcode the data to represent the database entity. In the later section of this article, <a href="#connecting-with-database"
+>I will connect to database</a>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TasksDAO</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> HashMap<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> Tasks<span style="color:#f92672">&gt;</span> tasksHashMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>      todoTaskCommentsSet<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>TodoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span><span style="color:#a6e22e">todoTaskCommentsId</span><span style="color:#f92672">(</span>2L<span style="color:#f92672">).</span><span style="color:#a6e22e">taskComments</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hardcode Comment&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">creationDate</span><span style="color:#f92672">(</span>LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>      tasksHashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> Tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span><span style="color:#a6e22e">systemTasksId</span><span style="color:#f92672">(</span>1L<span style="color:#f92672">).</span><span style="color:#a6e22e">title</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Test from Dropwizard&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">description</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hardcoded in Dropwizard&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span><span style="color:#a6e22e">creationDate</span><span style="color:#f92672">(</span>LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">dueDate</span><span style="color:#f92672">(</span>LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">status</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;NOT_STARTED&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span><span style="color:#a6e22e">todoTaskCommentsSet</span><span style="color:#f92672">(</span>todoTaskCommentsSet<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAllTodoTasks</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;(</span>tasksHashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">values</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="creating-a-resourcecontroller-class">Creating A Resource/Controller Class</h3>
+<p>We will now add REST resources containing REST APIs. Each <strong>Resource/Controller Class</strong> is associated with a <em>URI template</em>. This class will be responsible for handling HTTP requests and generating JSON responses. <em>Jersey is used for building these REST APIs</em>.</p>
+<ul>
+<li>Create Resource/Controller Class - <code>controller.TodoController</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Path</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/todo-app/tasks&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Produces</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoController</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> TasksDAO tasksDAO <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TasksDAO<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">TodoController</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@GET</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> Response <span style="color:#a6e22e">getAllTodoTasks</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">ok</span><span style="color:#f92672">(</span>tasksDAO<span style="color:#f92672">.</span><span style="color:#a6e22e">getAllTodoTasks</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="registering-a-resource">Registering A Resource</h3>
+<p>We need to register this <strong>Resource/Controller Class</strong> in the <code>run()</code> method of our <strong>Application Class</strong>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MicroserviceDropwizardH2Application</span> <span style="color:#66d9ef">extends</span> Application<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> MicroserviceDropwizardH2Application<span style="color:#f92672">().</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Configuration configuration<span style="color:#f92672">,</span> Environment environment<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        environment<span style="color:#f92672">.</span><span style="color:#a6e22e">jersey</span><span style="color:#f92672">().</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> TodoController<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="running-the-application">Running the Application</h2>
+<p>Once we have everything configured, its time to run the application.</p>
+<p>We have 2 ways of running the application.</p>
+<h3 id="using-the-uber-fat-jar-file-standalone-application">Using the Uber Fat Jar File (Standalone application)</h3>
+<h4 id="build-application-uber-fat-jar-file">Build Application Uber Fat Jar File</h4>
+<p>Go into your project directory and run this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mvn clean package <span style="color:#f92672">(</span>or run the <span style="color:#e6db74">`</span>clean package<span style="color:#e6db74">`</span> goal from your IDE<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h4 id="start-application-jetty-server">Start Application Jetty server</h4>
+<p>In your project directory, run this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>java -jar .<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\m</span>icroservice-dropwizard-h2-1.0-SNAPSHOT.jar server
+</span></span></code></pre></div><p>And if you have <code>configuration.yml</code> file, then run the below command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>java -jar .<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\m</span>icroservice-dropwizard-h2-1.0-SNAPSHOT.jar server configuration.yml
+</span></span></code></pre></div><h3 id="through-the-intellij-idea-ide">Through the Intellij Idea IDE</h3>
+<ol>
+<li>Open <strong>Run/Debug Configuration</strong> menu by selecting <code>Run -&gt; Edit Configurations</code> from the menu.</li>
+<li>Add a new configuration by pressing <strong>Alt+Insert</strong> or clicking the <strong>green plus sign</strong> in the top left corner.</li>
+<li>From the dropdown menu, select <strong>Application</strong>.</li>
+<li>Add a <em>name</em> to the configuration.</li>
+<li>Enter the <em>fully qualified name of your main class</em>.</li>
+<li>Enter <code>server configuration.yml</code> to the <em>Program arguments</em> field (if you do not have any <code>configuration.yml</code>, as yet, you can only enter <code>server</code>).</li>
+<li>Press <strong>Shift+F10</strong> or select <code>Run -&gt; Run &lt;&lt;your run configuration name&gt;&gt;</code> from the menu to <em>start your Dropwizard application</em>.
+
+  <figure>
+    <img src="images/running-through-intellij-idea-ide.jpeg" alt="running-through-intellij-idea-ide.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Running through the Intellij Idea IDE</figcaption>
+  </figure>
+</li>
+</ol>
+<h3 id="server-start">Server start</h3>
+<p>Your Dropwizard application is now listening on ports <code>8080</code> for application requests and <code>8081</code> for administration requests.
+
+  <figure>
+    <img src="images/jetty-server-started.jpeg" alt="jetty-server-started.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Jetty Server Started and Listening on Ports 8080 and 8081</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="access-the-uri">Access the URI</h3>
+<p>Once you have started the server <em>(using any of method mentioned above)</em>, <em>open any REST client(like Postman)</em> and provide values, as per the below table and see the response from the server.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">Endpoint URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>http://localhost:8080/todo-app/tasks</code></td>
+</tr>
+</tbody>
+</table>
+<p>
+  <figure>
+    <img src="images/get-all-response-from-server.jpeg" alt="get-all-response-from-server.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for GET All API call</figcaption>
+  </figure>
+</p>
+<blockquote>
+<p>We have successfully got our first <strong>Dropwizard Project</strong> up and running by hardcoding the values.</p>
+</blockquote>
+<hr>
+<h2 id="enhance-the-existing-application-to-expose-rest-apis">Enhance the Existing Application to Expose REST APIs</h2>
+<p>It is now time to enhance our project to include REST API endpoints, so that they can be exposed for consumption by other applications.</p>
+<h3 id="final-project-structure">Final Project Structure</h3>
+<p>The final project structure will look something like this:
+
+  <figure>
+    <img src="images/final-project-structure.jpeg" alt="final-project-structure.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Final Project Structure</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="connecting-with-database">Connecting with Database</h3>
+<p>We will first setup the database for persisting the data. I will be using the <strong>Relational Database</strong> known as <em><strong>H2 Database</strong></em>. It is called the <em>Java SQL database</em>. You can extend this to use any other Relational Database and only Database configurations needs to be changed.</p>
+<p>To know more about the <strong>H2 Database</strong>, <a href="/post/microservice-springboot-h2/#adding-database"
+ target="_blank">read here</a>.</p>
+<h4 id="add-dependencies-to-pomxml">Add dependencies to <code>pom.xml</code></h4>
+<p>Add dependencies of <strong>Hibernate</strong> and <strong>H2 Database</strong> to <code>pom.xml</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;properties&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;h2db.version&gt;</span>2.1.214<span style="color:#f92672">&lt;/h2db.version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/properties&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- For Database connectivity --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;groupId&gt;</span>io.dropwizard<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;artifactId&gt;</span>dropwizard-hibernate<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;groupId&gt;</span>com.h2database<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;artifactId&gt;</span>h2<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;version&gt;</span>${h2db.version}<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h4 id="update-representationmodel-classes">Update Representation/Model Classes</h4>
+<p>Add some Hibernate Annotations to the <strong>Representation/Model Classes</strong>.</p>
+<ol>
+<li>Update <strong>Representation/Model Class</strong>- <code>model.Tasks</code></li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#a6e22e">@Entity</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#a6e22e">@NamedQueries</span><span style="color:#f92672">({</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#a6e22e">@NamedQuery</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.myzonesoft.todo.microservice.model.Tasks.findAll&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>                query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select e from Tasks e&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#f92672">})</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tasks</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">AUTO</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Long systemTasksId<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String title<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String description<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@JsonFormat</span><span style="color:#f92672">(</span>shape <span style="color:#f92672">=</span> JsonFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">Shape</span><span style="color:#f92672">.</span><span style="color:#a6e22e">STRING</span><span style="color:#f92672">,</span> pattern <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yyyy-MM-dd&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@JsonFormat</span><span style="color:#f92672">(</span>shape <span style="color:#f92672">=</span> JsonFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">Shape</span><span style="color:#f92672">.</span><span style="color:#a6e22e">STRING</span><span style="color:#f92672">,</span> pattern <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yyyy-MM-dd&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> LocalDate dueDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String status<span style="color:#f92672">;</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">@OneToMany</span><span style="color:#f92672">(</span>mappedBy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;todoTask&#34;</span><span style="color:#f92672">,</span> fetch <span style="color:#f92672">=</span> FetchType<span style="color:#f92672">.</span><span style="color:#a6e22e">EAGER</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>Update <strong>Representation/Model Class</strong> - <code>model.TodoTaskComments</code></li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#a6e22e">@Entity</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#a6e22e">@NamedQueries</span><span style="color:#f92672">({</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#a6e22e">@NamedQuery</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.myzonesoft.todo.microservice.model.TodoTaskComments.findAll&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>                query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select e from TodoTaskComments e&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#f92672">})</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTaskComments</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">AUTO</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Long todoTaskCommentsId<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String taskComments<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@JsonFormat</span><span style="color:#f92672">(</span>shape <span style="color:#f92672">=</span> JsonFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">Shape</span><span style="color:#f92672">.</span><span style="color:#a6e22e">STRING</span><span style="color:#f92672">,</span> pattern <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yyyy-MM-dd&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#a6e22e">@JsonIgnore</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#a6e22e">@ManyToOne</span><span style="color:#f92672">(</span>fetch <span style="color:#f92672">=</span> FetchType<span style="color:#f92672">.</span><span style="color:#a6e22e">EAGER</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#a6e22e">@JoinColumn</span><span style="color:#f92672">(</span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;systemTasksId&#34;</span><span style="color:#f92672">,</span> nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Tasks todoTask<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Some of the <strong>Hibernate Annotations</strong> used in the above code are explained below:</p>
+<ul>
+<li><code>@Entity</code>– Letting the Hibernate know that this <em><strong>POJO Model Class</strong></em> is to be converted to Table in the database and its private variables into Columns of that Table.</li>
+<li><code>@NamedQueries</code> and <code>@NamedQuery</code> - They enable us to declare a query in your persistence layer and reference it in your business code. It can easily be reused.</li>
+<li><code>@Id</code>– To identify the primary key of the table.</li>
+<li><code>@GeneratedValue(strategy = GenerationType.AUTO)</code>– To Auto Generate the sequence for the Primary Key. There are different strategies available, based on the database that is used.</li>
+<li><code>@JsonIgnore</code>- is used at field level to mark a property or list of properties to be ignored.</li>
+<li><code>@OneToMany</code>- Each Todo task can have many comments.
+<ul>
+<li>So there is a <strong>One-To-Many relationship</strong> between <em><strong>Todo POJO Model Class</strong></em> and <em><strong>TodoTaskComments POJO Model Class</strong></em>.</li>
+<li>We are using <code>mappedBy</code> attribute, where we inform the Hibernate which variable is responsible for updating this relationship.</li>
+</ul>
+</li>
+<li><code>@ManyToOne</code>- Reverse mapping for the <strong>OneToMany</strong> explained above.</li>
+<li><code>@JoinColumn</code>- Refers to the Primary Key of the Main Model Class.</li>
+</ul>
+<hr>
+<h4 id="updatecreate-daorepository-classes">Update/Create DAO/Repository Classes</h4>
+<ul>
+<li>Update <code>repository.TasksDAO</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TasksDAO</span> <span style="color:#66d9ef">extends</span> AbstractDAO<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">TasksDAO</span><span style="color:#f92672">(</span>SessionFactory sessionFactory<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>sessionFactory<span style="color:#f92672">);</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Create <code>repository.TodoTaskCommentsDAO</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTaskCommentsDAO</span> <span style="color:#66d9ef">extends</span> AbstractDAO<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">TodoTaskCommentsDAO</span><span style="color:#f92672">(</span>SessionFactory sessionFactory<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>sessionFactory<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>DAO Class should extend the <code>io.dropwizard.hibernate.AbstractDAO</code> and implemet its constructor.</p>
+<hr>
+<h4 id="add-the-configuration-file-to-the-root-folder---rootconfigurationyml">Add the Configuration file to the root folder - <code>&lt;root&gt;/configuration.yml</code></h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">database</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># the name of your JDBC driver</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">driverClass</span>: <span style="color:#ae81ff">org.h2.Driver</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># the username</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">user</span>: <span style="color:#ae81ff">root</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># the password</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">password</span>: <span style="color:#ae81ff">root</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># the JDBC URL</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">url</span>: <span style="color:#ae81ff">jdbc:h2:~/todo-app</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># any properties specific to your JDBC driver:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">charSet</span>: <span style="color:#ae81ff">UTF-8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hibernate.dialect</span>: <span style="color:#ae81ff">org.hibernate.dialect.H2Dialect</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hibernate.hbm2ddl.auto</span>: <span style="color:#ae81ff">create-drop</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hibernate.show_sql</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># the maximum amount of time to wait on an empty pool before throwing an exception</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">maxWaitForConnection</span>: <span style="color:#ae81ff">3s</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># the SQL query to run when validating a connection&#39;s liveness</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">validationQuery</span>: <span style="color:#e6db74">&#34;/* MyApplication Health Check */ SELECT 1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># the minimum number of connections to keep open</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">minSize</span>: <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># the maximum number of connections to keep open</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">maxSize</span>: <span style="color:#ae81ff">30</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="create-configuration-class---configurationtodoconfiguration">Create Configuration Class - <code>configuration.TodoConfiguration</code></h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Getter</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Setter</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoConfiguration</span> <span style="color:#66d9ef">extends</span> Configuration <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Valid</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@NotNull</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@JsonProperty</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;database&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> DataSourceFactory dataSourceFactory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DataSourceFactory<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Configuration Class would be reading from the <code>configuration.yml</code> file.</p>
+<hr>
+<h4 id="update-the-application-class-to-register-the-hibernate-bundle">Update the Application Class to register the Hibernate Bundle</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MicroserviceDropwizardH2Application</span> <span style="color:#66d9ef">extends</span> Application<span style="color:#f92672">&lt;</span>TodoConfiguration<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> MicroserviceDropwizardH2Application<span style="color:#f92672">().</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>TodoConfiguration todoConfiguration<span style="color:#f92672">,</span> Environment environment<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> TasksDAO tasksDAO <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TasksDAO<span style="color:#f92672">(</span>hibernateBundle<span style="color:#f92672">.</span><span style="color:#a6e22e">getSessionFactory</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        environment<span style="color:#f92672">.</span><span style="color:#a6e22e">jersey</span><span style="color:#f92672">().</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> TodoController<span style="color:#f92672">(</span>tasksDAO<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>        environment<span style="color:#f92672">.</span><span style="color:#a6e22e">jersey</span><span style="color:#f92672">().</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> JsonProcessingExceptionMapper<span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> HibernateBundle<span style="color:#f92672">&lt;</span>TodoConfiguration<span style="color:#f92672">&gt;</span> hibernateBundle <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">new</span> HibernateBundle<span style="color:#f92672">&lt;</span>TodoConfiguration<span style="color:#f92672">&gt;(</span>Tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> TodoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> DataSourceFactory <span style="color:#a6e22e">getDataSourceFactory</span><span style="color:#f92672">(</span>TodoConfiguration configuration<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> configuration<span style="color:#f92672">.</span><span style="color:#a6e22e">getDataSourceFactory</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>Bootstrap<span style="color:#f92672">&lt;</span>TodoConfiguration<span style="color:#f92672">&gt;</span> bootstrap<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        bootstrap<span style="color:#f92672">.</span><span style="color:#a6e22e">addBundle</span><span style="color:#f92672">(</span>hibernateBundle<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, if we start the server, as explained <a href="#running-the-application"
+>here</a>, we see the Hibernate tables created during the server startup, as shown below
+
+  <figure>
+    <img src="images/database-connection-successful.jpeg" alt="database-connection-successful.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Database Table Creation</figcaption>
+  </figure>
+</p>
+<p>Now, with this basic understanding of how Models, Entities and Tables mapping works in Hibernate, let us move on and add some REST API Endpoints.</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-create-operation">Add REST API Endpoint for CREATE Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Create New Todo Task</td>
+<td style="text-align:center">CREATE</td>
+<td style="text-align:center">POST</td>
+<td style="text-align:center"><code>/tasks</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Update <strong>DAO/Repository Class</strong> <code>repository.TasksDAO</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Tasks <span style="color:#a6e22e">createOrUpdateTask</span><span style="color:#f92672">(</span>Tasks task<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//Get the list of TodoTaskComments from the Request Body
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet <span style="color:#f92672">=</span> task<span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoTaskCommentsSet</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>todoTaskCommentsSet <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>TodoTaskComments todoTaskComment<span style="color:#f92672">:</span> todoTaskCommentsSet<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>todoTaskComment <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>todoTaskComment<span style="color:#f92672">.</span><span style="color:#a6e22e">getTaskComments</span><span style="color:#f92672">().</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        todoTaskComment<span style="color:#f92672">.</span><span style="color:#a6e22e">setTodoTask</span><span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        todoTaskCommentsDAO<span style="color:#f92672">.</span><span style="color:#a6e22e">createTodoTaskComments</span><span style="color:#f92672">(</span>todoTaskComment<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//Set the Creation Date only during initial creation of the task
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">getCreationDate</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>      task<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDate</span><span style="color:#f92672">(</span>LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> persist<span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Update <strong>DAO/Repository Class</strong> <code>repository.TodoTasksCommentsDAO</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createTodoTaskComments</span><span style="color:#f92672">(</span>TodoTaskComments todoTaskComment<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  todoTaskComment<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDate</span><span style="color:#f92672">(</span>LocalDate<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>  persist<span style="color:#f92672">(</span>todoTaskComment<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Create <strong>Util Interface</strong>, for storing all the constants, enums and other values= <code>util.TodoApplicationConstants</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoApplicationConstants</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//Enums
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">enum</span> TASK_STATUS <span style="color:#f92672">{</span>NOT_STARTED<span style="color:#f92672">,</span> IN_PROGRESS<span style="color:#f92672">,</span> ON_HOLD<span style="color:#f92672">,</span> COMPLETED<span style="color:#f92672">,</span> DEFERRED<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Update <strong>Resource/Controller Class</strong>, for exposing the REST APIs = <code>controller.TodoController</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@POST</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@UnitOfWork</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Consumes</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Response <span style="color:#a6e22e">createTasks</span><span style="color:#f92672">(</span>Tasks task<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">accepted</span><span style="color:#f92672">(</span>tasksDAO<span style="color:#f92672">.</span><span style="color:#a6e22e">createOrUpdateTask</span><span style="color:#f92672">(</span>task<span style="color:#f92672">)).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">()</span> <span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@GET</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Path</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/status&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@UnitOfWork</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getTodoStatusAsList</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> taskStatusList <span style="color:#f92672">=</span> Stream<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>TASK_STATUS<span style="color:#f92672">.</span><span style="color:#a6e22e">values</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>TASK_STATUS<span style="color:#f92672">::</span>name<span style="color:#f92672">).</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> taskStatusList<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<table><tbody><tr><td><strong>HTTP Method</strong></td><td>POST</td></tr><tr><td><strong>Endpoint URL</strong></td><td><em>http://localhost:8080/todo-app/tasks</em></td></tr><tr><td><strong>Request Header</strong></td><td><code>Content-type: application/json</code></td></tr><tr><td><strong>Request Body</strong></td><td><code><em>{<br>&nbsp;&nbsp;"title":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"description":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"dueDate":&nbsp;"2022-06-30",<br>&nbsp;&nbsp;"status":&nbsp;"NOT_STARTED",<br>&nbsp;&nbsp;"todoTaskCommentsSet":&nbsp;[]<br>}</em></code></td></tr></tbody></table>
+<p>
+  <figure>
+    <img src="images/create-api-response.jpeg" alt="create-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for POST API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-get-all-operation">Add REST API Endpoint for GET All Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fetch All Todo Tasks</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/tasks</code></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we would need to update following classes:</p>
+<ul>
+<li>Update <strong>DAO/Repository Class</strong> <code>repository.TasksDAO</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAllTodoTasks</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> list<span style="color:#f92672">(</span>namedTypedQuery<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.myzonesoft.todo.microservice.model.Tasks.findAll&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Update <strong>Resource/Controller Class</strong>, for exposing the REST APIs = <code>controller.TodoController</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@GET</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@UnitOfWork</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Response <span style="color:#a6e22e">getAllTodoTasks</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">ok</span><span style="color:#f92672">(</span>tasksDAO<span style="color:#f92672">.</span><span style="color:#a6e22e">getAllTodoTasks</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">Endpoint URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>http://localhost:8080/todo-app/tasks</code></td>
+</tr>
+</tbody>
+</table>
+<p>
+  <figure>
+    <img src="images/find-all-api-response.jpeg" alt="find-all-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for GET All API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-get-operation">Add REST API Endpoint for GET Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fetch One Todo Task</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/tasks/{id}</code></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we would need to update following classes:</p>
+<ul>
+<li>Update <strong>DAO/Repository Class</strong> <code>repository.TasksDAO</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getById</span><span style="color:#f92672">(</span>Long systemTasksId<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span>get<span style="color:#f92672">(</span>systemTasksId<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Update <strong>Resource/Controller Class</strong>, for exposing the REST APIs = <code>controller.TodoController</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@GET</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Path</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@UnitOfWork</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getById</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathParam</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span> Long id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> tasksDAO<span style="color:#f92672">.</span><span style="color:#a6e22e">getById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">Endpoint URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>http://localhost:8080/todo-app/tasks/1</code></td>
+</tr>
+</tbody>
+</table>
+<p>
+  <figure>
+    <img src="images/find-one-api-response.jpeg" alt="find-one-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for GET API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-update-operation">Add REST API Endpoint for UPDATE Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Update One Specific Todo Task</td>
+<td style="text-align:center">UPDATE</td>
+<td style="text-align:center">PUT</td>
+<td style="text-align:center"><code>/tasks</code></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we would need to update following classes:</p>
+<ul>
+<li>Update <strong>Resource/Controller Class</strong>, for exposing the REST APIs = <code>controller.TodoController</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@PUT</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@UnitOfWork</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Consumes</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Response <span style="color:#a6e22e">updateTasks</span><span style="color:#f92672">(</span>Tasks tasks<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">accepted</span><span style="color:#f92672">(</span>tasksDAO<span style="color:#f92672">.</span><span style="color:#a6e22e">createOrUpdateTask</span><span style="color:#f92672">(</span>tasks<span style="color:#f92672">)).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<table><tbody><tr><td><strong>HTTP Method</strong></td><td>PUT</td></tr><tr><td><strong>Endpoint URL</strong></td><td><em>http://localhost:8080/todo-app/tasks</em></td></tr><tr><td><strong>Request Header</strong></td><td><code>Content-type: application/json</code></td></tr><tr><td><strong>Request Body</strong></td><td><code><em>{<br>&nbsp;&nbsp;"systemTasksId":&nbsp;1,<br>&nbsp;&nbsp;"title":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"description":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"creationDate":&nbsp;"2022-06-27",<br>&nbsp;&nbsp;"dueDate":&nbsp;"2022-06-30",<br>&nbsp;&nbsp;"status":&nbsp;"IN_PROGRESS",<br>&nbsp;&nbsp;"todoTaskCommentsSet":&nbsp;[{<br>&nbsp;&nbsp;&nbsp;&nbsp;"taskComments":&nbsp;"Testing comments 1"<br>&nbsp;&nbsp;}]<br>}</em></code></td></tr></tbody></table>
+<p>
+  <figure>
+    <img src="images/update-api-response.jpeg" alt="update-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for PUT API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-delete-operation">Add REST API Endpoint for DELETE Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Delete One Specific Todo Task</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>/tasks/{id}</code></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we would need to update following classes:</p>
+<ul>
+<li>Update <strong>DAO/Repository Class</strong> <code>repository.TasksDAO</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">deleteTask</span><span style="color:#f92672">(</span>Long id<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">boolean</span> isDeleted <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">//Delete the TaskComments before deleting the tasks.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      Optional<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> deletionTask <span style="color:#f92672">=</span> getById<span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>deletionTask<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">()){</span>
+</span></span><span style="display:flex;"><span>          Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet <span style="color:#f92672">=</span> deletionTask<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getTodoTaskCommentsSet</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>todoTaskCommentsSet <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>TodoTaskComments todoTaskComment <span style="color:#f92672">:</span> todoTaskCommentsSet<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                  todoTaskCommentsDAO<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteTodoTaskComments</span><span style="color:#f92672">(</span>todoTaskComment<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>          currentSession<span style="color:#f92672">().</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>deletionTask<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>          isDeleted <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception ex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      ex<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> isDeleted<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Update <strong>DAO/Repository Class</strong> <code>repository.TodoTasksCommentsDAO</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteTodoTaskComments</span><span style="color:#f92672">(</span>TodoTaskComments todoTaskComments<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  currentSession<span style="color:#f92672">().</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Update <strong>Resource/Controller Class</strong>, for exposing the REST APIs = <code>controller.TodoController</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@DELETE</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Path</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@UnitOfWork</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Response <span style="color:#a6e22e">deleteTask</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathParam</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span> Long id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>tasksDAO<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteTask</span><span style="color:#f92672">(</span>id<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">noContent</span><span style="color:#f92672">().</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IllegalArgumentException exception<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">serverError</span><span style="color:#f92672">().</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Response<span style="color:#f92672">.</span><span style="color:#a6e22e">status</span><span style="color:#f92672">(</span>Response<span style="color:#f92672">.</span><span style="color:#a6e22e">Status</span><span style="color:#f92672">.</span><span style="color:#a6e22e">NOT_FOUND</span><span style="color:#f92672">).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, <em>Open any REST client</em> and provide values, as per the below table</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">Endpoint URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>http://localhost:8080/todo-app/tasks/1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Response from the Server
+
+  <figure>
+    <img src="images/delete-api-response.jpeg" alt="delete-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for /deleteById/{id} DELETE API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h2 id="configure-dropwizard-to-handle-cors-request">Configure Dropwizard to Handle CORS Request</h2>
+<p>By default, the <strong>Dropwizard Server</strong> which is running on <code>http://localhost:8080/</code>, will not allow requests from frontend applications through domains like <code>http://localhost:3000/</code>.</p>
+<p>This is called <em><strong><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing"
+ target="_blank">CORS (Cross-Origin Resource Sharing) policy</a></strong></em>, where in by default, servers block request coming from other servers or domains.</p>
+<p>Let’s configure <strong>Dropwizard Application</strong> to allow access from specific server(s), in order to allow our frontend applications(will be developed later) to make REST APIs calls to this application.</p>
+<ul>
+<li>Update the <code>run</code> method of the <strong>Application Class</strong> to include the CORS update = <code>MicroserviceDropwizardH2Application</code></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">final</span> FilterRegistration<span style="color:#f92672">.</span><span style="color:#a6e22e">Dynamic</span> cors <span style="color:#f92672">=</span> environment<span style="color:#f92672">.</span><span style="color:#a6e22e">servlets</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addFilter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;CORS&#34;</span><span style="color:#f92672">,</span> CrossOriginFilter<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cors<span style="color:#f92672">.</span><span style="color:#a6e22e">setInitParameter</span><span style="color:#f92672">(</span>CrossOriginFilter<span style="color:#f92672">.</span><span style="color:#a6e22e">ALLOWED_ORIGINS_PARAM</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>cors<span style="color:#f92672">.</span><span style="color:#a6e22e">setInitParameter</span><span style="color:#f92672">(</span>CrossOriginFilter<span style="color:#f92672">.</span><span style="color:#a6e22e">ALLOWED_HEADERS_PARAM</span><span style="color:#f92672">,</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;X-Requested-With,Content-Type,Accept,Origin,Authorization&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>cors<span style="color:#f92672">.</span><span style="color:#a6e22e">setInitParameter</span><span style="color:#f92672">(</span>CrossOriginFilter<span style="color:#f92672">.</span><span style="color:#a6e22e">ALLOWED_METHODS_PARAM</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;OPTIONS,GET,PUT,POST,DELETE,HEAD&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>cors<span style="color:#f92672">.</span><span style="color:#a6e22e">setInitParameter</span><span style="color:#f92672">(</span>CrossOriginFilter<span style="color:#f92672">.</span><span style="color:#a6e22e">ALLOW_CREDENTIALS_PARAM</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Add URL mapping
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>cors<span style="color:#f92672">.</span><span style="color:#a6e22e">addMappingForUrlPatterns</span><span style="color:#f92672">(</span>EnumSet<span style="color:#f92672">.</span><span style="color:#a6e22e">allOf</span><span style="color:#f92672">(</span>DispatcherType<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">),</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;/*&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>With these endpoints’ setup, we have come to an end of this article and we have enabled <em><strong>CRUD (Create, Read, Update, Delete) Operations</strong></em> <em>using below REST API Endpoints</em> and they are ready to be consumed by any frontend or other microservice applications.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Create New Todo Task</td>
+<td style="text-align:center">CREATE</td>
+<td style="text-align:center">POST</td>
+<td style="text-align:center"><code>/tasks</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Fetch All Todo Tasks</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/tasks</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Fetch One Todo Task</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/tasks/{id}</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Update One Specific Todo Task</td>
+<td style="text-align:center">UPDATE</td>
+<td style="text-align:center">PUT</td>
+<td style="text-align:center"><code>/tasks</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Delete One Specific Todo Task</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>/tasks/{id}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Through this article, you have learned about how to:</p>
+<ul>
+<li>Configure Hibernate to work with <em>Relational Database</em> and persist the data.</li>
+<li>Create and Expose <em><strong>REST APIs</strong></em> for CRUD Operations using <strong>Dropwizard Framework</strong>.</li>
+<li>How to handle <em><strong>HTTP</strong></em> and <em><strong>CORS</strong></em> Requests through REST Controller.</li>
+</ul>
+<p>Complete code for this project can be found at GitHub <a href="https://github.com/prasbhat/microservice-dropwizard-h2"
+ target="_blank">here</a>.</p>
+<p><em>Instructions on how to clone the code repository and run the project are provided on the GitHub project page.</em></p>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/h2-database/" rel="tag">H2 Database</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hibernate/" rel="tag">Hibernate</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/java/" rel="tag">Java</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/relational-database/" rel="tag">Relational Database</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/microservice/" rel="tag">Microservice</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/dropwizard/" rel="tag">Dropwizard</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Prashanth Bhat</span>
+	</div>
+	<div class="authorbox__description">
+		<strong>Prashanth Bhat</strong> has about 15+ years of <strong>Developing/Coding</strong> knowledge. <em>He loves to work with Technology, learn new things and share his learnings with others</em>. For comments/feedback you can reach <a href="mailto:bhatpp.android@gmail.com"
+>here</a>.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/frontend-vue/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Frontend using VueJS and TypeScript</p>
+		</a>
+	</div>
+</nav>
+<script src="https://utteranc.es/client.js"
+	repo="prasbhat/prasbhat.github.io"
+	issue-term="title"
+	label="Comments"
+	theme="github-light"
+	crossorigin="anonymous"
+	async>
+</script>
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020-2022 myzonesoft.com
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

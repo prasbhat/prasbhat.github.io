@@ -526,55 +526,27 @@ if (!doNotTrack) {
 <p>We need to make some changes to our existing project, in order to make it compatible with MongoDB.</p>
 <h3 id="update-the-pomxml">Update the <code>pom.xml</code></h3>
 <p>Update the <em>pom.xml</em> by adding the following dependency</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">dependency</span>&gt;
-</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">groupId</span>&gt;org.springframework.boot&lt;/<span style="color:#f92672">groupId</span>&gt;
-</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">artifactId</span>&gt;spring-boot-starter-data-mongodb&lt;/<span style="color:#f92672">artifactId</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">dependency</span>&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="update-the-pojo-model-classes">Update the POJO Model Classes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&lt;<span style="color:#f92672">dependency</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	&lt;<span style="color:#f92672">groupId</span>&gt;org.springframework.boot&lt;/<span style="color:#f92672">groupId</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	&lt;<span style="color:#f92672">artifactId</span>&gt;spring-boot-starter-data-mongodb&lt;/<span style="color:#f92672">artifactId</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>&lt;/<span style="color:#f92672">dependency</span>&gt;
+</span></span></code></pre></div><h3 id="update-the-pojo-model-classes">Update the POJO Model Classes</h3>
 <ol>
 <li><code>model.Tasks</code></li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#a6e22e">@Document</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tasks</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#a6e22e">@Id</span>
-</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">private</span> String systemTasksId<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String title<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String description<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> LocalDate dueDate<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String status<span style="color:#f92672">;</span>
-</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">private</span> Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Let us look at the highlighted lines</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a6e22e">@Document</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tasks</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">private</span> String systemTasksId<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">private</span> String title<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">private</span> String description<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#66d9ef">private</span> LocalDate dueDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#66d9ef">private</span> String status<span style="color:#f92672">;</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#66d9ef">private</span> Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Let us look at the highlighted lines</p>
 <ul>
 <li><code>@Entity</code> is replaced with <code>@Document</code>- Because everything is stored as <em>document</em> in MongoDB.</li>
 <li>We don’t need <code>@GeneratedValue</code> on the primary key, as MongoDB would generate the primary key (<code>_id</code>- hexadecimal alphanumeric value) automatically, as already seen.</li>
@@ -589,76 +561,37 @@ if (!doNotTrack) {
 <ol start="2">
 <li><code>model.TodoTaskComments</code></li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Document</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTaskComments</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Id</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String todoTaskCommentsId<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String taskComments<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">@Document</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTaskComments</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#66d9ef">private</span> String todoTaskCommentsId<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>    <span style="color:#66d9ef">private</span> String taskComments<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>    <span style="color:#66d9ef">private</span> LocalDate creationDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
 <li>Since we are not working with the Relationship Mappings, we need not define the reverse mapping in the Child Object.</li>
 </ul>
 <h3 id="update-repository-interfaces">Update Repository Interfaces</h3>
 <ol>
 <li><code>repository.TasksRepository</code></li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Repository</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TasksRepository</span> <span style="color:#66d9ef">extends</span> MongoRepository<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">@Repository</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TasksRepository</span> <span style="color:#66d9ef">extends</span> MongoRepository<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+</span></span></code></pre></div><ol start="2">
 <li><code>repository.TodoTaskCommentsRepository</code></li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Repository</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoTaskCommentsRepository</span> <span style="color:#66d9ef">extends</span> MongoRepository<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">@Repository</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TodoTaskCommentsRepository</span> <span style="color:#66d9ef">extends</span> MongoRepository<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
 <li>Extend the <strong><em>MongoRepository</em></strong>, instead of <strong><em>JPARepository</em></strong>.</li>
 </ul>
 <h3 id="update-the-applicationproperties">Update the <code>application.properties</code></h3>
 <p>Update the database properties in <em>/src/main/resources/application.properties</em></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>spring.<span style="color:#66d9ef">data</span>.mongodb.<span style="color:#66d9ef">database</span><span style="color:#f92672">=</span>todo<span style="color:#f92672">-</span>app
-</span></span><span style="display:flex;"><span>spring.<span style="color:#66d9ef">data</span>.mongodb.port<span style="color:#f92672">=</span><span style="color:#ae81ff">27017</span>
-</span></span><span style="display:flex;"><span>spring.<span style="color:#66d9ef">data</span>.mongodb.<span style="color:#66d9ef">host</span><span style="color:#f92672">=</span>localhost
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>If we don’t specify any database name(as in <em>todo-app</em> here), MongoDB server will create a default database called <em><strong>“test”</strong></em>, when inserting first set of document.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>spring.<span style="color:#66d9ef">data</span>.mongodb.<span style="color:#66d9ef">database</span><span style="color:#f92672">=</span>todo<span style="color:#f92672">-</span>app
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>spring.<span style="color:#66d9ef">data</span>.mongodb.port<span style="color:#f92672">=</span><span style="color:#ae81ff">27017</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>spring.<span style="color:#66d9ef">data</span>.mongodb.<span style="color:#66d9ef">host</span><span style="color:#f92672">=</span>localhost
+</span></span></code></pre></div><p>If we don’t specify any database name(as in <em>todo-app</em> here), MongoDB server will create a default database called <em><strong>“test”</strong></em>, when inserting first set of document.</p>
 <p>Once we have completed these configurations, we are ready to persist the data from the Spring Boot into MongoDB database.</p>
 <h2 id="add-data-into-mongodb-database">Add Data into MongoDB Database</h2>
 <p>Open Command Prompt and start the MongoDB database as given <a href="#running-the-mongodb-server"
@@ -687,33 +620,17 @@ if (!doNotTrack) {
   </figure>
 
 This is the output on the Mongo console:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{ 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;628744e3b0159e382a4365fb&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;title&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;description&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-19T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;dueDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-30T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;status&#34;</span> : <span style="color:#e6db74">&#34;NOT_STARTED&#34;</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;todoTaskCommentsSet&#34;</span> : [ ], 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;_class&#34;</span> : <span style="color:#e6db74">&#34;com.myzonesoft.todo.microservice.model.Tasks&#34;</span> 
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="update-the-existing-data-in-mongodb-database">Update the existing Data in MongoDB Database</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>{ 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;628744e3b0159e382a4365fb&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  <span style="color:#f92672">&#34;title&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  <span style="color:#f92672">&#34;description&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-19T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  <span style="color:#f92672">&#34;dueDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-30T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  <span style="color:#f92672">&#34;status&#34;</span> : <span style="color:#e6db74">&#34;NOT_STARTED&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  <span style="color:#f92672">&#34;todoTaskCommentsSet&#34;</span> : [ ], 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  <span style="color:#f92672">&#34;_class&#34;</span> : <span style="color:#e6db74">&#34;com.myzonesoft.todo.microservice.model.Tasks&#34;</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>}
+</span></span></code></pre></div><h2 id="update-the-existing-data-in-mongodb-database">Update the existing Data in MongoDB Database</h2>
 <p>Use Update API on any Rest Client and update an object.</p>
 <table>
   <tbody>
@@ -751,59 +668,30 @@ This is the output on the Mongo console:</p>
   </figure>
 </p>
 <p>This is the output on the Mongo console:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{ 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;628744e3b0159e382a4365fb&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;title&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;description&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-19T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;dueDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-30T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;status&#34;</span> : <span style="color:#e6db74">&#34;IN_PROGRESS&#34;</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;todoTaskCommentsSet&#34;</span> : [ 
-</span></span><span style="display:flex;"><span>    { 
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;6287492fb0159e382a4365fc&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;taskComments&#34;</span> : <span style="color:#e6db74">&#34;Testing comments 1&#34;</span>, 
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-19T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span> 
-</span></span><span style="display:flex;"><span>    } 
-</span></span><span style="display:flex;"><span>  ], 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;_class&#34;</span> : <span style="color:#e6db74">&#34;com.myzonesoft.todo.microservice.model.Tasks&#34;</span> 
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>{ 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;6287492fb0159e382a4365fc&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;taskComments&#34;</span> : <span style="color:#e6db74">&#34;Testing comments 1&#34;</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-19T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;_class&#34;</span> : <span style="color:#e6db74">&#34;com.myzonesoft.todo.microservice.model.TodoTaskComments&#34;</span> 
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>As you can see, it iterates through all the Child Objects and displays the result.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>{ 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;628744e3b0159e382a4365fb&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  <span style="color:#f92672">&#34;title&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  <span style="color:#f92672">&#34;description&#34;</span> : <span style="color:#e6db74">&#34;Testing the Application&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-19T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  <span style="color:#f92672">&#34;dueDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-30T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  <span style="color:#f92672">&#34;status&#34;</span> : <span style="color:#e6db74">&#34;IN_PROGRESS&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  <span style="color:#f92672">&#34;todoTaskCommentsSet&#34;</span> : [ 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    { 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>      <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;6287492fb0159e382a4365fc&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>      <span style="color:#f92672">&#34;taskComments&#34;</span> : <span style="color:#e6db74">&#34;Testing comments 1&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>      <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-19T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    } 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>  ], 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>  <span style="color:#f92672">&#34;_class&#34;</span> : <span style="color:#e6db74">&#34;com.myzonesoft.todo.microservice.model.Tasks&#34;</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>{ 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>  <span style="color:#f92672">&#34;_id&#34;</span> : <span style="color:#960050;background-color:#1e0010">ObjectId(</span><span style="color:#e6db74">&#34;6287492fb0159e382a4365fc&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>  <span style="color:#f92672">&#34;taskComments&#34;</span> : <span style="color:#e6db74">&#34;Testing comments 1&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>  <span style="color:#f92672">&#34;creationDate&#34;</span> : <span style="color:#960050;background-color:#1e0010">ISODate(</span><span style="color:#e6db74">&#34;2022-05-19T18:30:00Z&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>  <span style="color:#f92672">&#34;_class&#34;</span> : <span style="color:#e6db74">&#34;com.myzonesoft.todo.microservice.model.TodoTaskComments&#34;</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>}
+</span></span></code></pre></div><p>As you can see, it iterates through all the Child Objects and displays the result.</p>
 <blockquote>
 <p>Congratulations, you have successfully persisted data into MongoDB database.</p>
 </blockquote>

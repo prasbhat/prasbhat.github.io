@@ -19,10 +19,12 @@
   backgroundColor: &#39;rgb(255, 82, 82)&#39;,
   textColor: &#39;#fff&#39;
 })&lt;/script&gt; 
-&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;Spring Boot&lt;/strong&gt; and &lt;strong&gt;Thymeleaf&lt;/strong&gt; for the Microservice Application that was created in &lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://myzonesoft.com/categories/microservice/&#34;
- target=&#34;_blank&#34;&gt;Microservices&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;, which exposes the REST APIs as a backend application.&lt;/p&gt;
-&lt;p&gt;If you want to understand more about MVC architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
- target=&#34;_blank&#34;&gt;this&lt;/a&gt; article.&lt;/p&gt;</description>
+&lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
+ target=&#34;_blank&#34;&gt;Model-View-Controller (MVC)&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;Spring Boot&lt;/strong&gt;, &lt;strong&gt;H2 Database&lt;/strong&gt; and &lt;strong&gt;Thymeleaf (Java Template Engine)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Spring Boot Framework&lt;/strong&gt; will serve as back-end(created in &lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://myzonesoft.com/post/microservice-springboot-h2&#34;
+ target=&#34;_blank&#34;&gt;Microservice Using Spring Boot, Hibernate and H2 Database&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;, same code will be reused with few modifications).&lt;/p&gt;
+&lt;p&gt;I will be using the same &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, for persisting(storing) the data, used in the above mentioned project.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Thymeleaf (Java Template Engine)&lt;/strong&gt; will be the &lt;em&gt;User Interface (UI)&lt;/em&gt; for this application.&lt;/p&gt;</description>
     </item>
     
   </channel>

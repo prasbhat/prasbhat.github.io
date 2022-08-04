@@ -6,22 +6,76 @@
     <description>Recent content in Tags on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jun 2022 15:24:28 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jul 2022 11:23:37 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Dropwizard</title>
-      <link>https://myzonesoft.com/tags/dropwizard/</link>
-      <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
+      <title>Frontend</title>
+      <link>https://myzonesoft.com/tags/frontend/</link>
+      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
       
-      <guid>https://myzonesoft.com/tags/dropwizard/</guid>
+      <guid>https://myzonesoft.com/tags/frontend/</guid>
       <description></description>
     </item>
     
     <item>
       <title>H2 Database</title>
       <link>https://myzonesoft.com/tags/h2-database/</link>
-      <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
+      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
       
       <guid>https://myzonesoft.com/tags/h2-database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://myzonesoft.com/tags/java/</link>
+      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservice</title>
+      <link>https://myzonesoft.com/tags/microservice/</link>
+      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MVC</title>
+      <link>https://myzonesoft.com/tags/mvc/</link>
+      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/mvc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Play Framework</title>
+      <link>https://myzonesoft.com/tags/play-framework/</link>
+      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/play-framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Relational Database</title>
+      <link>https://myzonesoft.com/tags/relational-database/</link>
+      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/relational-database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dropwizard</title>
+      <link>https://myzonesoft.com/tags/dropwizard/</link>
+      <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/dropwizard/</guid>
       <description></description>
     </item>
     
@@ -35,56 +89,11 @@
     </item>
     
     <item>
-      <title>Java</title>
-      <link>https://myzonesoft.com/tags/java/</link>
-      <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Microservice</title>
-      <link>https://myzonesoft.com/tags/microservice/</link>
-      <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/microservice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Relational Database</title>
-      <link>https://myzonesoft.com/tags/relational-database/</link>
-      <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/relational-database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Frontend</title>
-      <link>https://myzonesoft.com/tags/frontend/</link>
-      <pubDate>Mon, 20 Jun 2022 12:04:54 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/frontend/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>JavaScript</title>
       <link>https://myzonesoft.com/tags/javascript/</link>
       <pubDate>Mon, 20 Jun 2022 12:04:54 +0530</pubDate>
       
       <guid>https://myzonesoft.com/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MVC</title>
-      <link>https://myzonesoft.com/tags/mvc/</link>
-      <pubDate>Mon, 20 Jun 2022 12:04:54 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/mvc/</guid>
       <description></description>
     </item>
     

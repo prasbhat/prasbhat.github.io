@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MVC Application using Java and Play Framework (Contd) - myzonesoft.com</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KY3NJW8CDF"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-KY3NJW8CDF', { 'anonymize_ip': false });
+}
+</script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="myzonesoft.com" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">myzonesoft.com</div>
+					<div class="logo__tagline">A Technical Site for Everyone</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__dropdown">
+			<a class="menu__link" href="/categories/microservice/">
+				
+				<span class="menu__text">Microservices</span>
+				<label class="drop-icon" for="Microservices">▾</label>
+				
+			</a>
+			<input type="checkbox" id="Microservices">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/spring-boot/">
+						
+						<span class="menu__text">Spring Boot</span>
+						
+					</a>
+					</li>
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/dropwizard/">
+						
+						<span class="menu__text">Dropwizard</span>
+						
+					</a>
+					</li>
+				
+			</ul>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/mvc/">
+				
+				<span class="menu__text">MVC</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/frontend/">
+				
+				<span class="menu__text">Frontend</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__dropdown">
+			<a class="menu__link" href="/categories/others/">
+				
+				<span class="menu__text">Others</span>
+				<label class="drop-icon" for="Others">▾</label>
+				
+			</a>
+			<input type="checkbox" id="Others">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/hugo/">
+						
+						<span class="menu__text">Hugo</span>
+						
+					</a>
+					</li>
+				
+			</ul>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About Us</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post" autonumbering>
+		<header class="post__header"><div class="views">
+    <span class="views">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=https%3a%2f%2fmyzonesoft.com%2fpost%2fmvc-java-play-framework-2%2f" alt="Views"/>
+    </span>
+</div>
+
+			<h1 class="post__title">MVC Application using Java and Play Framework (Contd)</h1>
+			
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-07-27T11:23:37&#43;05:30">July 27, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/mvc/" rel="category">MVC</a>
+	</span>
+</div><div class="meta__item meta__icon">
+<svg width="18" height="18" viewBox="0 0 88.965 88.966">
+	<polygon points="66.436,56.656 61.639,56.656 61.639,72.438 75.096,72.438 75.096,67.641 66.436,67.641"/>
+	<path d="M65.049,46.49v-3.342V23.541c0,0,0.008-6.385,0-6.465l-3.746-7.59l3.324-6.32c0.354-0.67,0.33-1.475-0.062-2.121
+		C64.174,0.397,63.471,0,62.715,0H5.301C4.11,0,3.143,0.967,3.143,2.16l0.052,80.307h10.369V16.841H7.461V4.32h51.68l-2.186,4.15
+		c-0.328,0.625-0.332,1.369-0.007,1.998l3.295,6.373h-42.43v65.625h7.915h6.818h14.526h2.236c3.865,4,9.273,6.5,15.264,6.5
+		c11.719,0,21.25-9.532,21.25-21.25C85.825,56.158,76.547,46.746,65.049,46.49z M64.575,81.966c-7.857,0-14.25-6.394-14.25-14.25
+		s6.393-14.25,14.25-14.25s14.25,6.394,14.25,14.25S72.432,81.966,64.575,81.966z"/>	
+</svg>
+ 9 Minutes   Read   
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/cover_images/mvc-java-play-framework.png" alt="MVC Application using Java and Play Framework (Contd)">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#refactoring-the-views-with-bootstrap">Refactoring the Views with Bootstrap</a>
+      <ul>
+        <li><a href="#download-bootstrap-font-awesome-icons-jquery-and-popperjs">Download Bootstrap, Font Awesome Icons, jQuery and popper.js</a></li>
+        <li><a href="#create-a-common-layout-template">Create a common layout template</a></li>
+        <li><a href="#call-common-layout-template-from-views">Call common layout template from views</a></li>
+        <li><a href="#refactored-views">Refactored Views</a></li>
+      </ul>
+    </li>
+    <li><a href="#connecting-the-database">Connecting the Database</a>
+      <ul>
+        <li><a href="#enable-play-ebean-plugin">Enable Play Ebean plugin</a></li>
+        <li><a href="#configure-confapplicationconf">Configure <code>conf/application.conf</code></a></li>
+        <li><a href="#using-model-superclass">Using Model superclass</a></li>
+        <li><a href="#update-service-class">Update Service Class</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(255, 82, 82)',
+  textColor: '#fff'
+})</script>
+<p>This article is the extension of the <a href="/post/mvc-java-play-framework/"
+ target="_blank">previous article</a>.</p>
+<p>In this article, I will be enhancing the application developed in the previous article, by:</p>
+<ul>
+<li>Refactoring the Views using <strong>Bootstrap</strong> and <strong>jQuery</strong>, so that the Views are presented in a better way.</li>
+<li>Connecting to the Database to persist the data, using <strong>Ebean ORM</strong>.</li>
+</ul>
+<hr>
+<p>Continuing from where we left in the previous article, let us go ahead and Refactor the Views.</p>
+<h2 id="refactoring-the-views-with-bootstrap">Refactoring the Views with Bootstrap</h2>
+<p>Let us do some refactoring of the Views/HTML pages by adding some styling and moving the common lines of code into other files.</p>
+<p>For styling, I will be using <strong>Bootstrap</strong>.</p>
+<h3 id="download-bootstrap-font-awesome-icons-jquery-and-popperjs">Download Bootstrap, Font Awesome Icons, jQuery and popper.js</h3>
+<p>Download the latest version of the Bootstrap from <a href="https://getbootstrap.com/docs/5.0/getting-started/download/"
+ target="_blank">here</a>.</p>
+<p>Copy the <code>bootstrap.min.css</code> file into the <code>/public/css</code> folder.</p>
+<p>Copy the <code>bootstrap.min.js</code> file into the <code>/public/js</code> folder.</p>
+<p>We will be using the <strong>Font Awesome Icons</strong> from <a href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+ target="_blank">https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css</a>, directly into our Views Templates.</p>
+<p>Download the latest version of the jQuery from <a href="https://jquery.com/download/"
+ target="_blank">here</a> and place the <code>jQuery.min.js</code> file in the <code>/public/js</code> folder.</p>
+<p>Either use the <code>popper.js</code> directly from the CDN location <a href="https://unpkg.com/@popperjs/core@2"
+ target="_blank">https://unpkg.com/@popperjs/core@2</a> or download and place the file in <code>/public/js</code> folder.</p>
+<h3 id="create-a-common-layout-template">Create a common layout template</h3>
+<ol>
+<li>There are some common(repeated) piece of codes in the Views. We can move them to the common Layout Template.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  &lt;<span style="color:#f92672">title</span>&gt;Todo Tracker Application&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  &lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;Todo Tracker Application&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  ...
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  &lt;<span style="color:#f92672">script</span>&gt;...&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><ol start="2">
+<li>Create a template - <code>views.layout.scala.html</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>@(title: String)(content: Html)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    &lt;<span style="color:#f92672">title</span>&gt;Todo Tracker Application&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#75715e">&lt;!-- Add the bootstrap css from public/css folder --&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.Assets.versioned(&#34;</span><span style="color:#a6e22e">css</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">bootstrap</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">min</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">css</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#75715e">&lt;!-- Add the font-awesome css from the cdn link directly --&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#75715e">&lt;!-- Start of navigation menu --&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>      &lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar navbar-expand-lg navbar-light bg-light&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container-fluid&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>          &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.TasksController.getAllTasks&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-brand&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>            &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.Assets.versioned(&#34;</span><span style="color:#a6e22e">images</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">favicon</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">png</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;30&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;24&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-inline-block align-text-top&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            &lt;<span style="color:#f92672">b</span>&gt;Todo Tracker Application&lt;/<span style="color:#f92672">b</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>          @* Here&#39;s where we render the page title `String`. *@
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>          &lt;<span style="color:#f92672">h4</span>&gt;@title&lt;/<span style="color:#f92672">h4</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>          &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav nav-pills&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.TasksController.getAllTasks&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;home&#34;</span> <span style="color:#a6e22e">aria-current</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page&#34;</span>&gt;Home&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>            &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.TasksController.getCreateForm&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;create&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span>&gt;Create Task&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>          &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>      &lt;/<span style="color:#f92672">nav</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>      <span style="color:#75715e">&lt;!-- End of navigation menu --&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>      &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>      @* And here&#39;s where we render the `Html` object containing the page content. *@
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>      @content
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>    <span style="color:#75715e">&lt;!-- It is always advisable to add the script tags inside body tag toward the end for faster rendering of the page  --&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>    <span style="color:#75715e">&lt;!-- Add the required js from public/js folder --&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>    <span style="color:#75715e">&lt;!-- Add the popper.js and jquery.js before the bootstrap.js --&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.Assets.versioned(&#34;</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">popper</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">min</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.Assets.versioned(&#34;</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">jquery-3</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">6</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">min</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.Assets.versioned(&#34;</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">bootstrap</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">min</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>    <span style="color:#75715e">&lt;!-- Add all the custom js in custom.js --&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.Assets.versioned(&#34;</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">custom</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><ul>
+<li>Add the <code>bootstrap.min.css</code> and <code>font-awesome.min.css</code> files path to the <code>href</code> attribute of the <code>link</code> tags inside the <code>head</code> tag.</li>
+<li>Add the <code>jquery.min.js</code>, <code>popper.min.js</code> and <code>bootstrap.min.js</code> files path to the <code>src</code> attribute of the <code>script</code> tags at the bottom of the <code>body</code> tag.</li>
+<li>Place the <code>popper.min.js</code> and <code>jquery.min.js</code> before the <code>bootstrap.min.js</code>, as <code>bootstrap.min.js</code> requires <strong>jQuery</strong> for loading its contents.</li>
+<li>It is always advisable to add the <code>script</code> tags inside <code>body</code> tag toward the end for faster rendering of the page.</li>
+<li>We will add the <strong>navigation menu</strong>, using the <strong>standard bootstrap navigation navbar</strong> styling.</li>
+<li>For the <strong>src attribute for script tags</strong> and <strong>href attribute for link tags</strong>, we add the path using <code>@routes.Assets.versioned</code> in Play framework. This would render the files that are in the <code>/public</code> folder, since we have the route mapping enabled like given below:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Map</span> <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">resources</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">the</span> <span style="color:#f92672">/</span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">folder</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">the</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">assets</span> <span style="color:#a6e22e">URL</span> <span style="color:#a6e22e">path</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">GET</span>     <span style="color:#f92672">/</span><span style="color:#a6e22e">assets</span><span style="color:#f92672">/*</span><span style="color:#a6e22e">file</span>               <span style="color:#a6e22e">controllers</span>.<span style="color:#a6e22e">Assets</span>.<span style="color:#a6e22e">versioned</span>(<span style="color:#a6e22e">path</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/public&#34;</span>, <span style="color:#a6e22e">file</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Asset</span>)
+</span></span></code></pre></div><hr>
+<h3 id="call-common-layout-template-from-views">Call common layout template from views</h3>
+<p>We shall update the existing views in the <code>views.tasks</code> folder to make a call to the <strong>layout template</strong>.</p>
+<ul>
+<li>We will be removing the <strong>head</strong> section and also the closing <strong>body</strong> section in the file and replacing them with the call to <strong>layout template</strong>. It takes 2 parameters, <strong>title</strong> and <strong>html content</strong>.</li>
+<li>Since we have created the <em>Navigation Menu</em> with <strong>Create Task</strong> tab, we will be removing the <em><strong>Create link</strong></em> from the Homepage.</li>
+<li>We will be updating all the buttons with the relevant <em><strong>Font Awesome Icons</strong></em>.</li>
+<li>We will move all the custom javascript methods to the <code>custom.js</code> and place it in the <code>/public/js</code> folder.</li>
+<li>Each view files would have changes like below (highlighted lines).</li>
+</ul>
+<h4 id="viewtaskshomescalahtml"><code>view.tasks.home.scala.html</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>@(tasksList : List[Tasks])
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>@layout(&#34;List All Tasks&#34;) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table table-striped table-hover&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    &lt;<span style="color:#f92672">caption</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;caption-side: top;font-style:italic;text-align:center;&#34;</span>&gt;Click on the row(s) to view the details&lt;/<span style="color:#f92672">caption</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    &lt;<span style="color:#f92672">thead</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>      &lt;<span style="color:#f92672">th</span>&gt;Title&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>      &lt;<span style="color:#f92672">th</span>&gt;Description&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>      &lt;<span style="color:#f92672">th</span>&gt;Due Date&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>      &lt;<span style="color:#f92672">th</span>&gt;Status&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>      &lt;<span style="color:#f92672">th</span>&gt;No. Of Comments&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>      &lt;<span style="color:#f92672">th</span>&gt;Edit&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>      &lt;<span style="color:#f92672">th</span>&gt;Delete&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    &lt;/<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    &lt;<span style="color:#f92672">tbody</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    @for(task &lt;<span style="color:#f92672">-</span> <span style="color:#a6e22e">tasksList</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">tr</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rowClick(&#39;@routes.TasksController.view(task.getSystemTaskId())&#39;);&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>      &lt;<span style="color:#f92672">td</span>&gt;@task.getTitle()&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>      &lt;<span style="color:#f92672">td</span>&gt;@task.getDescription()&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>      &lt;<span style="color:#f92672">td</span>&gt;@task.getDueDateStr()&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>      &lt;<span style="color:#f92672">td</span>&gt;@task.getStatus()&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>      &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;@task.getTodoTaskCommentsSet().size()&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>      &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-warning&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.TasksController.edit(task.getSystemTaskId())&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>        &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-edit&#34;</span> <span style="color:#a6e22e">aria-hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>      &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-danger&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@routes.TasksController.deleteTask(task.getSystemTaskId())&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>        &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-trash&#34;</span> <span style="color:#a6e22e">aria-hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>    &lt;/<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>  &lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>}
+</span></span></code></pre></div><h4 id="add-customjs">Add <code>custom.js</code></h4>
+<p>We will move all the custom javascript methods to the <code>custom.js</code> and place it in the <code>/public/js</code> folder.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#75715e">// &#34;Add New Comments&#34; button toggle for adding new comment
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">addNewComments</span>(){
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">lTable</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;commentsTable&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#a6e22e">lTable</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">lTable</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;table&#34;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;none&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;table&#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#75715e">//To enable the click on the row functionality, in the Homepage
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rowClick</span>(<span style="color:#a6e22e">iUrl</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    document.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">iUrl</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#75715e">//To enable the active nav section in the menu
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;a&#39;</span>).<span style="color:#a6e22e">each</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">prop</span>(<span style="color:#e6db74">&#39;href&#39;</span>) <span style="color:#f92672">==</span> window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>            <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">addClass</span>(<span style="color:#e6db74">&#39;active&#39;</span>); <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">parents</span>(<span style="color:#e6db74">&#39;li&#39;</span>).<span style="color:#a6e22e">addClass</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    });
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>});
+</span></span></code></pre></div><hr>
+<h3 id="refactored-views">Refactored Views</h3>
+<h4 id="home-page">Home Page</h4>
+<p>Now when we <strong>Stop, Compile and Run</strong> the Application Server, we will see the below refractored views.
+
+  <figure>
+    <img src="images/refactored-home-page.jpeg" alt="refactored-home-page.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Refactored Home page</figcaption>
+  </figure>
+</p>
+<h4 id="create-task-page">Create Task Page</h4>
+<p>Click on the <em><strong>Create Task</strong></em> tab on the navigation menu, at the top.
+
+  <figure>
+    <img src="images/refactored-create-page.jpeg" alt="refactored-create-page.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Refactored Create page</figcaption>
+  </figure>
+</p>
+<p>Fill in the details and click on <em><strong>&ldquo;Create Task&rdquo;</strong></em> button, to create new task.
+
+  <figure>
+    <img src="images/refactored-home-page-after-create.jpeg" alt="refactored-home-page-after-create.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Refactored Home page after Task Creation</figcaption>
+  </figure>
+</p>
+<h4 id="view-task-page">View Task Page</h4>
+<p>Click on the row to <em><strong>View</strong></em> the details.
+
+  <figure>
+    <img src="images/refactored-view-page.jpeg" alt="refactored-view-page.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Refactored View Page</figcaption>
+  </figure>
+</p>
+<h4 id="editupdate-task-page">Edit/Update Task Page</h4>
+<p>For <em><strong>Editing</strong></em> the task details, there are 2 options:</p>
+<ol>
+<li>From the <strong>Homepage</strong>, click on <em><strong>Edit icon</strong></em>.</li>
+<li>From <strong>View page</strong>, click on <em><strong>Edit icon</strong></em>.
+
+  <figure>
+    <img src="images/refactored-edit-page.jpeg" alt="refactored-edit-page.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Refactored Edit Page</figcaption>
+  </figure>
+
+
+  <figure>
+    <img src="images/refactored-view-page-with-comments.jpeg" alt="refactored-view-page-with-comments.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Refactored View Page with Comments</figcaption>
+  </figure>
+</li>
+</ol>
+<h4 id="delete-task">Delete Task</h4>
+<p>For <em><strong>Deleting</strong></em> the task, there are 2 options:</p>
+<ol>
+<li>From the <strong>Homepage</strong>, click on <em><strong>Delete icon</strong></em>.</li>
+<li>From <strong>View page</strong>, click on <em><strong>Delete icon</strong></em>.
+
+  <figure>
+    <img src="images/refactored-home-page-after-delete.jpeg" alt="refactored-home-page-after-delete.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Refactored Home page after Task Deletion</figcaption>
+  </figure>
+</li>
+</ol>
+<hr>
+<h2 id="connecting-the-database">Connecting the Database</h2>
+<p>Till now, we have seen the complete <strong>MVC Functionality of Play</strong>, <strong>Refactoring Views using Bootstrap</strong> <em>without even persisting the data</em>. Now, let us look at persisting the data in the database.</p>
+<p>The <strong>Play Framework</strong> has a built-in <strong>H2 Database</strong>, along with support for <strong>JPA with Hibernate</strong> and other persistence frameworks.</p>
+<h3 id="enable-play-ebean-plugin">Enable Play Ebean plugin</h3>
+<p>Play comes with the <strong><a href="https://ebean.io/"
+ target="_blank">Ebean ORM</a></strong> for Persisting data in Java.</p>
+<p>To enable it, add the <em><strong>Play Ebean plugin</strong></em> to your SBT plugins in <code>project/plugins.sbt</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">addSbtPlugin</span>(<span style="color:#e6db74">&#34;io.github.lapidus79&#34;</span> <span style="color:#f92672">%</span> <span style="color:#e6db74">&#34;sbt-play-ebean&#34;</span> <span style="color:#f92672">%</span> <span style="color:#e6db74">&#34;6.2.2&#34;</span>)
+</span></span></code></pre></div><blockquote>
+<p>See latest version <a href="https://github.com/lapidus79/play-ebean"
+ target="_blank">here</a>.</p>
+</blockquote>
+<p>Enable this plugin in the <code>build.sbt</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">lazy</span> <span style="color:#a6e22e">val</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">project</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">file</span>(<span style="color:#e6db74">&#34;.&#34;</span>)).<span style="color:#a6e22e">enablePlugins</span>(<span style="color:#a6e22e">PlayJava</span>, <span style="color:#a6e22e">PlayEbean</span>)
+</span></span></code></pre></div><hr>
+<h3 id="configure-confapplicationconf">Configure <code>conf/application.conf</code></h3>
+<p><strong>Play Ebean</strong> comes with two components, <em>a runtime library</em> that actually talks to the database, and <em>an sbt plugin</em> that enhances the compiled Java bytecode of your models for use with Ebean. Both of these components need to be configured so that Ebean knows where your models are.</p>
+<h4 id="configuring-the-runtime-library">Configuring the runtime library</h4>
+<p>The runtime library can be configured by putting the list of packages and/or classes that your Ebean models live in your application configuration file.</p>
+<p>Since all our models are in the <strong>models</strong> package, add the following to <code>conf/application.conf</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">ebean</span>.<span style="color:#66d9ef">default</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;models.*&#34;</span>]
+</span></span></code></pre></div><p>This defines a <code>default</code> Ebean server, using the <code>default</code> data source, which must be properly configured.</p>
+<h4 id="configuring-the-default-ebean-datasource">Configuring the <code>default</code> Ebean Datasource</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a6e22e">db</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">You</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">declare</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">many</span> <span style="color:#a6e22e">datasources</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">want</span>.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">By</span> <span style="color:#a6e22e">convention</span>, <span style="color:#a6e22e">the</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">datasource</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">named</span> <span style="color:#e6db74">`default`</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//www.playframework.com/documentation/latest/Developing-with-the-H2-Database
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">default</span>.<span style="color:#a6e22e">driver</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">h2</span>.<span style="color:#a6e22e">Driver</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  <span style="color:#66d9ef">default</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;jdbc:h2:mem:play&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  <span style="color:#66d9ef">default</span>.<span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sa</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  <span style="color:#66d9ef">default</span>.<span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  <span style="color:#66d9ef">default</span>.<span style="color:#a6e22e">logSql</span><span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>}
+</span></span></code></pre></div><p>Add the <strong>h2 database</strong> into your dependencies list in the <code>build.sbt</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">libraryDependencies</span> <span style="color:#f92672">++=</span> <span style="color:#a6e22e">Seq</span>(<span style="color:#e6db74">&#34;com.h2database&#34;</span> <span style="color:#f92672">%</span> <span style="color:#e6db74">&#34;h2&#34;</span> <span style="color:#f92672">%</span> <span style="color:#e6db74">&#34;2.1.212&#34;</span>)
+</span></span></code></pre></div><h4 id="managing-database-evolutions">Managing database evolutions</h4>
+<p>When you use a relational database, you need a way to track and organize your database schema evolutions.</p>
+<p>Enable the evolutions by adding the following to the <code>conf/application.conf</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">play</span>.<span style="color:#a6e22e">evolutions</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">You</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">disable</span> <span style="color:#a6e22e">evolutions</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">specific</span> <span style="color:#a6e22e">datasource</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">necessary</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#a6e22e">db</span>.<span style="color:#66d9ef">default</span>.<span style="color:#a6e22e">enabled</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>}
+</span></span></code></pre></div><p>Add <code>jdbc</code> and <code>javaJdbc</code> into your dependencies list in the <code>build.sbt</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">libraryDependencies</span> <span style="color:#f92672">++=</span> <span style="color:#a6e22e">Seq</span>(<span style="color:#a6e22e">jdbc</span>,<span style="color:#a6e22e">javaJdbc</span>)
+</span></span></code></pre></div><hr>
+<h3 id="using-model-superclass">Using Model superclass</h3>
+<p><strong>Ebean</strong> defines a convenient superclass for your <em><strong>Ebean model classes</strong></em>, <code>io.ebean.Model</code>. Let us enhance our model classes to extend this <em><strong>Models</strong></em> Superclass.</p>
+<p>Also add the <em>Entity</em>, <em>Id</em> and other <code>java.persistance</code> annotation properties.</p>
+<h4 id="modelstasks"><code>models.Tasks</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a6e22e">@Entity</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tasks</span> <span style="color:#66d9ef">extends</span> Model <span style="color:#f92672">{</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">AUTO</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  <span style="color:#66d9ef">private</span> Long systemTaskId<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  <span style="color:#66d9ef">private</span> String title<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  <span style="color:#66d9ef">private</span> String description<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  <span style="color:#66d9ef">private</span> String status<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  <span style="color:#66d9ef">private</span> Date dueDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  <span style="color:#66d9ef">private</span> String dueDateStr<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>  <span style="color:#66d9ef">private</span> Date creationDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>  <span style="color:#66d9ef">private</span> String creationDateStr<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>  <span style="color:#a6e22e">@JsonManagedReference</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>  <span style="color:#a6e22e">@OneToMany</span><span style="color:#f92672">(</span>mappedBy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;todoTask&#34;</span><span style="color:#f92672">,</span> fetch <span style="color:#f92672">=</span> FetchType<span style="color:#f92672">.</span><span style="color:#a6e22e">EAGER</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>  <span style="color:#66d9ef">private</span> Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Finder<span style="color:#f92672">&lt;</span>Long<span style="color:#f92672">,</span> Tasks<span style="color:#f92672">&gt;</span> find <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Finder<span style="color:#f92672">&lt;&gt;(</span>Tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>  <span style="color:#75715e">//bolierplate Constructors, Getters and Setters, toString methods
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>As you can see, we’ve added a <code>find</code> static field, defining a <code>Finder</code> for an entity of type <code>Task</code> with a <code>Long</code> identifier. This helper field is then used to simplify querying our model.</p>
+<h4 id="modelstodotaskcomments"><code>models.TodoTaskComments</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a6e22e">@Entity</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTaskComments</span> <span style="color:#66d9ef">extends</span> Model <span style="color:#f92672">{</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">AUTO</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  <span style="color:#66d9ef">private</span> Long todoTaskCommentsId<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  <span style="color:#66d9ef">private</span> String taskComments<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  <span style="color:#66d9ef">private</span> Date creationDate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  <span style="color:#66d9ef">private</span> String creationDateStr<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  <span style="color:#a6e22e">@JsonBackReference</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>  <span style="color:#a6e22e">@ManyToOne</span><span style="color:#f92672">(</span>fetch <span style="color:#f92672">=</span> FetchType<span style="color:#f92672">.</span><span style="color:#a6e22e">EAGER</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>  <span style="color:#a6e22e">@JoinColumn</span><span style="color:#f92672">(</span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;systemTasksId&#34;</span><span style="color:#f92672">,</span> nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>  <span style="color:#66d9ef">private</span> Tasks todoTask<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Finder<span style="color:#f92672">&lt;</span>Long<span style="color:#f92672">,</span> TodoTaskComments<span style="color:#f92672">&gt;</span> find <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Finder<span style="color:#f92672">&lt;&gt;(</span>TodoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>  <span style="color:#75715e">//bolierplate Constructors, Getters and Setters, toString methods
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><hr>
+<h3 id="update-service-class">Update Service Class</h3>
+<p>In the previous article, we have used the <em>Hashmaps</em> in the Service Class, to store the data. Hence we had adapted all our action methods to be in sync with that.</p>
+<p>Now that we are <em>persisting the data</em>, we will update the Service Class to <em>Store</em>, <em>Read</em>, <em>Edit</em> and <em>Delete</em> the data from the database.</p>
+<h4 id="storing-the-new-task-details">Storing the new Task details</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createTask</span><span style="color:#f92672">(</span>Tasks task<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  task<span style="color:#f92672">.</span><span style="color:#a6e22e">setDueDateStr</span><span style="color:#f92672">(</span>dateFormatter<span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">getDueDate</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  task<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDate</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>  task<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDateStr</span><span style="color:#f92672">(</span>dateFormatter<span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">getCreationDate</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>  task<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h4 id="fetching-list-of-tasks">Fetching list of tasks</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Tasks<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAllTasks</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#66d9ef">return</span> Tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">find</span><span style="color:#f92672">.</span><span style="color:#a6e22e">all</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h4 id="fetching-one-task-details">Fetching one task details</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#66d9ef">public</span> Tasks <span style="color:#a6e22e">getTaskById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> id<span style="color:#f92672">){</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#66d9ef">return</span> Tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">find</span><span style="color:#f92672">.</span><span style="color:#a6e22e">byId</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h4 id="update-the-task-details">Update the Task details</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateTask</span> <span style="color:#f92672">(</span>Tasks task<span style="color:#f92672">,</span> TodoTaskComments todoTaskComments<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">getTaskComments</span><span style="color:#f92672">()</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">getTaskComments</span><span style="color:#f92672">().</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDate</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">setCreationDateStr</span><span style="color:#f92672">(</span>dateFormatter<span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">getCreationDate</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">setTodoTask</span><span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet <span style="color:#f92672">=</span> task<span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoTaskCommentsSet</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    todoTaskCommentsSet<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>todoTaskComments<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    task<span style="color:#f92672">.</span><span style="color:#a6e22e">setTodoTaskCommentsSet</span><span style="color:#f92672">(</span>todoTaskCommentsSet<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>  task<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h4 id="delete-the-task-details">Delete the Task details</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteTask</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> systemTaskId<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  Tasks task <span style="color:#f92672">=</span> Tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">find</span><span style="color:#f92672">.</span><span style="color:#a6e22e">byId</span><span style="color:#f92672">(</span>systemTaskId<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span> <span style="color:#f92672">!=</span> task<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    Set<span style="color:#f92672">&lt;</span>TodoTaskComments<span style="color:#f92672">&gt;</span> todoTaskCommentsSet <span style="color:#f92672">=</span> task<span style="color:#f92672">.</span><span style="color:#a6e22e">getTodoTaskCommentsSet</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>todoTaskCommentsSet<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>      <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>TodoTaskComments todoTaskComments<span style="color:#f92672">:</span> todoTaskCommentsSet<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        todoTaskComments<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    task<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>With this setup complete, we have come to the end of this article.</p>
+<p>At the end of this article, we have seen how to enhance the application developed in the previous article, by:</p>
+<ul>
+<li>Refactoring the Views using <strong>Bootstrap</strong> and <strong>jQuery</strong>, so that the Views are presented in a better way.</li>
+<li>Connecting to the Database to persist the data, using <strong>Ebean ORM</strong>.</li>
+</ul>
+<p>Complete code for this project can be found at GitHub <a href="https://github.com/prasbhat/mvc-java-play-framework"
+ target="_blank">here</a>. Go ahead and clone it.</p>
+<p>Instructions on how to clone and run the project are provided on the GitHub page.</p>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/relational-database/" rel="tag">Relational Database</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/h2-database/" rel="tag">H2 Database</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/java/" rel="tag">Java</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/play-framework/" rel="tag">Play Framework</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/microservice/" rel="tag">Microservice</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/mvc/" rel="tag">MVC</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/frontend/" rel="tag">Frontend</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Prashanth Bhat</span>
+	</div>
+	<div class="authorbox__description">
+		<strong>Prashanth Bhat</strong> has about 15+ years of <strong>Developing/Coding</strong> knowledge. <em>He loves to work with Technology, learn new things and share his learnings with others</em>. For comments/feedback you can reach <a href="mailto:bhatpp.android@gmail.com"
+>here</a>.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/mvc-java-play-framework/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">MVC Application using Java and Play Framework</p>
+		</a>
+	</div>
+</nav>
+<script src="https://utteranc.es/client.js"
+	repo="prasbhat/prasbhat.github.io"
+	issue-term="title"
+	label="Comments"
+	theme="github-light"
+	crossorigin="anonymous"
+	async>
+</script>
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020-2022 myzonesoft.com
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

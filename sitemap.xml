@@ -3,7 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://myzonesoft.com/categories/</loc>
-    <lastmod>2022-06-28T15:24:28+05:30</lastmod>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/frontend/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/h2-database/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/java/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/microservice/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/mvc/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/categories/mvc/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/post/mvc-java-play-framework-2/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/play-framework/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/post/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/relational-database/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/post/mvc-java-play-framework/</loc>
+    <lastmod>2022-07-12T11:23:37+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/dropwizard/</loc>
     <lastmod>2022-06-28T15:24:28+05:30</lastmod>
@@ -11,16 +50,7 @@
     <loc>https://myzonesoft.com/categories/dropwizard/</loc>
     <lastmod>2022-06-28T15:24:28+05:30</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/tags/h2-database/</loc>
-    <lastmod>2022-06-28T15:24:28+05:30</lastmod>
-  </url><url>
     <loc>https://myzonesoft.com/tags/hibernate/</loc>
-    <lastmod>2022-06-28T15:24:28+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/java/</loc>
-    <lastmod>2022-06-28T15:24:28+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/microservice/</loc>
     <lastmod>2022-06-28T15:24:28+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/categories/microservice/</loc>
@@ -29,21 +59,6 @@
     <loc>https://myzonesoft.com/post/microservice-dropwizard-h2/</loc>
     <lastmod>2022-06-28T15:24:28+05:30</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/</loc>
-    <lastmod>2022-06-28T15:24:28+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/post/</loc>
-    <lastmod>2022-06-28T15:24:28+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/relational-database/</loc>
-    <lastmod>2022-06-28T15:24:28+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/</loc>
-    <lastmod>2022-06-28T15:24:28+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/frontend/</loc>
-    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
-  </url><url>
     <loc>https://myzonesoft.com/categories/frontend/</loc>
     <lastmod>2022-06-20T12:04:54+05:30</lastmod>
   </url><url>
@@ -51,9 +66,6 @@
     <lastmod>2022-06-20T12:04:54+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/javascript/</loc>
-    <lastmod>2022-06-20T12:04:54+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/mvc/</loc>
     <lastmod>2022-06-20T12:04:54+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/typescript/</loc>
@@ -100,9 +112,6 @@
   </url><url>
     <loc>https://myzonesoft.com/post/frontend-angular/</loc>
     <lastmod>2021-07-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/mvc/</loc>
-    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</loc>
     <lastmod>2021-04-12T00:00:00+00:00</lastmod>

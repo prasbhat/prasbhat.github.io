@@ -3,7 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://myzonesoft.com/categories/</loc>
-    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/flask-framework/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/microservice/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/categories/microservice/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/post/microservice-python-flask-sqlite/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/post/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/python/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/categories/python/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/relational-database/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/sqlalchemy/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/sqlite-database/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/</loc>
+    <lastmod>2022-08-18T13:30:35+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/frontend/</loc>
     <lastmod>2022-07-27T11:23:37+05:30</lastmod>
@@ -12,9 +48,6 @@
     <lastmod>2022-07-27T11:23:37+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/java/</loc>
-    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/microservice/</loc>
     <lastmod>2022-07-27T11:23:37+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/mvc/</loc>
@@ -26,19 +59,7 @@
     <loc>https://myzonesoft.com/post/mvc-java-play-framework-2/</loc>
     <lastmod>2022-07-27T11:23:37+05:30</lastmod>
   </url><url>
-    <loc>https://myzonesoft.com/</loc>
-    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
-  </url><url>
     <loc>https://myzonesoft.com/tags/play-framework/</loc>
-    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/post/</loc>
-    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/relational-database/</loc>
-    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/</loc>
     <lastmod>2022-07-27T11:23:37+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/mvc-java-play-framework/</loc>
@@ -51,9 +72,6 @@
     <lastmod>2022-06-28T15:24:28+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/hibernate/</loc>
-    <lastmod>2022-06-28T15:24:28+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/microservice/</loc>
     <lastmod>2022-06-28T15:24:28+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/microservice-dropwizard-h2/</loc>

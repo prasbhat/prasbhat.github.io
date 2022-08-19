@@ -81,6 +81,14 @@ if (!doNotTrack) {
 					</a>
 					</li>
 				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/python/">
+						
+						<span class="menu__text">Python</span>
+						
+					</a>
+					</li>
+				
 			</ul>
 		</li>
 		<li class="menu__item">
@@ -179,7 +187,7 @@ if (!doNotTrack) {
         <li><a href="#other-related-software">Other related software</a></li>
       </ul>
     </li>
-    <li><a href="#create-bootstrap-spring-boot-application">Create Bootstrap Spring Boot Application</a>
+    <li><a href="#create-base-spring-boot-application">Create Base Spring Boot Application</a>
       <ul>
         <li><a href="#project-structure">Project Structure</a></li>
       </ul>
@@ -226,7 +234,7 @@ if (!doNotTrack) {
 <li>Each <strong>Todo Task</strong> has <em>id, title, description, creation date, due date, status and comments</em>.</li>
 <li>APIs help to <em>Create, Read, Update, Delete</em> <strong>Todo Tasks</strong>.</li>
 </ul>
-<p>Below mentioned are the <em><strong>REST APIs</strong></em> for CRUD Operations using <strong>Spring Boot</strong>.</p>
+<p>Below mentioned are the <em><strong>REST APIs</strong></em> for CRUD Operations.</p>
 <table>
 <thead>
 <tr>
@@ -241,31 +249,31 @@ if (!doNotTrack) {
 <td style="text-align:center">Create New Todo Task</td>
 <td style="text-align:center">CREATE</td>
 <td style="text-align:center">POST</td>
-<td style="text-align:center"><code>/tasks</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
 </tr>
 <tr>
 <td style="text-align:center">Fetch All Todo Tasks</td>
 <td style="text-align:center">READ</td>
 <td style="text-align:center">GET</td>
-<td style="text-align:center"><code>/tasks</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
 </tr>
 <tr>
 <td style="text-align:center">Fetch One Todo Task</td>
 <td style="text-align:center">READ</td>
 <td style="text-align:center">GET</td>
-<td style="text-align:center"><code>/tasks/{id}</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
 </tr>
 <tr>
 <td style="text-align:center">Update One Specific Todo Task</td>
 <td style="text-align:center">UPDATE</td>
 <td style="text-align:center">PUT</td>
-<td style="text-align:center"><code>/tasks</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
 </tr>
 <tr>
 <td style="text-align:center">Delete One Specific Todo Task</td>
 <td style="text-align:center">DELETE</td>
 <td style="text-align:center">DELETE</td>
-<td style="text-align:center"><code>/tasks/{id}</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
 </tr>
 </tbody>
 </table>
@@ -301,9 +309,9 @@ if (!doNotTrack) {
 <p><strong>Webserver</strong>– Tomcat is embedded in the Spring Boot application and can be used as Webserver for running this project.</p>
 <p><strong>Project Management Tool (Maven)</strong>– Maven is embedded in the Spring Boot application and can be used for building and managing the Spring Boot project.</p>
 <hr>
-<h2 id="create-bootstrap-spring-boot-application">Create Bootstrap Spring Boot Application</h2>
-<p>Let me first create the <em>Bootstrap Spring Boot Application</em>, I mean, the basic application without any of the customization. Later I will enhance it with different methods, to include <em>CRUD Operations</em> and <em>Expose REST APIs</em>, as discussed above.</p>
-<p>To create the <em>Bootstrap Spring Boot Application</em>, I use <a href="https://start.spring.io/"
+<h2 id="create-base-spring-boot-application">Create Base Spring Boot Application</h2>
+<p>Let me first create the <em>Base Spring Boot Application</em>, the basic application without any of the customization. Later I will enhance it with different methods, to include <em>CRUD Operations</em> and <em>Expose REST APIs</em>, as discussed above.</p>
+<p>To create the <em>Base Spring Boot Application</em>, I use <a href="https://start.spring.io/"
  target="_blank">Spring Boot Initializr</a>. This will setup the basic required <em>pom.xml</em> with maven dependencies and some sample Java files, so that we can run and test the application. This should help us in getting started.</p>
 <p>Provide all the required information like: <em>Groups, Artifacts, Name, Description, Package Name, Java Version, Dependencies (Maven)</em> and click on <em><strong>Generate</strong></em>.
 
@@ -598,7 +606,7 @@ It takes following values:
 <td style="text-align:center">Create New Todo Task</td>
 <td style="text-align:center">CREATE</td>
 <td style="text-align:center">POST</td>
-<td style="text-align:center"><code>/tasks</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
 </tr>
 </tbody>
 </table>
@@ -690,7 +698,7 @@ It takes following values:
 <td style="text-align:center">Fetch All Todo Tasks</td>
 <td style="text-align:center">READ</td>
 <td style="text-align:center">GET</td>
-<td style="text-align:center"><code>/tasks</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
 </tr>
 </tbody>
 </table>
@@ -751,7 +759,7 @@ It takes following values:
 <td style="text-align:center">Fetch One Todo Task</td>
 <td style="text-align:center">READ</td>
 <td style="text-align:center">GET</td>
-<td style="text-align:center"><code>/tasks/{id}</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
 </tr>
 </tbody>
 </table>
@@ -812,7 +820,7 @@ It takes following values:
 <td style="text-align:center">Update One Specific Todo Task</td>
 <td style="text-align:center">UPDATE</td>
 <td style="text-align:center">PUT</td>
-<td style="text-align:center"><code>/tasks</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
 </tr>
 </tbody>
 </table>
@@ -848,7 +856,7 @@ It takes following values:
 <td style="text-align:center">Delete One Specific Todo Task</td>
 <td style="text-align:center">DELETE</td>
 <td style="text-align:center">DELETE</td>
-<td style="text-align:center"><code>/tasks/{id}</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
 </tr>
 </tbody>
 </table>
@@ -909,7 +917,7 @@ It takes following values:
 
   <figure>
     <img src="images/delete-api-response.jpeg" alt="delete-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
-    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for /deleteById/{id} DELETE API call</figcaption>
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for Delete API call</figcaption>
   </figure>
 </p>
 <hr>
@@ -944,31 +952,31 @@ It takes following values:
 <td style="text-align:center">Create New Todo Task</td>
 <td style="text-align:center">CREATE</td>
 <td style="text-align:center">POST</td>
-<td style="text-align:center"><code>/tasks</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
 </tr>
 <tr>
 <td style="text-align:center">Fetch All Todo Tasks</td>
 <td style="text-align:center">READ</td>
 <td style="text-align:center">GET</td>
-<td style="text-align:center"><code>/tasks</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
 </tr>
 <tr>
 <td style="text-align:center">Fetch One Todo Task</td>
 <td style="text-align:center">READ</td>
 <td style="text-align:center">GET</td>
-<td style="text-align:center"><code>/tasks/{id}</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
 </tr>
 <tr>
 <td style="text-align:center">Update One Specific Todo Task</td>
 <td style="text-align:center">UPDATE</td>
 <td style="text-align:center">PUT</td>
-<td style="text-align:center"><code>/tasks</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
 </tr>
 <tr>
 <td style="text-align:center">Delete One Specific Todo Task</td>
 <td style="text-align:center">DELETE</td>
 <td style="text-align:center">DELETE</td>
-<td style="text-align:center"><code>/tasks/{id}</code></td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
 </tr>
 </tbody>
 </table>
@@ -976,7 +984,7 @@ It takes following values:
 <ul>
 <li>Configure Hibernate to work with <em>Relational Database</em> and persist the data.</li>
 <li>Create and Expose <em><strong>REST APIs</strong></em> for CRUD Operations using <strong>Spring Boot</strong>.</li>
-<li>How to handle <em><strong>HTTP</strong></em> and <em><strong>CORS</strong></em> Requests through REST Controller.</li>
+<li>Handle <em><strong>HTTP</strong></em> and <em><strong>CORS</strong></em> Requests through REST Controller.</li>
 </ul>
 <p>Complete code for this project can be found at GitHub <a href="https://github.com/prasbhat/microservice-springboot-h2"
  target="_blank">here</a>.</p>

@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Microservice using Python, Flask and SQLite Database - myzonesoft.com</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KY3NJW8CDF"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-KY3NJW8CDF', { 'anonymize_ip': false });
+}
+</script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="myzonesoft.com" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">myzonesoft.com</div>
+					<div class="logo__tagline">A Technical Site for Everyone</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__dropdown">
+			<a class="menu__link" href="/categories/microservice/">
+				
+				<span class="menu__text">Microservices</span>
+				<label class="drop-icon" for="Microservices">▾</label>
+				
+			</a>
+			<input type="checkbox" id="Microservices">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/spring-boot/">
+						
+						<span class="menu__text">Spring Boot</span>
+						
+					</a>
+					</li>
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/dropwizard/">
+						
+						<span class="menu__text">Dropwizard</span>
+						
+					</a>
+					</li>
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/python/">
+						
+						<span class="menu__text">Python</span>
+						
+					</a>
+					</li>
+				
+			</ul>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/mvc/">
+				
+				<span class="menu__text">MVC</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/frontend/">
+				
+				<span class="menu__text">Frontend</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__dropdown">
+			<a class="menu__link" href="/categories/others/">
+				
+				<span class="menu__text">Others</span>
+				<label class="drop-icon" for="Others">▾</label>
+				
+			</a>
+			<input type="checkbox" id="Others">
+			<ul class="submenu__list">
+				
+					<li class="menu__item">
+					<a class="menu__link" href="/categories/hugo/">
+						
+						<span class="menu__text">Hugo</span>
+						
+					</a>
+					</li>
+				
+			</ul>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About Us</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post" autonumbering>
+		<header class="post__header"><div class="views">
+    <span class="views">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=https%3a%2f%2fmyzonesoft.com%2fpost%2fmicroservice-python-flask-sqlite%2f" alt="Views"/>
+    </span>
+</div>
+
+			<h1 class="post__title">Microservice using Python, Flask and SQLite Database</h1>
+			
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-18T13:30:35&#43;05:30">August 18, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/microservice/" rel="category">Microservice</a>, <a class="meta__link" href="/categories/python/" rel="category">Python</a>
+	</span>
+</div><div class="meta__item meta__icon">
+<svg width="18" height="18" viewBox="0 0 88.965 88.966">
+	<polygon points="66.436,56.656 61.639,56.656 61.639,72.438 75.096,72.438 75.096,67.641 66.436,67.641"/>
+	<path d="M65.049,46.49v-3.342V23.541c0,0,0.008-6.385,0-6.465l-3.746-7.59l3.324-6.32c0.354-0.67,0.33-1.475-0.062-2.121
+		C64.174,0.397,63.471,0,62.715,0H5.301C4.11,0,3.143,0.967,3.143,2.16l0.052,80.307h10.369V16.841H7.461V4.32h51.68l-2.186,4.15
+		c-0.328,0.625-0.332,1.369-0.007,1.998l3.295,6.373h-42.43v65.625h7.915h6.818h14.526h2.236c3.865,4,9.273,6.5,15.264,6.5
+		c11.719,0,21.25-9.532,21.25-21.25C85.825,56.158,76.547,46.746,65.049,46.49z M64.575,81.966c-7.857,0-14.25-6.394-14.25-14.25
+		s6.393-14.25,14.25-14.25s14.25,6.394,14.25,14.25S72.432,81.966,64.575,81.966z"/>	
+</svg>
+ 12 Minutes   Read   
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/cover_images/python-flask-sqlite.png" alt="Microservice using Python, Flask and SQLite Database">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#definitions">Definitions</a></li>
+    <li><a href="#prerequisites">Prerequisites</a>
+      <ul>
+        <li><a href="#familiarity-with-technology-and-frameworks">Familiarity with Technology and Frameworks</a></li>
+        <li><a href="#install-python">Install Python</a></li>
+        <li><a href="#integrated-development-environment-ide-for-code-development">Integrated Development Environment (IDE) for Code Development</a></li>
+        <li><a href="#install-the-python-extension-for-the-vs-code">Install the Python Extension for the VS Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#create-base-project">Create Base Project</a>
+      <ul>
+        <li><a href="#create-a-project-environment">Create a Project Environment</a></li>
+        <li><a href="#install-flask-and-sqlalchemy">Install Flask and SQLAlchemy</a></li>
+        <li><a href="#setting-up-an-initial-flask-server">Setting up an initial Flask server</a></li>
+        <li><a href="#change-the-port">Change the port</a></li>
+      </ul>
+    </li>
+    <li><a href="#enhance-the-existing-application-to-expose-rest-apis">Enhance the Existing Application to Expose REST APIs</a>
+      <ul>
+        <li><a href="#adding-database">Adding Database</a></li>
+        <li><a href="#add-rest-api-endpoint-for-create-operation">Add REST API Endpoint for CREATE Operation</a></li>
+        <li><a href="#add-rest-api-endpoint-for-get-all-operation">Add REST API Endpoint for GET All Operation</a></li>
+        <li><a href="#add-rest-api-endpoint-for-get-operation">Add REST API Endpoint for GET Operation</a></li>
+        <li><a href="#add-rest-api-endpoint-for-update-operation">Add REST API Endpoint for UPDATE Operation</a></li>
+        <li><a href="#add-rest-api-endpoint-for-delete-operation">Add REST API Endpoint for DELETE Operation</a></li>
+        <li><a href="#add-rest-api-endpoint-for-delete-all-operation">Add REST API Endpoint for DELETE ALL Operation</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(255, 82, 82)',
+  textColor: '#fff'
+})</script>
+<p>In this article, I will develop a <strong>Microservice Application</strong> using <strong>Python Language</strong> with <strong>Flask Framework</strong> and <strong>SQLite Database</strong> and expose all <em>CRUD (Create, Read, Update, Delete) Operations</em> as the REST APIs.</p>
+<p><strong>Flask Framework</strong> will serve as back-end server and I will be using <em><strong>Relational Database</strong></em> known as <strong>SQLite Database</strong>, for persisting(storing) the data.</p>
+<p>By the end of this article, you would learn about how to:</p>
+<ul>
+<li>Use <strong>SQLAlchemy</strong> to work with <em>Relational Database</em> and persist the data.</li>
+<li>Create and Expose <em><strong>REST APIs</strong></em> for CRUD Operations using <strong>Flask Framework</strong>.</li>
+<li>How to handle <em><strong>HTTP</strong></em> Requests through REST Controller.</li>
+</ul>
+<hr>
+<h2 id="overview">Overview</h2>
+<p>We will build a <strong>Python Flask Rest CRUD API</strong> for a <strong>Todo Task Application</strong> in that:</p>
+<ul>
+<li>Each <strong>Todo Task</strong> has <em>id, title, description, creation date, due date, status and comments</em>.</li>
+<li>APIs help to <em>Create, Read, Update, Delete</em> <strong>Todo Tasks</strong>.</li>
+</ul>
+<p>Below mentioned are the <em><strong>REST APIs</strong></em> for CRUD Operations.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Create New Todo Task</td>
+<td style="text-align:center">CREATE</td>
+<td style="text-align:center">POST</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Fetch All Todo Tasks</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Fetch One Todo Task</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Update One Specific Todo Task</td>
+<td style="text-align:center">UPDATE</td>
+<td style="text-align:center">PUT</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Delete One Specific Todo Task</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Delete All Todo Task</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+</tbody>
+</table>
+<p>If you have no time to read this article, but want to try the code for yourself, GitHub location is provided <a href="https://github.com/prasbhat/microservice-python-flask-sqlite"
+ target="_blank">here</a>. Go ahead and clone the code repository.</p>
+<hr>
+<h2 id="definitions">Definitions</h2>
+<p><strong><a href="https://www.python.org/doc/essays/blurb/"
+ target="_blank">Python</a></strong> is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python supports modules and packages, which encourages program modularity and code reuse.</p>
+<p><strong><a href="https://en.wikipedia.org/wiki/Flask_%28web_framework%29"
+ target="_blank">Flask</a></strong> is a web framework, it&rsquo;s a Python module that lets you develop web applications easily. It&rsquo;s has a small and easy-to-extend core: it’s a <em>microframework</em> that doesn&rsquo;t include an <em>ORM (Object Relational Manager)</em> or such features. <strong>Flask</strong> is a <em>web application framework</em> written in Python. Flask is based on the <em>Werkzeg WSGI toolkit</em> and the <em>Jinja2 template engine</em>.</p>
+<p><strong><a href="https://www.sqlalchemy.org/"
+ target="_blank">SQLAlchemy</a></strong> is a library that facilitates the communication between Python programs and databases. <strong>SQLAlchemy</strong> is the Python SQL toolkit and <strong>Object Relational Mapper</strong> that gives application developers the full power and flexibility of SQL.</p>
+<p><strong><a href="https://www.sqlite.org/index.html"
+ target="_blank">SQLite</a></strong> is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. <em><strong>SQLite</strong> is the most used database engine in the world</em>. <strong>SQLite</strong> is built into all mobile phones.</p>
+<p><strong><a href="https://spring.io/microservices"
+ target="_blank">Microservices</a></strong> is an architecture that allows the developers to develop and deploy services independently. Each service running has its own process and this achieves the lightweight model to support business applications. One of the most popular types of APIs for building Microservices applications is known as <em><strong>&ldquo;RESTful API&rdquo;</strong></em> or <em><strong>&ldquo;REST API&rdquo;</strong></em>.</p>
+<p><strong>RE</strong>presentational <strong>S</strong>tate <strong>T</strong>ransfer <strong>(REST)</strong> is an architectural style that defines a set of constraints to be used for creating web services. <strong>REST API</strong> is a way of accessing web services in a simple and flexible way without having any processing. All communication done via REST API uses only <em>HTTP request</em>.</p>
+<p><strong>Application Programming Interface (API)</strong> is a software intermediary that allows two applications to talk to each other. To simplify, an <em><strong>API</strong></em> delivers a user requests to a system and sends the system’s response back to a user.</p>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>There are some prerequisites that are required for creating the <strong>Microservice Using Python, Flask and SQLite Database Application</strong>.</p>
+<h3 id="familiarity-with-technology-and-frameworks">Familiarity with Technology and Frameworks</h3>
+<p>It is assumed that you have prior knowledge or familiarity with <strong>Python Language</strong>, <strong>Flask Framework</strong>, <strong>working with RDBMS databases</strong> and <strong>basic SQL commands</strong>, because I will not be covering the basics of these in this article.</p>
+<p>If you are not familiar, then it is advised to get the basic knowledge of these before continuing.</p>
+<h3 id="install-python">Install Python</h3>
+<p>Install latest version for your platform from <a href="https://www.python.org/downloads/windows/"
+ target="_blank">here</a>. Select the latest version of <strong>Python 3</strong> and download the Windows Installer. Click on the downloaded <em>.exe</em> and follow the on-screen instructions to complete the download.</p>
+<h3 id="integrated-development-environment-ide-for-code-development">Integrated Development Environment (IDE) for Code Development</h3>
+<p>You can use any Text Editor or IDE of your choice. I will be using the <strong>Visual Studio Code</strong>.</p>
+<p>If you wish to use the <strong>Visual Studio Code</strong>, download the latest version from <a href="https://aka.ms/win32-x64-user-stable"
+ target="_blank">here</a>. Click on the downloaded <em>.exe</em> and complete the installation.</p>
+<h3 id="install-the-python-extension-for-the-vs-code">Install the Python Extension for the VS Code</h3>
+<p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"
+ target="_blank">Python extension for VS Code</a> from the Visual Studio Marketplace.</p>
+<ol>
+<li>You can browse and install extensions from within VS Code. Bring up the Extensions view by clicking on the <em>Extensions icon</em> in the <strong>Activity Bar</strong> on the side of VS Code or the <strong>View: Extensions</strong> command (<code>Ctrl+Shift+X</code>).</li>
+<li>Browse for <strong>Python</strong> and click on <strong>Install</strong> button.</li>
+</ol>
+<hr>
+<h2 id="create-base-project">Create Base Project</h2>
+<p>An important concept while working with Python projects is a <em><strong>virtual environment</strong></em>. It allows you to create an isolated Python environment, where all required packages for the project are installed.</p>
+<h3 id="create-a-project-environment">Create a Project Environment</h3>
+<ol>
+<li>Open command prompt and go to the folder where you want to create the <strong>Python Project</strong> and type following command:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir microservice-python-flask-sqlite
+</span></span><span style="display:flex;"><span>cd microservice-python-flask-sqlite
+</span></span></code></pre></div><ol start="2">
+<li>In that folder, use the following commands (one after another) to <em>create</em> and <em>activate</em> a <em><strong>virtual environment</strong></em> named <code>.venv</code>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>py -3 -m venv .venv
+</span></span><span style="display:flex;"><span>.venv<span style="color:#ae81ff">\S</span>cripts<span style="color:#ae81ff">\a</span>ctivate
+</span></span></code></pre></div><p>If the activate command generates the message <em><strong>Activate.ps1 is not digitally signed. You cannot run this script on the current system.</strong></em>, then you need to temporarily change the PowerShell execution policy to allow scripts to run (see <a href="https://go.microsoft.com/fwlink/?LinkID=135170"
+ target="_blank">About Execution Policies</a> in the PowerShell documentation):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+</span></span></code></pre></div><ol start="3">
+<li>Open the project folder in VS Code by running <code>code .</code>, or by running VS Code and using the <code>File &gt; Open Folder</code> command.</li>
+<li>In VS Code, open the Command Palette (<strong>View &gt; Command Palette</strong> or (<code>Ctrl+Shift+P</code>)). Then select the <strong>Python: Select Interpreter</strong> command:
+
+  <figure>
+    <img src="images/command-palette.jpeg" alt="command-palette.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Command Palette in VS Code Editor</figcaption>
+  </figure>
+</li>
+<li>The command presents a list of available interpreters that VS Code can find automatically, including virtual environments. Select the folder that starts with .venv
+
+  <figure>
+    <img src="images/venv-selection.jpeg" alt="venv-selection.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Select the .venv that starts with \.venv</figcaption>
+  </figure>
+</li>
+<li>Run <strong>Terminal: Create New Terminal</strong> (Ctrl+Shift+`)) from the Command Palette, which creates a terminal and automatically activates the virtual environment by running its activation script.</li>
+</ol>
+<h3 id="install-flask-and-sqlalchemy">Install Flask and SQLAlchemy</h3>
+<p>Use the inbuilt Python package manager tool <code>pip</code> for installing dependencies. In your VS Code terminal enter the following one after another.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip install flask
+</span></span><span style="display:flex;"><span>pip install flask-sqlalchemy
+</span></span></code></pre></div><p>
+  <figure>
+    <img src="images/pip-install-flask.jpeg" alt="pip-install-flask.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Succeesful installation of Flask</figcaption>
+  </figure>
+
+
+  <figure>
+    <img src="images/pip-install-sqlalchemy.jpeg" alt="pip-install-sqlalchemy.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Succeesful installation of SQLAlchemy</figcaption>
+  </figure>
+</p>
+<h3 id="setting-up-an-initial-flask-server">Setting up an initial Flask server</h3>
+<ul>
+<li>Create a new Python file in project root directory with a preferred name. Let us call it <code>app.py</code></li>
+<li>Import <code>Flask</code> class and create its instance for this application</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>app <span style="color:#f92672">=</span> Flask(__name__)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>():
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Hello!&#39;</span>
+</span></span></code></pre></div><ul>
+<li>Set the <code>FLASK_APP</code> Environment variable using the command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$env:FLASK_APP<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app.py&#34;</span>
+</span></span></code></pre></div><ul>
+<li>Start the server using the command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>flask run
+</span></span></code></pre></div><p>
+  <figure>
+    <img src="images/flask-run.jpeg" alt="flask-run.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Start the server</figcaption>
+  </figure>
+</p>
+<ul>
+<li>When you navigate to <a href="http://localhost:5000/"
+ target="_blank">http://localhost:5000/</a> you should see <strong>&lsquo;Hello!&rsquo;</strong> on the browser
+
+  <figure>
+    <img src="images/browser-with-hello.jpeg" alt="browser-with-hello.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Browser displaying Hello!</figcaption>
+  </figure>
+</li>
+</ul>
+<h3 id="change-the-port">Change the port</h3>
+<p>As we have seen, default port for <strong>Python Flask Application Server</strong> is <em><strong>5000</strong></em>. However, we can change the port.</p>
+<p>Start the server using the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>flask run --port <span style="color:#ae81ff">8080</span> 
+</span></span></code></pre></div><p>This would start the <strong>Python Flask Application Server</strong> on the <em><strong>port 8080</strong></em>.</p>
+<p>Now that we have base flask app setup complete, lets dive in and start designing our <strong>Todo Task Application</strong> project.</p>
+<hr>
+<h2 id="enhance-the-existing-application-to-expose-rest-apis">Enhance the Existing Application to Expose REST APIs</h2>
+<p>It is now time to enhance our project to include REST API endpoints, so that they can be exposed for consumption by other applications.</p>
+<h3 id="adding-database">Adding Database</h3>
+<p>We will first setup the database for persisting the data. I will be using <em><strong>Relational Database</strong></em> known as <strong>SQLite Database</strong>. You can extend this to use any other Relational Database and only Database configurations needs to be changed.</p>
+<p>For completing this setup, we will need to update/create few files. Let us go ahead and complete that.</p>
+<h4 id="create-__init__py">Create <code>/__init__.py</code></h4>
+<p>In the Project root folder create the file <code>__init__.py</code>. This will initialize the SQLite Database using the SQLAlchemy Module.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> create_engine, MetaData
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f92672">from</span> sqlalchemy.ext.declarative <span style="color:#f92672">import</span> declarative_base
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>SQLALCHEMY_DATABASE_URI<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sqlite:///todo-app.sqlite&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>engine <span style="color:#f92672">=</span> create_engine(SQLALCHEMY_DATABASE_URI, echo <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>meta <span style="color:#f92672">=</span> MetaData()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>Base <span style="color:#f92672">=</span> declarative_base()
+</span></span></code></pre></div><h4 id="create-modelspy">Create <code>/models.py</code></h4>
+<p>This file will hold all the models that we will creating for this project</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> engine, Base
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, String, Date, ForeignKey
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> relationship
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tasks</span>(Base):
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    __tablename__<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tasks&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    systemTaskId <span style="color:#f92672">=</span> Column(Integer, primary_key <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    title <span style="color:#f92672">=</span> Column(String)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    description <span style="color:#f92672">=</span> Column(String)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    status <span style="color:#f92672">=</span> Column(String)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    dueDate <span style="color:#f92672">=</span> Column(Date)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    creationDate <span style="color:#f92672">=</span> Column(Date)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    todoTaskCommentsSet <span style="color:#f92672">=</span> relationship(<span style="color:#e6db74">&#34;TodoTaskComments&#34;</span>, backref <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;task&#34;</span>, lazy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;subquery&#39;</span>, cascade<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all, delete-orphan&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTaskComments</span>(Base):
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    __tablename__<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;todoTaskComments&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    systemTodoTaskCommentsId <span style="color:#f92672">=</span> Column(Integer, primary_key <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    taskComments <span style="color:#f92672">=</span> Column(String)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    creationDate <span style="color:#f92672">=</span> Column(Date)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    task_systemTaskId <span style="color:#f92672">=</span> Column(Integer, ForeignKey(<span style="color:#e6db74">&#39;tasks.systemTaskId&#39;</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>Base<span style="color:#f92672">.</span>metadata<span style="color:#f92672">.</span>create_all(engine)
+</span></span></code></pre></div><ul>
+<li>Each class will represent the entity model.</li>
+<li>Each class contains: tablename, Column and Column type</li>
+<li><code>relationship</code> represents the One To Many Relationship</li>
+<li><code>Base.metadata.create_all</code> will create all the tables and its dependencies in the database, at the application startup.</li>
+</ul>
+<h4 id="update-the-apppy">Update the <code>/app.py</code></h4>
+<p>Update the <code>app.py</code> to include the SQLAlchemy Session for handling the persistance.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> engine
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> sessionmaker
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>app <span style="color:#f92672">=</span> Flask(__name__)
+</span></span><span style="display:flex; background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>Session <span style="color:#f92672">=</span> sessionmaker(bind<span style="color:#f92672">=</span> engine)
+</span></span></code></pre></div><p>Now when we stop and restart the Server, we can see on the console that, 2 tables are created.
+
+  <figure>
+    <img src="images/database-table-creation.jpeg" alt="database-table-creation.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Tables Created in Database</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-create-operation">Add REST API Endpoint for CREATE Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Create New Todo Task</td>
+<td style="text-align:center">CREATE</td>
+<td style="text-align:center">POST</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we need to update the <code>app.py</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask, request, jsonify, abort
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#f92672">from</span> .models <span style="color:#f92672">import</span> Tasks, TodoTaskComments
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime,date
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> engine
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> sessionmaker
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>app <span style="color:#f92672">=</span> Flask(__name__)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>Session <span style="color:#f92672">=</span> sessionmaker(bind<span style="color:#f92672">=</span> engine)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#39;/todo-app/tasks/&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;POST&#39;</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_task</span>():
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    record <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(request<span style="color:#f92672">.</span>data)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    task <span style="color:#f92672">=</span> Tasks(title <span style="color:#f92672">=</span> record<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;title&#39;</span>), description <span style="color:#f92672">=</span> record<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;description&#39;</span>), status <span style="color:#f92672">=</span> record<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;status&#39;</span>), 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    dueDate <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>strptime(record<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;dueDate&#39;</span>), <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>date(), creationDate <span style="color:#f92672">=</span> date<span style="color:#f92672">.</span>today())
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    <span style="color:#66d9ef">with</span> Session() <span style="color:#66d9ef">as</span> session:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        session<span style="color:#f92672">.</span>add(task)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        session<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        session<span style="color:#f92672">.</span>refresh(task)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    <span style="color:#66d9ef">return</span> __jsonResponse(task, <span style="color:#66d9ef">None</span>), <span style="color:#ae81ff">201</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__jsonResponse</span>(task, todoTaskCommentsList):
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    todoTaskCommentSet <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    taskDict <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>        <span style="color:#e6db74">&#39;systemTaskId&#39;</span> : task<span style="color:#f92672">.</span>systemTaskId,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>        <span style="color:#e6db74">&#39;title&#39;</span> : task<span style="color:#f92672">.</span>title,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>        <span style="color:#e6db74">&#39;description&#39;</span> : task<span style="color:#f92672">.</span>description,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>        <span style="color:#e6db74">&#39;status&#39;</span> : task<span style="color:#f92672">.</span>status,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>        <span style="color:#e6db74">&#39;dueDate&#39;</span> : task<span style="color:#f92672">.</span>dueDate,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>        <span style="color:#e6db74">&#39;creationDate&#39;</span> : task<span style="color:#f92672">.</span>creationDate,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>        <span style="color:#e6db74">&#39;todoTaskCommentSet&#39;</span> : todoTaskCommentSet,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>    
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>    <span style="color:#66d9ef">if</span> (todoTaskCommentsList <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>        <span style="color:#66d9ef">for</span> todoTaskComment <span style="color:#f92672">in</span> todoTaskCommentsList:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>            todoTaskCommentDict <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>                <span style="color:#e6db74">&#39;systemTodoTaskCommentsId&#39;</span>: todoTaskComment<span style="color:#f92672">.</span>systemTodoTaskCommentsId,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>                <span style="color:#e6db74">&#39;taskComments&#39;</span>: todoTaskComment<span style="color:#f92672">.</span>taskComments,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>                <span style="color:#e6db74">&#39;creationDate&#39;</span>: todoTaskComment<span style="color:#f92672">.</span>creationDate,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>                <span style="color:#e6db74">&#39;task_systemTaskId&#39;</span>: todoTaskComment<span style="color:#f92672">.</span>task_systemTaskId
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>            taskDict[<span style="color:#e6db74">&#34;todoTaskCommentSet&#34;</span>]<span style="color:#f92672">.</span>append(todoTaskCommentDict)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>       
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>    <span style="color:#66d9ef">return</span> taskDict
+</span></span></code></pre></div><ul>
+<li><code>create_task()</code> is the method that will be called for creating new task.</li>
+<li><code>__jsonResponse()</code> is the custom private method created for returning the json response from rest api methods.</li>
+<li><code>with Session() as session:</code> with establish the Session with the <code>sessionmaker</code> for the current transaction.</li>
+<li>After the <code>session.commit()</code> or <code>session.flush()</code>, sometimes data will not be refreshed with the latest database value. This is where <code>session.refresh()</code> comes in handy.</li>
+</ul>
+<p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<table><tbody><tr><td><strong>HTTP Method</strong></td><td>POST</td></tr><tr><td><strong>Endpoint URL</strong></td><td><em>http://localhost:8080/todo-app/tasks</em></td></tr><tr><td><strong>Request Body</strong></td><td><code><em>{<br>&nbsp;&nbsp;"title":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"description":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"dueDate":&nbsp;"2022-08-31",<br>&nbsp;&nbsp;"status":&nbsp;"NOT_STARTED",<br>&nbsp;&nbsp;"todoTaskCommentsSet":&nbsp;[]<br>}</em></code></td></tr></tbody></table>
+<p>
+  <figure>
+    <img src="images/create-api-response.jpeg" alt="create-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for POST API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-get-all-operation">Add REST API Endpoint for GET All Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fetch All Todo Tasks</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we need to update the <code>app.py</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#39;/todo-app/tasks/&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;GET&#39;</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_all</span>():
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#66d9ef">with</span> Session() <span style="color:#66d9ef">as</span> session:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        data <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        taskList <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(Tasks)<span style="color:#f92672">.</span>all()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>        
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        <span style="color:#66d9ef">for</span> task <span style="color:#f92672">in</span> taskList:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>            todoTaskCommentsList <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(TodoTaskComments)<span style="color:#f92672">.</span>filter(TodoTaskComments<span style="color:#f92672">.</span>task_systemTaskId <span style="color:#f92672">==</span> task<span style="color:#f92672">.</span>systemTaskId)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            data<span style="color:#f92672">.</span>append(__jsonResponse(task, todoTaskCommentsList))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#66d9ef">return</span> data
+</span></span></code></pre></div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">Endpoint URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>http://localhost:8080/todo-app/tasks</code></td>
+</tr>
+</tbody>
+</table>
+<p>
+  <figure>
+    <img src="images/find-all-api-response.jpeg" alt="find-all-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for GET All API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-get-operation">Add REST API Endpoint for GET Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fetch One Todo Task</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we need to update the <code>app.py</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#39;/todo-app/tasks/&lt;int:id&gt;&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;GET&#39;</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_one_task</span>(id):
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#66d9ef">with</span> Session() <span style="color:#66d9ef">as</span> session:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        task <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(Tasks)<span style="color:#f92672">.</span>get(id)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>    <span style="color:#66d9ef">if</span> task <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>        abort(<span style="color:#ae81ff">404</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>    <span style="color:#66d9ef">return</span> jsonify(__jsonResponse(task, task<span style="color:#f92672">.</span>todoTaskCommentsSet))
+</span></span></code></pre></div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">Endpoint URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>http://localhost:8080/todo-app/tasks/1</code></td>
+</tr>
+</tbody>
+</table>
+<p>
+  <figure>
+    <img src="images/find-one-api-response.jpeg" alt="find-one-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for GET API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-update-operation">Add REST API Endpoint for UPDATE Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Update One Specific Todo Task</td>
+<td style="text-align:center">UPDATE</td>
+<td style="text-align:center">PUT</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we need to update the <code>app.py</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#39;/todo-app/tasks/&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;PUT&#39;</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_task</span>():
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    record <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(request<span style="color:#f92672">.</span>data)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    print(record)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">with</span> Session() <span style="color:#66d9ef">as</span> session:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        data <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        task <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(Tasks)<span style="color:#f92672">.</span>get(record<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;systemTasksId&#39;</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">if</span> task <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            abort(<span style="color:#ae81ff">404</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        task<span style="color:#f92672">.</span>title <span style="color:#f92672">=</span> record<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;title&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        task<span style="color:#f92672">.</span>description <span style="color:#f92672">=</span> record<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;description&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        task<span style="color:#f92672">.</span>status <span style="color:#f92672">=</span> record<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;status&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        task<span style="color:#f92672">.</span>dueDate <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>strptime(record<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;dueDate&#39;</span>), <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>date()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        <span style="color:#66d9ef">for</span> taskComment <span style="color:#f92672">in</span> record[<span style="color:#e6db74">&#39;todoTaskCommentsSet&#39;</span>]:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            todoTaskCommentsSet <span style="color:#f92672">=</span> TodoTaskComments(taskComments <span style="color:#f92672">=</span> taskComment[<span style="color:#e6db74">&#39;taskComments&#39;</span>], creationDate <span style="color:#f92672">=</span> date<span style="color:#f92672">.</span>today(), task_systemTaskId<span style="color:#f92672">=</span>task<span style="color:#f92672">.</span>systemTaskId)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>            session<span style="color:#f92672">.</span>add(todoTaskCommentsSet)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        session<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        session<span style="color:#f92672">.</span>refresh(task)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        data<span style="color:#f92672">.</span>append(__jsonResponse(task, task<span style="color:#f92672">.</span>todoTaskCommentsSet))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    <span style="color:#66d9ef">return</span> data
+</span></span></code></pre></div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<table><tbody><tr><td><strong>HTTP Method</strong></td><td>PUT</td></tr><tr><td><strong>Endpoint URL</strong></td><td><em>http://localhost:8080/todo-app/tasks</em></td></tr><tr><td><strong>Request Header</strong></td><td><code>Content-type: application/json</code></td></tr><tr><td><strong>Request Body</strong></td><td><code><em>{<br>&nbsp;&nbsp;"systemTasksId":&nbsp;1,<br>&nbsp;&nbsp;"title":&nbsp;"Testing&nbsp;the&nbsp;Application",<br>&nbsp;&nbsp;"description":&nbsp;"Testing&nbsp;the&nbsp;Application - update",<br>&nbsp;&nbsp;"dueDate":&nbsp;"2022-08-31",<br>&nbsp;&nbsp;"status":&nbsp;"IN_PROGRESS",<br>&nbsp;&nbsp;"todoTaskCommentsSet":&nbsp;[{<br>&nbsp;&nbsp;&nbsp;&nbsp;"taskComments":&nbsp;"Adding comments 1"<br>&nbsp;&nbsp;}]<br>}</em></code></td></tr></tbody></table>
+<p>
+  <figure>
+    <img src="images/update-api-response.jpeg" alt="update-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for PUT API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-delete-operation">Add REST API Endpoint for DELETE Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Delete One Specific Todo Task</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we need to update the <code>app.py</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/todo-app/tasks/&lt;int:id&gt;&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;DELETE&#34;</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delete_one_task</span>(id):
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#66d9ef">with</span> Session() <span style="color:#66d9ef">as</span> session:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        task <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(Tasks)<span style="color:#f92672">.</span>get(id)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        <span style="color:#66d9ef">if</span> task <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>            abort(<span style="color:#ae81ff">404</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        session<span style="color:#f92672">.</span>delete(task)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        session<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#66d9ef">return</span> jsonify({<span style="color:#e6db74">&#39;result&#39;</span>: <span style="color:#66d9ef">True</span>})
+</span></span></code></pre></div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">Endpoint URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>http://localhost:8080/todo-app/tasks/1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Response from the Server
+
+  <figure>
+    <img src="images/delete-one-api-response.jpeg" alt="delete-one-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for Delete One API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h3 id="add-rest-api-endpoint-for-delete-all-operation">Add REST API Endpoint for DELETE ALL Operation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Delete All Todo Task</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+</tbody>
+</table>
+<p>For creating this endpoint, we need to update the <code>app.py</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/todo-app/tasks/&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;DELETE&#34;</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delete_all</span>():
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#66d9ef">with</span> Session() <span style="color:#66d9ef">as</span> session:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        taskList <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(Tasks)<span style="color:#f92672">.</span>all()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        <span style="color:#66d9ef">if</span> taskList <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>            abort(<span style="color:#ae81ff">404</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">for</span> task <span style="color:#f92672">in</span> taskList:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            session<span style="color:#f92672">.</span>delete(task)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            session<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    <span style="color:#66d9ef">return</span> jsonify({<span style="color:#e6db74">&#39;result&#39;</span>: <span style="color:#66d9ef">True</span>})
+</span></span></code></pre></div><p>Now, <em>Open any REST client</em> and provide values, as per the below table and see the response from the server.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">Endpoint URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>http://localhost:8080/todo-app/tasks/</code></td>
+</tr>
+</tbody>
+</table>
+<p>Response from the Server
+
+  <figure>
+    <img src="images/delete-all-api-response.jpeg" alt="delete-all-api-response.jpeg" style="display: block;margin: 0.7rem auto;">
+    <figcaption style="text-align: center;font-style: italic;font-size: smaller;">Server Response for Delete All API call</figcaption>
+  </figure>
+</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>With these endpoints’ setup, we have come to an end of this article and we have enabled <em><strong>CRUD (Create, Read, Update, Delete) Operations</strong></em> <em>using below REST API Endpoints</em> and they are ready to be consumed by any frontend or other microservice applications.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">CRUD Operation</th>
+<th style="text-align:center">HTTP Method</th>
+<th style="text-align:center">REST API Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Create New Todo Task</td>
+<td style="text-align:center">CREATE</td>
+<td style="text-align:center">POST</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Fetch All Todo Tasks</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Fetch One Todo Task</td>
+<td style="text-align:center">READ</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Update One Specific Todo Task</td>
+<td style="text-align:center">UPDATE</td>
+<td style="text-align:center">PUT</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Delete One Specific Todo Task</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>/todo-app/tasks/{id}</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Delete All Todo Task</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center"><code>/todo-app/tasks/</code></td>
+</tr>
+</tbody>
+</table>
+<p>Through this article, you have learned about how to:</p>
+<ul>
+<li>Use <strong>SQLAlchemy</strong> to work with <em>Relational Database</em> and persist the data.</li>
+<li>Create and Expose <em><strong>REST APIs</strong></em> for CRUD Operations using <strong>Flask Framework</strong>.</li>
+<li>Handle <em><strong>HTTP</strong></em> Requests through REST Controller.</li>
+</ul>
+<p>Complete code for this project can be found at GitHub <a href="https://github.com/prasbhat/microservice-python-flask-sqlite"
+ target="_blank">here</a>.</p>
+<p><em>Instructions on how to clone the code repository and run the project are provided on the GitHub project page.</em></p>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/flask-framework/" rel="tag">Flask Framework</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/sqlalchemy/" rel="tag">SQLAlchemy</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/sqlite-database/" rel="tag">SQLite Database</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/relational-database/" rel="tag">Relational Database</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/microservice/" rel="tag">Microservice</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Prashanth Bhat</span>
+	</div>
+	<div class="authorbox__description">
+		<strong>Prashanth Bhat</strong> has about 15+ years of <strong>Developing/Coding</strong> knowledge. <em>He loves to work with Technology, learn new things and share his learnings with others</em>. For comments/feedback you can reach <a href="mailto:bhatpp.android@gmail.com"
+>here</a>.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/mvc-java-play-framework-2/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">MVC Application using Java and Play Framework (Contd)</p>
+		</a>
+	</div>
+</nav>
+<script src="https://utteranc.es/client.js"
+	repo="prasbhat/prasbhat.github.io"
+	issue-term="title"
+	label="Comments"
+	theme="github-light"
+	crossorigin="anonymous"
+	async>
+</script>
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020-2022 myzonesoft.com
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

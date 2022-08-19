@@ -6,7 +6,61 @@
     <description>Recent content in Tags on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jul 2022 11:23:37 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Aug 2022 13:30:35 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flask Framework</title>
+      <link>https://myzonesoft.com/tags/flask-framework/</link>
+      <pubDate>Thu, 18 Aug 2022 13:30:35 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/flask-framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservice</title>
+      <link>https://myzonesoft.com/tags/microservice/</link>
+      <pubDate>Thu, 18 Aug 2022 13:30:35 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://myzonesoft.com/tags/python/</link>
+      <pubDate>Thu, 18 Aug 2022 13:30:35 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Relational Database</title>
+      <link>https://myzonesoft.com/tags/relational-database/</link>
+      <pubDate>Thu, 18 Aug 2022 13:30:35 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/relational-database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQLAlchemy</title>
+      <link>https://myzonesoft.com/tags/sqlalchemy/</link>
+      <pubDate>Thu, 18 Aug 2022 13:30:35 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/sqlalchemy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQLite Database</title>
+      <link>https://myzonesoft.com/tags/sqlite-database/</link>
+      <pubDate>Thu, 18 Aug 2022 13:30:35 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/tags/sqlite-database/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Frontend</title>
       <link>https://myzonesoft.com/tags/frontend/</link>
@@ -35,15 +89,6 @@
     </item>
     
     <item>
-      <title>Microservice</title>
-      <link>https://myzonesoft.com/tags/microservice/</link>
-      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/microservice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>MVC</title>
       <link>https://myzonesoft.com/tags/mvc/</link>
       <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
@@ -58,15 +103,6 @@
       <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
       
       <guid>https://myzonesoft.com/tags/play-framework/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Relational Database</title>
-      <link>https://myzonesoft.com/tags/relational-database/</link>
-      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/relational-database/</guid>
       <description></description>
     </item>
     

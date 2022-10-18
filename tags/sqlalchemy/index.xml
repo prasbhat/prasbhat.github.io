@@ -6,7 +6,23 @@
     <description>Recent content in SQLAlchemy on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Aug 2022 13:30:35 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/sqlalchemy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Oct 2022 16:45:26 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/sqlalchemy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MVC Application using Python, Flask and Jinja Template</title>
+      <link>https://myzonesoft.com/post/mvc-python-flask-jinja/</link>
+      <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/post/mvc-python-flask-jinja/</guid>
+      <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 56,
+  backgroundColor: &#39;rgb(255, 82, 82)&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;
+&lt;p&gt;In this article, I will develop a &lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
+ target=&#34;_blank&#34;&gt;Model-View-Controller (MVC)&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;Python Language&lt;/strong&gt; with &lt;strong&gt;Flask Framework&lt;/strong&gt; and &lt;strong&gt;Jinja Template&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Microservice using Python, Flask and SQLite Database</title>
       <link>https://myzonesoft.com/post/microservice-python-flask-sqlite/</link>

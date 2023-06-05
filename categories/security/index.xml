@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on myzonesoft.com</title>
+    <link>https://myzonesoft.com/categories/security/</link>
+    <description>Recent content in Security on myzonesoft.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Jun 2023 11:30:00 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Securing Spring Boot Application Using Spring Security - Introduction</title>
+      <link>https://myzonesoft.com/post/springboot-spring-security/</link>
+      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/post/springboot-spring-security/</guid>
+      <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 56,
+  backgroundColor: &#39;rgb(255, 82, 82)&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This article is the first in the series on &lt;em&gt;&lt;strong&gt;&amp;ldquo;Securing Spring Boot Application Using Spring Security&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In this article I will provide a brief introduction about &lt;strong&gt;What is Spring Security?&lt;/strong&gt; and &lt;strong&gt;Why is Spring Security popular&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Here I will create a new simple Spring Boot project, using &lt;strong&gt;&lt;a href=&#34;https://www.thymeleaf.org/&#34;
+ target=&#34;_blank&#34;&gt;Thymeleaf&lt;/a&gt;&lt;/strong&gt;. Later securing it using the &lt;strong&gt;&lt;a href=&#34;https://docs.spring.io/spring-security/reference/&#34;
+ target=&#34;_blank&#34;&gt;Spring Security&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

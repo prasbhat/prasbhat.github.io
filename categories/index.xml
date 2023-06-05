@@ -6,7 +6,34 @@
     <description>Recent content in Categories on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Oct 2022 16:45:26 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jun 2023 11:30:00 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security</title>
+      <link>https://myzonesoft.com/categories/security/</link>
+      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Boot</title>
+      <link>https://myzonesoft.com/categories/spring-boot/</link>
+      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/categories/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Security</title>
+      <link>https://myzonesoft.com/categories/spring-security/</link>
+      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
+      
+      <guid>https://myzonesoft.com/categories/spring-security/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Flask Framework</title>
       <link>https://myzonesoft.com/categories/flask-framework/</link>
@@ -76,15 +103,6 @@
       <pubDate>Fri, 18 Mar 2022 12:54:13 +0530</pubDate>
       
       <guid>https://myzonesoft.com/categories/others/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spring Boot</title>
-      <link>https://myzonesoft.com/categories/spring-boot/</link>
-      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://myzonesoft.com/categories/spring-boot/</guid>
       <description></description>
     </item>
     

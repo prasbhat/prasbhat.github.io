@@ -6,12 +6,12 @@
     <description>Recent content in Python on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Oct 2022 16:45:26 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Oct 2022 16:45:26 +0530</lastBuildDate>
+    <atom:link href="https://myzonesoft.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MVC Application using Python, Flask and Jinja Template</title>
       <link>https://myzonesoft.com/post/mvc-python-flask-jinja/</link>
       <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/post/mvc-python-flask-jinja/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -22,12 +22,10 @@
 &lt;p&gt;In this article, I will develop a &lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
  target=&#34;_blank&#34;&gt;Model-View-Controller (MVC)&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;Python Language&lt;/strong&gt; with &lt;strong&gt;Flask Framework&lt;/strong&gt; and &lt;strong&gt;Jinja Template&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microservice using Python, Flask and SQLite Database</title>
       <link>https://myzonesoft.com/post/microservice-python-flask-sqlite/</link>
       <pubDate>Thu, 18 Aug 2022 13:30:35 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/post/microservice-python-flask-sqlite/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -38,6 +36,5 @@
 &lt;p&gt;In this article, I will develop a &lt;strong&gt;Microservice Application&lt;/strong&gt; using &lt;strong&gt;Python Language&lt;/strong&gt; with &lt;strong&gt;Flask Framework&lt;/strong&gt; and &lt;strong&gt;SQLite Database&lt;/strong&gt; and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Flask Framework&lt;/strong&gt; will serve as back-end server and I will be using &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;SQLite Database&lt;/strong&gt;, for persisting(storing) the data.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

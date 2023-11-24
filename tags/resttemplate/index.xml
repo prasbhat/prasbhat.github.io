@@ -6,12 +6,12 @@
     <description>Recent content in RestTemplate on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://myzonesoft.com/tags/resttemplate/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://myzonesoft.com/tags/resttemplate/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MVC Application using Spring Boot and Thymeleaf</title>
       <link>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</link>
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -26,6 +26,5 @@
 &lt;p&gt;I will be using the same &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, for persisting(storing) the data, used in the above mentioned project.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Thymeleaf (Java Template Engine)&lt;/strong&gt; will be the &lt;em&gt;User Interface (UI)&lt;/em&gt; for this application.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

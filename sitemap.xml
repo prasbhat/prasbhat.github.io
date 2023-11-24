@@ -3,58 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://myzonesoft.com/categories/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/frontend/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/h2-database/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/hibernate/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/java/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/microservice/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/mvc/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/post/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/relational-database/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/post/springboot-spring-security/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/security/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/spring-boot/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/spring-boot/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/spring-security/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/categories/spring-security/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
-  </url><url>
-    <loc>https://myzonesoft.com/tags/thymeleaf/</loc>
-    <lastmod>2023-06-05T11:30:00+05:30</lastmod>
+    <lastmod>2022-10-18T16:45:26+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/flask-framework/</loc>
     <lastmod>2022-10-18T16:45:26+05:30</lastmod>
@@ -62,7 +11,16 @@
     <loc>https://myzonesoft.com/categories/flask-framework/</loc>
     <lastmod>2022-10-18T16:45:26+05:30</lastmod>
   </url><url>
+    <loc>https://myzonesoft.com/tags/frontend/</loc>
+    <lastmod>2022-10-18T16:45:26+05:30</lastmod>
+  </url><url>
     <loc>https://myzonesoft.com/tags/jinja-template/</loc>
+    <lastmod>2022-10-18T16:45:26+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/microservice/</loc>
+    <lastmod>2022-10-18T16:45:26+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/mvc/</loc>
     <lastmod>2022-10-18T16:45:26+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/categories/mvc/</loc>
@@ -71,10 +29,19 @@
     <loc>https://myzonesoft.com/post/mvc-python-flask-jinja/</loc>
     <lastmod>2022-10-18T16:45:26+05:30</lastmod>
   </url><url>
+    <loc>https://myzonesoft.com/</loc>
+    <lastmod>2022-10-18T16:45:26+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/post/</loc>
+    <lastmod>2022-10-18T16:45:26+05:30</lastmod>
+  </url><url>
     <loc>https://myzonesoft.com/tags/python/</loc>
     <lastmod>2022-10-18T16:45:26+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/categories/python/</loc>
+    <lastmod>2022-10-18T16:45:26+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/relational-database/</loc>
     <lastmod>2022-10-18T16:45:26+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/sqlalchemy/</loc>
@@ -83,11 +50,20 @@
     <loc>https://myzonesoft.com/tags/sqlite-database/</loc>
     <lastmod>2022-10-18T16:45:26+05:30</lastmod>
   </url><url>
+    <loc>https://myzonesoft.com/tags/</loc>
+    <lastmod>2022-10-18T16:45:26+05:30</lastmod>
+  </url><url>
     <loc>https://myzonesoft.com/categories/microservice/</loc>
     <lastmod>2022-08-18T13:30:35+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/microservice-python-flask-sqlite/</loc>
     <lastmod>2022-08-18T13:30:35+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/h2-database/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/java/</loc>
+    <lastmod>2022-07-27T11:23:37+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/mvc-java-play-framework-2/</loc>
     <lastmod>2022-07-27T11:23:37+05:30</lastmod>
@@ -102,6 +78,9 @@
     <lastmod>2022-06-28T15:24:28+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/categories/dropwizard/</loc>
+    <lastmod>2022-06-28T15:24:28+05:30</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/hibernate/</loc>
     <lastmod>2022-06-28T15:24:28+05:30</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/post/microservice-dropwizard-h2/</loc>
@@ -165,6 +144,15 @@
     <lastmod>2021-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/resttemplate/</loc>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/spring-boot/</loc>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/categories/spring-boot/</loc>
+    <lastmod>2021-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://myzonesoft.com/tags/thymeleaf/</loc>
     <lastmod>2021-04-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://myzonesoft.com/tags/jsp/</loc>

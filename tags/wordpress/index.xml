@@ -6,12 +6,12 @@
     <description>Recent content in Wordpress on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jan 2022 13:03:48 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Jan 2022 13:03:48 +0530</lastBuildDate>
+    <atom:link href="https://myzonesoft.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Migration from Wordpress to Hugo and GitHub Pages</title>
       <link>https://myzonesoft.com/post/getting-started-with-hugo/</link>
       <pubDate>Wed, 05 Jan 2022 13:03:48 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/post/getting-started-with-hugo/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -26,6 +26,5 @@
 &lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; is the &lt;em&gt;world’s fastest static website engine&lt;/em&gt;. It is written in &lt;em&gt;&lt;strong&gt;Golang&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;GitHub Pages&lt;/strong&gt; provides &lt;em&gt;free hosting space for the static sites&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

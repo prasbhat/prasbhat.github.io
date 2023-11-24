@@ -6,12 +6,12 @@
     <description>Recent content in MongoDB Database on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://myzonesoft.com/tags/mongodb-database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://myzonesoft.com/tags/mongodb-database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microservice Using Spring Boot, Hibernate and MongoDB Database</title>
       <link>https://myzonesoft.com/post/microservice-springboot-mongodb/</link>
       <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/post/microservice-springboot-mongodb/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -22,6 +22,5 @@
 &lt;p&gt;In this article, I will develop a &lt;strong&gt;Microservice Application&lt;/strong&gt; using &lt;strong&gt;Spring Boot Framework&lt;/strong&gt; and &lt;strong&gt;MongoDB Database&lt;/strong&gt; and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Spring Boot Framework&lt;/strong&gt; will serve as back-end server and I will be using &lt;em&gt;&lt;strong&gt;No SQL Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;MongoDB Database&lt;/strong&gt; for persisting(storing) the data.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

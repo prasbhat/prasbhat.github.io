@@ -6,32 +6,12 @@
     <description>Recent content in Java on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jun 2023 11:30:00 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Securing Spring Boot Application Using Spring Security - Introduction</title>
-      <link>https://myzonesoft.com/post/springboot-spring-security/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/post/springboot-spring-security/</guid>
-      <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;addBackToTop({
-  diameter: 56,
-  backgroundColor: &#39;rgb(255, 82, 82)&#39;,
-  textColor: &#39;#fff&#39;
-})&lt;/script&gt;
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;This article is the first in the series on &lt;em&gt;&lt;strong&gt;&amp;ldquo;Securing Spring Boot Application Using Spring Security&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;In this article I will provide a brief introduction about &lt;strong&gt;What is Spring Security?&lt;/strong&gt; and &lt;strong&gt;Why is Spring Security popular&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Here I will create a new simple Spring Boot project, using &lt;strong&gt;&lt;a href=&#34;https://www.thymeleaf.org/&#34;
- target=&#34;_blank&#34;&gt;Thymeleaf&lt;/a&gt;&lt;/strong&gt;. Later securing it using the &lt;strong&gt;&lt;a href=&#34;https://docs.spring.io/spring-security/reference/&#34;
- target=&#34;_blank&#34;&gt;Spring Security&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Wed, 27 Jul 2022 11:23:37 +0530</lastBuildDate>
+    <atom:link href="https://myzonesoft.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MVC Application using Java and Play Framework (Contd)</title>
       <link>https://myzonesoft.com/post/mvc-java-play-framework-2/</link>
       <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/post/mvc-java-play-framework-2/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -42,12 +22,10 @@
 &lt;p&gt;This article is the extension of the &lt;a href=&#34;https://myzonesoft.com/post/mvc-java-play-framework/&#34;
  target=&#34;_blank&#34;&gt;previous article&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MVC Application using Java and Play Framework</title>
       <link>https://myzonesoft.com/post/mvc-java-play-framework/</link>
       <pubDate>Tue, 12 Jul 2022 11:23:37 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/post/mvc-java-play-framework/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -58,12 +36,10 @@
 &lt;p&gt;In this article, I will be developing a &lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
  target=&#34;_blank&#34;&gt;Model-View-Controller (MVC)&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt; application using &lt;strong&gt;Java&lt;/strong&gt; and &lt;strong&gt;Play Framework&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microservice Using Dropwizard, Hibernate and H2 Database</title>
       <link>https://myzonesoft.com/post/microservice-dropwizard-h2/</link>
       <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/post/microservice-dropwizard-h2/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -74,12 +50,10 @@
 &lt;p&gt;In this article, I will develop a &lt;strong&gt;Microservice Application&lt;/strong&gt; using &lt;strong&gt;Dropwizard Framework&lt;/strong&gt; and &lt;strong&gt;H2 Database&lt;/strong&gt; and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Dropwizard Framework&lt;/strong&gt; will serve as back-end server and I will be using &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, &lt;em&gt;it is also known as an Embedded Java Database&lt;/em&gt;, for persisting(storing) the data.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MVC Application using Spring Boot and Thymeleaf</title>
       <link>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</link>
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/post/mvc-springboot-thymeleaf/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -94,12 +68,10 @@
 &lt;p&gt;I will be using the same &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, for persisting(storing) the data, used in the above mentioned project.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Thymeleaf (Java Template Engine)&lt;/strong&gt; will be the &lt;em&gt;User Interface (UI)&lt;/em&gt; for this application.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MVC Application using Spring Boot and JSP</title>
       <link>https://myzonesoft.com/post/mvc-springboot-jsp/</link>
       <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/post/mvc-springboot-jsp/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -114,12 +86,10 @@
 &lt;p&gt;I will be using the same &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, for persisting(storing) the data, used in the above mentioned project.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Java Server Pages (JSP)&lt;/strong&gt; will be the &lt;em&gt;User Interface (UI)&lt;/em&gt; for this application.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microservice Using Spring Boot, Hibernate and MongoDB Database</title>
       <link>https://myzonesoft.com/post/microservice-springboot-mongodb/</link>
       <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/post/microservice-springboot-mongodb/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -130,12 +100,10 @@
 &lt;p&gt;In this article, I will develop a &lt;strong&gt;Microservice Application&lt;/strong&gt; using &lt;strong&gt;Spring Boot Framework&lt;/strong&gt; and &lt;strong&gt;MongoDB Database&lt;/strong&gt; and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Spring Boot Framework&lt;/strong&gt; will serve as back-end server and I will be using &lt;em&gt;&lt;strong&gt;No SQL Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;MongoDB Database&lt;/strong&gt; for persisting(storing) the data.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microservice Using Spring Boot, Hibernate and H2 Database</title>
       <link>https://myzonesoft.com/post/microservice-springboot-h2/</link>
       <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/post/microservice-springboot-h2/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -146,6 +114,5 @@
 &lt;p&gt;In this article, I will develop a &lt;strong&gt;Microservice Application&lt;/strong&gt; using &lt;strong&gt;Spring Boot Framework&lt;/strong&gt; and &lt;strong&gt;H2 Database&lt;/strong&gt; and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Spring Boot Framework&lt;/strong&gt; will serve as back-end server and I will be using &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, &lt;em&gt;it is also known as an Embedded Java Database&lt;/em&gt;, for persisting(storing) the data.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

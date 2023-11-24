@@ -6,12 +6,12 @@
     <description>Recent content in Frontend on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jun 2022 12:04:54 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/categories/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 12:04:54 +0530</lastBuildDate>
+    <atom:link href="https://myzonesoft.com/categories/frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Frontend using VueJS and TypeScript</title>
       <link>https://myzonesoft.com/post/frontend-vue/</link>
       <pubDate>Mon, 20 Jun 2022 12:04:54 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/post/frontend-vue/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -24,12 +24,10 @@
 &lt;p&gt;If you want to understand more about MVC Architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
  target=&#34;_blank&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Frontend using ReactJS and TypeScript</title>
       <link>https://myzonesoft.com/post/frontend-react/</link>
       <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/post/frontend-react/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -42,12 +40,10 @@
 &lt;p&gt;If you want to understand more about MVC Architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
  target=&#34;_blank&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Frontend using AngularJS and TypeScript</title>
       <link>https://myzonesoft.com/post/frontend-angular/</link>
       <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/post/frontend-angular/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -60,6 +56,5 @@
 &lt;p&gt;If you want to understand more about MVC Architecture, go through &lt;a href=&#34;https://myzonesoft.com/post/mvc-springboot-jsp/#what-is-model-view-controller-mvc-architecture&#34;
  target=&#34;_blank&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

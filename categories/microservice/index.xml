@@ -6,12 +6,12 @@
     <description>Recent content in Microservice on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Aug 2022 13:30:35 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/categories/microservice/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Aug 2022 13:30:35 +0530</lastBuildDate>
+    <atom:link href="https://myzonesoft.com/categories/microservice/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microservice using Python, Flask and SQLite Database</title>
       <link>https://myzonesoft.com/post/microservice-python-flask-sqlite/</link>
       <pubDate>Thu, 18 Aug 2022 13:30:35 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/post/microservice-python-flask-sqlite/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -22,12 +22,10 @@
 &lt;p&gt;In this article, I will develop a &lt;strong&gt;Microservice Application&lt;/strong&gt; using &lt;strong&gt;Python Language&lt;/strong&gt; with &lt;strong&gt;Flask Framework&lt;/strong&gt; and &lt;strong&gt;SQLite Database&lt;/strong&gt; and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Flask Framework&lt;/strong&gt; will serve as back-end server and I will be using &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;SQLite Database&lt;/strong&gt;, for persisting(storing) the data.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microservice Using Dropwizard, Hibernate and H2 Database</title>
       <link>https://myzonesoft.com/post/microservice-dropwizard-h2/</link>
       <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/post/microservice-dropwizard-h2/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -38,12 +36,10 @@
 &lt;p&gt;In this article, I will develop a &lt;strong&gt;Microservice Application&lt;/strong&gt; using &lt;strong&gt;Dropwizard Framework&lt;/strong&gt; and &lt;strong&gt;H2 Database&lt;/strong&gt; and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Dropwizard Framework&lt;/strong&gt; will serve as back-end server and I will be using &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, &lt;em&gt;it is also known as an Embedded Java Database&lt;/em&gt;, for persisting(storing) the data.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microservice Using Spring Boot, Hibernate and MongoDB Database</title>
       <link>https://myzonesoft.com/post/microservice-springboot-mongodb/</link>
       <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/post/microservice-springboot-mongodb/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -54,12 +50,10 @@
 &lt;p&gt;In this article, I will develop a &lt;strong&gt;Microservice Application&lt;/strong&gt; using &lt;strong&gt;Spring Boot Framework&lt;/strong&gt; and &lt;strong&gt;MongoDB Database&lt;/strong&gt; and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Spring Boot Framework&lt;/strong&gt; will serve as back-end server and I will be using &lt;em&gt;&lt;strong&gt;No SQL Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;MongoDB Database&lt;/strong&gt; for persisting(storing) the data.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microservice Using Spring Boot, Hibernate and H2 Database</title>
       <link>https://myzonesoft.com/post/microservice-springboot-h2/</link>
       <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/post/microservice-springboot-h2/</guid>
       <description>&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;addBackToTop({
@@ -70,6 +64,5 @@
 &lt;p&gt;In this article, I will develop a &lt;strong&gt;Microservice Application&lt;/strong&gt; using &lt;strong&gt;Spring Boot Framework&lt;/strong&gt; and &lt;strong&gt;H2 Database&lt;/strong&gt; and expose all &lt;em&gt;CRUD (Create, Read, Update, Delete) Operations&lt;/em&gt; as the REST APIs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Spring Boot Framework&lt;/strong&gt; will serve as back-end server and I will be using &lt;em&gt;&lt;strong&gt;Relational Database&lt;/strong&gt;&lt;/em&gt; known as &lt;strong&gt;H2 Database&lt;/strong&gt;, &lt;em&gt;it is also known as an Embedded Java Database&lt;/em&gt;, for persisting(storing) the data.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

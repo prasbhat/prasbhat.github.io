@@ -6,276 +6,210 @@
     <description>Recent content in Tags on myzonesoft.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jun 2023 11:30:00 +0530</lastBuildDate><atom:link href="https://myzonesoft.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Frontend</title>
-      <link>https://myzonesoft.com/tags/frontend/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/frontend/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>H2 Database</title>
-      <link>https://myzonesoft.com/tags/h2-database/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/h2-database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hibernate</title>
-      <link>https://myzonesoft.com/tags/hibernate/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/hibernate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://myzonesoft.com/tags/java/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Microservice</title>
-      <link>https://myzonesoft.com/tags/microservice/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/microservice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MVC</title>
-      <link>https://myzonesoft.com/tags/mvc/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/mvc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Relational Database</title>
-      <link>https://myzonesoft.com/tags/relational-database/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/relational-database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spring Boot</title>
-      <link>https://myzonesoft.com/tags/spring-boot/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/spring-boot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spring Security</title>
-      <link>https://myzonesoft.com/tags/spring-security/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/spring-security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Thymeleaf</title>
-      <link>https://myzonesoft.com/tags/thymeleaf/</link>
-      <pubDate>Mon, 05 Jun 2023 11:30:00 +0530</pubDate>
-      
-      <guid>https://myzonesoft.com/tags/thymeleaf/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Tue, 18 Oct 2022 16:45:26 +0530</lastBuildDate>
+    <atom:link href="https://myzonesoft.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flask Framework</title>
       <link>https://myzonesoft.com/tags/flask-framework/</link>
       <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/flask-framework/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Frontend</title>
+      <link>https://myzonesoft.com/tags/frontend/</link>
+      <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
+      <guid>https://myzonesoft.com/tags/frontend/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Jinja Template</title>
       <link>https://myzonesoft.com/tags/jinja-template/</link>
       <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/jinja-template/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Microservice</title>
+      <link>https://myzonesoft.com/tags/microservice/</link>
+      <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
+      <guid>https://myzonesoft.com/tags/microservice/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MVC</title>
+      <link>https://myzonesoft.com/tags/mvc/</link>
+      <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
+      <guid>https://myzonesoft.com/tags/mvc/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Python</title>
       <link>https://myzonesoft.com/tags/python/</link>
       <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/python/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Relational Database</title>
+      <link>https://myzonesoft.com/tags/relational-database/</link>
+      <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
+      <guid>https://myzonesoft.com/tags/relational-database/</guid>
+      <description></description>
+    </item>
     <item>
       <title>SQLAlchemy</title>
       <link>https://myzonesoft.com/tags/sqlalchemy/</link>
       <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/sqlalchemy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SQLite Database</title>
       <link>https://myzonesoft.com/tags/sqlite-database/</link>
       <pubDate>Tue, 18 Oct 2022 16:45:26 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/sqlite-database/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>H2 Database</title>
+      <link>https://myzonesoft.com/tags/h2-database/</link>
+      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
+      <guid>https://myzonesoft.com/tags/h2-database/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://myzonesoft.com/tags/java/</link>
+      <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
+      <guid>https://myzonesoft.com/tags/java/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Play Framework</title>
       <link>https://myzonesoft.com/tags/play-framework/</link>
       <pubDate>Wed, 27 Jul 2022 11:23:37 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/play-framework/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Dropwizard</title>
       <link>https://myzonesoft.com/tags/dropwizard/</link>
       <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/dropwizard/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Hibernate</title>
+      <link>https://myzonesoft.com/tags/hibernate/</link>
+      <pubDate>Tue, 28 Jun 2022 15:24:28 +0530</pubDate>
+      <guid>https://myzonesoft.com/tags/hibernate/</guid>
+      <description></description>
+    </item>
     <item>
       <title>JavaScript</title>
       <link>https://myzonesoft.com/tags/javascript/</link>
       <pubDate>Mon, 20 Jun 2022 12:04:54 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>TypeScript</title>
       <link>https://myzonesoft.com/tags/typescript/</link>
       <pubDate>Mon, 20 Jun 2022 12:04:54 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/typescript/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>VueJS</title>
       <link>https://myzonesoft.com/tags/vuejs/</link>
       <pubDate>Mon, 20 Jun 2022 12:04:54 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/vuejs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hugo</title>
       <link>https://myzonesoft.com/tags/hugo/</link>
       <pubDate>Fri, 18 Mar 2022 12:54:13 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/hugo/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>GitHub Pages</title>
       <link>https://myzonesoft.com/tags/github-pages/</link>
       <pubDate>Wed, 05 Jan 2022 13:03:48 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/github-pages/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Website Migration</title>
       <link>https://myzonesoft.com/tags/website-migration/</link>
       <pubDate>Wed, 05 Jan 2022 13:03:48 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/website-migration/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Wordpress</title>
       <link>https://myzonesoft.com/tags/wordpress/</link>
       <pubDate>Wed, 05 Jan 2022 13:03:48 +0530</pubDate>
-      
       <guid>https://myzonesoft.com/tags/wordpress/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ReactJS</title>
       <link>https://myzonesoft.com/tags/reactjs/</link>
       <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/tags/reactjs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AngularJS</title>
       <link>https://myzonesoft.com/tags/angularjs/</link>
       <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/tags/angularjs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>RestTemplate</title>
       <link>https://myzonesoft.com/tags/resttemplate/</link>
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/tags/resttemplate/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Spring Boot</title>
+      <link>https://myzonesoft.com/tags/spring-boot/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://myzonesoft.com/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Thymeleaf</title>
+      <link>https://myzonesoft.com/tags/thymeleaf/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://myzonesoft.com/tags/thymeleaf/</guid>
+      <description></description>
+    </item>
     <item>
       <title>JSP</title>
       <link>https://myzonesoft.com/tags/jsp/</link>
       <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/tags/jsp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>MongoDB Database</title>
       <link>https://myzonesoft.com/tags/mongodb-database/</link>
       <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/tags/mongodb-database/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>No SQL Database</title>
       <link>https://myzonesoft.com/tags/no-sql-database/</link>
       <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://myzonesoft.com/tags/no-sql-database/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
